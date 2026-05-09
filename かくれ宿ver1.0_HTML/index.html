@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>かくれ宿 — 千葉にある、まだ誰も知らない宿へ</title>
+<meta name="description" content="大手予約サイトには載っていない、千葉県内の隠れた宿を発掘・紹介するウェブメディア。" />
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+<template id="__bundler_thumbnail" data-bg-color="#7A9971">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#7A9971"/>
+    <rect x="600" y="0" width="600" height="800" fill="#A8907A"/>
+    <g fill="#F5F1E8" font-family="serif">
+      <text x="80" y="380" font-size="110" font-weight="500">その宿、</text>
+      <text x="80" y="500" font-size="110" font-weight="500">まだ誰も</text>
+      <text x="80" y="620" font-size="110" font-weight="500">知らない。</text>
+    </g>
+    <text x="80" y="185" font-family="serif" font-size="20" fill="#F5F1E8" letter-spacing="4" opacity="0.85">CHIBA HIDDEN INNS</text>
+  </svg>
+</template>
+
+<link rel="stylesheet" href="assets/shared.css" />
+</head>
+<body>
+
+<!-- =====================================================
+     HEADER / GLOBAL NAVIGATION
+     ===================================================== -->
+<header class="site-header is-hero" id="siteHeader">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      かくれ宿
+      <span class="logo-mark">CHIBA</span>
+    </a>
+
+    <nav class="nav" id="siteNav">
+      <a href="articles.html">宿一覧</a>
+      <a href="index.html#about">メディアについて</a>
+      <a href="index.html#owners">オーナーへ</a>
+      <a href="index.html#newsletter" class="nav-cta">登録する</a>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="メニュー" aria-controls="siteNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+
+<!-- =====================================================
+     HERO — split layout: forest panel (left) + image (right)
+     ===================================================== -->
+<section class="hero" id="hero">
+  <div class="hero-panel">
+    <div class="hero-top">
+      <span class="hero-eyebrow">A MEDIA FOR HIDDEN INNS &nbsp;·&nbsp; CHIBA</span>
+      <span class="hero-issue">NO.&nbsp;001 &nbsp;/&nbsp; 2026 SPRING</span>
+    </div>
+
+    <div class="hero-body">
+      <h1 class="hero-title">
+        <span class="small">千葉にある、まだ誰も知らない宿へ。</span>
+        その宿、<br />まだ誰も<br />知らない。
+      </h1>
+      <p class="hero-sub">
+        大手の予約サイトには載っていない。<br />
+        でも、一生忘れられない宿が千葉にはある。<br />
+        そんな場所だけを、静かに紹介していきます。
+      </p>
+      <div class="hero-cta-row">
+        <a href="articles.html" class="btn hero-cta">
+          宿を見つける
+          <span class="arrow">→</span>
+        </a>
+        <a href="#about" class="hero-scroll">SCROLL</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <img src="https://picsum.photos/seed/chiba-hero-coast/1400/1800" alt="千葉の海辺の宿" />
+    <span class="hero-caption">千葉県・某所</span>
+  </div>
+</section>
+
+
+<!-- =====================================================
+     ABOUT / FEATURES — 3 cards
+     ===================================================== -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-header is-centered reveal">
+      <span class="eyebrow">ABOUT&nbsp;US</span>
+      <h2>「泊まる」ではなく、<br />「出会う」ための宿を。</h2>
+      <p>
+        かくれ宿は、大手の宿泊掲載サイトには載っていない千葉県内の宿を発掘し、<br />
+        そのオーナーやストーリーごと、静かに届けるメディアです。
+      </p>
+    </div>
+
+    <div class="features">
+      <!-- Feature 01 -->
+      <article class="feature reveal">
+        <span class="feature-num">01</span>
+        <div class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="24" cy="24" r="18"/>
+            <path d="M10 24h28 M24 10c4 4 6 9 6 14s-2 10-6 14c-4-4-6-9-6-14s2-10 6-14z"/>
+            <path d="M14 16l20 16 M34 16L14 32" opacity="0.35"/>
+          </svg>
+        </div>
+        <h3>予約サイトには<br />載っていない</h3>
+        <p>大手の宿泊掲載サイトでは辿り着けない宿だけを紹介します。プラットフォームでは見つからない、千葉のローカルな小さな宿へ。</p>
+      </article>
+
+      <!-- Feature 02 -->
+      <article class="feature reveal">
+        <span class="feature-num">02</span>
+        <div class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M8 38l8-12 6 8 8-14 10 18z"/>
+            <circle cx="34" cy="14" r="3"/>
+            <path d="M6 42h36"/>
+          </svg>
+        </div>
+        <h3>ここにしかない<br />体験がある</h3>
+        <p>オーナーが一人で守り続ける海辺の民宿、築100年の古民家、朝に自分で薪を割る宿。消費される旅ではなく、記憶に残る時間を。</p>
+      </article>
+
+      <!-- Feature 03 -->
+      <article class="feature reveal">
+        <span class="feature-num">03</span>
+        <div class="feature-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M24 6v12 M24 30v12 M6 24h12 M30 24h12"/>
+            <circle cx="24" cy="24" r="5"/>
+            <path d="M12 12l4 4 M36 12l-4 4 M12 36l4-4 M36 36l-4-4" opacity="0.4"/>
+          </svg>
+        </div>
+        <h3>消えゆく前に<br />届けたい</h3>
+        <p>後継者不足や集客難で、廃業の危機にある宿も少なくありません。なくなる前に、そこにある景色と人の手触りを、訪れてほしい。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================
+     LISTINGS — featured inns (4 cards)
+     ===================================================== -->
+<section class="listings-section" id="listings">
+  <div class="container">
+    <div class="listings-head reveal">
+      <div class="title-block">
+        <span class="eyebrow">FEATURED&nbsp;INNS</span>
+        <h2>まだ誰も知らない、<br />四つの宿。</h2>
+        <p>今月紹介する、千葉のどこかの宿。</p>
+      </div>
+      <a href="articles.html" class="view-all">すべて見る <span>→</span></a>
+    </div>
+
+    <div class="listings">
+
+      <!-- Listing 01 -->
+      <a class="listing reveal" href="articles/01-nagi.html">
+        <div class="listing-media">
+          <span class="listing-number">NO. 01</span>
+          <img src="https://picsum.photos/seed/chiba-nagi-tateyama/900/700" alt="館山の海辺の民宿 凪" />
+          <div class="listing-tags">
+            <span class="tag">館山市</span>
+            <span class="tag">海辺</span>
+          </div>
+        </div>
+        <div class="listing-body">
+          <div class="listing-meta">
+            <span>INN &nbsp;001</span>
+            <span class="sep"></span>
+            <span>TATEYAMA</span>
+          </div>
+          <h3>館山の海辺の民宿<br />凪（なぎ）</h3>
+          <p class="listing-desc">朝に揚がったばかりの地魚と、太平洋の朝焼け。女将ひとりで切り盛りする、四部屋だけの小さな宿。</p>
+          <span class="listing-link">詳しく見る <span>→</span></span>
+        </div>
+      </a>
+
+      <!-- Listing 02 -->
+      <a class="listing reveal" href="articles/02-kayabukian.html">
+        <div class="listing-media">
+          <span class="listing-number">NO. 02</span>
+          <img src="https://picsum.photos/seed/chiba-kayabuki-isumi/900/700" alt="いすみの茅葺古民家 茅葺庵" />
+          <div class="listing-tags">
+            <span class="tag">いすみ市</span>
+            <span class="tag">古民家</span>
+          </div>
+        </div>
+        <div class="listing-body">
+          <div class="listing-meta">
+            <span>INN &nbsp;002</span>
+            <span class="sep"></span>
+            <span>ISUMI</span>
+          </div>
+          <h3>築百二十年の茅葺古民家<br />茅葺庵（かやぶきあん）</h3>
+          <p class="listing-desc">囲炉裏で炊いた飯と、縁側の風。田園のただなかで、時計を置いた一泊二日のゆっくりとした息継ぎを。</p>
+          <span class="listing-link">詳しく見る <span>→</span></span>
+        </div>
+      </a>
+
+      <!-- Listing 03 -->
+      <a class="listing reveal" href="articles/03-komorebi.html">
+        <div class="listing-media">
+          <span class="listing-number">NO. 03</span>
+          <img src="https://picsum.photos/seed/chiba-komorebi-yourou/900/700" alt="養老渓谷の山小屋 こもれび" />
+          <div class="listing-tags">
+            <span class="tag">大多喜町</span>
+            <span class="tag">山あい</span>
+          </div>
+        </div>
+        <div class="listing-body">
+          <div class="listing-meta">
+            <span>INN &nbsp;003</span>
+            <span class="sep"></span>
+            <span>YOUROU</span>
+          </div>
+          <h3>養老渓谷の山小屋<br />こもれび</h3>
+          <p class="listing-desc">朝は自分で薪を割り、夜は渓谷の音と満点の星。電気も最小限、自然と呼吸を合わせる二泊三日。</p>
+          <span class="listing-link">詳しく見る <span>→</span></span>
+        </div>
+      </a>
+
+      <!-- Listing 04 -->
+      <a class="listing reveal" href="articles/04-sawaranoyado.html">
+        <div class="listing-media">
+          <span class="listing-number">NO. 04</span>
+          <img src="https://picsum.photos/seed/chiba-sawara-edo/900/700" alt="佐原の町家宿 佐原の宿" />
+          <div class="listing-tags">
+            <span class="tag">香取市</span>
+            <span class="tag">町家</span>
+          </div>
+        </div>
+        <div class="listing-body">
+          <div class="listing-meta">
+            <span>INN &nbsp;004</span>
+            <span class="sep"></span>
+            <span>SAWARA</span>
+          </div>
+          <h3>小江戸佐原の町家宿<br />佐原の宿（さわらのやど）</h3>
+          <p class="listing-desc">小野川沿いの江戸の町並み。明治期の商家を改装した、二組限定の貸し切り宿で過ごす夜。</p>
+          <span class="listing-link">詳しく見る <span>→</span></span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================
+     OWNERS — メッセージ（宿のオーナー向け）
+     ===================================================== -->
+<section class="owners-section" id="owners">
+  <div class="owners-grid">
+    <div class="owners-media">
+      <img src="https://picsum.photos/seed/kakure-owner-message/900/1100" alt="宿のオーナー" />
+    </div>
+
+    <div class="owners-body">
+      <span class="eyebrow">FOR&nbsp;INN&nbsp;OWNERS</span>
+      <h2>あなたの宿の物語を、<br />届けさせてください。</h2>
+      <p>
+        ウェブサイトがない、SNSをやっていない、<br />
+        でも、とびきり素敵な宿——<br />
+        そういう場所を、私たちは探しています。
+      </p>
+
+      <ul class="owners-list">
+        <li data-num="①">取材・撮影・執筆はすべて無償</li>
+        <li data-num="②">ウェブサイト・SNS整備も無償で支援</li>
+        <li data-num="③">あなたの宿のストーリーを、丁寧に届けます</li>
+      </ul>
+
+      <p>
+        情報発信が苦手でも大丈夫です。<br />
+        あなたの宿の魅力を、世界に届けるお手伝いをします。
+      </p>
+
+      <a href="contact.html" class="btn">
+        取材・掲載を相談する
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================
+     NEWSLETTER — 読者向け登録
+     ===================================================== -->
+<section class="newsletter-section" id="newsletter">
+  <div class="container">
+    <div class="newsletter-inner reveal">
+      <span class="eyebrow" style="justify-content: center;">NEWSLETTER</span>
+      <h2>新しい宿の情報、<br />見逃したくないあなたへ。</h2>
+      <p>月に1〜2回、まだ誰も知らない宿の情報と、<br />取材の裏側のエッセイをお届けします。</p>
+
+      <form class="newsletter-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='登録ありがとうございます';">
+        <input type="email" placeholder="your@email.com" required />
+        <button type="submit">無料で登録する</button>
+      </form>
+      <p class="newsletter-fine">※ いつでも配信停止できます。メールアドレスは登録以外の目的では使いません。</p>
+
+      <div class="newsletter-social">
+        <a href="#">INSTAGRAM</a>
+        <a href="#">NOTE</a>
+        <a href="#">X&nbsp;/&nbsp;TWITTER</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">かくれ宿 <span class="logo-mark">CHIBA</span></a>
+        <p>大手の宿泊掲載サイトには載っていない、千葉県内に眠る"隠れた宿"を、静かに発掘・紹介するウェブメディア。</p>
+      </div>
+      <div class="footer-col">
+        <h4>MEDIA</h4>
+        <ul>
+          <li><a href="articles.html">宿一覧</a></li>
+          <li><a href="index.html#about">メディアについて</a></li>
+          <li><a href="index.html#newsletter">メルマガ登録</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>FOR&nbsp;OWNERS</h4>
+        <ul>
+          <li><a href="index.html#owners">オーナーへ</a></li>
+          <li><a href="contact.html">取材の依頼</a></li>
+          <li><a href="index.html#owners">デジタル支援について</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>CONTACT</h4>
+        <ul>
+          <li><a href="contact.html">お問い合わせ</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+          <li><a href="#">特定商取引法に基づく表記</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 かくれ宿 千葉. All rights reserved.</span>
+      <span class="legal">
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+
+<!-- =====================================================
+     TWEAKS PANEL (design-time only — remove before Studio import)
+     ===================================================== -->
+<div class="tw-panel" id="twPanel">
+  <h5>Tweaks <button id="twClose" aria-label="閉じる">×</button></h5>
+
+  <div class="tw-row">
+    <label>Forest tone</label>
+    <div class="tw-options" data-tw-group="green">
+      <button data-tw="green-default" class="is-active">森</button>
+      <button data-tw="green-dark">深緑</button>
+      <button data-tw="green-olive">苔</button>
+    </div>
+  </div>
+
+  <div class="tw-row">
+    <label>Section spacing</label>
+    <div class="tw-options" data-tw-group="spacing">
+      <button data-tw="spacing-default" class="is-active">標準</button>
+      <button data-tw="spacing-compact">詰め</button>
+      <button data-tw="spacing-roomy">ゆったり</button>
+    </div>
+  </div>
+
+  <div class="tw-row">
+    <label>Heading font</label>
+    <div class="tw-options" data-tw-group="font">
+      <button data-tw="serif-headings" class="is-active">明朝</button>
+      <button data-tw="sans-headings">ゴシック</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- =====================================================
+     JS — hamburger menu, header scroll state, reveal, tweaks
+     ===================================================== -->
+<script>
+(function () {
+  // Hamburger menu
+  var hb = document.getElementById('hamburger');
+  var nav = document.getElementById('siteNav');
+  if (hb && nav) {
+    hb.addEventListener('click', function () {
+      hb.classList.toggle('is-open');
+      nav.classList.toggle('is-open');
+    });
+    nav.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        hb.classList.remove('is-open');
+        nav.classList.remove('is-open');
+      });
+    });
+  }
+
+  // Header scroll state + switch from "hero/light" to "normal/dark"
+  var header = document.getElementById('siteHeader');
+  var hero = document.getElementById('hero');
+  function updateHeader() {
+    if (!header) return;
+    var y = window.scrollY || window.pageYOffset;
+    header.classList.toggle('is-scrolled', y > 20);
+    // Once we're past hero, header becomes light-bg / dark-text
+    if (hero) {
+      var heroBottom = hero.offsetTop + hero.offsetHeight - 80;
+      header.classList.toggle('is-hero', y < heroBottom);
+    }
+  }
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, { passive: true });
+
+  // Hero loaded state (enables slow ken-burns zoom)
+  requestAnimationFrame(function () {
+    document.getElementById('hero') && document.getElementById('hero').classList.add('is-loaded');
+  });
+
+  // Reveal on scroll
+  var reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+})();
+</script>
+
+<!-- Tweaks: integrated with host toolbar (__edit_mode_*) -->
+<script>
+(function () {
+  var panel = document.getElementById('twPanel');
+  var closeBtn = document.getElementById('twClose');
+
+  // Listen for toolbar messages FIRST
+  window.addEventListener('message', function (e) {
+    var d = e && e.data;
+    if (!d || !d.type) return;
+    if (d.type === '__activate_edit_mode') panel.classList.add('is-open');
+    if (d.type === '__deactivate_edit_mode') panel.classList.remove('is-open');
+  });
+
+  // Then announce availability
+  try { window.parent.postMessage({ type: '__edit_mode_available' }, '*'); } catch (err) {}
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function () {
+      panel.classList.remove('is-open');
+      try { window.parent.postMessage({ type: '__edit_mode_dismissed' }, '*'); } catch (err) {}
+    });
+  }
+
+  // Tweak buttons: toggle body class per group
+  document.querySelectorAll('.tw-options').forEach(function (group) {
+    group.addEventListener('click', function (e) {
+      var btn = e.target.closest('button[data-tw]');
+      if (!btn) return;
+      var value = btn.getAttribute('data-tw');
+      // Remove sibling classes from body
+      group.querySelectorAll('button[data-tw]').forEach(function (b) {
+        document.body.classList.remove('tw-' + b.getAttribute('data-tw'));
+        b.classList.remove('is-active');
+      });
+      btn.classList.add('is-active');
+      if (!/-default$/.test(value)) {
+        document.body.classList.add('tw-' + value);
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
