@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{{TITLE}} — かくれ宿</title>
+<meta name="description" content="{{LEAD_SHORT}}" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/shared.css" />
+
+<template id="__bundler_thumbnail" data-bg-color="#7A9971">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#7A9971"/>
+    <text x="80" y="380" font-family="serif" font-size="72" fill="#F5F1E8">{{TITLE}}</text>
+    <text x="80" y="450" font-family="serif" font-size="24" fill="#F5F1E8" letter-spacing="6" opacity="0.85">{{NUMBER}} · {{LOCATION_EN}}</text>
+  </svg>
+</template>
+
+<style>
+.article-hero {
+  position: relative;
+  height: 80vh;
+  min-height: 540px;
+  background: #1a1a1a;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  color: #fff;
+}
+.article-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7) saturate(0.95); }
+.article-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0.6) 100%); }
+.article-hero .container { position: relative; z-index: 2; padding-bottom: 80px; padding-top: 140px; }
+.article-hero .meta {
+  font-family: var(--font-serif); font-size: 12px; letter-spacing: 0.35em;
+  display: flex; gap: 18px; align-items: center; margin-bottom: 28px;
+  color: rgba(255,255,255,0.85);
+}
+.article-hero .meta .sep { width: 4px; height: 4px; background: currentColor; border-radius: 50%; }
+.article-hero h1 {
+  font-family: var(--font-serif); font-weight: 500;
+  font-size: clamp(34px, 5.5vw, 64px);
+  line-height: 1.4; letter-spacing: 0.04em;
+  max-width: 860px; margin: 0 0 24px;
+}
+.article-hero .subtitle { font-family: var(--font-serif); font-size: clamp(15px, 1.8vw, 19px); color: rgba(255,255,255,0.85); max-width: 600px; line-height: 1.9; }
+
+.article-body { padding: 100px 0; max-width: 760px; margin: 0 auto; }
+.article-body .lead {
+  font-family: var(--font-serif); font-size: clamp(17px, 2vw, 21px);
+  line-height: 2.1; letter-spacing: 0.04em; color: var(--color-text);
+  margin-bottom: 56px; padding-bottom: 56px; border-bottom: 1px solid var(--color-line);
+}
+.article-body h2 {
+  font-family: var(--font-serif); font-size: clamp(22px, 2.6vw, 30px);
+  margin: 80px 0 32px; line-height: 1.6; letter-spacing: 0.04em;
+  display: flex; align-items: baseline; gap: 18px;
+}
+.article-body h2::before {
+  content: attr(data-num); font-size: 13px; letter-spacing: 0.3em;
+  color: var(--color-forest); font-weight: 400; min-width: 32px;
+}
+.article-body p { font-size: 15px; line-height: 2.1; margin-bottom: 24px; color: var(--color-text); }
+.article-body figure { margin: 56px 0; }
+.article-body figure img { width: 100%; height: auto; aspect-ratio: 3/2; object-fit: cover; }
+.article-body figcaption {
+  font-family: var(--font-serif); font-size: 12px; letter-spacing: 0.18em;
+  color: var(--color-text-mute); margin-top: 14px; padding-left: 14px;
+  border-left: 1px solid var(--color-line);
+}
+.article-body blockquote {
+  font-family: var(--font-serif); font-size: clamp(20px, 2.4vw, 26px);
+  line-height: 1.8; letter-spacing: 0.04em; margin: 64px 0;
+  padding: 0 0 0 32px; border-left: 2px solid var(--color-forest);
+  color: var(--color-text);
+}
+.article-body blockquote cite { display: block; font-family: var(--font-sans); font-size: 13px; font-style: normal; color: var(--color-text-mute); margin-top: 16px; letter-spacing: 0.1em; }
+
+.spec {
+  background: var(--color-bg-sub);
+  padding: 48px clamp(24px, 4vw, 56px);
+  margin: 80px 0;
+}
+.spec h3 { font-family: var(--font-serif); font-size: 14px; letter-spacing: 0.3em; margin: 0 0 28px; color: var(--color-text-mute); font-weight: 500; }
+.spec dl { margin: 0; display: grid; grid-template-columns: 140px 1fr; gap: 0; }
+.spec dt, .spec dd { padding: 14px 0; border-top: 1px solid var(--color-line); margin: 0; }
+.spec dt { font-family: var(--font-serif); font-size: 13px; letter-spacing: 0.18em; color: var(--color-text-mute); }
+.spec dd { font-size: 14px; line-height: 1.85; color: var(--color-text); }
+.spec dt:nth-of-type(1), .spec dd:nth-of-type(1) { border-top: 0; padding-top: 0; }
+@media (max-width: 540px) { .spec dl { grid-template-columns: 1fr; gap: 0; } .spec dt { padding-bottom: 4px; border-top: 1px solid var(--color-line); } .spec dd { padding-top: 4px; padding-bottom: 18px; border-top: 0; } }
+
+.article-cta {
+  background: var(--color-forest); color: var(--color-beige);
+  padding: 60px clamp(28px, 5vw, 60px); margin: 80px 0 0;
+  text-align: center;
+}
+.article-cta h3 { font-family: var(--font-serif); font-size: 22px; line-height: 1.7; color: var(--color-beige); margin: 0 0 14px; font-weight: 500; }
+.article-cta p { font-size: 14px; color: rgba(245, 241, 232, 0.8); margin-bottom: 28px; line-height: 1.95; }
+.article-cta .btn { background: var(--color-beige); color: var(--color-text); }
+.article-cta .btn:hover { background: #fff; }
+
+.next-article {
+  background: var(--color-bg-sub); padding: 80px 0; border-top: 1px solid var(--color-line);
+}
+.next-article .container { display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
+.next-article .label { font-family: var(--font-serif); font-size: 12px; letter-spacing: 0.3em; color: var(--color-text-mute); margin-bottom: 8px; display: block; }
+.next-article a.next-link { font-family: var(--font-serif); font-size: clamp(20px, 2.5vw, 28px); color: var(--color-text); display: flex; align-items: center; gap: 18px; line-height: 1.5; }
+.next-article a.next-link:hover { color: var(--color-forest); }
+.next-article .back { font-family: var(--font-serif); font-size: 13px; letter-spacing: 0.2em; color: var(--color-text-mute); border-bottom: 1px solid var(--color-line); padding-bottom: 4px; }
+.next-article .back:hover { color: var(--color-text); border-bottom-color: currentColor; }
+
+@media (max-width: 720px) {
+  .article-hero { height: 70vh; min-height: 420px; }
+  .article-hero .container { padding-bottom: 50px; padding-top: 100px; }
+  .article-body { padding: 60px 0; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header is-hero" id="siteHeader">
+  <div class="container header-inner">
+    <a href="../index.html" class="logo">かくれ宿 <span class="logo-mark">CHIBA</span></a>
+    <nav class="nav" id="siteNav">
+      <a href="../articles.html">宿一覧</a>
+      <a href="../index.html#about">メディアについて</a>
+      <a href="../index.html#owners">オーナーへ</a>
+      <a href="../index.html#newsletter" class="nav-cta">登録する</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="article-hero">
+  <img src="{{HERO_IMG}}" alt="{{TITLE}}" />
+  <div class="container">
+    <div class="meta">
+      <span>{{NUMBER}}</span><span class="sep"></span>
+      <span>{{LOCATION_EN}}</span><span class="sep"></span>
+      <span>{{DATE}}</span>
+    </div>
+    <h1>{{TITLE}}</h1>
+    <p class="subtitle">{{SUBTITLE}}</p>
+  </div>
+</section>
+
+<article class="article-body container">
+  <p class="lead">{{LEAD}}</p>
+
+  <h2 data-num="01">{{H2_1}}</h2>
+  <p>{{P1A}}</p>
+  <p>{{P1B}}</p>
+
+  <figure>
+    <img src="{{FIG1_IMG}}" alt="{{FIG1_ALT}}" />
+    <figcaption>{{FIG1_CAP}}</figcaption>
+  </figure>
+
+  <h2 data-num="02">{{H2_2}}</h2>
+  <p>{{P2A}}</p>
+
+  <blockquote>
+    {{QUOTE}}
+    <cite>— {{QUOTE_BY}}</cite>
+  </blockquote>
+
+  <p>{{P2B}}</p>
+
+  <figure>
+    <img src="{{FIG2_IMG}}" alt="{{FIG2_ALT}}" />
+    <figcaption>{{FIG2_CAP}}</figcaption>
+  </figure>
+
+  <h2 data-num="03">{{H2_3}}</h2>
+  <p>{{P3A}}</p>
+  <p>{{P3B}}</p>
+
+  <div class="spec">
+    <h3>INN INFORMATION</h3>
+    <dl>
+      <dt>宿名</dt><dd>{{TITLE}}</dd>
+      <dt>所在地</dt><dd>{{ADDRESS}}</dd>
+      <dt>部屋数</dt><dd>{{ROOMS}}</dd>
+      <dt>食事</dt><dd>{{MEAL}}</dd>
+      <dt>料金目安</dt><dd>{{PRICE}}</dd>
+      <dt>アクセス</dt><dd>{{ACCESS}}</dd>
+      <dt>予約</dt><dd>{{RESERVE}}</dd>
+    </dl>
+  </div>
+
+  <div class="article-cta">
+    <h3>この宿に泊まるには</h3>
+    <p>大手の予約サイトには載っていないため、<br />宿への直接連絡が必要です。詳しくはお問い合わせください。</p>
+    <a href="../contact.html" class="btn">問い合わせる <span class="arrow">→</span></a>
+  </div>
+</article>
+
+<section class="next-article">
+  <div class="container">
+    <div>
+      <span class="label">NEXT INN</span>
+      <a class="next-link" href="{{NEXT_HREF}}">{{NEXT_TITLE}} <span>→</span></a>
+    </div>
+    <a class="back" href="../articles.html">← 宿一覧へ戻る</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo">かくれ宿 <span class="logo-mark">CHIBA</span></a>
+        <p>大手の宿泊掲載サイトには載っていない、千葉県内に眠る"隠れた宿"を、静かに発掘・紹介するウェブメディア。</p>
+      </div>
+      <div class="footer-col"><h4>MEDIA</h4><ul>
+        <li><a href="../articles.html">宿一覧</a></li>
+        <li><a href="../index.html#about">メディアについて</a></li>
+        <li><a href="../index.html#newsletter">メルマガ登録</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>FOR&nbsp;OWNERS</h4><ul>
+        <li><a href="../index.html#owners">オーナーへ</a></li>
+        <li><a href="../contact.html">取材の依頼</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>CONTACT</h4><ul>
+        <li><a href="../contact.html">お問い合わせ</a></li>
+        <li><a href="#">プライバシーポリシー</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 かくれ宿 千葉. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var hb = document.getElementById('hamburger'), nav = document.getElementById('siteNav');
+  if (hb) hb.addEventListener('click', function(){ hb.classList.toggle('is-open'); nav.classList.toggle('is-open'); });
+  var header = document.getElementById('siteHeader');
+  function up(){ var y = window.scrollY||0; header.classList.toggle('is-scrolled', y>20); header.classList.toggle('is-hero', y < 400); }
+  up(); window.addEventListener('scroll', up, {passive:true});
+})();
+</script>
+</body>
+</html>

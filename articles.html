@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>宿一覧 — かくれ宿</title>
+<meta name="description" content="大手予約サイトには載っていない、千葉県内の隠れた宿の記事一覧。" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/shared.css" />
+
+<template id="__bundler_thumbnail" data-bg-color="#7A9971">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#F5F1E8"/>
+    <text x="80" y="380" font-family="serif" font-size="100" fill="#3A2E22">宿一覧</text>
+    <text x="80" y="450" font-family="serif" font-size="32" fill="#7A9971" letter-spacing="6">CHIBA · 8 INNS</text>
+  </svg>
+</template>
+
+<style>
+.page-head {
+  padding: 180px 0 80px;
+  background: var(--color-bg-sub);
+  border-bottom: 1px solid var(--color-line);
+}
+.page-head .container { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+.page-head h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(34px, 5vw, 56px);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+.page-head .breadcrumb {
+  font-family: var(--font-serif);
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  color: var(--color-text-mute);
+  margin-bottom: 24px;
+  display: block;
+}
+.page-head .breadcrumb a { color: var(--color-text-mute); border-bottom: 1px solid transparent; padding-bottom: 2px; }
+.page-head .breadcrumb a:hover { border-bottom-color: currentColor; }
+.page-head .count {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  letter-spacing: 0.25em;
+  color: var(--color-text-mute);
+}
+.page-head .count strong { font-size: 22px; color: var(--color-forest); margin: 0 6px; font-weight: 500; }
+
+.filter-bar {
+  border-top: 1px solid var(--color-line);
+  padding: 28px 0;
+  background: var(--color-bg);
+  position: sticky;
+  top: 0;
+  z-index: 30;
+}
+.filter-bar .container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 13px;
+  font-family: var(--font-serif);
+  letter-spacing: 0.18em;
+}
+.filter-bar .label { color: var(--color-text-mute); margin-right: 8px; }
+.filter-bar button {
+  padding: 8px 18px;
+  background: transparent;
+  color: var(--color-text-mute);
+  border: 1px solid var(--color-line);
+  font-family: var(--font-serif);
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  transition: all .25s var(--ease);
+  cursor: pointer;
+}
+.filter-bar button:hover { border-color: var(--color-text); color: var(--color-text); }
+.filter-bar button.is-active { background: var(--color-forest); color: var(--color-beige); border-color: var(--color-forest); }
+
+.archive-section { padding: 80px 0 120px; }
+.archive-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(28px, 4vw, 56px) clamp(28px, 4vw, 48px);
+}
+@media (max-width: 720px) {
+  .archive-grid { grid-template-columns: 1fr; }
+  .page-head { padding: 130px 0 60px; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header is-scrolled" id="siteHeader">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">かくれ宿 <span class="logo-mark">CHIBA</span></a>
+    <nav class="nav" id="siteNav">
+      <a href="articles.html">宿一覧</a>
+      <a href="index.html#about">メディアについて</a>
+      <a href="index.html#owners">オーナーへ</a>
+      <a href="index.html#newsletter" class="nav-cta">登録する</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="page-head">
+  <div class="container">
+    <div>
+      <span class="breadcrumb"><a href="index.html">HOME</a> &nbsp;/&nbsp; INNS</span>
+      <h1>千葉の、<br />まだ誰も知らない宿。</h1>
+    </div>
+    <span class="count">全 <strong>8</strong> 軒の宿</span>
+  </div>
+</section>
+
+<div class="filter-bar">
+  <div class="container">
+    <span class="label">AREA</span>
+    <button class="is-active" data-area="all">すべて</button>
+    <button data-area="tateyama">館山・南房総</button>
+    <button data-area="isumi">いすみ・外房</button>
+    <button data-area="yourou">大多喜・養老</button>
+    <button data-area="sawara">香取・佐原</button>
+    <button data-area="kujukuri">九十九里</button>
+    <button data-area="kanaya">金谷・内房</button>
+  </div>
+</div>
+
+<section class="archive-section">
+  <div class="container">
+    <div class="archive-grid" id="archiveGrid">
+
+      <a class="listing reveal" href="articles/01-nagi.html" data-area="tateyama">
+        <div class="listing-media">
+          <span class="listing-number">NO. 01</span>
+          <img src="https://picsum.photos/seed/chiba-nagi-tateyama/900/700" alt="館山の海辺の民宿 凪" />
+          <div class="listing-tags"><span class="tag">館山市</span><span class="tag">海辺</span></div>
+        </div>
+        <div class="listing-body">
+          <div class="listing-meta"><span>INN&nbsp;001</span><span class="sep"></span><span>TATEYAMA</span></div>
+          <h3>館山の海辺の民宿<br />凪（なぎ）</h3>
+          <p class="listing-desc">朝に揚がったばかりの地魚と、太平洋の朝焼け。女将ひとりで切り盛りする、四部屋だけの小さな宿。</p>
+          <span class="listing-link">詳しく見る <span>→</span></span>
+        </div>
+      </a>
+
+      <a class="listing reveal" href="articles/02-kayabukian.html" data-area="isumi">
+        <div class="listing-media">
+          <span class="listing-number">NO. 02</span>
+          <img src="https://picsum.photos/seed/chiba-kayabuki-isumi/900/700" alt="いすみの茅葺古民家 茅葺庵" />
+          <div class="listing-tags"><span class="tag">いすみ市</span><span class="tag">古民家</span></div>
+        </div>
+        <div class="listing-body">
+          <div class="listing-meta"><span>INN&nbsp;002</span><span class="sep"></span><span>ISUMI</span></div>
+          <h3>築百二十年の茅葺古民家<br />茅葺庵（かやぶきあん）</h3>
+          <p class="listing-desc">囲炉裏で炊いた飯と、縁側の風。田園のただなかで、時計を置いた一泊二日のゆっくりとした息継ぎを。</p>
+          <span class="listing-link">詳しく見る <span>→</span></span>
+        </div>
+      </a>
+
+      <a class="listing reveal" href="articles/03-komorebi.html" data-area="yourou">
+        <div class="listing-media">
+          <span class="listing-number">NO. 03</span>
+          <img src="https://picsum.photos/seed/chiba-komorebi-yourou/900/700" alt="養老渓谷の山小屋 こもれび" />
+          <div class="listing-tags"><span class="tag">大多喜町</span><span class="tag">山あい</span></div>
+        </div>
+        <div class="listing-body">
+          <div class="listing-meta"><span>INN&nbsp;003</span><span class="sep"></span><span>YOUROU</span></div>
+          <h3>養老渓谷の山小屋<br />こもれび</h3>
+          <p class="listing-desc">朝は自分で薪を割り、夜は渓谷の音と満点の星。電気も最小限、自然と呼吸を合わせる二泊三日。</p>
+          <span class="listing-link">詳しく見る <span>→</span></span>
+        </div>
+      </a>
+
+      <a class="listing reveal" href="articles/04-sawaranoyado.html" data-area="sawara">
+        <div class="listing-media">
+          <span class="listing-number">NO. 04</span>
+          <img src="https://picsum.photos/seed/chiba-sawara-edo/900/700" alt="佐原の町家宿 佐原の宿" />
+          <div class="listing-tags"><span class="tag">香取市</span><span class="tag">町家</span></div>
+        </div>
+        <div class="listing-body">
+          <div class="listing-meta"><span>INN&nbsp;004</span><span class="sep"></span><span>SAWARA</span></div>
+          <h3>小江戸佐原の町家宿<br />佐原の宿（さわらのやど）</h3>
+          <p class="listing-desc">小野川沿いの江戸の町並み。明治期の商家を改装した、二組限定の貸し切り宿で過ごす夜。</p>
+          <span class="listing-link">詳しく見る <span>→</span></span>
+        </div>
+      </a>
+
+      <a class="listing reveal" href="articles/05-shiosai.html" data-area="kujukuri">
+        <div class="listing-media">
+          <span class="listing-number">NO. 05</span>
+          <img src="https://picsum.photos/seed/chiba-shiosai-kujukuri/900/700" alt="九十九里の浜辺の宿 潮騒" />
+          <div class="listing-tags"><span class="tag">九十九里町</span><span class="tag">浜辺</span></div>
+        </div>
+        <div class="listing-body">
+          <div class="listing-meta"><span>INN&nbsp;005</span><span class="sep"></span><span>KUJUKURI</span></div>
+          <h3>九十九里浜の宿<br />潮騒（しおさい）</h3>
+          <p class="listing-desc">窓を開ければ、ずっと波の音。鰯漁師だった主人が建てた、海まで歩いて十秒の三部屋の宿。</p>
+          <span class="listing-link">詳しく見る <span>→</span></span>
+        </div>
+      </a>
+
+      <a class="listing reveal" href="articles/06-kanaya.html" data-area="kanaya">
+        <div class="listing-media">
+          <span class="listing-number">NO. 06</span>
+          <img src="https://picsum.photos/seed/chiba-kanaya-stone/900/700" alt="金谷の石蔵宿 蔵の宿" />
+          <div class="listing-tags"><span class="tag">富津市</span><span class="tag">石蔵</span></div>
+        </div>
+        <div class="listing-body">
+          <div class="listing-meta"><span>INN&nbsp;006</span><span class="sep"></span><span>KANAYA</span></div>
+          <h3>金谷の石蔵を改装した<br />蔵の宿（くらのやど）</h3>
+          <p class="listing-desc">かつて石材を保管した蔵を、一棟貸しの宿へ。鋸山の麓、東京湾を見下ろす一日一組の隠れ家。</p>
+          <span class="listing-link">詳しく見る <span>→</span></span>
+        </div>
+      </a>
+
+      <a class="listing reveal" href="articles/07-tsukinoyado.html" data-area="tateyama">
+        <div class="listing-media">
+          <span class="listing-number">NO. 07</span>
+          <img src="https://picsum.photos/seed/chiba-tsuki-minamiboso/900/700" alt="南房総の月待ちの宿 月の宿" />
+          <div class="listing-tags"><span class="tag">南房総市</span><span class="tag">花畑</span></div>
+        </div>
+        <div class="listing-body">
+          <div class="listing-meta"><span>INN&nbsp;007</span><span class="sep"></span><span>MINAMIBOSO</span></div>
+          <h3>花畑の中の小さな宿<br />月の宿（つきのやど）</h3>
+          <p class="listing-desc">冬には菜の花、春にはポピー。三世代続いた花農家がやっている、母屋を改装した二部屋だけの宿。</p>
+          <span class="listing-link">詳しく見る <span>→</span></span>
+        </div>
+      </a>
+
+      <a class="listing reveal" href="articles/08-yamabiko.html" data-area="yourou">
+        <div class="listing-media">
+          <span class="listing-number">NO. 08</span>
+          <img src="https://picsum.photos/seed/chiba-yamabiko-kazusa/900/700" alt="上総の山あいの宿 やまびこ荘" />
+          <div class="listing-tags"><span class="tag">市原市</span><span class="tag">里山</span></div>
+        </div>
+        <div class="listing-body">
+          <div class="listing-meta"><span>INN&nbsp;008</span><span class="sep"></span><span>KAZUSA</span></div>
+          <h3>里山の一軒宿<br />やまびこ荘</h3>
+          <p class="listing-desc">小湊鉄道の小さな駅から徒歩二十分。棚田と竹林に囲まれた、主人が四十年守り続けてきた六部屋の宿。</p>
+          <span class="listing-link">詳しく見る <span>→</span></span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">かくれ宿 <span class="logo-mark">CHIBA</span></a>
+        <p>大手の宿泊掲載サイトには載っていない、千葉県内に眠る"隠れた宿"を、静かに発掘・紹介するウェブメディア。</p>
+      </div>
+      <div class="footer-col"><h4>MEDIA</h4><ul>
+        <li><a href="articles.html">宿一覧</a></li>
+        <li><a href="index.html#about">メディアについて</a></li>
+        <li><a href="index.html#newsletter">メルマガ登録</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>FOR&nbsp;OWNERS</h4><ul>
+        <li><a href="index.html#owners">オーナーへ</a></li>
+        <li><a href="contact.html">取材の依頼</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>CONTACT</h4><ul>
+        <li><a href="contact.html">お問い合わせ</a></li>
+        <li><a href="#">プライバシーポリシー</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 かくれ宿 千葉. All rights reserved.</span>
+      <span class="legal"><a href="#">Terms</a><a href="#">Privacy</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Hamburger
+  var hb = document.getElementById('hamburger'), nav = document.getElementById('siteNav');
+  if (hb) hb.addEventListener('click', function(){ hb.classList.toggle('is-open'); nav.classList.toggle('is-open'); });
+
+  // Reveal
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target);} });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  }
+
+  // Filter
+  var btns = document.querySelectorAll('.filter-bar button');
+  var cards = document.querySelectorAll('#archiveGrid .listing');
+  btns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      btns.forEach(function(b){ b.classList.remove('is-active'); });
+      btn.classList.add('is-active');
+      var area = btn.getAttribute('data-area');
+      cards.forEach(function(c){
+        var match = (area === 'all') || (c.getAttribute('data-area') === area);
+        c.style.display = match ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
