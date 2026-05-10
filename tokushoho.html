@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>特定商取引法に基づく表記 — かくれ宿</title>
+  <meta name="description" content="かくれ宿の特定商取引法に基づく表記です。" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/shared.css" />
+
+  <style>
+    /* =========================================================
+       Legal page styles
+    ========================================================= */
+    .legal-hero {
+      padding: 140px 0 80px;
+      background: var(--color-forest);
+      color: var(--color-beige);
+    }
+    .legal-hero .breadcrumb {
+      font-family: var(--font-serif);
+      font-size: 12px;
+      letter-spacing: 0.3em;
+      color: rgba(245, 237, 214, 0.6);
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .legal-hero .breadcrumb a {
+      color: rgba(245, 237, 214, 0.6);
+      transition: color .3s;
+    }
+    .legal-hero .breadcrumb a:hover {
+      color: var(--color-beige);
+    }
+    .legal-hero .breadcrumb .sep {
+      opacity: 0.4;
+    }
+    .legal-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 3.5vw, 46px);
+      font-weight: 500;
+      color: var(--color-beige);
+      letter-spacing: 0.04em;
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+    .legal-hero .updated {
+      font-size: 13px;
+      color: rgba(245, 237, 214, 0.55);
+      letter-spacing: 0.1em;
+    }
+
+    .legal-content {
+      padding: clamp(60px, 10vw, 100px) 0 clamp(80px, 12vw, 120px);
+    }
+    .legal-body {
+      max-width: 780px;
+    }
+    .legal-body .intro {
+      font-size: 15px;
+      line-height: 2.1;
+      color: var(--color-text);
+      margin-bottom: 56px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--color-line);
+    }
+
+    /* Table style for 特定商取引法 */
+    .tokusho-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 48px;
+    }
+    .tokusho-table th,
+    .tokusho-table td {
+      padding: 20px 24px;
+      text-align: left;
+      border-bottom: 1px solid var(--color-line);
+      font-size: 14.5px;
+      line-height: 1.9;
+      vertical-align: top;
+    }
+    .tokusho-table th {
+      font-family: var(--font-serif);
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      color: var(--color-text-mute);
+      background: var(--color-bg-sub);
+      white-space: nowrap;
+      width: 200px;
+      min-width: 160px;
+    }
+    .tokusho-table td {
+      color: var(--color-text);
+    }
+    .tokusho-table tr:first-child th,
+    .tokusho-table tr:first-child td {
+      border-top: 1px solid var(--color-line);
+    }
+
+    .note-box {
+      margin-top: 48px;
+      padding: 32px 36px;
+      background: var(--color-beige);
+      border-left: 3px solid var(--color-forest);
+      font-size: 14px;
+      line-height: 2;
+      color: var(--color-text-mute);
+    }
+    .note-box a {
+      color: var(--color-forest);
+      border-bottom: 1px solid var(--color-forest);
+    }
+
+    @media (max-width: 600px) {
+      .tokusho-table,
+      .tokusho-table tbody,
+      .tokusho-table tr,
+      .tokusho-table th,
+      .tokusho-table td {
+        display: block;
+        width: 100%;
+      }
+      .tokusho-table th {
+        border-bottom: none;
+        padding-bottom: 4px;
+      }
+      .tokusho-table td {
+        padding-top: 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">かくれ宿<span class="logo-mark">CHIBA</span></a>
+      <nav class="nav" id="nav">
+        <a href="articles.html">宿一覧</a>
+        <a href="index.html#about">メディアについて</a>
+        <a href="index.html#owners">オーナーへ</a>
+        <a href="index.html#newsletter" class="nav-cta">登録する</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== Page Hero ===== -->
+  <section class="legal-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">HOME</a>
+        <span class="sep">/</span>
+        <span>特定商取引法に基づく表記</span>
+      </div>
+      <h1>特定商取引法に基づく表記</h1>
+      <p class="updated">制定・最終更新：2026年1月</p>
+    </div>
+  </section>
+
+  <!-- ===== Legal Content ===== -->
+  <section class="legal-content">
+    <div class="container">
+      <div class="legal-body">
+
+        <p class="intro">
+          かくれ宿は、千葉県内の隠れた宿を発掘・紹介する無料のウェブメディアです。
+          現在、当メディアでは有償の商品・サービスの販売は行っておりません。
+          今後、有償サービスの提供を開始する場合は、本ページを更新し、
+          特定商取引法に基づく必要事項を記載いたします。
+        </p>
+
+        <table class="tokusho-table">
+          <tbody>
+            <tr>
+              <th>販売業者</th>
+              <td>かくれ宿 千葉（個人運営メディア）</td>
+            </tr>
+            <tr>
+              <th>運営責任者</th>
+              <td>土谷 悠太</td>
+            </tr>
+            <tr>
+              <th>所在地</th>
+              <td>千葉県（詳細はお問い合わせいただいた際にお伝えします）</td>
+            </tr>
+            <tr>
+              <th>電話番号</th>
+              <td>お問い合わせフォームよりご連絡ください<br>
+                <small style="color: var(--color-text-mute);">（3営業日以内にご返信いたします）</small>
+              </td>
+            </tr>
+            <tr>
+              <th>メールアドレス</th>
+              <td>お問い合わせフォームよりご連絡ください</td>
+            </tr>
+            <tr>
+              <th>サービス内容</th>
+              <td>千葉県内の隠れた宿の情報発信・メールマガジンの配信（いずれも無料）</td>
+            </tr>
+            <tr>
+              <th>販売価格</th>
+              <td>現在、すべてのコンテンツおよびサービスは無料でご提供しています</td>
+            </tr>
+            <tr>
+              <th>お支払い方法</th>
+              <td>現在、有償サービスはございません</td>
+            </tr>
+            <tr>
+              <th>サービス提供時期</th>
+              <td>メールマガジンは登録後より随時配信（月1〜2回予定）</td>
+            </tr>
+            <tr>
+              <th>キャンセル・解約</th>
+              <td>メールマガジンはいつでも配信停止できます。配信メール内のリンク、またはお問い合わせフォームよりお手続きください。</td>
+            </tr>
+            <tr>
+              <th>個人情報の取り扱い</th>
+              <td><a href="privacy.html" style="color: var(--color-forest); border-bottom: 1px solid var(--color-forest);">プライバシーポリシー</a>をご参照ください</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="note-box">
+          ご不明な点がございましたら、<a href="contact.html">お問い合わせフォーム</a>よりお気軽にご連絡ください。
+          3営業日以内にご返信いたします。
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="logo">かくれ宿<span class="logo-mark">CHIBA</span></a>
+          <p>大手の宿泊掲載サイトには載っていない、千葉県内に眠る"隠れた宿"を、静かに発掘・紹介するウェブメディア。</p>
+        </div>
+        <div class="footer-col">
+          <h4>MEDIA</h4>
+          <ul>
+            <li><a href="articles.html">宿一覧</a></li>
+            <li><a href="index.html#about">メディアについて</a></li>
+            <li><a href="index.html#newsletter">メルマガ登録</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>FOR OWNERS</h4>
+          <ul>
+            <li><a href="index.html#owners">オーナーへ</a></li>
+            <li><a href="contact.html">取材の依頼</a></li>
+            <li><a href="index.html#owners">デジタル支援について</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>CONTACT</h4>
+          <ul>
+            <li><a href="contact.html">お問い合わせ</a></li>
+            <li><a href="privacy.html">プライバシーポリシー</a></li>
+            <li><a href="tokushoho.html">特定商取引法に基づく表記</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 かくれ宿 千葉. All rights reserved.</span>
+        <div class="legal">
+          <a href="tokushoho.html">Terms</a>
+          <a href="privacy.html">Privacy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Header scroll behavior
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        header.classList.add('is-scrolled');
+      } else {
+        header.classList.remove('is-scrolled');
+      }
+    });
+
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('is-open');
+      nav.classList.toggle('is-open');
+    });
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('is-open');
+        nav.classList.remove('is-open');
+      });
+    });
+
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
