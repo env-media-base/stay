@@ -144,13 +144,16 @@ p { margin: 0; }
   border-bottom-color: var(--color-line);
 }
 .site-header.is-hero .logo,
-.site-header.is-hero .nav a,
-.site-header.is-hero .hamburger span { color: #fff; }
-.site-header.is-hero .hamburger span { background: #fff; }
+.site-header.is-hero .nav a { color: #fff; }
 .site-header.is-hero.is-scrolled .logo,
-.site-header.is-hero.is-scrolled .nav a,
-.site-header.is-hero.is-scrolled .hamburger span { color: var(--color-text); }
-.site-header.is-hero.is-scrolled .hamburger span { background: var(--color-text); }
+.site-header.is-hero.is-scrolled .nav a { color: var(--color-text); }
+/* ヒーロー（暗い写真）の上にいる間は、☰ ボタンを白抜きにする */
+.site-header.is-hero:not(.is-scrolled) .hamburger {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.45);
+}
+.site-header.is-hero:not(.is-scrolled) .hamburger-lines span { background: #fff; }
+.site-header.is-hero:not(.is-scrolled) .hamburger-label { color: #fff; }
 
 .header-inner {
   display: flex;
@@ -284,50 +287,203 @@ p { margin: 0; }
 .nav-cta::after { display: none; }
 .nav-cta:hover { background: var(--color-earth-hover); }
 
+/* ☰ ボタン：PC・スマホとも常時表示。押すとサイトマップ（#siteMenu）が開く。
+   2026-08-03：以前はスマホ専用で、押すと上部ナビが全画面に降りてくる作りだったが、
+   「何がどこにあるか分からない」ため、全ページ一覧を出す方式に変更した。 */
 .hamburger {
-  display: none;
-  width: 28px;
-  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 15px 9px 13px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.55);
   position: relative;
   z-index: 60;
+  transition: background .25s var(--ease), border-color .25s var(--ease);
 }
-.hamburger span {
+.hamburger:hover { background: #fff; border-color: var(--color-text); }
+.hamburger-lines {
+  position: relative;
+  display: block;
+  width: 18px;
+  height: 12px;
+  flex: none;
+}
+.hamburger-lines span {
   position: absolute;
   left: 0; width: 100%;
   height: 1.5px;
   background: var(--color-text);
   transition: transform .3s var(--ease), top .3s var(--ease), opacity .2s var(--ease);
 }
-.hamburger span:nth-child(1) { top: 4px; }
-.hamburger span:nth-child(2) { top: 11px; }
-.hamburger span:nth-child(3) { top: 18px; }
-.hamburger.is-open span:nth-child(1) { top: 11px; transform: rotate(45deg); }
-.hamburger.is-open span:nth-child(2) { opacity: 0; }
-.hamburger.is-open span:nth-child(3) { top: 11px; transform: rotate(-45deg); }
+.hamburger-lines span:nth-child(1) { top: 0; }
+.hamburger-lines span:nth-child(2) { top: 5px; }
+.hamburger-lines span:nth-child(3) { top: 10px; }
+.hamburger-label {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+.hamburger.is-open .hamburger-lines span:nth-child(1) { top: 5px; transform: rotate(45deg); }
+.hamburger.is-open .hamburger-lines span:nth-child(2) { opacity: 0; }
+.hamburger.is-open .hamburger-lines span:nth-child(3) { top: 5px; transform: rotate(-45deg); }
 
 @media (max-width: 860px) {
-  .nav {
-    position: fixed;
-    inset: 0;
-    /* .site-header.is-scrolled の backdrop-filter が position:fixed の包含ブロックになるため、
-       inset:0 だけだとヘッダー（72px）の高さにしか広がらず、閉じているはずのメニュー項目が
-       画面にはみ出していた（2026-08-03 に本番でも再現を確認して修正）。
-       ビューポート単位で明示してこれを防ぐ。 */
-    width: 100vw;
-    height: 100vh;
-    height: 100svh;
-    overflow-y: auto;
-    background: var(--color-bg);
-    flex-direction: column;
-    justify-content: center;
-    gap: 40px;
-    transform: translateY(-100%);
-    transition: transform .5s var(--ease);
-  }
-  .nav.is-open { transform: translateY(0); }
-  .nav a { color: var(--color-text) !important; font-size: 22px; font-family: var(--font-serif); }
-  .nav-cta { font-size: 14px !important; padding: 14px 28px !important; }
-  .hamburger { display: block; }
+  /* スマホでは上部ナビを畳み、☰ のサイトマップ一本にする */
+  .nav { display: none; }
+  .hamburger-label { display: none; }
+  .hamburger { padding: 9px 13px; }
+}
+
+
+/* =========================================================
+   Sitemap overlay（☰ で開く全ページ一覧）
+   ページを「誰向けか」でグループ分けして、どこからでも全部に飛べるようにする。
+   ヘッダーの外（</header> の直後）に置くこと。
+   ヘッダー内に置くと backdrop-filter の包含ブロックに閉じ込められて全画面にならない。
+   ========================================================= */
+.sitemap {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  background: var(--color-bg);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity .28s var(--ease), transform .32s var(--ease), visibility .32s;
+}
+.sitemap.is-open { opacity: 1; visibility: visible; transform: none; }
+body.has-sitemap-open { overflow: hidden; }
+
+.sitemap-inner { padding: 26px 0 80px; }
+.sitemap-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--color-line);
+  margin-bottom: 40px;
+}
+.sitemap-close {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-pill);
+  transition: background .25s var(--ease), border-color .25s var(--ease);
+}
+.sitemap-close:hover { background: var(--color-bg-sub); border-color: var(--color-text); }
+
+.sitemap-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 44px 32px;
+  align-items: start;
+}
+.sitemap-group h2 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 6px;
+  color: var(--color-forest-deep);
+}
+/* 「このグループは誰向けか」を必ず1行で書く */
+.sitemap-group .who {
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: var(--color-text-mute);
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--color-line);
+}
+.sitemap-group ul { list-style: none; margin: 0; padding: 0; }
+.sitemap-group li { margin-bottom: 2px; }
+.sitemap-group li > a {
+  display: block;
+  padding: 9px 12px;
+  margin-left: -12px;
+  border-radius: var(--radius-sm);
+  font-size: 15.5px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--color-text);
+  transition: background .2s var(--ease), color .2s var(--ease);
+}
+.sitemap-group li > a:hover { background: var(--color-bg-sub); color: var(--color-forest-deep); }
+.sitemap-group li > a .note {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--color-text-mute);
+}
+
+.sitemap-areas-label {
+  margin-top: 18px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-mute);
+}
+.sitemap-areas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+.sitemap-areas a {
+  padding: 7px 14px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--color-text-mute);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-pill);
+  transition: color .2s var(--ease), border-color .2s var(--ease), background .2s var(--ease);
+}
+.sitemap-areas a:hover {
+  color: var(--color-forest-deep);
+  border-color: var(--color-forest);
+  background: var(--color-bg-sub);
+}
+
+.sitemap-foot {
+  margin-top: 52px;
+  padding-top: 28px;
+  border-top: 1px solid var(--color-line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.sitemap-foot p {
+  font-size: 13px;
+  line-height: 1.95;
+  color: var(--color-text-mute);
+  max-width: 480px;
+}
+/* サイトマップは明るい背景なので、SNSアイコンの .is-dark（生成り色）を打ち消す */
+.sitemap-foot .social-icons.is-dark .social-icon { color: var(--color-text-mute); }
+.sitemap-foot .social-icons.is-dark .social-icon:hover {
+  color: var(--color-earth);
+  background: var(--color-bg-sub);
+}
+
+@media (max-width: 600px) {
+  .sitemap-inner { padding: 18px 0 64px; }
+  .sitemap-head { margin-bottom: 28px; }
+  .sitemap-groups { gap: 34px; }
+  .sitemap-head .logo-mark { font-size: 14px; }
 }
 
 
