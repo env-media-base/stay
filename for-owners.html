@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>宿の価値向上サポート — かくれ宿</title>
+<meta name="description" content="将来の事業承継・売却を見据えて、今のうちに宿の価値を高めたい50〜60代のオーナー様へ。若者目線の宿づくり、SNS・広報支援、デジタル化支援、取材による魅力発信を無料でサポートします。" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+<template id="__bundler_thumbnail" data-bg-color="#A8907A">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#A8907A"/>
+    <rect x="0" y="0" width="600" height="800" fill="#7A9971"/>
+    <g fill="#F5F1E8" font-family="serif">
+      <text x="640" y="340" font-size="64" font-weight="500">宿の価値を、</text>
+      <text x="640" y="430" font-size="64" font-weight="500">未来へつなぐ。</text>
+    </g>
+    <text x="80" y="185" font-family="serif" font-size="20" fill="#F5F1E8" letter-spacing="4" opacity="0.85">FOR INN OWNERS · CHIBA</text>
+  </svg>
+</template>
+
+<link rel="stylesheet" href="assets/shared.css" />
+
+<style>
+  /* =========================================================
+     Owner support page — local styles
+     ========================================================= */
+
+  /* ---- Page hero (split, mirrors top-page hero but earth-toned) ---- */
+  .owner-hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .owner-hero-panel {
+    background: var(--color-earth);
+    color: var(--color-beige);
+    padding: 140px var(--gutter) 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+  .owner-hero-panel::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image: radial-gradient(rgba(245, 237, 214, 0.04) 1px, transparent 1px);
+    background-size: 3px 3px;
+    pointer-events: none;
+  }
+  .owner-hero-panel::after {
+    content: "";
+    position: absolute; top: 0; right: 0; bottom: 0;
+    width: 1px;
+    background: rgba(245, 237, 214, 0.14);
+  }
+  .owner-hero-eyebrow {
+    font-family: var(--font-serif);
+    font-size: 12px;
+    letter-spacing: 0.4em;
+    color: rgba(245, 237, 214, 0.75);
+    display: flex; align-items: center; gap: 14px;
+  }
+  .owner-hero-eyebrow::before {
+    content: ""; width: 40px; height: 1px;
+    background: currentColor; opacity: 0.6;
+  }
+  .owner-hero-body { max-width: 540px; margin-top: auto; }
+  .owner-hero-title {
+    font-family: var(--font-serif);
+    font-size: clamp(34px, 5.2vw, 60px);
+    font-weight: 500;
+    line-height: 1.55;
+    letter-spacing: 0.03em;
+    color: var(--color-beige);
+    margin-bottom: 32px;
+  }
+  .owner-hero-title .small {
+    display: block;
+    font-size: 0.5em;
+    letter-spacing: 0.16em;
+    color: rgba(245, 237, 214, 0.78);
+    margin-bottom: 18px;
+    font-weight: 300;
+  }
+  .owner-hero-sub {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 2;
+    color: rgba(245, 237, 214, 0.88);
+    max-width: 440px;
+    margin-bottom: 40px;
+    font-weight: 300;
+  }
+  .owner-hero-cta-row {
+    display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+  }
+  .owner-hero-cta {
+    background: var(--color-beige);
+    color: var(--color-text);
+    padding: 20px 38px;
+    font-size: 15px; font-weight: 500; letter-spacing: 0.14em;
+  }
+  .owner-hero-cta:hover { background: #fff; }
+  .owner-hero-image {
+    position: relative;
+    background: #1a1a1a;
+    overflow: hidden;
+  }
+  .owner-hero-image img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: brightness(0.85) saturate(0.95);
+    transition: transform 8s var(--ease);
+  }
+  .owner-hero.is-loaded .owner-hero-image img { transform: scale(1.06); }
+  .owner-hero-image::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.25) 100%);
+    pointer-events: none;
+  }
+  .owner-hero-caption {
+    position: absolute; right: 24px; bottom: 28px;
+    font-family: var(--font-serif); font-size: 11px; letter-spacing: 0.25em;
+    color: rgba(255,255,255,0.85);
+    writing-mode: vertical-rl; text-orientation: mixed; padding: 16px 6px;
+  }
+
+  @media (max-width: 900px) {
+    .owner-hero { grid-template-columns: 1fr; min-height: auto; }
+    .owner-hero-image { height: 46vh; min-height: 340px; order: 1; }
+    .owner-hero-panel { order: 2; padding: 70px var(--gutter) 70px; min-height: auto; }
+    .owner-hero-caption { right: 18px; bottom: 18px; font-size: 10px; }
+  }
+
+  /* ---- Breadcrumb strip ---- */
+  .owner-breadcrumb-strip {
+    background: var(--color-bg-sub);
+    border-bottom: 1px solid var(--color-line);
+    padding: 18px 0;
+  }
+  .owner-breadcrumb-strip .breadcrumb {
+    font-family: var(--font-serif);
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    color: var(--color-text-mute);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .owner-breadcrumb-strip .breadcrumb a { color: var(--color-text-mute); border-bottom: 1px solid transparent; padding-bottom: 2px; }
+  .owner-breadcrumb-strip .breadcrumb a:hover { border-bottom-color: currentColor; color: var(--color-text); }
+  .owner-breadcrumb-strip .breadcrumb .sep { opacity: 0.4; }
+
+  /* ---- Reasons / context section ---- */
+  .reasons-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(24px, 4vw, 56px);
+    margin-top: 64px;
+  }
+  .reason-card {
+    padding: 40px clamp(24px, 3vw, 44px);
+    border: 1px solid var(--color-line);
+    background: var(--color-bg);
+  }
+  .reason-card.is-muted { background: var(--color-bg-sub); }
+  .reason-card .reason-tag {
+    font-family: var(--font-serif);
+    font-size: 12px; letter-spacing: 0.3em;
+    color: var(--color-text-mute);
+    margin-bottom: 20px; display: block;
+  }
+  .reason-card h3 {
+    font-size: 20px; line-height: 1.7; margin-bottom: 18px;
+    color: var(--color-text);
+  }
+  .reason-card.is-highlight h3 { color: var(--color-earth); }
+  .reason-card p { font-size: 14.5px; line-height: 2; color: var(--color-text-mute); }
+  @media (max-width: 760px) { .reasons-grid { grid-template-columns: 1fr; } }
+
+  /* ---- Strengths (実績・繋がり) ---- */
+  .strengths-section { background: var(--color-bg-sub); }
+  .strengths-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(24px, 4vw, 56px);
+    margin-top: 64px;
+  }
+  .strength-item {
+    display: flex; gap: 24px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--color-line);
+  }
+  .strength-item .num {
+    font-family: var(--font-serif);
+    font-size: 13px; letter-spacing: 0.3em;
+    color: var(--color-earth);
+    min-width: 36px; padding-top: 4px;
+  }
+  .strength-item h3 { font-size: 19px; line-height: 1.7; margin-bottom: 14px; color: var(--color-forest); }
+  .strength-item p { font-size: 14.5px; line-height: 2; color: var(--color-text-mute); }
+  @media (max-width: 760px) { .strengths-list { grid-template-columns: 1fr; } }
+
+  /* ---- Support pillars (支援内容) ---- */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(24px, 3vw, 40px);
+    margin-top: 64px;
+  }
+  .pillar {
+    background: var(--color-bg);
+    border: 1px solid var(--color-line);
+    padding: clamp(32px, 4vw, 44px);
+    display: flex; flex-direction: column;
+  }
+  .pillar .pillar-num {
+    font-family: var(--font-serif);
+    font-size: 12px; letter-spacing: 0.3em;
+    color: var(--color-earth);
+    margin-bottom: 22px; display: block;
+  }
+  .pillar h3 { font-size: 19px; line-height: 1.7; margin-bottom: 16px; color: var(--color-forest); }
+  .pillar p { font-size: 14px; line-height: 1.95; color: var(--color-text-mute); flex-grow: 1; }
+  .pillar .pillar-tags { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .pillar .pillar-tags span {
+    font-size: 11px; letter-spacing: 0.08em;
+    padding: 6px 12px;
+    background: var(--color-bg-sub);
+    color: var(--color-text-mute);
+    font-family: var(--font-sans);
+  }
+  @media (max-width: 960px) { .pillars { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 640px) { .pillars { grid-template-columns: 1fr; } }
+
+  /* 5th pillar — full width, slightly different treatment */
+  .pillar.is-wide {
+    grid-column: span 3;
+    flex-direction: row;
+    align-items: center;
+    gap: clamp(28px, 4vw, 56px);
+    background: var(--color-forest);
+    color: var(--color-beige);
+    border: none;
+  }
+  .pillar.is-wide .pillar-text { flex: 1; }
+  .pillar.is-wide .pillar-num { color: rgba(245, 237, 214, 0.6); }
+  .pillar.is-wide h3 { color: var(--color-beige); }
+  .pillar.is-wide p { color: rgba(245, 237, 214, 0.85); }
+  .pillar.is-wide .pillar-tags span {
+    background: rgba(245, 237, 214, 0.12);
+    color: rgba(245, 237, 214, 0.9);
+  }
+  @media (max-width: 960px) {
+    .pillar.is-wide { grid-column: span 2; flex-direction: column; align-items: flex-start; }
+  }
+  @media (max-width: 640px) {
+    .pillar.is-wide { grid-column: span 1; }
+  }
+
+  /* ---- Flow / how it works ---- */
+  .flow-section { background: var(--color-bg-sub); }
+  .flow-steps {
+    margin-top: 64px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(20px, 3vw, 32px);
+  }
+  .flow-step {
+    background: var(--color-bg);
+    padding: 32px 24px;
+    border: 1px solid var(--color-line);
+    text-align: center;
+  }
+  .flow-step .flow-num {
+    font-family: var(--font-serif);
+    font-size: 28px; color: var(--color-earth);
+    margin-bottom: 18px; display: block;
+  }
+  .flow-step h4 {
+    font-family: var(--font-serif);
+    font-size: 15px; line-height: 1.7; margin-bottom: 12px;
+    color: var(--color-text); font-weight: 500;
+  }
+  .flow-step p { font-size: 13px; line-height: 1.9; color: var(--color-text-mute); }
+  @media (max-width: 860px) { .flow-steps { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 500px) { .flow-steps { grid-template-columns: 1fr; } }
+
+  /* ---- Case studies (支援事例) ---- */
+  .cases {
+    margin-top: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(28px, 4vw, 48px);
+  }
+  .case-card {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: clamp(28px, 4vw, 48px);
+    border: 1px solid var(--color-line);
+    background: var(--color-bg);
+    padding: clamp(28px, 3vw, 40px);
+  }
+  .case-card .case-media {
+    position: relative;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background: #2a2a2a;
+  }
+  .case-card .case-media img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%; object-fit: cover;
+    filter: saturate(0.92);
+  }
+  .case-card .case-body { display: flex; flex-direction: column; justify-content: center; }
+  .case-card .case-tags { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+  .case-card .case-tags span {
+    font-size: 11px; letter-spacing: 0.1em;
+    padding: 6px 12px;
+    background: var(--color-bg-sub);
+    color: var(--color-text-mute);
+    font-family: var(--font-sans);
+  }
+  .case-card h3 { font-size: 21px; line-height: 1.6; margin-bottom: 14px; color: var(--color-text); }
+  .case-card .case-desc { font-size: 14.5px; line-height: 2; color: var(--color-text-mute); margin-bottom: 18px; }
+  .case-card .case-result {
+    font-family: var(--font-serif);
+    font-size: 13px; letter-spacing: 0.08em;
+    color: var(--color-forest);
+    padding-top: 14px;
+    border-top: 1px solid var(--color-line);
+  }
+  .case-card .case-result strong { font-size: 16px; }
+  @media (max-width: 760px) {
+    .case-card { grid-template-columns: 1fr; }
+  }
+
+  /* ---- Note about case studies being illustrative ---- */
+  .cases-note {
+    margin-top: 32px;
+    font-size: 13px;
+    color: var(--color-text-mute);
+    line-height: 1.95;
+    letter-spacing: 0.02em;
+  }
+
+  /* ---- Testimonials (オーナーの声) ---- */
+  .testimonials {
+    margin-top: 64px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(24px, 3vw, 40px);
+  }
+  .testimonial {
+    background: var(--color-bg);
+    border: 1px solid var(--color-line);
+    padding: clamp(28px, 3vw, 36px);
+    display: flex;
+    flex-direction: column;
+  }
+  .testimonial .quote-mark {
+    font-family: var(--font-serif);
+    font-size: 40px; line-height: 1;
+    color: var(--color-earth);
+    margin-bottom: 12px;
+    opacity: 0.5;
+  }
+  .testimonial p.body-text {
+    font-size: 14.5px; line-height: 2;
+    color: var(--color-text);
+    margin-bottom: 24px;
+    flex-grow: 1;
+  }
+  .testimonial .who {
+    font-family: var(--font-serif);
+    font-size: 12px; letter-spacing: 0.15em;
+    color: var(--color-text-mute);
+    padding-top: 16px;
+    border-top: 1px solid var(--color-line);
+  }
+  @media (max-width: 860px) { .testimonials { grid-template-columns: 1fr; } }
+
+  /* ---- FAQ ---- */
+  .faq-list { margin-top: 64px; max-width: 820px; }
+  .faq-item {
+    border-bottom: 1px solid var(--color-line);
+  }
+  .faq-item:first-child { border-top: 1px solid var(--color-line); }
+  .faq-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 28px 4px;
+    text-align: left;
+    cursor: pointer;
+  }
+  .faq-question .q-text {
+    display: flex; gap: 18px; align-items: baseline;
+    font-size: 15.5px;
+    color: var(--color-text);
+    line-height: 1.7;
+  }
+  .faq-question .q-mark {
+    font-family: var(--font-serif);
+    font-size: 13px; letter-spacing: 0.2em;
+    color: var(--color-earth);
+    min-width: 28px;
+  }
+  .faq-question .q-toggle {
+    font-family: var(--font-serif);
+    font-size: 20px;
+    color: var(--color-text-mute);
+    transition: transform .3s var(--ease);
+    flex-shrink: 0;
+  }
+  .faq-item.is-open .q-toggle { transform: rotate(45deg); }
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s var(--ease);
+  }
+  .faq-answer-inner {
+    padding: 0 4px 28px 46px;
+    font-size: 14.5px;
+    line-height: 2;
+    color: var(--color-text-mute);
+  }
+  @media (max-width: 600px) {
+    .faq-question .q-text { font-size: 14.5px; gap: 12px; }
+    .faq-answer-inner { padding-left: 40px; }
+  }
+
+  /* ---- Consultation form section ---- */
+  .consult-section {
+    background: var(--color-forest);
+    color: var(--color-beige);
+  }
+  .consult-section .section-header h2 { color: var(--color-beige); }
+  .consult-section .section-header p { color: rgba(245, 237, 214, 0.8); }
+  .consult-section .eyebrow { color: rgba(245, 237, 214, 0.75); }
+  .consult-grid {
+    margin-top: 64px;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: clamp(40px, 5vw, 72px);
+    max-width: 1100px;
+    margin-left: auto; margin-right: auto;
+  }
+  .consult-side h3 {
+    font-family: var(--font-serif);
+    font-size: 13px; letter-spacing: 0.3em;
+    margin-bottom: 20px;
+    color: rgba(245, 237, 214, 0.75);
+    font-weight: 500;
+  }
+  .consult-side ul { list-style: none; padding: 0; margin: 0 0 36px; }
+  .consult-side li {
+    padding: 14px 0;
+    border-top: 1px solid rgba(245, 237, 214, 0.15);
+    font-size: 14px; line-height: 1.9;
+    display: flex; gap: 16px;
+    color: rgba(245, 237, 214, 0.92);
+  }
+  .consult-side li:last-child { border-bottom: 1px solid rgba(245, 237, 214, 0.15); }
+  .consult-side li::before {
+    content: attr(data-num);
+    font-family: var(--font-serif);
+    font-size: 11px; letter-spacing: 0.2em;
+    color: rgba(245, 237, 214, 0.5);
+    min-width: 24px; padding-top: 2px;
+  }
+  .consult-side .note {
+    font-size: 13px; line-height: 1.95;
+    color: rgba(245, 237, 214, 0.7);
+  }
+
+  .consult-form { background: var(--color-bg); padding: clamp(32px, 4vw, 48px); }
+  .consult-form .field { margin-bottom: 26px; }
+  .consult-form .field label {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 13px; letter-spacing: 0.16em;
+    color: var(--color-text); margin-bottom: 10px;
+  }
+  .consult-form .field label .req { color: var(--color-forest); margin-left: 6px; font-size: 11px; letter-spacing: 0.1em; }
+  .consult-form .field label .opt { color: var(--color-text-mute); margin-left: 8px; font-size: 11px; letter-spacing: 0.1em; }
+  .consult-form .field input,
+  .consult-form .field select,
+  .consult-form .field textarea {
+    width: 100%; border: 0; border-bottom: 1px solid var(--color-line);
+    background: transparent; padding: 12px 2px;
+    font: inherit; font-size: 15px; color: var(--color-text);
+    outline: none; transition: border-color .25s var(--ease);
+    font-family: var(--font-sans);
+  }
+  .consult-form .field textarea { min-height: 120px; resize: vertical; line-height: 1.9; }
+  .consult-form .field input:focus,
+  .consult-form .field select:focus,
+  .consult-form .field textarea:focus { border-bottom-color: var(--color-earth); }
+  .consult-form .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+  @media (max-width: 540px) { .consult-form .field-row { grid-template-columns: 1fr; gap: 0; } }
+
+  .consult-form .field-checkbox {
+    display: flex; gap: 14px; align-items: flex-start;
+    padding: 18px 0; border-top: 1px solid var(--color-line);
+  }
+  .consult-form .field-checkbox input { margin-top: 6px; }
+  .consult-form .field-checkbox label {
+    font-size: 13px; line-height: 1.8; color: var(--color-text-mute);
+    margin: 0; letter-spacing: 0; font-family: var(--font-sans);
+  }
+  .consult-form .submit-row {
+    margin-top: 36px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
+  }
+  .consult-form .submit-row .fine { font-size: 12px; color: var(--color-text-mute); }
+  .consult-form .submit-row .btn { background: var(--color-earth); }
+  .consult-form .submit-row .btn:hover { background: var(--color-earth-hover); }
+
+  .consult-thanks {
+    display: none;
+    padding: 60px 40px; text-align: center;
+    background: var(--color-bg-sub); border: 1px solid var(--color-line);
+  }
+  .consult-thanks h3 { font-size: 22px; margin: 0 0 16px; color: var(--color-forest); font-family: var(--font-serif); font-weight: 500; }
+  .consult-thanks p { color: var(--color-text-mute); line-height: 2; font-size: 14px; }
+  .is-submitted .consult-form-fields { display: none; }
+  .is-submitted .consult-thanks { display: block; }
+
+  @media (max-width: 860px) { .consult-grid { grid-template-columns: 1fr; } }
+
+  /* ---- Cross-link banner back to media side ---- */
+  .crosslink-banner {
+    background: var(--color-beige);
+    padding: clamp(48px, 6vw, 80px) 0;
+    text-align: center;
+  }
+  .crosslink-banner .eyebrow { justify-content: center; }
+  .crosslink-banner h2 { font-size: clamp(22px, 2.6vw, 30px); line-height: 1.7; margin-bottom: 28px; }
+  .crosslink-banner p { color: var(--color-text-mute); font-size: 14.5px; line-height: 2; max-width: 560px; margin: 0 auto 32px; }
+</style>
+</head>
+<body>
+
+<!-- =====================================================
+     HEADER / GLOBAL NAVIGATION
+     ===================================================== -->
+<header class="site-header is-hero" id="siteHeader">
+  <div class="container header-inner">
+    <a href="index.html" class="logo" aria-label="かくれ宿 ホームへ">
+      <img class="logo-img" src="assets/logo.jpg" alt="かくれ宿 ロゴ" />
+      <span class="logo-mark">かくれ宿 / CHIBA</span>
+    </a>
+
+    <nav class="nav" id="siteNav">
+      <a href="articles.html">宿一覧</a>
+      <a href="index.html#about">メディアについて</a>
+      <a href="for-owners.html">宿のオーナー様へ</a>
+      <a href="index.html#newsletter" class="nav-cta">登録する</a>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="メニュー" aria-controls="siteNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+
+<!-- =====================================================
+     HERO — split layout: earth panel (left) + image (right)
+     ===================================================== -->
+<section class="owner-hero" id="ownerHero">
+  <div class="owner-hero-panel">
+    <span class="owner-hero-eyebrow">FOR INN OWNERS &nbsp;·&nbsp; CHIBA</span>
+
+    <div class="owner-hero-body">
+      <h1 class="owner-hero-title">
+        <span class="small">今のうちに、宿の価値を高めませんか。</span>
+        その宿の魅力を、<br />まだ誰も<br />知らないだけ。
+      </h1>
+      <p class="owner-hero-sub">
+        引退はもう少し先。でも、今のうちに手を打っておきたい。<br />
+        そんな50〜60代の宿オーナー様に向けて、<br />
+        「また来たくなる宿」へのリノベーション提案、SNS・広報支援、<br />
+        デジタル化のお手伝いを、無料相談から始めています。
+      </p>
+      <div class="owner-hero-cta-row">
+        <a href="#consult" class="btn owner-hero-cta">
+          無料相談に申し込む
+          <span class="arrow">→</span>
+        </a>
+        <a href="#service" class="hero-scroll">SCROLL</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="owner-hero-image">
+    <img src="assets/img/owner-hero.jpg" alt="宿のリノベーションイメージ" />
+    <span class="owner-hero-caption">千葉県・宿の朝</span>
+  </div>
+</section>
+
+
+<!-- =====================================================
+     BREADCRUMB
+     ===================================================== -->
+<div class="owner-breadcrumb-strip">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">HOME</a>
+      <span class="sep">/</span>
+      <span>宿の価値向上サポート</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- =====================================================
+     SERVICE INTRO — サービス紹介・なぜ今なのか
+     ===================================================== -->
+<section class="section" id="service">
+  <div class="container">
+    <div class="section-header is-centered reveal">
+      <span class="eyebrow">SERVICE</span>
+      <h2>「いつか売る」その日のために、<br />今、宿の価値を育てる。</h2>
+      <p>
+        かくれ宿は、これまで千葉県内の宿を取材し、オーナー様の想いに触れてきました。<br />
+        その経験から見えてきたのは、「引退はまだ先だけど、なるべく良い状態で次に繋ぎたい」<br />
+        という50〜60代のオーナー様の声です。私たちは、そんな前向きな想いに寄り添い、<br />
+        宿の価値を一緒に育てていくパートナーになりたいと考えています。
+      </p>
+    </div>
+
+    <div class="reasons-grid">
+      <article class="reason-card is-muted reveal">
+        <span class="reason-tag">こんなお悩み、ありませんか？</span>
+        <h3>「今のうちに、できることをしておきたい」</h3>
+        <p>
+          後継者のことはまだ決まっていない。でも、もし将来、宿を譲るときや売るときが来たら——
+          その時に「良い状態」であればあるほど、選択肢は広がります。
+          建物の手入れ、お客様からの評価、ネット上での見え方。今のうちに整えておくことが、
+          数年後の宿の価値を大きく左右します。
+        </p>
+      </article>
+
+      <article class="reason-card is-highlight reveal">
+        <span class="reason-tag">かくれ宿が、お手伝いできること</span>
+        <h3>「また来たくなる宿」へ、若い世代の視点で。</h3>
+        <p>
+          私たちは、千葉県内の宿を実際に歩いて取材してきたメディアです。
+          今の若い世代が「行きたい」と感じる宿の空気感、写真の見せ方、情報発信の方法を
+          肌感覚で知っています。その視点を活かして、宿の魅力を引き出し、
+          次の世代のお客様に届くかたちに整えるお手伝いをします。
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================
+     ABOUT US / STRENGTHS — 私たちについて・実績と繋がり
+     ===================================================== =->
+<!-- =====================================================
+     WHO & WHY — 運営者・なぜ無料か（信用強化）
+     ===================================================== -->
+<section class="section" id="about-operator">
+  <div class="container">
+    <div class="section-header is-centered reveal">
+      <span class="eyebrow">WHO&nbsp;&amp;&nbsp;WHY</span>
+      <h2>誰が、なぜ<br />無料でやっているのか。</h2>
+      <p>
+        「無料」と聞くと、かえって不安になるかもしれません。<br />
+        だからこそ、運営者が誰なのか、なぜ無料なのかを、正直にお伝えします。
+      </p>
+    </div>
+
+    <div class="reveal" style="display:grid; grid-template-columns:200px 1fr; gap:clamp(24px,4vw,48px); align-items:center; max-width:820px; margin:56px auto 0; border:1px solid var(--color-line); background:var(--color-bg); padding:clamp(28px,3vw,40px);">
+      <img src="assets/img/owner-profile.jpg" alt="運営者 土谷悠太" style="width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:50%;" />
+      <div>
+        <span class="reason-tag" style="font-family:var(--font-serif); font-size:12px; letter-spacing:0.3em; color:var(--color-text-mute); display:block; margin-bottom:12px;">運営者</span>
+        <h3 style="font-size:22px; line-height:1.6; margin-bottom:14px; color:var(--color-text);">土谷 悠太 <span style="font-size:14px; color:var(--color-text-mute);">（つちや ゆうた）</span></h3>
+        <p style="font-size:14.5px; line-height:2; color:var(--color-text-mute);">
+          千葉を拠点に、サステナビリティ領域の法人営業とコミュニティ運営を手がけるフリーランス。前職は地域の金融機関で、個人・法人のお客様を担当していました。「千葉のいい場所を、次の世代に残したい」という想いで、県内の宿を一軒ずつ訪ね歩いています。
+        </p>
+      </div>
+    </div>
+
+    <div class="reason-card is-highlight reveal" style="max-width:820px; margin:clamp(20px,3vw,28px) auto 0;">
+      <span class="reason-tag">なぜ、無料なのか</span>
+      <h3>いつか私たち自身も、千葉で宿を営みたいから。</h3>
+      <p>
+        正直にお伝えすると、私たち自身、いずれ千葉で体験型の宿を持ちたいと考えています。
+        そのために今、地域で宿を営む先輩方から現場を学び、長くお付き合いできる関係を築きたい——
+        それが、取材も支援も無料で行っている理由です。将来、事業の承継や協業といった話につながれば、
+        それはお互いにとって嬉しいこと。そうした下心も含めて、隠さずお話しします。
+        だからこそ、売り込みや、あとから請求される隠れた費用は一切ありません。
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================
+     ABOUT US / STRENGTHS — 私たちについて・実績と繋がり
+     ===================================================== -->
+<section class="section strengths-section" id="about-us">
+  <div class="container">
+    <div class="section-header is-centered reveal">
+      <span class="eyebrow">ABOUT&nbsp;US</span>
+      <h2>取材で積み上げてきた、<br />宿とのつながり。</h2>
+      <p>
+        「かくれ宿」は、大手の宿泊掲載サイトには載らない、千葉県内の宿を一軒ずつ訪ね歩き、<br />
+        オーナー様の声を直接お聞きしながら記事をつくってきたメディアです。<br />
+        その積み重ねが、私たちの強みです。
+      </p>
+    </div>
+
+    <div class="strengths-list">
+      <div class="strength-item reveal">
+        <span class="num">01</span>
+        <div>
+          <h3>豊富な取材実績</h3>
+          <p>
+            民宿、古民家、一棟貸し、山小屋、町家など、千葉県内のさまざまなタイプの宿を直接取材。
+            オーナー様おひとりおひとりの想いやこだわりを、丁寧に記事として届けてきました。
+            この記事づくりのノウハウを、宿の魅力発信に活かします。
+          </p>
+        </div>
+      </div>
+
+      <div class="strength-item reveal">
+        <span class="num">02</span>
+        <div>
+          <h3>最先端の宿づくりとの接点</h3>
+          <p>
+            取材活動を通じて、デザインやデジタル発信に力を入れている宿泊施設のオーナー様とも
+            交流を重ねています。そうした最新の取り組みの中から、千葉の宿にも取り入れられそうな
+            アイデアを、具体的なかたちでご提案します。
+          </p>
+        </div>
+      </div>
+
+      <div class="strength-item reveal">
+        <span class="num">03</span>
+        <div>
+          <h3>若い世代の感覚を、宿づくりに</h3>
+          <p>
+            運営チームは、実際に旅をして「泊まりたい」と感じる宿を選ぶ世代でもあります。
+            写真の撮り方、SNSでの見せ方、予約のしやすさなど、若い世代が宿を選ぶときに
+            何を見ているのかを、肌感覚でお伝えできます。
+          </p>
+        </div>
+      </div>
+
+      <div class="strength-item reveal">
+        <span class="num">04</span>
+        <div>
+          <h3>無償でのご相談・取材</h3>
+          <p>
+            取材・撮影・執筆、そしてウェブサイトやSNSの整備支援は、すべて無償で対応しています。
+            「まずは話を聞いてみたい」という段階からで構いません。
+            費用面の不安なく、お気軽にご相談ください。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================
+     SUPPORT PILLARS — 支援内容
+     ===================================================== -->
+<section class="section" id="support">
+  <div class="container">
+    <div class="section-header is-centered reveal">
+      <span class="eyebrow">SUPPORT</span>
+      <h2>宿の価値を高める、<br />5つの支援メニュー。</h2>
+      <p>
+        宿の状況やオーナー様のご希望に合わせて、必要なメニューだけをお選びいただけます。<br />
+        まずは無料相談で、現状とゴールを一緒に整理しましょう。
+      </p>
+    </div>
+
+    <div class="pillars">
+      <article class="pillar reveal">
+        <span class="pillar-num">01</span>
+        <h3>若者目線の<br />宿づくり</h3>
+        <p>
+          今の若い世代が「また来たい」と感じる宿には、共通する空気感があります。
+          客室や共用部の使い方、写真に映える設え、滞在中の体験設計など、
+          今の宿の魅力を活かしながら、改善できるポイントを一緒に見つけます。
+        </p>
+        <div class="pillar-tags"><span>体験設計</span><span>空間づくり</span><span>リノベーション提案</span></div>
+      </article>
+
+      <article class="pillar reveal">
+        <span class="pillar-num">02</span>
+        <h3>SNS・<br />広報支援</h3>
+        <p>
+          Instagramや note などでの発信を、無理なく続けられる形でサポートします。
+          写真の撮り方、投稿の組み立て方、宿の「らしさ」が伝わる言葉選びまで、
+          ゼロから一緒に整えていきます。
+        </p>
+        <div class="pillar-tags"><span>Instagram</span><span>写真撮影</span><span>発信の継続支援</span></div>
+      </article>
+
+      <article class="pillar reveal">
+        <span class="pillar-num">03</span>
+        <h3>デジタル化<br />支援</h3>
+        <p>
+          「電話のみ」の予約を、ウェブフォームや予約システムに切り替えるお手伝いをします。
+          ITが苦手でも大丈夫です。最小限の手間で運用できる仕組みを、一緒に選び、
+          設定までサポートします。
+        </p>
+        <div class="pillar-tags"><span>ネット予約</span><span>ウェブサイト整備</span><span>初期設定サポート</span></div>
+      </article>
+
+      <article class="pillar reveal">
+        <span class="pillar-num">04</span>
+        <h3>取材・<br />魅力発信</h3>
+        <p>
+          「かくれ宿」本体での取材・記事掲載を通じて、宿の魅力を広く伝えます。
+          オーナー様の人柄やストーリーも含めて、丁寧に届けることで、
+          宿の認知と評価を少しずつ積み重ねていきます。
+        </p>
+        <div class="pillar-tags"><span>記事掲載</span><span>撮影</span><span>ストーリー発信</span></div>
+      </article>
+
+      <article class="pillar is-wide reveal">
+        <div class="pillar-text">
+          <span class="pillar-num">05</span>
+          <h3>将来の事業承継相談</h3>
+          <p>
+            「いつか譲りたい・売りたい」と考えているけれど、何から手をつければいいか分からない——
+            そんな段階でも構いません。今のうちにできる準備や、価値を高めるための優先順位を、
+            一緒に整理します。専門的な手続きが必要な場合は、適切な専門家へのご紹介も可能です。
+          </p>
+          <div class="pillar-tags"><span>事業承継準備</span><span>価値向上の優先順位整理</span><span>専門家紹介</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================
+     FLOW — ご相談の流れ
+     ===================================================== -->
+<section class="section flow-section">
+  <div class="container">
+    <div class="section-header is-centered reveal">
+      <span class="eyebrow">HOW&nbsp;IT&nbsp;WORKS</span>
+      <h2>ご相談から、<br />サポート開始までの流れ。</h2>
+      <p>すべて無料・無理な勧誘はありません。まずはお気軽にお話しください。</p>
+    </div>
+
+    <div class="flow-steps">
+      <div class="flow-step reveal">
+        <span class="flow-num">01</span>
+        <h4>無料相談フォーム送信</h4>
+        <p>宿の概要と、気になっていることを簡単にお書きください。</p>
+      </div>
+      <div class="flow-step reveal">
+        <span class="flow-num">02</span>
+        <h4>ヒアリング</h4>
+        <p>オンラインまたは現地で、現状やご希望を詳しくお伺いします。</p>
+      </div>
+      <div class="flow-step reveal">
+        <span class="flow-num">03</span>
+        <h4>ご提案</h4>
+        <p>優先順位をつけた支援プランを、無理のない形でご提案します。</p>
+      </div>
+      <div class="flow-step reveal">
+        <span class="flow-num">04</span>
+        <h4>サポート開始</h4>
+        <p>取材・SNS・デジタル化など、必要なメニューから着手します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================
+     CASE STUDIES — 支援事例（準備中・イメージ）
+     ===================================================== -->
+<section class="section" id="cases">
+  <div class="container">
+    <div class="section-header is-centered reveal">
+      <span class="eyebrow">CASE&nbsp;STUDIES</span>
+      <h2>支援事例（準備中）</h2>
+      <p>
+        現在、支援実績を積み重ねています。<br />
+        今後、実際にサポートさせていただいた宿の事例を、こちらでご紹介していく予定です。
+      </p>
+    </div>
+
+    <div class="cases">
+      <article class="case-card reveal">
+        <div class="case-media">
+          <img src="assets/img/case-01.jpg" alt="リノベーション支援イメージ" />
+        </div>
+        <div class="case-body">
+          <div class="case-tags"><span>若者目線の宿づくり</span><span>SNS支援</span></div>
+          <h3>古民家宿の客室・写真を見直し、<br />予約数の変化を見ていく予定です</h3>
+          <p class="case-desc">
+            築年数の古い客室の見せ方や、共用部の使い方について、若い世代の視点からご提案。
+            合わせてInstagramでの発信方法も整理し、今後の予約状況の変化を追っていく予定です。
+          </p>
+          <div class="case-result">今後の実績として、随時更新していきます。</div>
+        </div>
+      </article>
+
+      <article class="case-card reveal">
+        <div class="case-media">
+          <img src="assets/img/case-02.jpg" alt="デジタル化支援イメージ" />
+        </div>
+        <div class="case-body">
+          <div class="case-tags"><span>デジタル化支援</span><span>取材・魅力発信</span></div>
+          <h3>電話のみの予約から、<br />ウェブ予約への切り替えを支援予定です</h3>
+          <p class="case-desc">
+            これまで電話のみだった予約受付に、簡易なウェブフォームを導入するサポートを予定。
+            合わせて「かくれ宿」での取材記事も掲載し、宿の魅力を発信していきます。
+          </p>
+          <div class="case-result">今後の実績として、随時更新していきます。</div>
+        </div>
+      </article>
+    </div>
+
+    <p class="cases-note">
+      ※ 上記は今後想定している支援内容のイメージです。実際の支援事例につきましては、
+      実施後にオーナー様のご了承を得たうえで、随時掲載してまいります。
+    </p>
+
+    <div class="reveal" style="margin-top:36px; padding:clamp(28px,3vw,40px); border:1px solid var(--color-line); background:var(--color-bg-sub); text-align:center;">
+      <p style="font-size:14.5px; line-height:2; color:var(--color-text-mute); margin-bottom:20px;">
+        支援事例はこれからですが、<strong style="color:var(--color-text);">宿の取材・記事づくりは、すでに千葉県内で実際に行っています。</strong><br />
+        私たちがどんな目線で宿を見て、どう言葉にしているか——まずは取材記事をご覧ください。
+      </p>
+      <a href="articles.html" class="btn">これまでの取材記事を見る <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================
+     TESTIMONIALS — オーナーの声（準備中・イメージ）
+     ===================================================== -->
+<section class="section listings-section" id="voices">
+  <div class="container">
+    <div class="section-header is-centered reveal">
+      <span class="eyebrow">OWNERS'&nbsp;VOICE</span>
+      <h2>オーナーの声（準備中）</h2>
+      <p>
+        サポートを受けていただいたオーナー様の声を、今後こちらでご紹介していく予定です。<br />
+        まずは、私たちが取材を通じてよく耳にする「宿オーナー様の想い」をご紹介します。
+      </p>
+    </div>
+
+    <div class="testimonials">
+      <div class="testimonial reveal">
+        <span class="quote-mark">“</span>
+        <p class="body-text">
+          後継者のことはまだ決めていないけれど、いつか誰かに譲るときのために、
+          今の宿の状態を良くしておきたい。そう考えている宿主さんは、少なくありません。
+        </p>
+        <div class="who">— 取材を通じて伺った声より</div>
+      </div>
+
+      <div class="testimonial reveal">
+        <span class="quote-mark">“</span>
+        <p class="body-text">
+          SNSは気になっているけれど、何を、どう発信すればいいのか分からない。
+          そんなお声を、これまでの取材先で多くお聞きしてきました。
+        </p>
+        <div class="who">— 取材を通じて伺った声より</div>
+      </div>
+
+      <div class="testimonial reveal">
+        <span class="quote-mark">“</span>
+        <p class="body-text">
+          ネット予約があれば便利だとは思うけれど、自分では設定できない。
+          そうした「あと一歩」を、私たちがお手伝いできればと考えています。
+        </p>
+        <div class="who">— 取材を通じて伺った声より</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================
+     FAQ — よくある質問
+     ===================================================== -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-header is-centered reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2>よくある質問</h2>
+      <p>ご相談前によくいただくご質問をまとめました。</p>
+    </div>
+
+    <div class="faq-list" id="faqList">
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span class="q-text"><span class="q-mark">Q1</span>本当に無料ですか？追加費用は発生しませんか？</span>
+          <span class="q-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            ご相談、取材・撮影・執筆、ウェブサイトやSNS整備の基本的な支援は無償で行っています。
+            将来的に大規模なリノベーションや専門的な事業承継手続きなど、外部の専門家が必要な場合は、
+            その範囲についてあらためてご説明し、ご了承いただいたうえで進めます。
+            無断で費用が発生することはありません。
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span class="q-text"><span class="q-mark">Q2</span>まだ何も決まっていない段階でも相談できますか？</span>
+          <span class="q-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            もちろんです。「いつか」というレベルのお話でも構いません。
+            今後の方向性を一緒に整理するところからスタートできますので、
+            まずは現状をお聞かせいただくだけでも大丈夫です。
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span class="q-text"><span class="q-mark">Q3</span>パソコンやスマートフォンの操作が苦手なのですが…</span>
+          <span class="q-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            問題ありません。操作が苦手な方にこそ、お役に立てるよう設計しています。
+            オンラインでのご説明が難しい場合は、お電話でのご相談や、現地に直接お伺いしての
+            ご説明も可能です。
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span class="q-text"><span class="q-mark">Q4</span>取材記事への掲載は必須ですか？</span>
+          <span class="q-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            必須ではありません。SNS支援やデジタル化支援だけをご希望の場合も、
+            個別にご相談いただけます。掲載を希望される場合は、内容について
+            事前にすり合わせのうえ進めます。
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span class="q-text"><span class="q-mark">Q5</span>すぐに宿を売却・譲渡したい場合はどうすればいいですか？</span>
+          <span class="q-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            このページでご案内している支援は、「今のうちに宿の価値を高めていきたい」という
+            オーナー様向けの内容です。すぐに売却・譲渡をご検討の場合は、まずは
+            <a href="contact.html" style="color: var(--color-forest); border-bottom: 1px solid var(--color-forest);">お問い合わせフォーム</a>
+            よりその旨をお知らせください。状況に応じて、適切な窓口をご案内します。
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          <span class="q-text"><span class="q-mark">Q6</span>個人情報の取り扱いはどうなっていますか？</span>
+          <span class="q-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            ご相談・お問い合わせいただいた内容は、
+            <a href="privacy.html" style="color: var(--color-forest); border-bottom: 1px solid var(--color-forest);">プライバシーポリシー</a>
+            に基づき、適切に管理いたします。ご相談内容を、ご本人の同意なく第三者に開示することはありません。
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================
+     CONSULTATION FORM — 無料相談フォーム
+     ===================================================== -->
+<section class="section consult-section" id="consult">
+  <div class="container">
+    <div class="section-header is-centered reveal">
+      <span class="eyebrow" style="justify-content: center;">FREE&nbsp;CONSULTATION</span>
+      <h2>無料相談フォーム</h2>
+      <p>
+        「話を聞いてみたい」という段階で構いません。<br />
+        まずは下記フォームより、宿の状況やお悩みをお知らせください。
+      </p>
+    </div>
+
+    <div class="consult-grid">
+      <aside class="consult-side reveal">
+        <h3>HOW IT WORKS</h3>
+        <ul>
+          <li data-num="①">無料相談フォームを送信</li>
+          <li data-num="②">ヒアリング（オンライン／現地）</li>
+          <li data-num="③">支援プランをご提案</li>
+          <li data-num="④">ご納得のうえ、サポート開始</li>
+        </ul>
+        <p class="note">
+          無理な勧誘は行いません。<br />
+          まずは現状とお悩みを、お気軽にお聞かせください。
+        </p>
+        <!-- TODO(つっちー): 電話相談を受けるなら下の 000-0000-0000 を実番号に差し替え。受けないならこの<p>ごと削除でOK -->
+        <p class="note" style="margin-top:24px;"><strong style="color: rgba(245,237,214,0.92);">お電話でのご相談</strong><br />お急ぎの場合はフォーム冒頭にお電話番号をご記入ください。折り返しご連絡します。</p>
+      </aside>
+
+      <div class="consult-form reveal">
+        <form class="consult-form-fields" id="consultForm" name="owner-consult" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="owner-consult" />
+          <p hidden><label>この欄は空のままに <input name="bot-field" /></label></p>
+
+          <div class="field">
+            <label>宿の名前 <span class="req">必須</span></label>
+            <input type="text" name="inn-name" required />
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label>所在地（千葉県内の地域） <span class="req">必須</span></label>
+              <input type="text" name="area" placeholder="例：館山市、いすみ市" required />
+            </div>
+            <div class="field">
+              <label>創業からの年数 <span class="opt">任意</span></label>
+              <input type="text" name="years" placeholder="例：30年" />
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label>お名前（宿主・ご担当者） <span class="req">必須</span></label>
+              <input type="text" name="name" required />
+            </div>
+            <div class="field">
+              <label>ご連絡先電話番号 <span class="opt">任意</span></label>
+              <input type="tel" name="tel" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label>メールアドレス <span class="req">必須</span></label>
+            <input type="email" name="email" required />
+          </div>
+
+          <div class="field">
+            <label>ご興味のある支援内容 <span class="opt">任意・複数選択可</span></label>
+            <div class="check-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:10px 24px; margin-top:6px;">
+              <label class="check" style="display:flex; gap:10px; align-items:flex-start; font-family:var(--font-sans); font-size:14px; line-height:1.6; color:var(--color-text); cursor:pointer; letter-spacing:0;"><input type="checkbox" name="interest" value="若者目線の宿づくり" style="margin-top:3px;" /> 若者目線の宿づくり</label>
+              <label class="check" style="display:flex; gap:10px; align-items:flex-start; font-family:var(--font-sans); font-size:14px; line-height:1.6; color:var(--color-text); cursor:pointer; letter-spacing:0;"><input type="checkbox" name="interest" value="SNS・広報支援" style="margin-top:3px;" /> SNS・広報支援</label>
+              <label class="check" style="display:flex; gap:10px; align-items:flex-start; font-family:var(--font-sans); font-size:14px; line-height:1.6; color:var(--color-text); cursor:pointer; letter-spacing:0;"><input type="checkbox" name="interest" value="デジタル化支援" style="margin-top:3px;" /> デジタル化支援（ネット予約など）</label>
+              <label class="check" style="display:flex; gap:10px; align-items:flex-start; font-family:var(--font-sans); font-size:14px; line-height:1.6; color:var(--color-text); cursor:pointer; letter-spacing:0;"><input type="checkbox" name="interest" value="取材・魅力発信" style="margin-top:3px;" /> 取材・魅力発信</label>
+              <label class="check" style="display:flex; gap:10px; align-items:flex-start; font-family:var(--font-sans); font-size:14px; line-height:1.6; color:var(--color-text); cursor:pointer; letter-spacing:0;"><input type="checkbox" name="interest" value="将来の事業承継相談" style="margin-top:3px;" /> 将来の事業承継相談</label>
+              <label class="check" style="display:flex; gap:10px; align-items:flex-start; font-family:var(--font-sans); font-size:14px; line-height:1.6; color:var(--color-text); cursor:pointer; letter-spacing:0;"><input type="checkbox" name="interest" value="まだ決まっていない" style="margin-top:3px;" /> まだ決まっていない・相談したい</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>現在のお悩み・ご相談したいこと <span class="req">必須</span></label>
+            <textarea name="message" required placeholder="例：建物は古いが、若い人にも来てもらえる宿にしたい。SNSをやってみたいが何から始めればいいか分からない。将来的に誰かに譲ることも考えているので、今のうちにできることを知りたい、など。"></textarea>
+          </div>
+
+          <div class="field-checkbox">
+            <input type="checkbox" id="agreeOwner" required />
+            <label for="agreeOwner">プライバシーポリシーに同意し、ご相談対応の目的でご連絡先を利用することに同意します。</label>
+          </div>
+
+          <div class="submit-row">
+            <button type="submit" class="btn">無料相談に申し込む <span class="arrow">→</span></button>
+            <span class="fine">3営業日以内にご返信いたします。</span>
+          </div>
+        </form>
+
+        <div class="consult-thanks" id="consultThanks">
+          <h3>お申し込みありがとうございます。</h3>
+          <p>内容を確認のうえ、3営業日以内にご返信いたします。<br />しばらくお待ちください。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================
+     CROSSLINK — メディア側へのリンク
+     ===================================================== -->
+<section class="crosslink-banner">
+  <div class="container">
+    <span class="eyebrow">FOR&nbsp;TRAVELERS</span>
+    <h2>千葉の隠れた宿を探している方は<br />こちらもご覧ください。</h2>
+    <p>
+      「かくれ宿」では、大手の予約サイトには載っていない千葉県内の宿を、
+      取材を通じてひとつずつご紹介しています。
+    </p>
+    <a href="articles.html" class="btn btn-beige">宿一覧を見る <span class="arrow">→</span></a>
+  </div>
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" aria-label="かくれ宿 ホームへ">
+      <img class="logo-img" src="assets/logo.jpg" alt="かくれ宿 ロゴ" />
+      <span class="logo-mark">かくれ宿 / CHIBA</span>
+    </a>
+        <p>大手の宿泊掲載サイトには載っていない、千葉県内に眠る"隠れた宿"を、静かに発掘・紹介するウェブメディア。宿の価値を高めるサポートも行っています。</p>
+          <div class="footer-social social-icons is-dark" aria-label="SNS">
+      <a class="social-icon" href="https://www.instagram.com/kakure_yado" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a class="social-icon" href="https://x.com/kakure_yado" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.53 3H20.5l-6.49 7.42L21.75 21h-6.02l-4.71-6.16L5.6 21H2.62l6.95-7.94L2.25 3h6.18l4.26 5.63L17.53 3Zm-1.06 16.2h1.66L7.62 4.7H5.84L16.47 19.2Z"/></svg></a>
+      <a class="social-icon" href="https://www.facebook.com/share/1cBxZJMGCn/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      <a class="social-icon" href="https://note.com/kakure_yado" target="_blank" rel="noopener" aria-label="note"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 4.5h12.7c2.04 0 4.1 1.56 4.1 4.1v10.9H15.5V9.85c0-1.05-.6-1.65-1.45-1.65-.65 0-1.4.4-2 .95v10.35H6.95V8.05c0-.45-.05-.65-.5-.65H3.6V4.5Z"/></svg></a>
+    </div>
+      </div>
+      <div class="footer-col">
+        <h4>MEDIA</h4>
+        <ul>
+          <li><a href="articles.html">宿一覧</a></li>
+          <li><a href="index.html#about">メディアについて</a></li>
+          <li><a href="index.html#newsletter">メルマガ登録</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>FOR&nbsp;OWNERS</h4>
+        <ul>
+          <li><a href="for-owners.html">宿の価値向上サポート</a></li>
+          <li><a href="for-owners.html#support">支援内容</a></li>
+          <li><a href="for-owners.html#faq">よくある質問</a></li>
+          <li><a href="for-owners.html#consult">無料相談フォーム</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>CONTACT</h4>
+        <ul>
+          <li><a href="contact.html">取材のお問い合わせ</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+          <li><a href="tokushoho.html">特定商取引法に基づく表記</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 かくれ宿 千葉. All rights reserved.</span>
+      <span class="legal">
+        <a href="tokushoho.html">Terms</a>
+        <a href="privacy.html">Privacy</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+
+<!-- =====================================================
+     JS — hamburger menu, header scroll state, reveal, FAQ, form
+     ===================================================== -->
+<script>
+(function () {
+  // Hamburger menu
+  var hb = document.getElementById('hamburger');
+  var nav = document.getElementById('siteNav');
+  if (hb && nav) {
+    hb.addEventListener('click', function () {
+      hb.classList.toggle('is-open');
+      nav.classList.toggle('is-open');
+    });
+    nav.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        hb.classList.remove('is-open');
+        nav.classList.remove('is-open');
+      });
+    });
+  }
+
+  // Header scroll state + switch from "hero/light" to "normal/dark"
+  var header = document.getElementById('siteHeader');
+  var hero = document.getElementById('ownerHero');
+  function updateHeader() {
+    if (!header) return;
+    var y = window.scrollY || window.pageYOffset;
+    header.classList.toggle('is-scrolled', y > 20);
+    if (hero) {
+      var heroBottom = hero.offsetTop + hero.offsetHeight - 80;
+      header.classList.toggle('is-hero', y < heroBottom);
+    }
+  }
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, { passive: true });
+
+  // Hero loaded state (ken-burns zoom)
+  requestAnimationFrame(function () {
+    document.getElementById('ownerHero') && document.getElementById('ownerHero').classList.add('is-loaded');
+  });
+
+  // Reveal on scroll
+  var reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = btn.closest('.faq-item');
+      var answer = item.querySelector('.faq-answer');
+      var isOpen = item.classList.contains('is-open');
+
+      // close all others
+      document.querySelectorAll('.faq-item.is-open').forEach(function (open) {
+        if (open !== item) {
+          open.classList.remove('is-open');
+          open.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+          open.querySelector('.faq-answer').style.maxHeight = null;
+        }
+      });
+
+      if (isOpen) {
+        item.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+        answer.style.maxHeight = null;
+      } else {
+        item.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // Consultation form submit — real POST to Netlify Forms, then show thanks
+  var consultForm = document.getElementById('consultForm');
+  if (consultForm) {
+    consultForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = consultForm.querySelector('button[type=submit]');
+      if (btn) { btn.disabled = true; btn.textContent = '送信中…'; }
+      var section = document.getElementById('consult');
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(consultForm)).toString()
+      }).then(function () {
+        section.classList.add('is-submitted');
+        window.scrollTo({ top: section.offsetTop - 80, behavior: 'smooth' });
+      }).catch(function () {
+        if (btn) { btn.disabled = false; btn.innerHTML = '送信に失敗しました。もう一度お試しください <span class="arrow">→</span>'; }
+      });
+    });
+  }
+})();
+</script>
+
+</body>
+</html>

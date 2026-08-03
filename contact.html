@@ -105,11 +105,14 @@
           <li data-num="⑤">記事を公開、SNSでも紹介</li>
         </ul>
         <p class="note">情報発信が苦手でも大丈夫です。<br />ご連絡いただければ、現地に直接お伺いします。</p>
-        <p class="note" style="margin-top:24px;"><strong>お電話でのご相談</strong><br />090-XXXX-XXXX（平日 10:00–18:00）</p>
+        <!-- TODO(つっちー): 電話相談を受けるなら下を実番号に。受けないならこの<p>ごと削除でOK -->
+        <p class="note" style="margin-top:24px;"><strong>お電話でのご相談</strong><br />お急ぎの場合はフォームにお電話番号をご記入ください。折り返しご連絡します。</p>
       </aside>
 
       <div class="contact-form">
-        <form class="contact-form-fields" id="contactForm" onsubmit="event.preventDefault(); document.getElementById('contactWrap').classList.add('is-submitted'); window.scrollTo({top:0,behavior:'smooth'});">
+        <form class="contact-form-fields" id="contactForm" name="inn-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="inn-contact" />
+          <p hidden><label>この欄は空のままに <input name="bot-field" /></label></p>
 
           <div class="field">
             <label>宿の名前 <span class="req">必須</span></label>
@@ -229,13 +232,23 @@
   var hb = document.getElementById('hamburger'), nav = document.getElementById('siteNav');
   if (hb) hb.addEventListener('click', function(){ hb.classList.toggle('is-open'); nav.classList.toggle('is-open'); });
 
-  // Submission state — toggle on the section, not the hidden div
-  document.getElementById('contactForm').addEventListener('submit', function(e){
+  // Submission — real POST to Netlify Forms, then show thanks
+  var cf = document.getElementById('contactForm');
+  cf.addEventListener('submit', function(e){
     e.preventDefault();
-    var section = document.querySelector('.contact-section');
-    section.classList.add('is-submitted');
-    window.scrollTo({top:0, behavior:'smooth'});
-  }, true);
+    var btn = cf.querySelector('button[type=submit]');
+    if (btn) { btn.disabled = true; btn.textContent = '送信中…'; }
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(cf)).toString()
+    }).then(function(){
+      document.querySelector('.contact-section').classList.add('is-submitted');
+      window.scrollTo({top:0, behavior:'smooth'});
+    }).catch(function(){
+      if (btn) { btn.disabled = false; btn.innerHTML = '送信に失敗しました。もう一度お試しください <span class="arrow">→</span>'; }
+    });
+  });
 })();
 </script>
 </body>
