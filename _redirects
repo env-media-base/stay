@@ -1,0 +1,2 @@
+# 記事テンプレートは公開面に出さない（{{HERO_IMG}} 等が生のまま見えるため）
+/articles/_template.html    /articles.html    302

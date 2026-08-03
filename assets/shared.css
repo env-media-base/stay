@@ -15,14 +15,20 @@
   --color-bg-sub: #F1ECE0;
   --color-line:   rgba(58, 46, 34, 0.14);
 
-  --font-serif: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
-  --font-sans:  "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  /* 2026-08-03 ハイブリッド：文字＝星野リゾート準拠（Noto Sans JP 一本・行間1.8・字間は詰めない）、
+     画像の並べ方＝Airbnb準拠（角丸カード・自動折返しグリッド・白いピルバッジ）。
+     明朝は廃止。--font-serif は旧トークン名の互換用に残し、中身をサンスに差し替えている。 */
+  --font-sans:  "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+  --font-serif: var(--font-sans);
 
   --container: 1200px;
   --gutter: clamp(20px, 4vw, 48px);
 
-  --radius-sm: 2px;
-  --radius-md: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+  --shadow-card: 0 6px 16px rgba(58, 46, 34, 0.10);
 
   --ease: cubic-bezier(.2,.7,.2,1);
 }
@@ -38,6 +44,7 @@ body {
   font-weight: 400;
   color: var(--color-text);
   background: var(--color-bg);
+  font-size: 16px;
   line-height: 1.8;
   font-feature-settings: "palt" 1;
   -webkit-font-smoothing: antialiased;
@@ -46,7 +53,7 @@ body {
 img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
-h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 500; line-height: 1.35; margin: 0; letter-spacing: 0.02em; }
+h1, h2, h3, h4 { font-family: var(--font-sans); font-weight: 700; line-height: 1.4; margin: 0; letter-spacing: normal; }
 p { margin: 0; }
 
 .container {
@@ -59,36 +66,31 @@ p { margin: 0; }
 
 /* Shared eyebrow label (small uppercase/serif label above headings) */
 .eyebrow {
-  font-family: var(--font-serif);
-  font-size: 12px;
-  letter-spacing: 0.4em;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--color-text-mute);
+  color: var(--color-forest-deep);
   display: inline-flex;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 28px;
+  gap: 10px;
+  margin-bottom: 16px;
 }
-.eyebrow::before {
-  content: "";
-  width: 36px;
-  height: 1px;
-  background: currentColor;
-  opacity: 0.7;
-}
+.eyebrow::before { content: none; }
 
 /* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
-  padding: 18px 34px;
+  gap: 10px;
+  padding: 15px 26px;
   background: var(--color-earth);
   color: #fff;
   font-family: var(--font-sans);
-  font-weight: 500;
-  font-size: 15px;
-  letter-spacing: 0.12em;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0;
   border-radius: var(--radius-sm);
   transition: background .3s var(--ease), transform .3s var(--ease);
   white-space: nowrap;
@@ -103,8 +105,8 @@ p { margin: 0; }
 .btn-ghost {
   background: transparent;
   color: var(--color-text);
-  border: 1px solid var(--color-line);
-  padding: 16px 30px;
+  border: 1px solid var(--color-text);
+  padding: 14px 24px;
 }
 .btn-ghost:hover { background: var(--color-text); color: var(--color-bg); border-color: var(--color-text); }
 
@@ -158,10 +160,10 @@ p { margin: 0; }
 }
 
 .logo {
-  font-family: var(--font-serif);
-  font-size: 22px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
+  font-family: var(--font-sans);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: normal;
   color: var(--color-text);
   display: inline-flex;
   align-items: center;
@@ -186,11 +188,11 @@ p { margin: 0; }
   box-shadow: 0 2px 10px -2px rgba(0,0,0,0.35), 0 0 0 1px rgba(245, 237, 214, 0.18);
 }
 .logo-mark {
-  font-size: 12px;
-  letter-spacing: 0.3em;
-  color: var(--color-text-mute);
-  font-weight: 400;
-  font-family: var(--font-serif);
+  font-size: 15px;
+  letter-spacing: normal;
+  color: inherit;
+  font-weight: 700;
+  font-family: var(--font-sans);
 }
 .site-header.is-hero:not(.is-scrolled) .logo-mark { color: rgba(245, 237, 214, 0.75); }
 
@@ -251,8 +253,9 @@ p { margin: 0; }
 }
 .nav a {
   font-family: var(--font-sans);
-  font-size: 14px;
-  letter-spacing: 0.1em;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0;
   color: var(--color-text);
   position: relative;
   padding: 6px 0;
@@ -270,12 +273,13 @@ p { margin: 0; }
 .nav a:hover::after { transform: scaleX(1); transform-origin: left center; }
 
 .nav-cta {
-  padding: 10px 22px !important;
+  padding: 11px 20px !important;
   background: var(--color-earth);
   color: #fff !important;
-  border-radius: var(--radius-sm);
-  font-size: 13px !important;
-  letter-spacing: 0.12em !important;
+  border-radius: var(--radius-pill);
+  font-size: 14px !important;
+  font-weight: 600;
+  letter-spacing: 0 !important;
 }
 .nav-cta::after { display: none; }
 .nav-cta:hover { background: var(--color-earth-hover); }
@@ -305,6 +309,14 @@ p { margin: 0; }
   .nav {
     position: fixed;
     inset: 0;
+    /* .site-header.is-scrolled の backdrop-filter が position:fixed の包含ブロックになるため、
+       inset:0 だけだとヘッダー（72px）の高さにしか広がらず、閉じているはずのメニュー項目が
+       画面にはみ出していた（2026-08-03 に本番でも再現を確認して修正）。
+       ビューポート単位で明示してこれを防ぐ。 */
+    width: 100vw;
+    height: 100vh;
+    height: 100svh;
+    overflow-y: auto;
     background: var(--color-bg);
     flex-direction: column;
     justify-content: center;
@@ -360,22 +372,17 @@ p { margin: 0; }
 }
 
 .hero-eyebrow {
-  font-family: var(--font-serif);
-  font-size: 12px;
-  letter-spacing: 0.4em;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   color: rgba(245, 237, 214, 0.75);
   display: flex;
   align-items: center;
   gap: 14px;
   margin-bottom: 0;
 }
-.hero-eyebrow::before {
-  content: "";
-  width: 40px;
-  height: 1px;
-  background: currentColor;
-  opacity: 0.6;
-}
+.hero-eyebrow::before { content: none; }
 
 .hero-body {
   max-width: 520px;
@@ -383,18 +390,19 @@ p { margin: 0; }
 }
 
 .hero-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: clamp(40px, 6.2vw, 76px);
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.25;
-  letter-spacing: 0.04em;
+  letter-spacing: normal;
   color: var(--color-beige);
   margin-bottom: 36px;
 }
 .hero-title .small {
   display: block;
-  font-size: 0.55em;
-  letter-spacing: 0.18em;
+  font-size: 0.42em;
+  font-weight: 500;
+  letter-spacing: 0;
   color: rgba(245, 237, 214, 0.75);
   margin-bottom: 20px;
   font-weight: 300;
@@ -407,8 +415,8 @@ p { margin: 0; }
 
 .hero-sub {
   font-family: var(--font-sans);
-  font-size: 15px;
-  line-height: 2;
+  font-size: 16px;
+  line-height: 1.9;
   color: rgba(245, 237, 214, 0.85);
   max-width: 420px;
   margin-bottom: 44px;
@@ -425,10 +433,10 @@ p { margin: 0; }
 .hero-cta {
   background: var(--color-beige);
   color: var(--color-text);
-  padding: 20px 38px;
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 0.14em;
+  padding: 17px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
 }
 .hero-cta:hover { background: #fff; }
 
@@ -524,24 +532,19 @@ p { margin: 0; }
 }
 .section-header h2 {
   font-size: clamp(28px, 3.5vw, 40px);
-  line-height: 1.5;
-  margin-bottom: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 16px;
 }
 .section-header p {
   color: var(--color-text-mute);
-  font-size: 15px;
-  line-height: 2;
+  font-size: 16px;
+  line-height: 1.9;
 }
 .section-header .eyebrow { margin-bottom: 36px; }
 .section-header.is-centered .eyebrow { justify-content: center; }
 .section-header.is-centered .eyebrow::before,
-.section-header.is-centered .eyebrow::after {
-  content: "";
-  width: 36px;
-  height: 1px;
-  background: currentColor;
-  opacity: 0.7;
-}
+.section-header.is-centered .eyebrow::after { content: none; }
 
 .features {
   display: grid;
@@ -553,9 +556,10 @@ p { margin: 0; }
   padding: 8px 0;
 }
 .feature-num {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 13px;
-  letter-spacing: 0.3em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   color: var(--color-earth);
   margin-bottom: 24px;
   display: block;
@@ -569,13 +573,13 @@ p { margin: 0; }
 .feature-icon svg { width: 100%; height: 100%; }
 .feature h3 {
   font-size: 22px;
-  line-height: 1.6;
-  margin-bottom: 18px;
-  color: var(--color-forest);
+  line-height: 1.5;
+  margin-bottom: 14px;
+  color: var(--color-forest-deep);
 }
 .feature p {
-  font-size: 14.5px;
-  line-height: 2;
+  font-size: 15px;
+  line-height: 1.9;
   color: var(--color-text-mute);
 }
 
@@ -604,20 +608,22 @@ p { margin: 0; }
 }
 .listings-head .title-block h2 {
   font-size: clamp(28px, 3.5vw, 40px);
-  line-height: 1.5;
-  margin-bottom: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 10px;
 }
 .listings-head .title-block p {
   color: var(--color-text-mute);
-  font-size: 14.5px;
+  font-size: 16px;
 }
 .listings-head .view-all {
-  font-family: var(--font-serif);
-  font-size: 13px;
-  letter-spacing: 0.2em;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0;
   color: var(--color-text);
   border-bottom: 1px solid var(--color-text);
-  padding-bottom: 4px;
+  padding-bottom: 3px;
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -625,10 +631,11 @@ p { margin: 0; }
 }
 .listings-head .view-all:hover { gap: 18px; }
 
+/* Airbnb型：固定2列ではなく、幅に応じて自動で折り返す等幅カードグリッド */
 .listings {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: clamp(28px, 4vw, 56px) clamp(28px, 4vw, 48px);
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 36px 20px;
 }
 .listing {
   display: flex;
@@ -640,10 +647,11 @@ p { margin: 0; }
 .listing:hover h3 { color: var(--color-forest); }
 .listing-media {
   position: relative;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 20 / 19;   /* Airbnbの宿カードと同じ比率 */
   overflow: hidden;
-  background: #2a2a2a;
-  margin-bottom: 28px;
+  background: var(--color-bg-sub);
+  border-radius: var(--radius-md);
+  margin-bottom: 12px;
 }
 .listing-media img {
   position: absolute;
@@ -651,87 +659,97 @@ p { margin: 0; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 1.4s var(--ease), filter 1.4s var(--ease);
-  filter: saturate(0.9);
+  transition: transform .5s var(--ease);
 }
 .listing:hover .listing-media img {
-  transform: scale(1.05);
-  filter: saturate(1);
+  transform: scale(1.04);
 }
+/* Airbnbの「ゲストチョイス」バッジ相当：白いピル */
 .listing-number {
   position: absolute;
-  top: 18px;
-  left: 18px;
-  font-family: var(--font-serif);
-  font-size: 11px;
-  letter-spacing: 0.3em;
-  color: #fff;
-  background: rgba(0,0,0,0.35);
-  backdrop-filter: blur(4px);
-  padding: 8px 14px;
+  top: 12px;
+  left: 12px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--color-text);
+  background: #fff;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-card);
+  padding: 6px 12px;
   z-index: 2;
 }
 .listing-tags {
   position: absolute;
-  bottom: 16px;
-  left: 16px;
+  bottom: 12px;
+  left: 12px;
   display: flex;
-  gap: 8px;
+  gap: 6px;
   z-index: 2;
 }
 .listing-tags .tag {
-  background: rgba(250, 250, 247, 0.94);
+  background: rgba(255, 255, 255, 0.95);
   color: var(--color-text);
-  padding: 6px 12px;
-  font-size: 11px;
-  letter-spacing: 0.1em;
+  padding: 5px 11px;
+  font-size: 12px;
+  letter-spacing: 0;
   font-family: var(--font-sans);
   font-weight: 500;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-card);
 }
 
-.listing-body {
-  padding: 0 4px;
-}
+/* Airbnb型：画像のすぐ下に、タイトル→補足→説明を詰めて置く */
+.listing-body { padding: 0; }
 .listing-meta {
-  font-family: var(--font-serif);
-  font-size: 11px;
-  letter-spacing: 0.3em;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0;
   color: var(--color-text-mute);
-  margin-bottom: 14px;
+  margin-bottom: 4px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
 }
 .listing-meta .sep { width: 2px; height: 2px; background: currentColor; border-radius: 50%; }
 .listing h3 {
-  font-size: 22px;
-  line-height: 1.6;
-  margin-bottom: 14px;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: normal;
+  margin-bottom: 6px;
   color: var(--color-text);
 }
 .listing-desc {
-  font-size: 14px;
-  line-height: 2;
+  font-size: 14.5px;
+  line-height: 1.8;
   color: var(--color-text-mute);
-  margin-bottom: 22px;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .listing-link {
-  font-family: var(--font-serif);
-  font-size: 13px;
-  letter-spacing: 0.2em;
-  color: var(--color-forest);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0;
+  color: var(--color-forest-deep);
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding-bottom: 4px;
-  border-bottom: 1px solid var(--color-forest);
+  gap: 6px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid currentColor;
   transition: gap .3s var(--ease);
   align-self: flex-start;
 }
-.listing-link:hover { gap: 18px; }
+.listing-link:hover { gap: 12px; }
 
-@media (max-width: 720px) {
-  .listings { grid-template-columns: 1fr; }
+@media (max-width: 560px) {
+  .listings { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 28px 16px; }
 }
 
 
@@ -806,9 +824,10 @@ p { margin: 0; }
   list-style: none;
 }
 .owners-list li {
-  font-family: var(--font-serif);
-  font-size: 14px;
-  letter-spacing: 0.05em;
+  font-family: var(--font-sans);
+  font-size: 15.5px;
+  font-weight: 500;
+  letter-spacing: 0;
   color: rgba(245, 237, 214, 0.95);
   padding: 14px 0;
   border-top: 1px solid rgba(245, 237, 214, 0.15);
@@ -819,9 +838,9 @@ p { margin: 0; }
 .owners-list li:last-child { border-bottom: 1px solid rgba(245, 237, 214, 0.15); }
 .owners-list li::before {
   content: attr(data-num);
-  font-family: var(--font-serif);
-  font-size: 11px;
-  letter-spacing: 0.2em;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  letter-spacing: 0;
   color: rgba(245, 237, 214, 0.5);
   min-width: 28px;
 }
@@ -876,6 +895,8 @@ p { margin: 0; }
   max-width: 520px;
   margin: 0 auto;
   border: 1px solid var(--color-line);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-card);
 }
 .newsletter-form input {
   flex: 1;
@@ -892,10 +913,11 @@ p { margin: 0; }
 .newsletter-form button {
   background: var(--color-earth);
   color: #fff;
-  padding: 14px 24px;
-  font-size: 13px;
-  letter-spacing: 0.14em;
-  font-weight: 500;
+  padding: 14px 26px;
+  font-size: 15px;
+  letter-spacing: 0;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
   transition: background .3s var(--ease);
   white-space: nowrap;
 }
@@ -919,7 +941,7 @@ p { margin: 0; }
 }
 
 @media (max-width: 500px) {
-  .newsletter-form { flex-direction: column; padding: 12px; gap: 8px; }
+  .newsletter-form { flex-direction: column; padding: 12px; gap: 8px; border-radius: var(--radius-md); }
   .newsletter-form button { padding: 14px; }
 }
 
@@ -959,12 +981,12 @@ p { margin: 0; }
 .footer-social .social-icon { width: 38px; height: 38px; }
 .footer-social .social-icon svg { width: 19px; height: 19px; }
 .footer-col h4 {
-  font-family: var(--font-serif);
-  font-size: 12px;
-  letter-spacing: 0.25em;
-  font-weight: 500;
-  color: var(--color-text-mute);
-  margin-bottom: 22px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 18px;
 }
 .footer-col ul { list-style: none; padding: 0; margin: 0; }
 .footer-col li { margin-bottom: 14px; }
