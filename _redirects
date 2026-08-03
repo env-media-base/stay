@@ -1,2 +1,3 @@
 # 記事テンプレートは公開面に出さない（{{HERO_IMG}} 等が生のまま見えるため）
-/articles/_template.html    /articles.html    302
+# ⚠️ Netlify は実ファイルをリダイレクト規則より優先するので、末尾の "!"（force）が必須。
+/articles/_template.html    /articles.html    302!
