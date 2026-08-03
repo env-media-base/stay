@@ -223,7 +223,7 @@
     color: var(--color-earth);
     min-width: 36px; padding-top: 4px;
   }
-  .strength-item h3 { font-size: 19px; line-height: 1.7; margin-bottom: 14px; color: var(--color-forest); }
+  .strength-item h3 { font-size: 19px; line-height: 1.7; margin-bottom: 14px; color: var(--color-host-deep); }
   .strength-item p { font-size: 14.5px; line-height: 2; color: var(--color-text-mute); }
   @media (max-width: 760px) { .strengths-list { grid-template-columns: 1fr; } }
 
@@ -246,7 +246,7 @@
     color: var(--color-earth);
     margin-bottom: 22px; display: block;
   }
-  .pillar h3 { font-size: 19px; line-height: 1.7; margin-bottom: 16px; color: var(--color-forest); }
+  .pillar h3 { font-size: 19px; line-height: 1.7; margin-bottom: 16px; color: var(--color-host-deep); }
   .pillar p { font-size: 14px; line-height: 1.95; color: var(--color-text-mute); flex-grow: 1; }
   .pillar .pillar-tags { margin-top: 22px; display: flex; flex-wrap: wrap; gap: 8px; }
   .pillar .pillar-tags span {
@@ -265,7 +265,7 @@
     flex-direction: row;
     align-items: center;
     gap: clamp(28px, 4vw, 56px);
-    background: var(--color-forest);
+    background: var(--color-host);
     color: var(--color-beige);
     border: none;
   }
@@ -460,7 +460,7 @@
 
   /* ---- Consultation form section ---- */
   .consult-section {
-    background: var(--color-forest);
+    background: var(--color-host);
     color: var(--color-beige);
   }
   .consult-section .section-header h2 { color: var(--color-beige); }
@@ -510,7 +510,7 @@
     font-size: 13px; letter-spacing: 0.16em;
     color: var(--color-text); margin-bottom: 10px;
   }
-  .consult-form .field label .req { color: var(--color-forest); margin-left: 6px; font-size: 11px; letter-spacing: 0.1em; }
+  .consult-form .field label .req { color: var(--color-host-deep); margin-left: 6px; font-size: 11px; letter-spacing: 0.1em; }
   .consult-form .field label .opt { color: var(--color-text-mute); margin-left: 8px; font-size: 11px; letter-spacing: 0.1em; }
   .consult-form .field input,
   .consult-form .field select,
@@ -541,15 +541,15 @@
     margin-top: 36px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap;
   }
   .consult-form .submit-row .fine { font-size: 12px; color: var(--color-text-mute); }
-  .consult-form .submit-row .btn { background: var(--color-earth); }
-  .consult-form .submit-row .btn:hover { background: var(--color-earth-hover); }
+  .consult-form .submit-row .btn { background: var(--color-host-deep); }
+  .consult-form .submit-row .btn:hover { background: var(--color-host-hover); }
 
   .consult-thanks {
     display: none;
     padding: 60px 40px; text-align: center;
     background: var(--color-bg-sub); border: 1px solid var(--color-line);
   }
-  .consult-thanks h3 { font-size: 22px; margin: 0 0 16px; color: var(--color-forest); font-family: var(--font-serif); font-weight: 500; }
+  .consult-thanks h3 { font-size: 22px; margin: 0 0 16px; color: var(--color-host-deep); font-family: var(--font-sans); font-weight: 600; }
   .consult-thanks p { color: var(--color-text-mute); line-height: 2; font-size: 14px; }
   .is-submitted .consult-form-fields { display: none; }
   .is-submitted .consult-thanks { display: block; }
@@ -692,8 +692,10 @@ h1, h2, h3, h4,
 </header>
 
 <!-- =====================================================
-     SITEMAP — ヘッダーの ☰ で開く全ページ一覧
-     「誰向けのページか」をグループごとに1行で明記している
+     SITEMAP — ヘッダーの ☰ で開くページ一覧
+     ・ページ単位まで。ページ内の見出しへのリンクは出さない（多すぎて選べなくなるため）
+     ・グループの先頭に「誰向けか」を必ず1行書く
+     ・to B のグループには is-host を付けて茶にする（色の役割は shared.css 参照）
      ===================================================== -->
 <div class="sitemap" id="siteMenu" role="dialog" aria-modal="true" aria-label="サイトマップ">
   <div class="container sitemap-inner">
@@ -713,7 +715,6 @@ h1, h2, h3, h4,
         <p class="who">泊まってみたい方・読みものとして楽しみたい方へ</p>
         <ul>
           <li><a href="articles.html">千葉の隠れ宿 一覧<span class="note">掲載中の全8軒をまとめて見る</span></a></li>
-          <li><a href="index.html#listings">今月の特集<span class="note">編集部が選んだ4軒</span></a></li>
           <li><a href="index.html#newsletter">新着メールを受け取る<span class="note">無料・月1〜2回・いつでも解除できます</span></a></li>
         </ul>
         <p class="sitemap-areas-label">エリアからさがす</p>
@@ -727,17 +728,12 @@ h1, h2, h3, h4,
         </div>
       </div>
 
-      <div class="sitemap-group">
+      <div class="sitemap-group is-host">
         <h2>宿を営む方へ</h2>
         <p class="who">宿のオーナー様・ご家族の方へ。取材も掲載も、支援もすべて無料です</p>
         <ul>
           <li><a href="contact.html">取材・掲載のご相談<span class="note">「うちの宿を紹介してほしい」はこちら</span></a></li>
           <li><a href="for-owners.html">宿の価値向上サポート<span class="note">事業承継を見据えて、今のうちに宿の価値を高めたい方へ</span></a></li>
-          <li><a href="for-owners.html#service">できること<span class="note">サイト・SNS・写真まわりの整備</span></a></li>
-          <li><a href="for-owners.html#cases">支援の事例</a></li>
-          <li><a href="for-owners.html#voices">オーナーの声</a></li>
-          <li><a href="for-owners.html#faq">よくあるご質問</a></li>
-          <li><a href="for-owners.html#consult">無料相談に申し込む<span class="note">無理な勧誘はいたしません</span></a></li>
         </ul>
       </div>
 
@@ -747,7 +743,6 @@ h1, h2, h3, h4,
         <ul>
           <li><a href="index.html">トップページ</a></li>
           <li><a href="index.html#about">このメディアについて<span class="note">なぜ隠れた宿だけを紹介するのか</span></a></li>
-          <li><a href="for-owners.html#about-operator">運営者について</a></li>
         </ul>
       </div>
 
@@ -1418,7 +1413,7 @@ h1, h2, h3, h4,
       「かくれ宿」では、大手の予約サイトには載っていない千葉県内の宿を、
       取材を通じてひとつずつご紹介しています。
     </p>
-    <a href="articles.html" class="btn btn-beige">宿一覧を見る <span class="arrow">→</span></a>
+    <a href="articles.html" class="btn">宿一覧を見る <span class="arrow">→</span></a>
   </div>
 </section>
 

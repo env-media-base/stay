@@ -234,8 +234,10 @@ h1, h2, h3, h4,
 </header>
 
 <!-- =====================================================
-     SITEMAP — ヘッダーの ☰ で開く全ページ一覧
-     「誰向けのページか」をグループごとに1行で明記している
+     SITEMAP — ヘッダーの ☰ で開くページ一覧
+     ・ページ単位まで。ページ内の見出しへのリンクは出さない（多すぎて選べなくなるため）
+     ・グループの先頭に「誰向けか」を必ず1行書く
+     ・to B のグループには is-host を付けて茶にする（色の役割は shared.css 参照）
      ===================================================== -->
 <div class="sitemap" id="siteMenu" role="dialog" aria-modal="true" aria-label="サイトマップ">
   <div class="container sitemap-inner">
@@ -255,7 +257,6 @@ h1, h2, h3, h4,
         <p class="who">泊まってみたい方・読みものとして楽しみたい方へ</p>
         <ul>
           <li><a href="articles.html">千葉の隠れ宿 一覧<span class="note">掲載中の全8軒をまとめて見る</span></a></li>
-          <li><a href="index.html#listings">今月の特集<span class="note">編集部が選んだ4軒</span></a></li>
           <li><a href="index.html#newsletter">新着メールを受け取る<span class="note">無料・月1〜2回・いつでも解除できます</span></a></li>
         </ul>
         <p class="sitemap-areas-label">エリアからさがす</p>
@@ -269,17 +270,12 @@ h1, h2, h3, h4,
         </div>
       </div>
 
-      <div class="sitemap-group">
+      <div class="sitemap-group is-host">
         <h2>宿を営む方へ</h2>
         <p class="who">宿のオーナー様・ご家族の方へ。取材も掲載も、支援もすべて無料です</p>
         <ul>
           <li><a href="contact.html">取材・掲載のご相談<span class="note">「うちの宿を紹介してほしい」はこちら</span></a></li>
           <li><a href="for-owners.html">宿の価値向上サポート<span class="note">事業承継を見据えて、今のうちに宿の価値を高めたい方へ</span></a></li>
-          <li><a href="for-owners.html#service">できること<span class="note">サイト・SNS・写真まわりの整備</span></a></li>
-          <li><a href="for-owners.html#cases">支援の事例</a></li>
-          <li><a href="for-owners.html#voices">オーナーの声</a></li>
-          <li><a href="for-owners.html#faq">よくあるご質問</a></li>
-          <li><a href="for-owners.html#consult">無料相談に申し込む<span class="note">無理な勧誘はいたしません</span></a></li>
         </ul>
       </div>
 
@@ -289,7 +285,6 @@ h1, h2, h3, h4,
         <ul>
           <li><a href="index.html">トップページ</a></li>
           <li><a href="index.html#about">このメディアについて<span class="note">なぜ隠れた宿だけを紹介するのか</span></a></li>
-          <li><a href="for-owners.html#about-operator">運営者について</a></li>
         </ul>
       </div>
 

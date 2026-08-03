@@ -15,6 +15,20 @@
   --color-bg-sub: #F1ECE0;
   --color-line:   rgba(58, 46, 34, 0.14);
 
+  /* ---- 色の役割（2026-08-03 制定）--------------------------------
+     色相は緑・茶の2つだけ。増やさない。分ける単位は「ボタン」ではなく「面」。
+       緑 = 宿をさがす・読む面（to C）… トップ／宿一覧／記事／メルマガ
+       茶 = 宿を営む方への相談・支援の面（to B）… オーナー誘導／オーナーLP／取材相談
+     *-deep は「白文字を乗せるボタン用」の濃度。元の #7A9971 / #A8907A は
+     白文字だとコントラストが 2.8:1 / 2.5:1 しかなく読めないため、面と行動で使い分ける。
+     （WCAG AA 4.5:1 → guest-deep 4.55:1 / host-deep 5.39:1 で通る） */
+  --color-guest:       var(--color-forest);       /* to C の面 */
+  --color-guest-deep:  var(--color-forest-deep);  /* to C のボタン・強調文字 */
+  --color-guest-hover: #4E6A48;
+  --color-host:        var(--color-earth);        /* to B の面 */
+  --color-host-deep:   #7D6653;                   /* to B のボタン・強調文字 */
+  --color-host-hover:  #6A5646;
+
   /* 2026-08-03 ハイブリッド：文字＝星野リゾート準拠（Noto Sans JP 一本・行間1.8・字間は詰めない）、
      画像の並べ方＝Airbnb準拠（角丸カード・自動折返しグリッド・白いピルバッジ）。
      明朝は廃止。--font-serif は旧トークン名の互換用に残し、中身をサンスに差し替えている。 */
@@ -85,7 +99,7 @@ p { margin: 0; }
   align-items: center;
   gap: 10px;
   padding: 15px 26px;
-  background: var(--color-earth);
+  background: var(--color-guest-deep);
   color: #fff;
   font-family: var(--font-sans);
   font-weight: 600;
@@ -95,7 +109,11 @@ p { margin: 0; }
   transition: background .3s var(--ease), transform .3s var(--ease);
   white-space: nowrap;
 }
-.btn:hover { background: var(--color-earth-hover); }
+.btn:hover { background: var(--color-guest-hover); }
+
+/* to B（宿を営む方）の面で使うボタン。取材相談・無料相談など */
+.btn-host { background: var(--color-host-deep); }
+.btn-host:hover { background: var(--color-host-hover); }
 .btn .arrow {
   display: inline-block;
   transition: transform .3s var(--ease);
@@ -277,7 +295,7 @@ p { margin: 0; }
 
 .nav-cta {
   padding: 11px 20px !important;
-  background: var(--color-earth);
+  background: var(--color-guest-deep);
   color: #fff !important;
   border-radius: var(--radius-pill);
   font-size: 14px !important;
@@ -285,7 +303,7 @@ p { margin: 0; }
   letter-spacing: 0 !important;
 }
 .nav-cta::after { display: none; }
-.nav-cta:hover { background: var(--color-earth-hover); }
+.nav-cta:hover { background: var(--color-guest-hover); }
 
 /* ☰ ボタン：PC・スマホとも常時表示。押すとサイトマップ（#siteMenu）が開く。
    2026-08-03：以前はスマホ専用で、押すと上部ナビが全画面に降りてくる作りだったが、
@@ -420,7 +438,10 @@ body.has-sitemap-open { overflow: hidden; }
   color: var(--color-text);
   transition: background .2s var(--ease), color .2s var(--ease);
 }
-.sitemap-group li > a:hover { background: var(--color-bg-sub); color: var(--color-forest-deep); }
+.sitemap-group li > a:hover { background: var(--color-bg-sub); color: var(--color-guest-deep); }
+/* to B のグループは茶。サイトマップの時点で「ここから先はオーナー向け」と分かるようにする */
+.sitemap-group.is-host h2 { color: var(--color-host-deep); }
+.sitemap-group.is-host li > a:hover { background: var(--color-bg-sub); color: var(--color-host-deep); }
 .sitemap-group li > a .note {
   display: block;
   font-size: 12.5px;
@@ -716,7 +737,7 @@ body.has-sitemap-open { overflow: hidden; }
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.04em;
-  color: var(--color-earth);
+  color: var(--color-guest-deep);
   margin-bottom: 24px;
   display: block;
 }
@@ -912,9 +933,10 @@ body.has-sitemap-open { overflow: hidden; }
 /* =========================================================
    Section: For Owners (オーナー向け)
    ========================================================= */
+/* ここから先は to B（宿を営む方）の話。面の色を茶に切り替えて境目を作る */
 .owners-section {
   padding: 0;
-  background: var(--color-forest);
+  background: var(--color-host);
   color: var(--color-beige);
   overflow: hidden;
 }
@@ -940,7 +962,7 @@ body.has-sitemap-open { overflow: hidden; }
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(45, 90, 61, 0) 60%, rgba(45, 90, 61, 0.4) 100%);
+  background: linear-gradient(90deg, rgba(125, 102, 83, 0) 60%, rgba(125, 102, 83, 0.45) 100%);
 }
 .owners-body {
   padding: clamp(60px, 8vw, 100px) clamp(40px, 6vw, 80px);
@@ -1067,7 +1089,7 @@ body.has-sitemap-open { overflow: hidden; }
 }
 .newsletter-form input::placeholder { color: var(--color-text-mute); }
 .newsletter-form button {
-  background: var(--color-earth);
+  background: var(--color-guest-deep);
   color: #fff;
   padding: 14px 26px;
   font-size: 15px;
@@ -1077,7 +1099,7 @@ body.has-sitemap-open { overflow: hidden; }
   transition: background .3s var(--ease);
   white-space: nowrap;
 }
-.newsletter-form button:hover { background: var(--color-earth-hover); }
+.newsletter-form button:hover { background: var(--color-guest-hover); }
 
 .newsletter-fine {
   margin-top: 24px;
@@ -1151,7 +1173,7 @@ body.has-sitemap-open { overflow: hidden; }
   color: var(--color-text);
   transition: color .3s var(--ease);
 }
-.footer-col a:hover { color: var(--color-earth); }
+.footer-col a:hover { color: var(--color-guest-deep); }
 
 .footer-bottom {
   display: flex;
