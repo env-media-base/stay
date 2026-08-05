@@ -1275,3 +1275,34 @@ body.tw-sans-headings .hero-title { font-family: var(--font-sans); font-weight: 
 @media (max-width: 600px) {
   .tw-panel { right: 16px; bottom: 16px; left: 16px; width: auto; }
 }
+
+
+/* =========================================================
+   Language switcher（EN ⇄ 日本語 / 2026-08-05）
+   ・ナビ末尾のピル（.nav-lang）と ☰ サイトマップ上部（.sitemap-lang）の2箇所
+   ・ヒーロー上では .site-header.is-hero .nav a の白文字を currentColor で継承
+   ========================================================= */
+.nav-lang {
+  padding: 8px 16px !important;
+  font-size: 13px !important;
+  font-weight: 600;
+  line-height: 1;
+  border: 1px solid currentColor;
+  border-radius: var(--radius-pill);
+}
+.nav-lang::after { display: none; }
+.nav-lang:hover { opacity: .7; }
+
+.sitemap-lang {
+  margin-left: auto; /* space-between の余白を消して閉じるボタン側に寄せる */
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap; /* スマホで「日本語」が2行に折れるのを防ぐ */
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-pill);
+}
+.sitemap-lang:hover { background: var(--color-bg-sub); border-color: var(--color-text); }
