@@ -313,9 +313,7 @@ h1, h2, h3, h4,
       </aside>
 
       <div class="contact-form">
-        <form class="contact-form-fields" id="contactForm" name="inn-contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="inn-contact" />
-          <p hidden><label>この欄は空のままに <input name="bot-field" /></label></p>
+        <form class="contact-form-fields" id="contactForm" name="inn-contact" method="POST" data-mailto="contact" data-done="thanksMsg" data-scope=".contact-section">
 
           <div class="field">
             <label>宿の名前 <span class="req">必須</span></label>
@@ -430,28 +428,7 @@ h1, h2, h3, h4,
   </div>
 </footer>
 
-<script>
-(function(){
-
-  // Submission — real POST to Netlify Forms, then show thanks
-  var cf = document.getElementById('contactForm');
-  cf.addEventListener('submit', function(e){
-    e.preventDefault();
-    var btn = cf.querySelector('button[type=submit]');
-    if (btn) { btn.disabled = true; btn.textContent = '送信中…'; }
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(new FormData(cf)).toString()
-    }).then(function(){
-      document.querySelector('.contact-section').classList.add('is-submitted');
-      window.scrollTo({top:0, behavior:'smooth'});
-    }).catch(function(){
-      if (btn) { btn.disabled = false; btn.innerHTML = '送信に失敗しました。もう一度お試しください <span class="arrow">→</span>'; }
-    });
-  });
-})();
-</script>
+<script src="assets/mailform.js"></script>
 <script src="assets/menu.js"></script>
 </body>
 </html>

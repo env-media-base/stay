@@ -1333,9 +1333,7 @@ h1, h2, h3, h4,
       </aside>
 
       <div class="consult-form reveal">
-        <form class="consult-form-fields" id="consultForm" name="owner-consult" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="owner-consult" />
-          <p hidden><label>この欄は空のままに <input name="bot-field" /></label></p>
+        <form class="consult-form-fields" id="consultForm" name="owner-consult" method="POST" data-mailto="consult" data-done="consultThanks" data-scope="#consult">
 
           <div class="field">
             <label>宿の名前 <span class="req">必須</span></label>
@@ -1547,30 +1545,10 @@ h1, h2, h3, h4,
       }
     });
   });
-
-  // Consultation form submit — real POST to Netlify Forms, then show thanks
-  var consultForm = document.getElementById('consultForm');
-  if (consultForm) {
-    consultForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var btn = consultForm.querySelector('button[type=submit]');
-      if (btn) { btn.disabled = true; btn.textContent = '送信中…'; }
-      var section = document.getElementById('consult');
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(new FormData(consultForm)).toString()
-      }).then(function () {
-        section.classList.add('is-submitted');
-        window.scrollTo({ top: section.offsetTop - 80, behavior: 'smooth' });
-      }).catch(function () {
-        if (btn) { btn.disabled = false; btn.innerHTML = '送信に失敗しました。もう一度お試しください <span class="arrow">→</span>'; }
-      });
-    });
-  }
 })();
 </script>
 
+<script src="assets/mailform.js"></script>
 <script src="assets/menu.js"></script>
 </body>
 </html>

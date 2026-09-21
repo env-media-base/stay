@@ -518,9 +518,7 @@ h1, h2, h3, h4,
       <h2>Don't miss<br />the next hidden inn.</h2>
       <p>Once or twice a month, we'll send you inns no one knows yet,<br />plus short essays from behind the scenes of our visits.</p>
 
-      <form class="newsletter-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-nl-form>
-        <input type="hidden" name="form-name" value="newsletter" />
-        <p class="nl-hp" hidden><label>Leave this field empty <input name="bot-field" /></label></p>
+      <form class="newsletter-form" name="newsletter" method="POST" data-mailto="newsletter" data-nl-form>
         <input type="email" name="email" placeholder="your@email.com" required />
         <button type="submit">Subscribe for Free</button>
       </form>
@@ -651,29 +649,10 @@ h1, h2, h3, h4,
   } else {
     reveals.forEach(function (el) { el.classList.add('is-visible'); });
   }
-
-  // Newsletter form — real submit to Netlify Forms (keeps inline thank-you)
-  var nlForm = document.querySelector('[data-nl-form]');
-  if (nlForm) {
-    nlForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var btn = nlForm.querySelector('button');
-      btn.disabled = true; btn.textContent = 'Sending…';
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(new FormData(nlForm)).toString()
-      }).then(function () {
-        btn.textContent = 'Thank you for subscribing!';
-        nlForm.querySelector('input[type=email]').value = '';
-      }).catch(function () {
-        btn.disabled = false; btn.textContent = 'Something went wrong — please try again';
-      });
-    });
-  }
 })();
 </script>
 
+<script src="../assets/mailform.js"></script>
 <script src="../assets/menu.js"></script>
 </body>
 </html>

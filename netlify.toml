@@ -1,0 +1,9 @@
+# 2026-09-21：かくれ宿CHIBAの本番は Cloudflare Pages（https://kakureyado.pages.dev）へ移行。
+# Netlify（comfy-lolly-2c9907.netlify.app）は、開いた人を新しいURLの同じページへ案内するだけ。
+# Cloudflare は netlify.toml を読まないので、Cloudflare 側の表示には影響しない。
+# 2026年10月下旬に Netlify のサイトごと削除する予定（削除前にフォームの受信履歴を書き出す）。
+[[redirects]]
+  from = "/*"
+  to = "https://kakureyado.pages.dev/:splat"
+  status = 301
+  force = true
