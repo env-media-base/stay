@@ -1,3 +1,5 @@
 # 記事テンプレートは公開面に出さない（{{HERO_IMG}} 等が生のまま見えるため）
-# ⚠️ Netlify は実ファイルをリダイレクト規則より優先するので、末尾の "!"（force）が必須。
-/articles/_template.html    /articles.html    302!
+# Cloudflare Pages は .html を拡張子なしへ自動転送（308）するので、両方の形を塞ぐ。
+# （Netlify時代の "302!" は Cloudflare では使えない書き方のため廃止・2026-09-21）
+/articles/_template.html    /articles    302
+/articles/_template         /articles    302
