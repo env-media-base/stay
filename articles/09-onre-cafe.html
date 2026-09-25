@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>一年に、一軒ずつ｜市原・若宮団地 On Re.cafe — かくれ宿</title>
+<meta name="description" content="市原・若宮団地。団地を調べる仕事をしていた人が、いまは団地の空き家を生き返らせている。On Re. Project の小野千景さんを訪ねた。" />
+<!-- OGP / Twitter Card / favicon -->
+<!-- 記事09は日本語のみ（英語版なし）。hreflang は ja / x-default だけにしている -->
+<link rel="canonical" href="https://kakureyado.pages.dev/articles/09-onre-cafe" />
+<link rel="alternate" hreflang="ja" href="https://kakureyado.pages.dev/articles/09-onre-cafe" />
+<link rel="alternate" hreflang="x-default" href="https://kakureyado.pages.dev/articles/09-onre-cafe" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="かくれ宿 CHIBA" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:title" content="一年に、一軒ずつ｜市原・若宮団地 On Re.cafe — かくれ宿" />
+<meta property="og:description" content="市原・若宮団地。団地を調べる仕事をしていた人が、いまは団地の空き家を生き返らせている。" />
+<meta property="og:url" content="https://kakureyado.pages.dev/articles/09-onre-cafe" />
+<meta property="og:image" content="https://kakureyado.pages.dev/assets/img/09-onre/onre-01-ivy-entrance.jpg" />
+<meta property="og:image:width" content="1600" />
+<meta property="og:image:height" content="900" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="一年に、一軒ずつ｜市原・若宮団地 On Re.cafe — かくれ宿" />
+<meta name="twitter:description" content="市原・若宮団地。団地を調べる仕事をしていた人が、いまは団地の空き家を生き返らせている。" />
+<meta name="twitter:image" content="https://kakureyado.pages.dev/assets/img/09-onre/onre-01-ivy-entrance.jpg" />
+<meta name="theme-color" content="#7A9971" />
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="../assets/logo.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/shared.css" />
+
+<template id="__bundler_thumbnail" data-bg-color="#7A9971">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#7A9971"/>
+    <text x="80" y="380" font-family="serif" font-size="72" fill="#F5F1E8">一年に、一軒ずつ</text>
+    <text x="80" y="450" font-family="serif" font-size="24" fill="#F5F1E8" letter-spacing="6" opacity="0.85">CASE 001 · ICHIHARA · CHIBA</text>
+  </svg>
+</template>
+
+<style>
+.article-hero {
+  position: relative;
+  height: 80vh;
+  min-height: 540px;
+  background: #1a1a1a;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  color: #fff;
+}
+.article-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7) saturate(0.95); }
+.article-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0.6) 100%); }
+.article-hero .container { position: relative; z-index: 2; padding-bottom: 80px; padding-top: 140px; }
+.article-hero .meta {
+  font-family: var(--font-serif); font-size: 12px; letter-spacing: 0.35em;
+  display: flex; gap: 18px; align-items: center; margin-bottom: 28px;
+  color: rgba(255,255,255,0.85);
+}
+.article-hero .meta .sep { width: 4px; height: 4px; background: currentColor; border-radius: 50%; }
+.article-hero h1 {
+  font-family: var(--font-serif); font-weight: 500;
+  font-size: clamp(34px, 5.5vw, 64px);
+  line-height: 1.4; letter-spacing: 0.04em;
+  max-width: 860px; margin: 0 0 24px;
+}
+.article-hero .subtitle { font-family: var(--font-serif); font-size: clamp(15px, 1.8vw, 19px); color: rgba(255,255,255,0.85); max-width: 600px; line-height: 1.9; }
+
+.article-body { padding: 100px 0; max-width: 760px; margin: 0 auto; }
+.article-body .lead {
+  font-family: var(--font-serif); font-size: clamp(17px, 2vw, 21px);
+  line-height: 2.1; letter-spacing: 0.04em; color: var(--color-text);
+  margin-bottom: 56px; padding-bottom: 56px; border-bottom: 1px solid var(--color-line);
+}
+.article-body h2 {
+  font-family: var(--font-serif); font-size: clamp(22px, 2.6vw, 30px);
+  margin: 80px 0 32px; line-height: 1.6; letter-spacing: 0.04em;
+  display: flex; align-items: baseline; gap: 18px;
+}
+.article-body h2::before {
+  content: attr(data-num); font-size: 13px; letter-spacing: 0.3em;
+  color: var(--color-forest); font-weight: 400; min-width: 32px;
+}
+.article-body p { font-size: 15px; line-height: 2.1; margin-bottom: 24px; color: var(--color-text); }
+.article-body figure { margin: 56px 0; }
+.article-body figure img { width: 100%; height: auto; aspect-ratio: 3/2; object-fit: cover; }
+.article-body figcaption {
+  font-family: var(--font-serif); font-size: 12px; letter-spacing: 0.18em;
+  color: var(--color-text-mute); margin-top: 14px; padding-left: 14px;
+  border-left: 1px solid var(--color-line);
+}
+.article-body blockquote {
+  font-family: var(--font-serif); font-size: clamp(20px, 2.4vw, 26px);
+  line-height: 1.8; letter-spacing: 0.04em; margin: 64px 0;
+  padding: 0 0 0 32px; border-left: 2px solid var(--color-forest);
+  color: var(--color-text);
+}
+.article-body blockquote cite { display: block; font-family: var(--font-sans); font-size: 13px; font-style: normal; color: var(--color-text-mute); margin-top: 16px; letter-spacing: 0.1em; }
+
+.spec {
+  background: var(--color-bg-sub);
+  padding: 48px clamp(24px, 4vw, 56px);
+  margin: 80px 0;
+}
+.spec h3 { font-family: var(--font-serif); font-size: 14px; letter-spacing: 0.3em; margin: 0 0 28px; color: var(--color-text-mute); font-weight: 500; }
+.spec dl { margin: 0; display: grid; grid-template-columns: 140px 1fr; gap: 0; }
+.spec dt, .spec dd { padding: 14px 0; border-top: 1px solid var(--color-line); margin: 0; }
+.spec dt { font-family: var(--font-serif); font-size: 13px; letter-spacing: 0.18em; color: var(--color-text-mute); }
+.spec dd { font-size: 14px; line-height: 1.85; color: var(--color-text); }
+.spec dt:nth-of-type(1), .spec dd:nth-of-type(1) { border-top: 0; padding-top: 0; }
+@media (max-width: 540px) { .spec dl { grid-template-columns: 1fr; gap: 0; } .spec dt { padding-bottom: 4px; border-top: 1px solid var(--color-line); } .spec dd { padding-top: 4px; padding-bottom: 18px; border-top: 0; } }
+
+.article-cta {
+  background: var(--color-forest); color: var(--color-beige);
+  padding: 60px clamp(28px, 5vw, 60px); margin: 80px 0 0;
+  text-align: center;
+}
+.article-cta h3 { font-family: var(--font-serif); font-size: 22px; line-height: 1.7; color: var(--color-beige); margin: 0 0 14px; font-weight: 500; }
+.article-cta p { font-size: 14px; color: rgba(245, 241, 232, 0.8); margin-bottom: 28px; line-height: 1.95; }
+.article-cta .btn { background: var(--color-beige); color: var(--color-text); }
+.article-cta .btn:hover { background: #fff; }
+
+.next-article {
+  background: var(--color-bg-sub); padding: 80px 0; border-top: 1px solid var(--color-line);
+}
+.next-article .container { display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
+.next-article .label { font-family: var(--font-serif); font-size: 12px; letter-spacing: 0.3em; color: var(--color-text-mute); margin-bottom: 8px; display: block; }
+.next-article a.next-link { font-family: var(--font-serif); font-size: clamp(20px, 2.5vw, 28px); color: var(--color-text); display: flex; align-items: center; gap: 18px; line-height: 1.5; }
+.next-article a.next-link:hover { color: var(--color-forest); }
+.next-article .back { font-family: var(--font-serif); font-size: 13px; letter-spacing: 0.2em; color: var(--color-text-mute); border-bottom: 1px solid var(--color-line); padding-bottom: 4px; }
+.next-article .back:hover { color: var(--color-text); border-bottom-color: currentColor; }
+
+@media (max-width: 720px) {
+  .article-hero { height: 70vh; min-height: 420px; }
+  .article-hero .container { padding-bottom: 50px; padding-top: 100px; }
+  .article-body { padding: 60px 0; }
+}
+
+/* =====================================================================
+   ハイブリッド層（2026-08-03）
+   文字＝星野リゾート準拠（Noto Sans JP・行間1.8・字間は詰めない）
+   画像の並べ方＝Airbnb準拠（角丸カード・自動折返しグリッド・白いピルバッジ）
+   色は一切変更していない。
+   ページ固有の <style> は shared.css より後勝ちなので、ここで上書きする。
+   ===================================================================== */
+h1, h2, h3, h4,
+.hero-title, .owner-hero-title, .page-head h1, .article-hero h1 {
+  font-family: var(--font-sans);
+  letter-spacing: normal;
+  font-weight: 700;
+  line-height: 1.4;
+}
+/* 和文エディトリアル特有の「広すぎる字間」を通常値へ（星野リゾート コーポレートと同じ ≒0.02em） */
+.eyebrow, .breadcrumb, .count, .filter-bar .container, .filter-bar button,
+.listing-meta, .feature-num, .footer-col h4, .hero-eyebrow, .owner-hero-eyebrow,
+.hero-issue, .hero-caption, .hero-scroll, .owner-hero-caption,
+.article-hero .meta, .article-body h2::before, .article-body figcaption,
+.article-body blockquote cite, .spec h3, .spec dt,
+.next-article .label, .next-article .back, .next-article a.next-link,
+.reason-card .reason-tag, .strength-item .num, .pillar .pillar-num,
+.pillar .pillar-tags span, .flow-step .flow-num, .flow-step h4,
+.case-card .case-tags span, .case-card .case-result,
+.testimonial .who, .consult-side li, .consult-side li::before,
+.consult-form .field label, .consult-form .field label .req,
+.consult-form .field label .opt, .faq-question .q-mark, .legal-body h2 {
+  letter-spacing: 0.02em;
+}
+.eyebrow::before, .eyebrow::after, .hero-eyebrow::before, .owner-hero-eyebrow::before { content: none; }
+.eyebrow, .hero-eyebrow, .owner-hero-eyebrow { font-weight: 600; font-size: 13px; }
+
+/* --- 画像・面はすべて角丸に（Airbnbの基本語彙） --- */
+.article-body figure img,
+.case-card .case-media,
+.testimonial img,
+.spec, .article-cta, .case-card, .testimonial, .pillar, .reason-card,
+.flow-step, .consult-form, .consult-thanks, .crosslink-banner,
+.strength-item, .faq-answer-inner {
+  border-radius: var(--radius-lg);
+}
+.case-card .case-media { overflow: hidden; }
+
+/* --- 一覧グリッド：自動折り返しの等幅カード --- */
+.archive-grid {
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important;
+  gap: 36px 20px !important;
+}
+@media (max-width: 560px) {
+  .archive-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)) !important; gap: 28px 16px !important; }
+}
+
+/* --- フィルターはAirbnbのピル型チップに --- */
+.filter-bar button {
+  border-radius: var(--radius-pill);
+  padding: 9px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--font-sans);
+}
+.filter-bar .container { font-size: 14px; font-family: var(--font-sans); }
+.filter-bar .label { font-weight: 600; }
+
+/* --- ページ見出し --- */
+.page-head h1 { line-height: 1.4; font-weight: 700; }
+.page-head .breadcrumb, .owner-breadcrumb-strip .breadcrumb { font-family: var(--font-sans); font-size: 14px; }
+.page-head .count { font-family: var(--font-sans); font-size: 15px; }
+
+/* ページ固有CSSの方が詳細度が高い箇所を、同じ深さで明示的に上書きする
+   （パンくず・小見出し・タグ・フォームのラベル等に 0.3em の字間が残っていたため） */
+.page-head .breadcrumb, .page-head .breadcrumb a, .page-head .count, .page-head .count strong,
+.owner-breadcrumb-strip .breadcrumb, .owner-breadcrumb-strip .breadcrumb a, .owner-breadcrumb-strip .breadcrumb span,
+.contact-head .breadcrumb, .contact-head .breadcrumb a, .contact-head .breadcrumb span,
+.legal-hero .breadcrumb, .legal-hero .breadcrumb a, .legal-hero .breadcrumb span, .legal-hero .updated,
+.hero-title .small, .owner-hero-title .small,
+.btn.owner-hero-cta, .btn.hero-cta,
+.reason-card .reason-tag,
+.consult-side h3, .contact-side h3,
+.contact-form .field label, .contact-form .field label .req, .contact-form .field label .opt,
+.consult-form .field label, .consult-form .field label .req, .consult-form .field label .opt {
+  letter-spacing: 0.02em;
+}
+
+/* --- 本文まわり --- */
+.article-body .lead { font-family: var(--font-sans); line-height: 1.9; letter-spacing: 0.02em; }
+.article-body h2 { line-height: 1.4; }
+.article-body p { font-size: 16px; line-height: 1.9; }
+.article-body blockquote { font-family: var(--font-sans); letter-spacing: 0.02em; line-height: 1.7; font-weight: 500; }
+.article-body figcaption { font-family: var(--font-sans); font-size: 13px; }
+.spec dt, .spec dd { font-family: var(--font-sans); }
+.spec dd { font-size: 15px; }
+.next-article a.next-link { font-family: var(--font-sans); font-weight: 600; }
+
+/* --- フォームの入力欄もAirbnbの角丸ボックスに --- */
+.consult-form .field input, .consult-form .field select, .consult-form .field textarea,
+.contact-form .field input, .contact-form .field select, .contact-form .field textarea {
+  border-radius: var(--radius-sm);
+}
+
+/* =====================================================================
+   取材記事（CASE）用の追加（2026-09・記事09から）
+   実写真に縦位置があること・短い発言が多いこと・INFORMATIONが複数施設に
+   またがることへの対応。色トークンは追加・変更していない。
+   ===================================================================== */
+.article-body .hero-note { font-size: 13px; color: var(--color-text-mute); margin: -40px 0 48px; line-height: 1.8; }
+.article-body figure.is-portrait { max-width: 360px; margin-left: auto; margin-right: auto; }
+.article-body figure.is-portrait img { aspect-ratio: 9/16; }
+.article-body .voice {
+  font-weight: 500; font-size: 17px; line-height: 1.85;
+  padding-left: 20px; border-left: 2px solid var(--color-guest);
+  margin: 32px 0;
+}
+.spec .spec-sub { font-weight: 700; font-size: 15px; margin: 40px 0 12px; color: var(--color-text); }
+.spec .spec-sub:first-of-type { margin-top: 0; }
+.spec a { color: var(--color-guest-deep); text-decoration: underline; text-underline-offset: 3px; word-break: break-all; }
+.article-note {
+  font-size: 13px; line-height: 1.9; color: var(--color-text-mute);
+  margin: 48px 0 0; padding-top: 24px; border-top: 1px solid var(--color-line);
+}
+@media (max-width: 720px) {
+  .article-body .hero-note { margin-top: -8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header is-hero" id="siteHeader">
+  <div class="container header-inner">
+    <a href="../index.html" class="logo" aria-label="かくれ宿 ホームへ">
+      <img class="logo-img" src="../assets/logo.jpg" alt="かくれ宿 ロゴ" />
+      <span class="logo-mark">かくれ宿 / CHIBA</span>
+    </a>
+    <nav class="nav" id="siteNav">
+      <a href="../articles.html">宿をさがす</a>
+      <a href="../for-owners.html">宿のオーナー様へ</a>
+      <a href="../index.html#newsletter" class="nav-cta">メルマガ登録</a>
+      <a href="../en/articles.html" class="nav-lang" lang="en" aria-label="English version">EN</a>
+    </nav>
+    <button class="hamburger" id="hamburger" type="button" aria-label="サイトマップを開く" aria-expanded="false" aria-controls="siteMenu">
+      <span class="hamburger-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="hamburger-label">メニュー</span>
+    </button>
+  </div>
+</header>
+
+<!-- =====================================================
+     SITEMAP — ヘッダーの ☰ で開くページ一覧
+     ・ページ単位まで。ページ内の見出しへのリンクは出さない（多すぎて選べなくなるため）
+     ・グループの先頭に「誰向けか」を必ず1行書く
+     ・to B のグループには is-host を付けて茶にする（色の役割は shared.css 参照）
+     ===================================================== -->
+<div class="sitemap" id="siteMenu" role="dialog" aria-modal="true" aria-label="サイトマップ">
+  <div class="container sitemap-inner">
+
+    <div class="sitemap-head">
+      <a href="../index.html" class="logo" aria-label="かくれ宿 ホームへ">
+        <img class="logo-img" src="../assets/logo.jpg" alt="かくれ宿 ロゴ" />
+        <span class="logo-mark">かくれ宿 / CHIBA</span>
+      </a>
+      <a href="../en/articles.html" class="sitemap-lang" lang="en">English</a>
+      <button type="button" class="sitemap-close">閉じる <span aria-hidden="true">✕</span></button>
+    </div>
+
+    <div class="sitemap-groups">
+
+      <div class="sitemap-group">
+        <h2>宿をさがす</h2>
+        <p class="who">泊まってみたい方・読みものとして楽しみたい方へ</p>
+        <ul>
+          <li><a href="../articles.html">千葉の隠れ宿 一覧<span class="note">掲載中の全8軒をまとめて見る</span></a></li>
+          <li><a href="../index.html#newsletter">新着メールを受け取る<span class="note">無料・月1〜2回・いつでも解除できます</span></a></li>
+        </ul>
+        <p class="sitemap-areas-label">エリアからさがす</p>
+        <div class="sitemap-areas">
+          <a href="../articles.html?area=tateyama">館山・南房総</a>
+          <a href="../articles.html?area=isumi">いすみ・外房</a>
+          <a href="../articles.html?area=yourou">大多喜・養老</a>
+          <a href="../articles.html?area=sawara">香取・佐原</a>
+          <a href="../articles.html?area=kujukuri">九十九里</a>
+          <a href="../articles.html?area=kanaya">金谷・内房</a>
+        </div>
+      </div>
+
+      <div class="sitemap-group is-host">
+        <h2>宿を営む方へ</h2>
+        <p class="who">宿のオーナー様・ご家族の方へ。取材も掲載も、支援もすべて無料です</p>
+        <ul>
+          <li><a href="../contact.html">取材・掲載のご相談<span class="note">「うちの宿を紹介してほしい」はこちら</span></a></li>
+          <li><a href="../for-owners.html">宿の価値向上サポート<span class="note">事業承継を見据えて、今のうちに宿の価値を高めたい方へ</span></a></li>
+        </ul>
+      </div>
+
+      <div class="sitemap-group">
+        <h2>かくれ宿について</h2>
+        <p class="who">どんなメディアなのかを知りたい方へ</p>
+        <ul>
+          <li><a href="../index.html">トップページ</a></li>
+          <li><a href="../index.html#about">このメディアについて<span class="note">なぜ隠れた宿だけを紹介するのか</span></a></li>
+        </ul>
+      </div>
+
+      <div class="sitemap-group">
+        <h2>きまり</h2>
+        <p class="who">ご利用にあたって</p>
+        <ul>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../tokushoho.html">特定商取引法に基づく表記</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="sitemap-foot">
+      <p>大手の宿泊掲載サイトには載っていない、千葉県内に眠る"隠れた宿"を、静かに発掘・紹介するウェブメディアです。</p>
+      <div class="social-icons is-dark" aria-label="SNS">
+        <a class="social-icon" href="https://www.instagram.com/kakure_yado" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a class="social-icon" href="https://x.com/kakure_yado" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.53 3H20.5l-6.49 7.42L21.75 21h-6.02l-4.71-6.16L5.6 21H2.62l6.95-7.94L2.25 3h6.18l4.26 5.63L17.53 3Zm-1.06 16.2h1.66L7.62 4.7H5.84L16.47 19.2Z"/></svg></a>
+        <a class="social-icon" href="https://www.facebook.com/share/1cBxZJMGCn/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a class="social-icon" href="https://note.com/kakure_yado" target="_blank" rel="noopener" aria-label="note"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 4.5h12.7c2.04 0 4.1 1.56 4.1 4.1v10.9H15.5V9.85c0-1.05-.6-1.65-1.45-1.65-.65 0-1.4.4-2 .95v10.35H6.95V8.05c0-.45-.05-.65-.5-.65H3.6V4.5Z"/></svg></a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<section class="article-hero">
+  <img src="../assets/img/09-onre/onre-01-ivy-entrance.jpg" alt="蔦に覆われた、若宮団地の空き家の玄関" />
+  <div class="container">
+    <div class="meta">
+      <span>CASE 001</span><span class="sep"></span>
+      <span>ICHIHARA · CHIBA</span><span class="sep"></span>
+      <span>2026.08</span>
+    </div>
+    <h1>一年に、一軒ずつ</h1>
+    <p class="subtitle">市原・若宮団地。団地を調べる仕事をしていた人が、いまは団地の空き家を生き返らせている。</p>
+  </div>
+</section>
+
+<article class="article-body container">
+  <p class="hero-note">トップ写真：この夏に手に入れたばかりの「四軒目」。玄関は蔦に覆われていた</p>
+
+  <p class="lead">千葉県市原市、若宮団地。JR内房線・八幡宿駅から歩ける場所にある住宅団地だ。<br />ここに、築五十年を超えるテラスハウスが、いまも横に連なって建っている。鉄筋コンクリートの二階建てで、一住戸ずつに玄関がある。団地全体では、二千世帯を超える大きな団地だ。<br /><br />その一角に、大きなガラス窓のカフェがある。<br />もとは、相続のあと空き家になり、十年間、誰も住んでいなかった家だった。</p>
+
+  <h2 data-num="01">新築マンションを売る仕事から、団地を調べる仕事へ</h2>
+  <p><strong>小野千景さん</strong>。市原市の出身。</p>
+  <p>大学を出て大手建設会社に入り、約十七年勤めた。新築マンションを販売する仕事から始まり、最後に携わっていたのは、築年数の経った住宅団地を調査する仕事だった。</p>
+  <p>結婚を機に、地元の市原へ戻ってきた。暮らし始めたのは、若宮地区。二〇一四年のことだ。<br />勤め先は都内、暮らしは市原。出産、子育てをしながら、団地を調べる仕事を続けていた。</p>
+  <p>団地の中を歩いていると、空き家が目に入ってくる。<br />在職中に知り合った市原の建築家・黒澤さんと、いろいろ話すうちに、気持ちが固まっていった。</p>
+  <p>子育てをしながらの会社員生活に、迷いのあった時期だった。空き家活用の話になったとき、「出来るかも……。やってみよう」と、勢いのまま飛び込んだ。</p>
+  <p class="voice">最初は、「自分でどうにかしなきゃいけないっていう、勝手な使命感に駆られて」</p>
+  <p>二児の母で、会社員。そのうえで会社を辞め、二〇二二年、On Re. Project を立ち上げた。<br /><strong>団地を調べていた人が、団地の空き家を活用する人になった。</strong></p>
+  <p>はじめてみると、「団地再生」なんておこがましかった、と彼女は言う。自分にできることなんて、ない。<br />だから、視点を変えた。</p>
+  <p>環境を変えてみると、忙しさは変わらないのに、気持ちには前より余裕が生まれたという。</p>
+  <p>On Re. Project の「On Re.」には、<strong>Ono</strong> が <strong>Re</strong>novation する、という意味がこめられている。<strong>Only</strong>——唯一無二、という意味は、あとから加わった。</p>
+
+  <figure>
+    <img src="../assets/img/09-onre/onre-02-ono.jpg" alt="On Re.cafe の店内で話す小野千景さん" loading="lazy" />
+    <figcaption>小野千景さん。On Re.cafe で話を聞いた</figcaption>
+  </figure>
+
+  <h2 data-num="02">この家は、壊せない</h2>
+  <p>若宮団地の家には、少し変わった事情がある。</p>
+  <p>一戸建てとテラスハウスでできた住宅地で、テラスハウスは鉄筋コンクリートの連棟だ。家が横につながっていて、<strong>全体でひとつの構造体になっている</strong>。</p>
+  <p>木造の一戸建てのように、簡単には壊せない。真ん中の一戸だけを壊すことは、そもそもできない。端の一戸を壊そうとしても、全戸の同意がいる。隣の壁の補強も必要になり、構造的には本来できないはずだという。</p>
+  <p>壊して建て替える、という普通の選択肢がない。<br />だから、空き家は空き家のまま残り続ける。</p>
+  <p>けれど、彼女の見方は逆だった。<br />しっかりした住宅団地で、インフラもひととおり整っている。それなのに、どこか廃れて見える。</p>
+
+  <blockquote>
+    ちょっと変えれば復活できるかもしれない。そういうポテンシャルが、この団地や地域にある
+    <cite>— 小野千景さん</cite>
+  </blockquote>
+
+  <p><strong>壊せない家は、使うしかない。使えば、生き返る。</strong></p>
+  <p>最初の一軒は、住民の方に喜んでもらえるものをつくりたくて、<strong>カフェ（店舗兼用住宅）</strong>にした。</p>
+  <p>床と天井を抜いたうえで構造の計算をしてもらい、補強してから改修した。抜いたのは、二階の床と天井。そこが吹き抜けになり、上から光が落ちてくる。外から見ると、屋根にちょこんとした出っ張りがある。</p>
+  <p>壁は打ちっぱなしのコンクリート。テーブルや椅子、デッキの木材は、台風十九号の被害を受けて倉庫に置かれたままだったもの。家を壊したときに出た廃材も、テーブルになった。<br />以前の玄関扉だった場所は、テイクアウトのカウンターになっている。奥には小上がり、外には緑の中庭。</p>
+  <p>解体は、できるところまで自分たちの手でやった。古材や古家具も、使えそうなものは残らず生かした。<br />現場には、地域の人と学生たちがいた。二〇二二年十二月に着工し、翌年四月、店は開いた。<br />それが <strong>On Re.cafe</strong>。</p>
+  <p>吹き抜けから、やわらかく陽が入る。座っていると、ここが十年間の空き家だったことを、つい忘れる。</p>
+
+  <figure>
+    <img src="../assets/img/09-onre/onre-03-album.jpg" alt="On Re.cafe の机で、アルバムを前に話す小野千景さん" loading="lazy" />
+    <figcaption>アルバム「On Re.cafeの軌跡」。空き家だったころからの写真が収まっている</figcaption>
+  </figure>
+
+  <p>店内には、アルバムが置いてある。「On Re.cafeの軌跡」。空き家だったころから、カフェになるまでの写真が順番に収まっている。一枚目は、蔦に覆われた玄関の写真だ。所有者に宛てた手紙が、そこに挟まっている。</p>
+  <p>厨房に立つのは、管理栄養士の資格を持つ実の姉。高齢の人が多い団地だから、「発酵」を軸にしたメニューを出す。一番人気は、塩麹で漬けた鶏の唐揚げ。イベントでも大人気だ。</p>
+  <p class="voice">「若宮団地に住む人が、気軽に集える場所でありたい」</p>
+  <p>ただ、カフェというだけで、団地に住む高齢の人には入りづらい場所になる。<br />そこで二〇二五年一月からは、月に二回、朝の時間に「Orange cafe」を開いている。専門家が必ずいて、座ったままできるヨガや、本の読み聞かせをする。</p>
+  <p>病気になっても、住み慣れた地域で、楽しく暮らす。それができる状況をつくりたい、という。</p>
+  <p class="voice">「認知症の有る無しにかかわらず、どんな方にも気軽に来てもらいたい」</p>
+
+  <h2 data-num="03">玄関に、手紙を挟んだ</h2>
+  <p>では、誰も住んでいない家の持ち主を、どうやって見つけるのか。</p>
+  <p>登記を上げて、所有者の住所を調べる。そこへ直接、手紙を送る。<br />最初の三軒は、どれも手紙から交渉にこぎつけて、手に入れた。</p>
+  <p>しかし実際には、<strong>登記が変わっていない家が多い</strong>。名義が亡くなった親のままだと、追いかける先がない。</p>
+  <p>On Re.cafe になった家が、それだった。<br />持ち主は都内に住んでいて、相続の登記はされていなかった。家が空き家になって、十年が経っていた。</p>
+  <p>家の中は、昨日まで人がいたかのような雰囲気が残っていた。一方で、庭の草は伸び放題。近所の人たちが時々集まって刈っていたそうだ。のちに話を聞くと、毎年毎年、苦労していたという。</p>
+  <p>だから彼女は、その家の<strong>玄関に、手紙を挟んだ</strong>。</p>
+  <p>そして二週間後には、もう返事が届いた。彼女は、強い縁を感じたという。<br />持ち主は話を丁寧に聞き、理解し、快くこの家を譲ってくれた。</p>
+
+  <blockquote>
+    わけのわからない手紙を送って、と笑われることもあります。でも、その“わけのわからない手紙”が、実際に相続人の方に届いているケースもあるんです。だから私は、これからも信じて、手紙を送り続けます
+    <cite>— 小野千景さん</cite>
+  </blockquote>
+
+  <p>団地を歩いても、空き家かどうか分からない家もある。</p>
+  <p class="voice">「玄関だけ見ても、空き家だと分からない家がいっぱいある」<br />「空き家に見えて、お住まいになっている家もある」</p>
+  <p>だから、とても慎重に見極める。近隣の方に聞いてみることもある。<br />実際に何軒空いているのかは、住んでいる人にも分からない。</p>
+
+  <figure class="is-portrait">
+    <img src="../assets/img/09-onre/onre-04-open-door.jpg" alt="開いた四軒目の玄関" loading="lazy" />
+    <figcaption>四軒目の玄関。開けると、暮らしの跡がそのまま残っていた</figcaption>
+  </figure>
+
+  <h2 data-num="04">物件が先で、使う人は後</h2>
+  <p>二軒目は、三人でシェアして暮らすシェアハウス <strong>On Re.House</strong> になった。</p>
+  <p>黒澤さんのアイデアで、残置物の片付けや設計の段階から、SNSで入居者を募った。集まったのは、二十代の社会人三人。どんな家にしたいかを話し合って、間取りを決めた。解体も内装も、一緒に手を動かした。二〇二四年二月に完成。<br />入居者は入れ替わりながら、いまも暮らしが続いている。</p>
+  <p>三軒目は、美容サロンに貸している。その庭は、これからハーブガーデンになる予定だ。<br />そして、所有する四軒目。この夏に手に入れたばかりだ。</p>
+
+  <figure class="is-portrait">
+    <img src="../assets/img/09-onre/onre-05-cleanup.jpg" alt="四軒目の室内で、荷物を袋に詰めて運び出す様子" loading="lazy" />
+    <figcaption>所有する四軒目の片付け。少しずつ、袋に詰めて運び出していく</figcaption>
+  </figure>
+
+  <p>並べてみると、順番が普通と逆であることに気づく。<br />やりたい人がいたから物件を探した、のではない。<br /><strong>先に建物を手に入れて、あとから使う人を探している。</strong></p>
+  <p class="voice">「もちろん、こういうのをやりたいと言われたら考えますけど、今までのは全部、物件がある、じゃあ何しよう、です」</p>
+  <p>四軒目についても、イベントの出店で出会った焼き菓子屋さんと話をしたことがある。レンタルキッチンでやっていて、そろそろ工房が欲しい、という話だった。<br />この話はまとまらなかったが、いまも、住みながら工房やアトリエとして使いたい人を探している。</p>
+  <p>若宮団地は、基本的に住まいであることが前提の土地だ。だからカフェも、一階が店で、二階には住める<strong>店舗兼用住宅</strong>になっている。<br />「住みながらの店」「住みながらの工房」が、ここでの基本形になる。</p>
+  <p>三軒目の庭「On Re.Garden」の管理人は、この団地に住む彼女の弟の知り合いだった。その人がノートに「いつかハーブガーデンをやりたい」と夢を書いていて、それを見つけて声をかけた。</p>
+  <p>この活動を始めて、世間は狭いと体感しているという。</p>
+  <p class="voice">「みんな、つながっている」</p>
+  <p>現に、この日いっしょに訪ねた学生とも、知り合いだった。</p>
+  <p>彼女の活動は、家の再生だけでもない。団地の専門店街で「リバイバルマーケット」を開いている。賑わいを戻したい、という思いを込めて始めたものだ。いまは開催を年二回（一月と七月）にしている。自治会主催のイベントにも、出店する。</p>
+  <p>On Re. Project を三年やって、変わったことがある。<br />最初は自分で手紙を挟んで探していたのが、いまは On Re.cafe に来てくれたお客さんのほうから「実は若宮に空き家を持っている」と声がかかる。</p>
+  <p class="voice">「若宮に住民を増やすというよりは、若宮団地と多様に関わる若い世代を増やしていきたい」</p>
+  <p class="voice">「自分のやりたいことを、この場所でやらせてもらっている。感謝しながら、楽しんでやっていきたい」</p>
+  <p>ひとりでやっているから、ペースは変えられない。</p>
+  <p class="voice">「今ぐらいのペースで。一年に一住戸ぐらいで」</p>
+
+  <h2 data-num="05">家から、光が出ている</h2>
+  <p>これから若宮団地をどんな場所にしたいか、と聞いた。</p>
+
+  <blockquote>
+    マンション販売のチラシによくあるじゃないですか。まちから光が出てる、家から光が出てる。ああいうイメージです。若宮に、カフェがあって、シェアハウスがあって。そのほかにも店舗兼用住宅が点々とあって、見ているだけで賑やかというか、明るいようなまち、行きたくなるまちになるのが目標です
+    <cite>— 小野千景さん</cite>
+  </blockquote>
+
+  <p class="voice">「市内のどこよりも若宮団地が一番楽しい！ってくらいにしたい」</p>
+  <p>ただ、いまはもう、彼女の活動は若宮団地だけの話ではないという。</p>
+  <p class="voice">「いろんな地域に空き家がいっぱいあるから、どこの地域でも通用する空き家活用の方法を考えられたら」</p>
+  <p>空き家だけでもない。耕作放棄地にも、興味があるという。</p>
+  <p>そして、所有する四軒目。まだ用途は決まっていない。<br />その候補のひとつとして、彼女はこう言った。</p>
+
+  <blockquote>
+    きれいにして、宿泊施設として作ってやってみるのも、ひとつかなと
+    <cite>— 小野千景さん</cite>
+  </blockquote>
+
+  <p><strong>壊せない家が、泊まれる家になるかもしれない。</strong><br />その日が来たら、この記事の続きを書きに行く。</p>
+
+  <figure>
+    <img src="../assets/img/09-onre/onre-06-light.jpg" alt="四軒目の室内。開けた戸口から光が差し込む" loading="lazy" />
+    <figcaption>閉ざされていた家に、光が入る</figcaption>
+  </figure>
+
+  <div class="spec">
+    <h3>INFORMATION</h3>
+
+    <p class="spec-sub">On Re.cafe</p>
+    <dl>
+      <dt>所在地</dt><dd>千葉県市原市若宮4-17-13</dd>
+      <dt>アクセス</dt><dd>JR八幡宿駅から小湊バス「労災病院行き（若宮団地経由）」若宮団地下車 徒歩9分（Googleマップでの検索がおすすめです）</dd>
+      <dt>営業時間</dt><dd>10:00〜16:00（ランチL.O. 14:00／L.O. 15:30）</dd>
+      <dt>定休日</dt><dd>木曜・日曜・祝日（ほかに臨時休業あり。最新の情報はInstagramでご確認ください）</dd>
+      <dt>Instagram</dt><dd><a href="https://www.instagram.com/on.re.cafe/" target="_blank" rel="noopener">@on.re.cafe</a></dd>
+    </dl>
+
+    <p class="spec-sub">Orange cafe（認知症カフェ・お独り様カフェ）</p>
+    <dl>
+      <dt>開催</dt><dd>第1・第3月曜 9:00〜11:00／On Re.cafe にて（祝日の場合は休み）</dd>
+    </dl>
+
+    <p class="spec-sub">On Re. Project</p>
+    <dl>
+      <dt>Instagram</dt><dd><a href="https://www.instagram.com/on_re.pj/" target="_blank" rel="noopener">@on_re.pj</a></dd>
+      <dt>マーケット</dt><dd>若宮専門店街リバイバルマーケット（年2回・1月と7月）</dd>
+    </dl>
+
+    <p class="spec-sub">BUILDING</p>
+    <dl>
+      <dt>所在</dt><dd>千葉県市原市 若宮団地（築50年超・2,000世帯以上）</dd>
+      <dt>団地の造成</dt><dd>千葉県住宅供給公社</dd>
+      <dt>建物形式</dt><dd>一戸建てとテラスハウス（連棟式低層住宅・鉄筋コンクリート造）</dd>
+      <dt>改修の設計</dt><dd>黒澤健一（建築家・市原）</dd>
+      <dt>現在の用途</dt><dd>On Re.cafe（店舗兼用住宅・2023.4〜）<br />On Re.House（シェアハウス・2024.2〜）<br />美容サロン（ハーブガーデンは計画中）<br />四軒目は用途を検討中（使ってみたい方は、On Re. Project までお気軽にお問い合わせください）</dd>
+      <dt>そのほか</dt><dd>セカンドハウス／コレクションルーム「On Re.Base」も作業中（所有物件ではありません）</dd>
+    </dl>
+  </div>
+
+  <div class="article-cta">
+    <h3>On Re.cafe に行ってみる</h3>
+    <p>市原市・若宮団地の奥、テラスハウスの一角にあります。<br />かつて賑わいの中心だった専門店街では、<br />リバイバルマーケットも開催中です（年2回・1月と7月）。</p>
+    <a href="https://www.instagram.com/on.re.cafe/" class="btn" target="_blank" rel="noopener">Instagramで見る <span class="arrow">→</span></a>
+  </div>
+
+  <p class="article-note">かくれ宿CHIBAは、千葉の隠れた宿を紹介するメディアです。運営している僕たちは、千葉で体験型の宿をつくろうとしている側でもあります。今回うかがったのは宿ではありませんが、「使われなくなった建物を、どう次につなぐか」という点で、宿の話とまっすぐつながっていました。<br />（取材：2026年8月）</p>
+</article>
+
+<section class="next-article">
+  <div class="container">
+    <div>
+      <span class="label">MORE</span>
+      <a class="next-link" href="../articles.html">千葉の隠れ宿 一覧を見る <span>→</span></a>
+    </div>
+    <a class="back" href="../index.html">← トップへ戻る</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo" aria-label="かくれ宿 ホームへ">
+      <img class="logo-img" src="../assets/logo.jpg" alt="かくれ宿 ロゴ" />
+      <span class="logo-mark">かくれ宿 / CHIBA</span>
+    </a>
+        <p>大手の宿泊掲載サイトには載っていない、千葉県内に眠る"隠れた宿"を、静かに発掘・紹介するウェブメディア。</p>
+          <div class="footer-social social-icons is-dark" aria-label="SNS">
+      <a class="social-icon" href="https://www.instagram.com/kakure_yado" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a class="social-icon" href="https://x.com/kakure_yado" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.53 3H20.5l-6.49 7.42L21.75 21h-6.02l-4.71-6.16L5.6 21H2.62l6.95-7.94L2.25 3h6.18l4.26 5.63L17.53 3Zm-1.06 16.2h1.66L7.62 4.7H5.84L16.47 19.2Z"/></svg></a>
+      <a class="social-icon" href="https://www.facebook.com/share/1cBxZJMGCn/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      <a class="social-icon" href="https://note.com/kakure_yado" target="_blank" rel="noopener" aria-label="note"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 4.5h12.7c2.04 0 4.1 1.56 4.1 4.1v10.9H15.5V9.85c0-1.05-.6-1.65-1.45-1.65-.65 0-1.4.4-2 .95v10.35H6.95V8.05c0-.45-.05-.65-.5-.65H3.6V4.5Z"/></svg></a>
+    </div>
+      </div>
+      <div class="footer-col"><h4>MEDIA</h4><ul>
+        <li><a href="../articles.html">宿一覧</a></li>
+        <li><a href="../index.html#about">メディアについて</a></li>
+        <li><a href="../index.html#newsletter">メルマガ登録</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>FOR&nbsp;OWNERS</h4><ul>
+        <li><a href="../for-owners.html">宿の価値向上サポート</a></li>
+        <li><a href="../contact.html">取材の依頼</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>CONTACT</h4><ul>
+        <li><a href="../contact.html">お問い合わせ</a></li>
+        <li><a href="../privacy.html">プライバシーポリシー</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 かくれ宿 千葉. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var header = document.getElementById('siteHeader');
+  function up(){ var y = window.scrollY||0; header.classList.toggle('is-scrolled', y>20); header.classList.toggle('is-hero', y < 400); }
+  up(); window.addEventListener('scroll', up, {passive:true});
+})();
+</script>
+<script src="../assets/menu.js"></script>
+</body>
+</html>
