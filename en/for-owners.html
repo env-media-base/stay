@@ -1338,72 +1338,12 @@ h1, h2, h3, h4,
       </aside>
 
       <div class="consult-form reveal">
-        <form class="consult-form-fields" id="consultForm" name="owner-consult" method="POST" data-mailto="consult" data-done="consultThanks" data-scope="#consult">
-
-          <div class="field">
-            <label>Inn Name <span class="req">Required</span></label>
-            <input type="text" name="inn-name" required />
-          </div>
-
-          <div class="field-row">
-            <div class="field">
-              <label>Location (area within Chiba) <span class="req">Required</span></label>
-              <input type="text" name="area" placeholder="e.g. Tateyama, Isumi" required />
-            </div>
-            <div class="field">
-              <label>Years in Business <span class="opt">Optional</span></label>
-              <input type="text" name="years" placeholder="e.g. 30 years" />
-            </div>
-          </div>
-
-          <div class="field-row">
-            <div class="field">
-              <label>Your Name (owner or contact person) <span class="req">Required</span></label>
-              <input type="text" name="name" required />
-            </div>
-            <div class="field">
-              <label>Phone Number <span class="opt">Optional</span></label>
-              <input type="tel" name="tel" />
-            </div>
-          </div>
-
-          <div class="field">
-            <label>Email Address <span class="req">Required</span></label>
-            <input type="email" name="email" required />
-          </div>
-
-          <div class="field">
-            <label>Support You're Interested In <span class="opt">Optional — select any that apply</span></label>
-            <div class="check-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:10px 24px; margin-top:6px;">
-              <label class="check" style="display:flex; gap:10px; align-items:flex-start; font-family:var(--font-sans); font-size:14px; line-height:1.6; color:var(--color-text); cursor:pointer; letter-spacing:0;"><input type="checkbox" name="interest" value="Inn-making from a younger perspective" style="margin-top:3px;" /> Inn-making from a younger perspective</label>
-              <label class="check" style="display:flex; gap:10px; align-items:flex-start; font-family:var(--font-sans); font-size:14px; line-height:1.6; color:var(--color-text); cursor:pointer; letter-spacing:0;"><input type="checkbox" name="interest" value="Social media &amp; PR support" style="margin-top:3px;" /> Social media &amp; PR support</label>
-              <label class="check" style="display:flex; gap:10px; align-items:flex-start; font-family:var(--font-sans); font-size:14px; line-height:1.6; color:var(--color-text); cursor:pointer; letter-spacing:0;"><input type="checkbox" name="interest" value="Going-digital support" style="margin-top:3px;" /> Going-digital support (online booking, etc.)</label>
-              <label class="check" style="display:flex; gap:10px; align-items:flex-start; font-family:var(--font-sans); font-size:14px; line-height:1.6; color:var(--color-text); cursor:pointer; letter-spacing:0;"><input type="checkbox" name="interest" value="Coverage &amp; storytelling" style="margin-top:3px;" /> Coverage &amp; storytelling</label>
-              <label class="check" style="display:flex; gap:10px; align-items:flex-start; font-family:var(--font-sans); font-size:14px; line-height:1.6; color:var(--color-text); cursor:pointer; letter-spacing:0;"><input type="checkbox" name="interest" value="Future succession planning" style="margin-top:3px;" /> Future succession planning</label>
-              <label class="check" style="display:flex; gap:10px; align-items:flex-start; font-family:var(--font-sans); font-size:14px; line-height:1.6; color:var(--color-text); cursor:pointer; letter-spacing:0;"><input type="checkbox" name="interest" value="Not sure yet" style="margin-top:3px;" /> Not sure yet — I'd like to talk it over</label>
-            </div>
-          </div>
-
-          <div class="field">
-            <label>What's on Your Mind <span class="req">Required</span></label>
-            <textarea name="message" required placeholder="e.g. The building is old, but I want younger guests to come. I'd like to try social media but don't know where to start. I may pass the inn on someday, so I want to know what I can do now — anything like this."></textarea>
-          </div>
-
-          <div class="field-checkbox">
-            <input type="checkbox" id="agreeOwner" required />
-            <label for="agreeOwner">I agree to the Privacy Policy and to my contact details being used for the purpose of responding to this consultation.</label>
-          </div>
-
-          <div class="submit-row">
-            <button type="submit" class="btn">Book a Free Consultation <span class="arrow">→</span></button>
-            <span class="fine">We reply within 3 business days.</span>
-          </div>
-        </form>
-
-        <div class="consult-thanks" id="consultThanks">
-          <h3>Thank you for reaching out.</h3>
-          <p>We will review your message and reply within 3 business days.<br />Thank you for your patience.</p>
+        <div class="form-cta">
+          <p class="form-cta-lead">You can book a free consultation through a Google Form. It takes about a minute, and we reply within 3 business days. The form is in Japanese, but English is welcome.</p>
+          <a class="btn btn btn-lg" href="https://docs.google.com/forms/d/e/1FAIpQLSeETUW033vC0tlaCbyqaaGW-YMgiCgIcYP9VUdAvr9TXnslrg/viewform?usp=pp_url&entry.1690091772=%E5%AE%BF%E3%81%AE%E7%84%A1%E6%96%99%E7%9B%B8%E8%AB%87%EF%BC%88%E5%AE%BF%E3%81%A5%E3%81%8F%E3%82%8A%E3%83%BBSNS%E3%83%BB%E3%83%8D%E3%83%83%E3%83%88%E4%BA%88%E7%B4%84%E3%83%BB%E4%BA%8B%E6%A5%AD%E6%89%BF%E7%B6%99%E3%81%AA%E3%81%A9%EF%BC%89" target="_blank" rel="noopener">Book a free consultation <span class="arrow">→</span></a>
+          <p class="form-cta-fine">If the form does not open, please email <a href="mailto:kakureyado.official@gmail.com">kakureyado.official@gmail.com</a>.</p>
         </div>
+
       </div>
     </div>
   </div>
@@ -1553,7 +1493,6 @@ h1, h2, h3, h4,
 })();
 </script>
 
-<script src="../assets/mailform.js"></script>
 <script src="../assets/menu.js"></script>
 </body>
 </html>

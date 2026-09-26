@@ -1333,72 +1333,12 @@ h1, h2, h3, h4,
       </aside>
 
       <div class="consult-form reveal">
-        <form class="consult-form-fields" id="consultForm" name="owner-consult" method="POST" data-mailto="consult" data-done="consultThanks" data-scope="#consult">
-
-          <div class="field">
-            <label>宿の名前 <span class="req">必須</span></label>
-            <input type="text" name="inn-name" required />
-          </div>
-
-          <div class="field-row">
-            <div class="field">
-              <label>所在地（千葉県内の地域） <span class="req">必須</span></label>
-              <input type="text" name="area" placeholder="例：館山市、いすみ市" required />
-            </div>
-            <div class="field">
-              <label>創業からの年数 <span class="opt">任意</span></label>
-              <input type="text" name="years" placeholder="例：30年" />
-            </div>
-          </div>
-
-          <div class="field-row">
-            <div class="field">
-              <label>お名前（宿主・ご担当者） <span class="req">必須</span></label>
-              <input type="text" name="name" required />
-            </div>
-            <div class="field">
-              <label>ご連絡先電話番号 <span class="opt">任意</span></label>
-              <input type="tel" name="tel" />
-            </div>
-          </div>
-
-          <div class="field">
-            <label>メールアドレス <span class="req">必須</span></label>
-            <input type="email" name="email" required />
-          </div>
-
-          <div class="field">
-            <label>ご興味のある支援内容 <span class="opt">任意・複数選択可</span></label>
-            <div class="check-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:10px 24px; margin-top:6px;">
-              <label class="check" style="display:flex; gap:10px; align-items:flex-start; font-family:var(--font-sans); font-size:14px; line-height:1.6; color:var(--color-text); cursor:pointer; letter-spacing:0;"><input type="checkbox" name="interest" value="若者目線の宿づくり" style="margin-top:3px;" /> 若者目線の宿づくり</label>
-              <label class="check" style="display:flex; gap:10px; align-items:flex-start; font-family:var(--font-sans); font-size:14px; line-height:1.6; color:var(--color-text); cursor:pointer; letter-spacing:0;"><input type="checkbox" name="interest" value="SNS・広報支援" style="margin-top:3px;" /> SNS・広報支援</label>
-              <label class="check" style="display:flex; gap:10px; align-items:flex-start; font-family:var(--font-sans); font-size:14px; line-height:1.6; color:var(--color-text); cursor:pointer; letter-spacing:0;"><input type="checkbox" name="interest" value="デジタル化支援" style="margin-top:3px;" /> デジタル化支援（ネット予約など）</label>
-              <label class="check" style="display:flex; gap:10px; align-items:flex-start; font-family:var(--font-sans); font-size:14px; line-height:1.6; color:var(--color-text); cursor:pointer; letter-spacing:0;"><input type="checkbox" name="interest" value="取材・魅力発信" style="margin-top:3px;" /> 取材・魅力発信</label>
-              <label class="check" style="display:flex; gap:10px; align-items:flex-start; font-family:var(--font-sans); font-size:14px; line-height:1.6; color:var(--color-text); cursor:pointer; letter-spacing:0;"><input type="checkbox" name="interest" value="将来の事業承継相談" style="margin-top:3px;" /> 将来の事業承継相談</label>
-              <label class="check" style="display:flex; gap:10px; align-items:flex-start; font-family:var(--font-sans); font-size:14px; line-height:1.6; color:var(--color-text); cursor:pointer; letter-spacing:0;"><input type="checkbox" name="interest" value="まだ決まっていない" style="margin-top:3px;" /> まだ決まっていない・相談したい</label>
-            </div>
-          </div>
-
-          <div class="field">
-            <label>現在のお悩み・ご相談したいこと <span class="req">必須</span></label>
-            <textarea name="message" required placeholder="例：建物は古いが、若い人にも来てもらえる宿にしたい。SNSをやってみたいが何から始めればいいか分からない。将来的に誰かに譲ることも考えているので、今のうちにできることを知りたい、など。"></textarea>
-          </div>
-
-          <div class="field-checkbox">
-            <input type="checkbox" id="agreeOwner" required />
-            <label for="agreeOwner">プライバシーポリシーに同意し、ご相談対応の目的でご連絡先を利用することに同意します。</label>
-          </div>
-
-          <div class="submit-row">
-            <button type="submit" class="btn">無料相談に申し込む <span class="arrow">→</span></button>
-            <span class="fine">3営業日以内にご返信いたします。</span>
-          </div>
-        </form>
-
-        <div class="consult-thanks" id="consultThanks">
-          <h3>お申し込みありがとうございます。</h3>
-          <p>内容を確認のうえ、3営業日以内にご返信いたします。<br />しばらくお待ちください。</p>
+        <div class="form-cta">
+          <p class="form-cta-lead">無料相談のお申し込みは、Googleフォームから送れます。入力は1分ほど。内容を確認のうえ、3営業日以内にご返信いたします。</p>
+          <a class="btn btn btn-lg" href="https://docs.google.com/forms/d/e/1FAIpQLSeETUW033vC0tlaCbyqaaGW-YMgiCgIcYP9VUdAvr9TXnslrg/viewform?usp=pp_url&entry.1690091772=%E5%AE%BF%E3%81%AE%E7%84%A1%E6%96%99%E7%9B%B8%E8%AB%87%EF%BC%88%E5%AE%BF%E3%81%A5%E3%81%8F%E3%82%8A%E3%83%BBSNS%E3%83%BB%E3%83%8D%E3%83%83%E3%83%88%E4%BA%88%E7%B4%84%E3%83%BB%E4%BA%8B%E6%A5%AD%E6%89%BF%E7%B6%99%E3%81%AA%E3%81%A9%EF%BC%89" target="_blank" rel="noopener">無料相談を申し込む <span class="arrow">→</span></a>
+          <p class="form-cta-fine">フォームが開かない場合は <a href="mailto:kakureyado.official@gmail.com">kakureyado.official@gmail.com</a> までメールでどうぞ。</p>
         </div>
+
       </div>
     </div>
   </div>
@@ -1548,7 +1488,6 @@ h1, h2, h3, h4,
 })();
 </script>
 
-<script src="assets/mailform.js"></script>
 <script src="assets/menu.js"></script>
 </body>
 </html>

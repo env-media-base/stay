@@ -313,76 +313,12 @@ h1, h2, h3, h4,
       </aside>
 
       <div class="contact-form">
-        <form class="contact-form-fields" id="contactForm" name="inn-contact" method="POST" data-mailto="contact" data-done="thanksMsg" data-scope=".contact-section">
-
-          <div class="field">
-            <label>Inn name <span class="req">Required</span></label>
-            <input type="text" name="inn-name" required />
-          </div>
-
-          <div class="field-row">
-            <div class="field">
-              <label>Location (area within Chiba) <span class="req">Required</span></label>
-              <input type="text" name="area" placeholder="e.g. Tateyama, Isumi" required />
-            </div>
-            <div class="field">
-              <label>Number of rooms <span class="opt">Optional</span></label>
-              <input type="text" name="rooms" placeholder="e.g. 4 rooms" />
-            </div>
-          </div>
-
-          <div class="field-row">
-            <div class="field">
-              <label>Your name (owner or contact person) <span class="req">Required</span></label>
-              <input type="text" name="name" required />
-            </div>
-            <div class="field">
-              <label>Phone number <span class="opt">Optional</span></label>
-              <input type="tel" name="tel" />
-            </div>
-          </div>
-
-          <div class="field">
-            <label>Email address <span class="req">Required</span></label>
-            <input type="email" name="email" required />
-          </div>
-
-          <div class="field-row">
-            <div class="field">
-              <label>Website URL <span class="opt">Optional</span></label>
-              <input type="url" name="website" placeholder="https://" />
-            </div>
-            <div class="field">
-              <label>Social media account <span class="opt">Optional</span></label>
-              <input type="text" name="sns" placeholder="e.g. @your_inn" />
-            </div>
-          </div>
-
-          <div class="field">
-            <label>About your inn — what makes it special <span class="req">Required</span></label>
-            <textarea name="story" required placeholder="Tell us in your own words what kind of inn it is, and what matters most to you."></textarea>
-          </div>
-
-          <div class="field">
-            <label>Anything else <span class="opt">Optional</span></label>
-            <textarea name="other" placeholder="Preferred timing for a visit, anything you're struggling with, and so on"></textarea>
-          </div>
-
-          <div class="field-checkbox">
-            <input type="checkbox" id="agree" required />
-            <label for="agree">I agree to the Privacy Policy and to my contact details being used to respond to this inquiry and consider a feature story.</label>
-          </div>
-
-          <div class="submit-row">
-            <button type="submit" class="btn btn-host">Send <span class="arrow">→</span></button>
-            <span class="fine">We will reply within 3 business days.</span>
-          </div>
-        </form>
-
-        <div class="thanks" id="thanksMsg">
-          <h3>Thank you for your inquiry.</h3>
-          <p>We will read your message carefully and reply within 3 business days.<br />Thank you for your patience.</p>
+        <div class="form-cta">
+          <p class="form-cta-lead">You can reach us through a Google Form. It takes about a minute, and we reply within 3 business days. The form is in Japanese, but please feel free to write in English.</p>
+          <a class="btn btn-host btn-lg" href="https://docs.google.com/forms/d/e/1FAIpQLSeETUW033vC0tlaCbyqaaGW-YMgiCgIcYP9VUdAvr9TXnslrg/viewform?usp=pp_url&entry.1690091772=%E5%8F%96%E6%9D%90%E3%83%BB%E6%8E%B2%E8%BC%89%E3%81%AE%E3%81%94%E7%9B%B8%E8%AB%87" target="_blank" rel="noopener">Open the contact form <span class="arrow">→</span></a>
+          <p class="form-cta-fine">If the form does not open, please email <a href="mailto:kakureyado.official@gmail.com">kakureyado.official@gmail.com</a>.</p>
         </div>
+
       </div>
 
     </div>
@@ -428,7 +364,6 @@ h1, h2, h3, h4,
   </div>
 </footer>
 
-<script src="../assets/mailform.js"></script>
 <script src="../assets/menu.js"></script>
 </body>
 </html>
