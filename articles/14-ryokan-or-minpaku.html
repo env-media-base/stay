@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>空き家を宿に。旅館業と民泊の違い — かくれ宿</title>
+<meta name="description" content="空き家や実家を宿にする前に知りたい、旅館業（簡易宿所）の許可・民泊の届出・特区民泊の違いを、国と千葉県・千葉市・船橋市の公式資料をもとに整理。千葉県での相談先と、最初にすべきことも紹介します。" />
+<!-- OGP / Twitter Card / favicon -->
+<!-- コラムは日本語のみ（英語版なし）。hreflang は ja / x-default だけにしている -->
+<link rel="canonical" href="https://kakureyado.pages.dev/articles/14-ryokan-or-minpaku" />
+<link rel="alternate" hreflang="ja" href="https://kakureyado.pages.dev/articles/14-ryokan-or-minpaku" />
+<link rel="alternate" hreflang="x-default" href="https://kakureyado.pages.dev/articles/14-ryokan-or-minpaku" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="かくれ宿 CHIBA" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:title" content="空き家を宿に。旅館業と民泊の違い — かくれ宿" />
+<meta property="og:description" content="簡易宿所、民泊、特区民泊。3つの入口を、日数・手続き先・設備・始めやすさで比べました。" />
+<meta property="og:url" content="https://kakureyado.pages.dev/articles/14-ryokan-or-minpaku" />
+<meta property="og:image" content="https://kakureyado.pages.dev/assets/ogp.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="空き家を宿に。旅館業と民泊の違い — かくれ宿" />
+<meta name="twitter:description" content="簡易宿所、民泊、特区民泊。3つの入口を、日数・手続き先・設備・始めやすさで比べました。" />
+<meta name="twitter:image" content="https://kakureyado.pages.dev/assets/ogp.png" />
+<meta name="theme-color" content="#7A9971" />
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="../assets/logo.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/shared.css" />
+
+<template id="__bundler_thumbnail" data-bg-color="#7A9971">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#7A9971"/>
+    <text x="80" y="380" font-family="serif" font-size="72" fill="#F5F1E8">空き家を宿に。旅館業と民泊の違い</text>
+    <text x="80" y="450" font-family="serif" font-size="24" fill="#F5F1E8" letter-spacing="6" opacity="0.85">COLUMN 005 · BEFORE YOU START · CHIBA</text>
+  </svg>
+</template>
+
+<style>
+.article-hero {
+  position: relative;
+  height: 80vh;
+  min-height: 540px;
+  background: #1a1a1a;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  color: #fff;
+}
+.article-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7) saturate(0.95); }
+.article-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0.6) 100%); }
+.article-hero .container { position: relative; z-index: 2; padding-bottom: 80px; padding-top: 140px; }
+.article-hero .meta {
+  font-family: var(--font-serif); font-size: 12px; letter-spacing: 0.35em;
+  display: flex; gap: 18px; align-items: center; margin-bottom: 28px;
+  color: rgba(255,255,255,0.85);
+}
+.article-hero .meta .sep { width: 4px; height: 4px; background: currentColor; border-radius: 50%; }
+.article-hero h1 {
+  font-family: var(--font-serif); font-weight: 500;
+  font-size: clamp(34px, 5.5vw, 64px);
+  line-height: 1.4; letter-spacing: 0.04em;
+  max-width: 860px; margin: 0 0 24px;
+}
+.article-hero .subtitle { font-family: var(--font-serif); font-size: clamp(15px, 1.8vw, 19px); color: rgba(255,255,255,0.85); max-width: 600px; line-height: 1.9; }
+
+.article-body { padding: 100px 0; max-width: 760px; margin: 0 auto; }
+.article-body .lead {
+  font-family: var(--font-serif); font-size: clamp(17px, 2vw, 21px);
+  line-height: 2.1; letter-spacing: 0.04em; color: var(--color-text);
+  margin-bottom: 56px; padding-bottom: 56px; border-bottom: 1px solid var(--color-line);
+}
+.article-body h2 {
+  font-family: var(--font-serif); font-size: clamp(22px, 2.6vw, 30px);
+  margin: 80px 0 32px; line-height: 1.6; letter-spacing: 0.04em;
+  display: flex; align-items: baseline; gap: 18px;
+}
+.article-body h2::before {
+  content: attr(data-num); font-size: 13px; letter-spacing: 0.3em;
+  color: var(--color-forest); font-weight: 400; min-width: 32px;
+}
+.article-body p { font-size: 15px; line-height: 2.1; margin-bottom: 24px; color: var(--color-text); }
+.article-body figure { margin: 56px 0; }
+.article-body figure img { width: 100%; height: auto; aspect-ratio: 3/2; object-fit: cover; }
+.article-body figcaption {
+  font-family: var(--font-serif); font-size: 12px; letter-spacing: 0.18em;
+  color: var(--color-text-mute); margin-top: 14px; padding-left: 14px;
+  border-left: 1px solid var(--color-line);
+}
+.article-body blockquote {
+  font-family: var(--font-serif); font-size: clamp(20px, 2.4vw, 26px);
+  line-height: 1.8; letter-spacing: 0.04em; margin: 64px 0;
+  padding: 0 0 0 32px; border-left: 2px solid var(--color-forest);
+  color: var(--color-text);
+}
+.article-body blockquote cite { display: block; font-family: var(--font-sans); font-size: 13px; font-style: normal; color: var(--color-text-mute); margin-top: 16px; letter-spacing: 0.1em; }
+
+.spec {
+  background: var(--color-bg-sub);
+  padding: 48px clamp(24px, 4vw, 56px);
+  margin: 80px 0;
+}
+.spec h3 { font-family: var(--font-serif); font-size: 14px; letter-spacing: 0.3em; margin: 0 0 28px; color: var(--color-text-mute); font-weight: 500; }
+.spec dl { margin: 0; display: grid; grid-template-columns: 140px 1fr; gap: 0; }
+.spec dt, .spec dd { padding: 14px 0; border-top: 1px solid var(--color-line); margin: 0; }
+.spec dt { font-family: var(--font-serif); font-size: 13px; letter-spacing: 0.18em; color: var(--color-text-mute); }
+.spec dd { font-size: 14px; line-height: 1.85; color: var(--color-text); }
+.spec dt:nth-of-type(1), .spec dd:nth-of-type(1) { border-top: 0; padding-top: 0; }
+@media (max-width: 540px) { .spec dl { grid-template-columns: 1fr; gap: 0; } .spec dt { padding-bottom: 4px; border-top: 1px solid var(--color-line); } .spec dd { padding-top: 4px; padding-bottom: 18px; border-top: 0; } }
+
+.article-cta {
+  background: var(--color-forest); color: var(--color-beige);
+  padding: 60px clamp(28px, 5vw, 60px); margin: 80px 0 0;
+  text-align: center;
+}
+.article-cta h3 { font-family: var(--font-serif); font-size: 22px; line-height: 1.7; color: var(--color-beige); margin: 0 0 14px; font-weight: 500; }
+.article-cta p { font-size: 14px; color: rgba(245, 241, 232, 0.8); margin-bottom: 28px; line-height: 1.95; }
+.article-cta .btn { background: var(--color-beige); color: var(--color-text); }
+.article-cta .btn:hover { background: #fff; }
+
+.next-article {
+  background: var(--color-bg-sub); padding: 80px 0; border-top: 1px solid var(--color-line);
+}
+.next-article .container { display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
+.next-article .label { font-family: var(--font-serif); font-size: 12px; letter-spacing: 0.3em; color: var(--color-text-mute); margin-bottom: 8px; display: block; }
+.next-article a.next-link { font-family: var(--font-serif); font-size: clamp(20px, 2.5vw, 28px); color: var(--color-text); display: flex; align-items: center; gap: 18px; line-height: 1.5; }
+.next-article a.next-link:hover { color: var(--color-forest); }
+.next-article .back { font-family: var(--font-serif); font-size: 13px; letter-spacing: 0.2em; color: var(--color-text-mute); border-bottom: 1px solid var(--color-line); padding-bottom: 4px; }
+.next-article .back:hover { color: var(--color-text); border-bottom-color: currentColor; }
+
+@media (max-width: 720px) {
+  .article-hero { height: 70vh; min-height: 420px; }
+  .article-hero .container { padding-bottom: 50px; padding-top: 100px; }
+  .article-body { padding: 60px 0; }
+}
+
+/* =====================================================================
+   ハイブリッド層（2026-08-03）
+   文字＝星野リゾート準拠（Noto Sans JP・行間1.8・字間は詰めない）
+   画像の並べ方＝Airbnb準拠（角丸カード・自動折返しグリッド・白いピルバッジ）
+   色は一切変更していない。
+   ページ固有の <style> は shared.css より後勝ちなので、ここで上書きする。
+   ===================================================================== */
+h1, h2, h3, h4,
+.hero-title, .owner-hero-title, .page-head h1, .article-hero h1 {
+  font-family: var(--font-sans);
+  letter-spacing: normal;
+  font-weight: 700;
+  line-height: 1.4;
+}
+/* 和文エディトリアル特有の「広すぎる字間」を通常値へ（星野リゾート コーポレートと同じ ≒0.02em） */
+.eyebrow, .breadcrumb, .count, .filter-bar .container, .filter-bar button,
+.listing-meta, .feature-num, .footer-col h4, .hero-eyebrow, .owner-hero-eyebrow,
+.hero-issue, .hero-caption, .hero-scroll, .owner-hero-caption,
+.article-hero .meta, .article-body h2::before, .article-body figcaption,
+.article-body blockquote cite, .spec h3, .spec dt,
+.next-article .label, .next-article .back, .next-article a.next-link,
+.reason-card .reason-tag, .strength-item .num, .pillar .pillar-num,
+.pillar .pillar-tags span, .flow-step .flow-num, .flow-step h4,
+.case-card .case-tags span, .case-card .case-result,
+.testimonial .who, .consult-side li, .consult-side li::before,
+.consult-form .field label, .consult-form .field label .req,
+.consult-form .field label .opt, .faq-question .q-mark, .legal-body h2 {
+  letter-spacing: 0.02em;
+}
+.eyebrow::before, .eyebrow::after, .hero-eyebrow::before, .owner-hero-eyebrow::before { content: none; }
+.eyebrow, .hero-eyebrow, .owner-hero-eyebrow { font-weight: 600; font-size: 13px; }
+
+/* --- 画像・面はすべて角丸に（Airbnbの基本語彙） --- */
+.article-body figure img,
+.case-card .case-media,
+.testimonial img,
+.spec, .article-cta, .case-card, .testimonial, .pillar, .reason-card,
+.flow-step, .consult-form, .consult-thanks, .crosslink-banner,
+.strength-item, .faq-answer-inner {
+  border-radius: var(--radius-lg);
+}
+.case-card .case-media { overflow: hidden; }
+
+/* --- 一覧グリッド：自動折り返しの等幅カード --- */
+.archive-grid {
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important;
+  gap: 36px 20px !important;
+}
+@media (max-width: 560px) {
+  .archive-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)) !important; gap: 28px 16px !important; }
+}
+
+/* --- フィルターはAirbnbのピル型チップに --- */
+.filter-bar button {
+  border-radius: var(--radius-pill);
+  padding: 9px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--font-sans);
+}
+.filter-bar .container { font-size: 14px; font-family: var(--font-sans); }
+.filter-bar .label { font-weight: 600; }
+
+/* --- ページ見出し --- */
+.page-head h1 { line-height: 1.4; font-weight: 700; }
+.page-head .breadcrumb, .owner-breadcrumb-strip .breadcrumb { font-family: var(--font-sans); font-size: 14px; }
+.page-head .count { font-family: var(--font-sans); font-size: 15px; }
+
+/* ページ固有CSSの方が詳細度が高い箇所を、同じ深さで明示的に上書きする
+   （パンくず・小見出し・タグ・フォームのラベル等に 0.3em の字間が残っていたため） */
+.page-head .breadcrumb, .page-head .breadcrumb a, .page-head .count, .page-head .count strong,
+.owner-breadcrumb-strip .breadcrumb, .owner-breadcrumb-strip .breadcrumb a, .owner-breadcrumb-strip .breadcrumb span,
+.contact-head .breadcrumb, .contact-head .breadcrumb a, .contact-head .breadcrumb span,
+.legal-hero .breadcrumb, .legal-hero .breadcrumb a, .legal-hero .breadcrumb span, .legal-hero .updated,
+.hero-title .small, .owner-hero-title .small,
+.btn.owner-hero-cta, .btn.hero-cta,
+.reason-card .reason-tag,
+.consult-side h3, .contact-side h3,
+.contact-form .field label, .contact-form .field label .req, .contact-form .field label .opt,
+.consult-form .field label, .consult-form .field label .req, .consult-form .field label .opt {
+  letter-spacing: 0.02em;
+}
+
+/* --- 本文まわり --- */
+.article-body .lead { font-family: var(--font-sans); line-height: 1.9; letter-spacing: 0.02em; }
+.article-body h2 { line-height: 1.4; }
+.article-body p { font-size: 16px; line-height: 1.9; }
+.article-body blockquote { font-family: var(--font-sans); letter-spacing: 0.02em; line-height: 1.7; font-weight: 500; }
+.article-body figcaption { font-family: var(--font-sans); font-size: 13px; }
+.spec dt, .spec dd { font-family: var(--font-sans); }
+.spec dd { font-size: 15px; }
+.next-article a.next-link { font-family: var(--font-sans); font-weight: 600; }
+
+/* --- フォームの入力欄もAirbnbの角丸ボックスに --- */
+.consult-form .field input, .consult-form .field select, .consult-form .field textarea,
+.contact-form .field input, .contact-form .field select, .contact-form .field textarea {
+  border-radius: var(--radius-sm);
+}
+
+/* =====================================================================
+   取材記事（CASE）用の追加（2026-09・記事09から）
+   実写真に縦位置があること・短い発言が多いこと・INFORMATIONが複数施設に
+   またがることへの対応。色トークンは追加・変更していない。
+   ===================================================================== */
+.article-body .hero-note { font-size: 13px; color: var(--color-text-mute); margin: -40px 0 48px; line-height: 1.8; }
+.article-body figure.is-portrait { max-width: 360px; margin-left: auto; margin-right: auto; }
+.article-body figure.is-portrait img { aspect-ratio: 9/16; }
+.article-body .voice {
+  font-weight: 500; font-size: 17px; line-height: 1.85;
+  padding-left: 20px; border-left: 2px solid var(--color-guest);
+  margin: 32px 0;
+}
+.spec .spec-sub { font-weight: 700; font-size: 15px; margin: 40px 0 12px; color: var(--color-text); }
+.spec .spec-sub:first-of-type { margin-top: 0; }
+.spec a { color: var(--color-guest-deep); text-decoration: underline; text-underline-offset: 3px; word-break: break-all; }
+.article-note {
+  font-size: 13px; line-height: 1.9; color: var(--color-text-mute);
+  margin: 48px 0 0; padding-top: 24px; border-top: 1px solid var(--color-line);
+}
+@media (max-width: 720px) {
+  .article-body .hero-note { margin-top: -8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header is-hero" id="siteHeader">
+  <div class="container header-inner">
+    <a href="../index.html" class="logo" aria-label="かくれ宿 ホームへ">
+      <img class="logo-img" src="../assets/logo.jpg" alt="かくれ宿 ロゴ" />
+      <span class="logo-mark">かくれ宿 / CHIBA</span>
+    </a>
+    <nav class="nav" id="siteNav">
+      <a href="../articles.html">宿をさがす</a>
+      <a href="../for-owners.html">宿のオーナー様へ</a>
+      <a href="../index.html#newsletter" class="nav-cta">メルマガ登録</a>
+      <a href="../en/articles.html" class="nav-lang" lang="en" aria-label="English version">EN</a>
+    </nav>
+    <button class="hamburger" id="hamburger" type="button" aria-label="サイトマップを開く" aria-expanded="false" aria-controls="siteMenu">
+      <span class="hamburger-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="hamburger-label">メニュー</span>
+    </button>
+  </div>
+</header>
+
+<!-- =====================================================
+     SITEMAP — ヘッダーの ☰ で開くページ一覧
+     ・ページ単位まで。ページ内の見出しへのリンクは出さない（多すぎて選べなくなるため）
+     ・グループの先頭に「誰向けか」を必ず1行書く
+     ・to B のグループには is-host を付けて茶にする（色の役割は shared.css 参照）
+     ===================================================== -->
+<div class="sitemap" id="siteMenu" role="dialog" aria-modal="true" aria-label="サイトマップ">
+  <div class="container sitemap-inner">
+
+    <div class="sitemap-head">
+      <a href="../index.html" class="logo" aria-label="かくれ宿 ホームへ">
+        <img class="logo-img" src="../assets/logo.jpg" alt="かくれ宿 ロゴ" />
+        <span class="logo-mark">かくれ宿 / CHIBA</span>
+      </a>
+      <a href="../en/articles.html" class="sitemap-lang" lang="en">English</a>
+      <button type="button" class="sitemap-close">閉じる <span aria-hidden="true">✕</span></button>
+    </div>
+
+    <div class="sitemap-groups">
+
+      <div class="sitemap-group">
+        <h2>記事を読む</h2>
+        <p class="who">泊まってみたい方・読みものとして楽しみたい方へ</p>
+        <ul>
+          <li><a href="../articles.html">記事一覧<span class="note">取材記事とコラムをまとめて読む</span></a></li>
+          <li><a href="../index.html#newsletter">新着メールを受け取る<span class="note">無料・月1〜2回・いつでも解除できます</span></a></li>
+        </ul>
+      </div>
+
+      <div class="sitemap-group is-host">
+        <h2>宿を営む方へ</h2>
+        <p class="who">宿のオーナー様・ご家族の方へ。取材も掲載も、支援もすべて無料です</p>
+        <ul>
+          <li><a href="../contact.html">取材・掲載のご相談<span class="note">「うちの宿を紹介してほしい」はこちら</span></a></li>
+          <li><a href="../for-owners.html">宿の価値向上サポート<span class="note">事業承継を見据えて、今のうちに宿の価値を高めたい方へ</span></a></li>
+        </ul>
+      </div>
+
+      <div class="sitemap-group">
+        <h2>かくれ宿について</h2>
+        <p class="who">どんなメディアなのかを知りたい方へ</p>
+        <ul>
+          <li><a href="../index.html">トップページ</a></li>
+          <li><a href="../index.html#about">このメディアについて<span class="note">なぜ隠れた宿だけを紹介するのか</span></a></li>
+        </ul>
+      </div>
+
+      <div class="sitemap-group">
+        <h2>きまり</h2>
+        <p class="who">ご利用にあたって</p>
+        <ul>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../tokushoho.html">特定商取引法に基づく表記</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="sitemap-foot">
+      <p>大手の宿泊掲載サイトには載っていない、千葉県内に眠る"隠れた宿"を、静かに発掘・紹介するウェブメディアです。</p>
+      <div class="social-icons is-dark" aria-label="SNS">
+        <a class="social-icon" href="https://www.instagram.com/kakure_yado" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a class="social-icon" href="https://x.com/kakure_yado" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.53 3H20.5l-6.49 7.42L21.75 21h-6.02l-4.71-6.16L5.6 21H2.62l6.95-7.94L2.25 3h6.18l4.26 5.63L17.53 3Zm-1.06 16.2h1.66L7.62 4.7H5.84L16.47 19.2Z"/></svg></a>
+        <a class="social-icon" href="https://www.facebook.com/share/1cBxZJMGCn/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a class="social-icon" href="https://note.com/kakure_yado" target="_blank" rel="noopener" aria-label="note"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 4.5h12.7c2.04 0 4.1 1.56 4.1 4.1v10.9H15.5V9.85c0-1.05-.6-1.65-1.45-1.65-.65 0-1.4.4-2 .95v10.35H6.95V8.05c0-.45-.05-.65-.5-.65H3.6V4.5Z"/></svg></a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<section class="article-hero is-text">
+  <div class="container">
+    <div class="meta">
+      <span>COLUMN 005</span><span class="sep"></span>
+      <span>BEFORE YOU START</span><span class="sep"></span>
+      <span>2026.10</span>
+    </div>
+    <h1>空き家を宿に。旅館業と民泊の違い</h1>
+    <p class="subtitle">簡易宿所、民泊、特区民泊。3つの入口を、日数・手続き先・設備・始めやすさで比べました。</p>
+  </div>
+</section>
+
+<article class="article-body container">
+<p class="lead">実家や空き家を宿にしたいと考えたとき、最初に迷うのが「どの制度で始めるか」です。入口は、旅館業の許可、民泊の届出、特区民泊の認定の3つ。僕たちが国・千葉県・市の公式ページを読み、違いと相談先を整理しました。</p>
+
+<h2 data-num="01">お金をもらって泊めるなら、手続きが要ります</h2>
+<p>厚生労働省は、旅館業を「宿泊料を受けて人を宿泊させる営業」と説明しています。ここでいう宿泊は、寝具を使って施設を利用することです。自宅の一部や空き家でも、宿泊料を受け取るなら考え方は同じです。</p>
+<p>千葉市の案内でも、宿泊料を受けて人を泊めるには、次の3つのどれかが必要とされています。</p>
+<ul>
+<li><strong>旅館業法の許可</strong>：保健所に申請し、許可を受けます。届出や特区の認定によらずに住宅を宿にする場合は、簡易宿所の許可が一般的とされています。簡易宿所は、ペンションやゲストハウスのように、宿泊場所を複数の人で共用する形の宿です。</li>
+<li><strong>住宅宿泊事業法の届出</strong>：いわゆる民泊です。許可ではなく届出で始められますが、営業は年180日までです。</li>
+<li><strong>国家戦略特区の認定</strong>：いわゆる特区民泊です。国家戦略特区に指定された地域で使える、旅館業法の特例です。</li>
+</ul>
+
+<h2 data-num="02">3つの制度を表で比べます</h2>
+<p>観光庁「民泊制度ポータルサイト」の比較表をもとに、主な違いをまとめました。窓口の欄は千葉県の場合です。</p>
+<div class="table-wrap"><table><thead><tr><th>項目</th><th>旅館業（簡易宿所）</th><th>民泊（住宅宿泊事業）</th><th>特区民泊</th></tr></thead><tbody>
+<tr><td>手続き</td><td>許可</td><td>届出</td><td>認定</td></tr>
+<tr><td>営業日数</td><td>制限なし</td><td>年180日以内（条例でさらに制限されることも）</td><td>年間の上限なし。2泊3日以上の滞在が条件</td></tr>
+<tr><td>住居専用地域</td><td>不可</td><td>可能（条例で制限あり）</td><td>可能（自治体ごとに制限あり）</td></tr>
+<tr><td>床面積</td><td>客室の延床33㎡以上（10人未満なら3.3㎡×人数）</td><td>1人あたり3.3㎡以上</td><td>原則1室25㎡以上</td></tr>
+<tr><td>消防用設備</td><td>必要</td><td>必要（家主同居で宿泊室が狭い場合は不要）</td><td>必要</td></tr>
+<tr><td>千葉県での窓口</td><td>建物の所在地を管轄する保健所</td><td>千葉県 衛生指導課</td><td>千葉市なら市保健所 環境衛生課</td></tr>
+</tbody></table></div>
+<p>どの制度でも、宿泊者名簿の作成・保存と、近隣とのトラブルを防ぐ取り組みが求められます。</p>
+
+<h2 data-num="03">それぞれの特徴をもう少し</h2>
+<h3>民泊：始めやすい反面、日数に上限があります</h3>
+<p>民泊の届出ができるのは「住宅」です。千葉県の手引きでは、宿泊者が使える台所・浴室・トイレ・洗面設備が条件です。そのうえで、人が住む家、入居者を募集中の家、年1回以上使う別荘などが対象です。</p>
+<p>相続したものの今は住んでおらず、将来住む予定の空き家も例に挙がっています。一方、住んだ実績のない民泊専用の新築投資用マンションは対象外です。</p>
+<p>日数は、4月1日正午から翌年4月1日正午までの1年で180日以内と数えます。これを超えて営業したい場合は、旅館業の許可が必要です。</p>
+<p>家主が泊まりの間いない「家主不在型」や、居室が5つを超える場合は、委託が必要です。委託先は、国に登録した住宅宿泊管理業者（民泊の管理を代わりに担う事業者）です。始めたあとも、標識の掲示や2か月ごとの宿泊実績の報告が続きます。</p>
+
+<h3>簡易宿所：日数の上限はなく、建物の確認が増えます</h3>
+<p>旅館業の許可には、営業日数の上限がありません。そのぶん、建物の基準と書類の確認が増えます。千葉県の保健所の案内では、建築基準法の検査済証の写しや消防法令適合通知書などを申請時に添えます。</p>
+<p>申請手数料は、千葉県の保健所と船橋市の案内で23,000円です。千葉県の保健所の標準処理期間は、土日・祝日を除いて30日間とされています。</p>
+
+<h3>特区民泊：使える地域が限られます</h3>
+<p>特区民泊は、国家戦略特区に指定された地域で、自治体が認定する仕組みです。千葉市では、若葉区と緑区の市街化調整区域と住居専用地域に限って実施しています。</p>
+<p>千葉市の手順は、保健所への事前相談、消防などとの協議、周辺住民への説明、認定申請の順です。申請手数料は22,100円と案内されています。</p>
+
+<h2 data-num="04">千葉県で相談・手続きする先</h2>
+<ul>
+<li><strong>旅館業（簡易宿所）</strong>：建物の所在地を管轄する県の保健所（健康福祉センター）です。千葉市・船橋市・柏市は、それぞれ市の保健所が窓口です。</li>
+<li><strong>民泊</strong>：千葉県健康福祉部衛生指導課（043-223-2627）です。千葉市内や船橋市内の物件も、届出先は県です。届出は原則、観光庁の「民泊制度運営システム」からインターネットで行います。</li>
+<li><strong>特区民泊</strong>：千葉市保健所環境衛生課（043-238-9939）です。2026年11月24日に千葉市総合保健医療センターへ移る予定と案内されています。</li>
+<li><strong>制度や操作の質問</strong>：国の民泊制度コールセンター（0570-041-389）です。</li>
+</ul>
+<p>市ごとに独自のルールもあります。たとえば船橋市では、旅館業の申請の20日前までに、近隣住民へ説明会か戸別訪問で計画を伝えます。</p>
+
+<h2 data-num="05">制度より先に、建物のことを確かめます</h2>
+<p>どの制度が使えるかは、建物の場所や造りで変わります。ここは僕たちも断定できません。必ず保健所・消防署・市町村の建築の窓口に事前相談をしてください。千葉市の旅館業の案内でも、保健所や建築、消防の窓口との事前協議が必要とされています。</p>
+<p>確かめたいことは、主に次の3つです。</p>
+<ul>
+<li><strong>用途地域（建てられる建物の種類を地域ごとに決めたルール）</strong>：住居専用地域では旅館業ができません。市街化調整区域などでは、地区計画で民泊も制限され、届出できない場合があります。</li>
+<li><strong>消防</strong>：民泊でも旅館業でも、消防法令適合通知書が必要です。管轄の消防署に相談します。</li>
+<li><strong>建築基準法</strong>：船橋市の案内では、民泊は建築基準法上「住宅」のままです。簡易宿所は「ホテル・旅館」への用途変更にあたり、200㎡を超えると確認申請が要ります。物件ごとの扱いは、市町村の建築の窓口で確かめてください。</li>
+</ul>
+<p>食事を出す、庭のサウナや露天風呂を使ってもらうといった場合は、別の許可が必要です。これも保健所に相談します。</p>
+<p>まず何をするか。答えは、<strong>建物の所在地を管轄する保健所への事前相談</strong>です。千葉市や船橋市も、図面を持っての事前相談を案内しています。あわせて消防署と、市町村の都市計画・建築の窓口にも確かめましょう。</p>
+<p>迷ったときは、かくれ宿CHIBAの<a href="../for-owners.html">宿オーナー向け無料相談ページ</a>からも気軽に声をかけてください。</p>
+
+<div class="spec"><h3>この記事のまとめ</h3><dl>
+<dt>年180日を超えて営業したい</dt><dd>旅館業（簡易宿所）の許可。窓口は建物の所在地を管轄する保健所</dd>
+<dt>住宅のまま始めたい</dt><dd>民泊の届出。窓口は千葉県衛生指導課。営業は年180日まで</dd>
+<dt>千葉市若葉区・緑区の一部</dt><dd>特区民泊も選べる。2泊3日以上が条件。窓口は千葉市保健所</dd>
+<dt>最初の一歩</dt><dd>図面を持って管轄の保健所に事前相談。消防署と市町村の窓口にも確認</dd>
+</dl></div>
+
+<div class="sources"><h3>参考にした資料</h3><ul>
+<li><a href="https://www.mlit.go.jp/kankocho/minpaku/overview/minpaku/index.html" target="_blank" rel="noopener">観光庁 民泊制度ポータルサイト「民泊制度の概要」</a>（確認日：2026年10月）</li>
+<li><a href="https://www.mlit.go.jp/kankocho/minpaku/business/host/index.html" target="_blank" rel="noopener">観光庁 民泊制度ポータルサイト「住宅宿泊事業者について」</a>（確認日：2026年10月）</li>
+<li><a href="https://www.mlit.go.jp/kankocho/minpaku/overview/minpaku/law2.html" target="_blank" rel="noopener">観光庁 民泊制度ポータルサイト「旅館業法について」</a>（確認日：2026年10月）</li>
+<li><a href="https://www.mlit.go.jp/kankocho/minpaku/overview/minpaku/law3.html" target="_blank" rel="noopener">観光庁 民泊制度ポータルサイト「特区民泊について」</a>（確認日：2026年10月）</li>
+<li><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000111008.html" target="_blank" rel="noopener">厚生労働省「民泊サービスと旅館業法に関するQ&amp;A」</a>（確認日：2026年10月）</li>
+<li><a href="https://www.pref.chiba.lg.jp/eishi/tetsuzuki/minpaku.html" target="_blank" rel="noopener">千葉県「民泊について（住宅宿泊事業法）」</a>（確認日：2026年10月）</li>
+<li><a href="https://www.pref.chiba.lg.jp/eishi/tetsuzuki/documents/202509tebiki-2.pdf" target="_blank" rel="noopener">千葉県「住宅宿泊事業（民泊）の手続き」令和7年9月現在（PDF）</a>（確認日：2026年10月）</li>
+<li><a href="https://www.pref.chiba.lg.jp/eishi/tetsuzuki/400/13110-295.html" target="_blank" rel="noopener">千葉県「【旅館業法】旅館業営業許可申請」</a>（確認日：2026年10月）</li>
+<li><a href="https://www.pref.chiba.lg.jp/kf-kaisou/kyoninka/ryokan.html" target="_blank" rel="noopener">千葉県 海匝保健所「旅館業について」</a>（確認日：2026年10月）</li>
+<li><a href="https://www.pref.chiba.lg.jp/kenfuku/kenkoufukushi/soudan.html" target="_blank" rel="noopener">千葉県「保健所（健康福祉センター）一覧・各種相談」</a>（確認日：2026年10月）</li>
+<li><a href="https://www.city.chiba.jp/hokenfukushi/iryoeisei/hokenjo/kankyo/minpaku.html" target="_blank" rel="noopener">千葉市「宿泊料を受けて人を宿泊させる営業を行う場合の手続き」</a>（確認日：2026年10月）</li>
+<li><a href="https://www.city.chiba.jp/hokenfukushi/iryoeisei/hokenjo/kankyo/ryokan.html" target="_blank" rel="noopener">千葉市「旅館業」</a>（確認日：2026年10月）</li>
+<li><a href="https://www.city.chiba.jp/sogoseisaku/miraitoshi/tokku/tokku_minpaku.html" target="_blank" rel="noopener">千葉市「特区民泊」</a>（確認日：2026年10月）</li>
+<li><a href="https://www.city.chiba.jp/hokenfukushi/iryoeisei/hokenjo/kankyo/30tokku-minnpaku.html" target="_blank" rel="noopener">千葉市「千葉市国家戦略特別区域外国人滞在施設経営事業（特区民泊）の手続きについて」</a>（確認日：2026年10月）</li>
+<li><a href="https://www.city.chiba.jp/hokenfukushi/iryoeisei/seikatsueisei/faq_29jyuutakusyukuhakujigyou.html" target="_blank" rel="noopener">千葉市「住宅宿泊事業の問い合わせ先、届出窓口はどちらですか。」</a>（確認日：2026年10月）</li>
+<li><a href="https://www.city.funabashi.lg.jp/jigyou/iji_yakuji_eisei/004/p004767.html" target="_blank" rel="noopener">船橋市「旅館業の各種申請・届出の手続き等について」</a>（確認日：2026年10月）</li>
+<li><a href="https://www.city.funabashi.lg.jp/jigyou/kenchiku_kaihatsu/006/p148903.html" target="_blank" rel="noopener">船橋市「既存住宅を民泊又は簡易宿所へ用途変更する際の注意点」</a>（確認日：2026年10月）</li>
+</ul></div>
+
+<p class="article-note">この記事は、上の公的な資料をもとに僕たちがまとめたものです。（執筆：2026年10月。制度は変わることがあるので、手続きの前に必ず窓口で確かめてください）</p>
+</article>
+
+<section class="next-article">
+  <div class="container">
+    <div>
+      <span class="label">MORE</span>
+      <a class="next-link" href="../articles.html">記事一覧を見る <span>→</span></a>
+    </div>
+    <a class="back" href="../index.html">← トップへ戻る</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo" aria-label="かくれ宿 ホームへ">
+      <img class="logo-img" src="../assets/logo.jpg" alt="かくれ宿 ロゴ" />
+      <span class="logo-mark">かくれ宿 / CHIBA</span>
+    </a>
+        <p>大手の宿泊掲載サイトには載っていない、千葉県内に眠る"隠れた宿"を、静かに発掘・紹介するウェブメディア。</p>
+          <div class="footer-social social-icons is-dark" aria-label="SNS">
+      <a class="social-icon" href="https://www.instagram.com/kakure_yado" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a class="social-icon" href="https://x.com/kakure_yado" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.53 3H20.5l-6.49 7.42L21.75 21h-6.02l-4.71-6.16L5.6 21H2.62l6.95-7.94L2.25 3h6.18l4.26 5.63L17.53 3Zm-1.06 16.2h1.66L7.62 4.7H5.84L16.47 19.2Z"/></svg></a>
+      <a class="social-icon" href="https://www.facebook.com/share/1cBxZJMGCn/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      <a class="social-icon" href="https://note.com/kakure_yado" target="_blank" rel="noopener" aria-label="note"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 4.5h12.7c2.04 0 4.1 1.56 4.1 4.1v10.9H15.5V9.85c0-1.05-.6-1.65-1.45-1.65-.65 0-1.4.4-2 .95v10.35H6.95V8.05c0-.45-.05-.65-.5-.65H3.6V4.5Z"/></svg></a>
+    </div>
+      </div>
+      <div class="footer-col"><h4>MEDIA</h4><ul>
+        <li><a href="../articles.html">記事一覧</a></li>
+        <li><a href="../index.html#about">メディアについて</a></li>
+        <li><a href="../index.html#newsletter">メルマガ登録</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>FOR&nbsp;OWNERS</h4><ul>
+        <li><a href="../for-owners.html">宿の価値向上サポート</a></li>
+        <li><a href="../contact.html">取材の依頼</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>CONTACT</h4><ul>
+        <li><a href="../contact.html">お問い合わせ</a></li>
+        <li><a href="../privacy.html">プライバシーポリシー</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 かくれ宿 千葉. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var header = document.getElementById('siteHeader');
+  function up(){ var y = window.scrollY||0; header.classList.toggle('is-scrolled', y>20); header.classList.toggle('is-hero', y < 400); }
+  up(); window.addEventListener('scroll', up, {passive:true});
+})();
+</script>
+<script src="../assets/menu.js"></script>
+</body>
+</html>

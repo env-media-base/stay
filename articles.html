@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>宿一覧 — かくれ宿</title>
-<meta name="description" content="大手予約サイトには載っていない、千葉県内の隠れた宿の記事一覧。" />
+<title>記事一覧 — かくれ宿</title>
+<meta name="description" content="千葉の建物と、それを守る人の取材記事。宿を営む方に役立つコラムも。" />
 <!-- OGP / Twitter Card / favicon -->
 <link rel="canonical" href="https://kakureyado.pages.dev/articles" />
 <link rel="alternate" hreflang="ja" href="https://kakureyado.pages.dev/articles" />
@@ -13,15 +13,15 @@
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="かくれ宿 CHIBA" />
 <meta property="og:locale" content="ja_JP" />
-<meta property="og:title" content="宿一覧 — かくれ宿" />
-<meta property="og:description" content="大手予約サイトには載っていない、千葉県内の隠れた宿の記事一覧。" />
+<meta property="og:title" content="記事一覧 — かくれ宿" />
+<meta property="og:description" content="千葉の建物と、それを守る人の取材記事。宿を営む方に役立つコラムも。" />
 <meta property="og:url" content="https://kakureyado.pages.dev/articles" />
 <meta property="og:image" content="https://kakureyado.pages.dev/assets/ogp.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="宿一覧 — かくれ宿" />
-<meta name="twitter:description" content="大手予約サイトには載っていない、千葉県内の隠れた宿の記事一覧。" />
+<meta name="twitter:title" content="記事一覧 — かくれ宿" />
+<meta name="twitter:description" content="千葉の建物と、それを守る人の取材記事。宿を営む方に役立つコラムも。" />
 <meta name="twitter:image" content="https://kakureyado.pages.dev/assets/ogp.png" />
 <meta name="theme-color" content="#7A9971" />
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
@@ -35,7 +35,7 @@
 <template id="__bundler_thumbnail" data-bg-color="#7A9971">
   <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
     <rect width="1200" height="800" fill="#F5F1E8"/>
-    <text x="80" y="380" font-family="serif" font-size="100" fill="#3A2E22">宿一覧</text>
+    <text x="80" y="380" font-family="serif" font-size="100" fill="#3A2E22">記事一覧</text>
     <text x="80" y="450" font-family="serif" font-size="32" fill="#7A9971" letter-spacing="6">CHIBA · 8 INNS</text>
   </svg>
 </template>
@@ -258,21 +258,12 @@ h1, h2, h3, h4,
     <div class="sitemap-groups">
 
       <div class="sitemap-group">
-        <h2>宿をさがす</h2>
+        <h2>記事を読む</h2>
         <p class="who">泊まってみたい方・読みものとして楽しみたい方へ</p>
         <ul>
-          <li><a href="articles.html">千葉の隠れ宿 一覧<span class="note">掲載中の全8軒をまとめて見る</span></a></li>
+          <li><a href="articles.html">記事一覧<span class="note">取材記事とコラムをまとめて読む</span></a></li>
           <li><a href="index.html#newsletter">新着メールを受け取る<span class="note">無料・月1〜2回・いつでも解除できます</span></a></li>
         </ul>
-        <p class="sitemap-areas-label">エリアからさがす</p>
-        <div class="sitemap-areas">
-          <a href="articles.html?area=tateyama">館山・南房総</a>
-          <a href="articles.html?area=isumi">いすみ・外房</a>
-          <a href="articles.html?area=yourou">大多喜・養老</a>
-          <a href="articles.html?area=sawara">香取・佐原</a>
-          <a href="articles.html?area=kujukuri">九十九里</a>
-          <a href="articles.html?area=kanaya">金谷・内房</a>
-        </div>
       </div>
 
       <div class="sitemap-group is-host">
@@ -320,139 +311,103 @@ h1, h2, h3, h4,
 <section class="page-head">
   <div class="container">
     <div>
-      <span class="breadcrumb"><a href="index.html">HOME</a> &nbsp;/&nbsp; INNS</span>
-      <h1>千葉の、<br />まだ誰も知らない宿。</h1>
+      <span class="breadcrumb"><a href="index.html">HOME</a> &nbsp;/&nbsp; READING</span>
+      <h1>建物と人をめぐる、<br />取材とコラム。</h1>
     </div>
-    <span class="count">全 <strong>8</strong> 軒の宿</span>
+    <span class="count">全 <strong>6</strong> 本の記事</span>
   </div>
 </section>
-
-<div class="filter-bar">
-  <div class="container">
-    <span class="label">AREA</span>
-    <button class="is-active" data-area="all">すべて</button>
-    <button data-area="tateyama">館山・南房総</button>
-    <button data-area="isumi">いすみ・外房</button>
-    <button data-area="yourou">大多喜・養老</button>
-    <button data-area="sawara">香取・佐原</button>
-    <button data-area="kujukuri">九十九里</button>
-    <button data-area="kanaya">金谷・内房</button>
-  </div>
-</div>
 
 <section class="archive-section">
   <div class="container">
     <div class="archive-grid" id="archiveGrid">
 
-      <a class="listing reveal" href="articles/01-nagi.html" data-area="tateyama">
+      <a class="listing reveal" href="articles/09-onre-cafe.html">
         <div class="listing-media">
-          <span class="listing-number">NO. 01</span>
-          <img src="https://picsum.photos/seed/chiba-nagi-tateyama/900/700" alt="館山の海辺の民宿 凪" />
-          <div class="listing-tags"><span class="tag">館山市</span><span class="tag">海辺</span></div>
+          <span class="listing-number">CASE 001</span>
+          <img src="assets/img/09-onre/onre-01-ivy-entrance.jpg" alt="一年に、一軒ずつ" loading="lazy" />
+          <div class="listing-tags"><span class="tag">市原市</span><span class="tag">取材記事</span></div>
         </div>
         <div class="listing-body">
-          <div class="listing-meta"><span>INN&nbsp;001</span><span class="sep"></span><span>TATEYAMA</span></div>
-          <h3>館山の海辺の民宿<br />凪（なぎ）</h3>
-          <p class="listing-desc">朝に揚がったばかりの地魚と、太平洋の朝焼け。女将ひとりで切り盛りする、四部屋だけの小さな宿。</p>
-          <span class="listing-link">詳しく見る <span>→</span></span>
+          <div class="listing-meta"><span>CASE 001</span><span class="sep"></span><span>ICHIHARA</span></div>
+          <h3>一年に、一軒ずつ</h3>
+          <p class="listing-desc">市原・若宮団地。団地を調べていた人が、いまは団地の空き家を生き返らせている。</p>
+          <span class="listing-link">読む <span>→</span></span>
         </div>
       </a>
 
-      <a class="listing reveal" href="articles/02-kayabukian.html" data-area="isumi">
-        <div class="listing-media">
-          <span class="listing-number">NO. 02</span>
-          <img src="https://picsum.photos/seed/chiba-kayabuki-isumi/900/700" alt="いすみの茅葺古民家 茅葺庵" />
-          <div class="listing-tags"><span class="tag">いすみ市</span><span class="tag">古民家</span></div>
+      <a class="listing reveal" href="articles/10-payment.html">
+        <div class="listing-media is-text">
+          <span class="listing-number">COLUMN 001</span>
+          <span class="text-media-topic">PAYMENT</span>
+          <span class="text-media-title">ネットの先払い、何を選ぶか</span>
+          <div class="listing-tags"><span class="tag">決済</span><span class="tag">宿・カフェ向け</span></div>
         </div>
         <div class="listing-body">
-          <div class="listing-meta"><span>INN&nbsp;002</span><span class="sep"></span><span>ISUMI</span></div>
-          <h3>築百二十年の茅葺古民家<br />茅葺庵（かやぶきあん）</h3>
-          <p class="listing-desc">囲炉裏で炊いた飯と、縁側の風。田園のただなかで、時計を置いた一泊二日のゆっくりとした息継ぎを。</p>
-          <span class="listing-link">詳しく見る <span>→</span></span>
+          <div class="listing-meta"><span>COLUMN 001</span><span class="sep"></span><span>PAYMENT</span></div>
+          <h3>ネットの先払い、何を選ぶか</h3>
+          <p class="listing-desc">地方銀行の加盟店サービス・Stripe・Squareを、費用と始めるまでの日数、入金の早さで比べました。</p>
+          <span class="listing-link">読む <span>→</span></span>
         </div>
       </a>
 
-      <a class="listing reveal" href="articles/03-komorebi.html" data-area="yourou">
-        <div class="listing-media">
-          <span class="listing-number">NO. 03</span>
-          <img src="https://picsum.photos/seed/chiba-komorebi-yourou/900/700" alt="養老渓谷の山小屋 こもれび" />
-          <div class="listing-tags"><span class="tag">大多喜町</span><span class="tag">山あい</span></div>
+      <a class="listing reveal" href="articles/11-closed-inns.html">
+        <div class="listing-media is-text">
+          <span class="listing-number">COLUMN 002</span>
+          <span class="text-media-topic">AFTER CLOSING</span>
+          <span class="text-media-title">宿を閉めたあと、建物はどうなる</span>
+          <div class="listing-tags"><span class="tag">廃業</span><span class="tag">事業承継</span></div>
         </div>
         <div class="listing-body">
-          <div class="listing-meta"><span>INN&nbsp;003</span><span class="sep"></span><span>YOUROU</span></div>
-          <h3>養老渓谷の山小屋<br />こもれび</h3>
-          <p class="listing-desc">朝は自分で薪を割り、夜は渓谷の音と満点の星。電気も最小限、自然と呼吸を合わせる二泊三日。</p>
-          <span class="listing-link">詳しく見る <span>→</span></span>
+          <div class="listing-meta"><span>COLUMN 002</span><span class="sep"></span><span>AFTER CLOSING</span></div>
+          <h3>宿を閉めたあと、建物はどうなる</h3>
+          <p class="listing-desc">千葉と全国の事例、国の制度の動きから、「閉めたあと」を元気なうちに考えておく理由をまとめました。</p>
+          <span class="listing-link">読む <span>→</span></span>
         </div>
       </a>
 
-      <a class="listing reveal" href="articles/04-sawaranoyado.html" data-area="sawara">
-        <div class="listing-media">
-          <span class="listing-number">NO. 04</span>
-          <img src="https://picsum.photos/seed/chiba-sawara-edo/900/700" alt="佐原の町家宿 佐原の宿" />
-          <div class="listing-tags"><span class="tag">香取市</span><span class="tag">町家</span></div>
+      <a class="listing reveal" href="articles/12-minpaku-data.html">
+        <div class="listing-media is-text">
+          <span class="listing-number">COLUMN 003</span>
+          <span class="text-media-topic">DATA</span>
+          <span class="text-media-title">数字で見る、千葉県の民泊</span>
+          <div class="listing-tags"><span class="tag">民泊</span><span class="tag">データ</span></div>
         </div>
         <div class="listing-body">
-          <div class="listing-meta"><span>INN&nbsp;004</span><span class="sep"></span><span>SAWARA</span></div>
-          <h3>小江戸佐原の町家宿<br />佐原の宿（さわらのやど）</h3>
-          <p class="listing-desc">小野川沿いの江戸の町並み。明治期の商家を改装した、二組限定の貸し切り宿で過ごす夜。</p>
-          <span class="listing-link">詳しく見る <span>→</span></span>
+          <div class="listing-meta"><span>COLUMN 003</span><span class="sep"></span><span>DATA</span></div>
+          <h3>数字で見る、千葉県の民泊</h3>
+          <p class="listing-desc">千葉県の民泊は7年で約3倍に。公的データを数え直し、増えている地域と小さな宿が読み取れることをまとめました。</p>
+          <span class="listing-link">読む <span>→</span></span>
         </div>
       </a>
 
-      <a class="listing reveal" href="articles/05-shiosai.html" data-area="kujukuri">
-        <div class="listing-media">
-          <span class="listing-number">NO. 05</span>
-          <img src="https://picsum.photos/seed/chiba-shiosai-kujukuri/900/700" alt="九十九里の浜辺の宿 潮騒" />
-          <div class="listing-tags"><span class="tag">九十九里町</span><span class="tag">浜辺</span></div>
+      <a class="listing reveal" href="articles/13-stay-report.html">
+        <div class="listing-media is-text">
+          <span class="listing-number">COLUMN 004</span>
+          <span class="text-media-topic">STAY REPORT</span>
+          <span class="text-media-title">一棟貸しに泊まって分かった選ばれる理由</span>
+          <div class="listing-tags"><span class="tag">宿泊記</span><span class="tag">一棟貸し</span></div>
         </div>
         <div class="listing-body">
-          <div class="listing-meta"><span>INN&nbsp;005</span><span class="sep"></span><span>KUJUKURI</span></div>
-          <h3>九十九里浜の宿<br />潮騒（しおさい）</h3>
-          <p class="listing-desc">窓を開ければ、ずっと波の音。鰯漁師だった主人が建てた、海まで歩いて十秒の三部屋の宿。</p>
-          <span class="listing-link">詳しく見る <span>→</span></span>
+          <div class="listing-meta"><span>COLUMN 004</span><span class="sep"></span><span>STAY REPORT</span></div>
+          <h3>一棟貸しに泊まって分かった選ばれる理由</h3>
+          <p class="listing-desc">奥多摩の一棟貸しに泊まった記録から、窓・BBQ・水まわりに見えた選ばれる理由と、千葉の宿への持ち帰りをまとめました。</p>
+          <span class="listing-link">読む <span>→</span></span>
         </div>
       </a>
 
-      <a class="listing reveal" href="articles/06-kanaya.html" data-area="kanaya">
-        <div class="listing-media">
-          <span class="listing-number">NO. 06</span>
-          <img src="https://picsum.photos/seed/chiba-kanaya-stone/900/700" alt="金谷の石蔵宿 蔵の宿" />
-          <div class="listing-tags"><span class="tag">富津市</span><span class="tag">石蔵</span></div>
+      <a class="listing reveal" href="articles/14-ryokan-or-minpaku.html">
+        <div class="listing-media is-text">
+          <span class="listing-number">COLUMN 005</span>
+          <span class="text-media-topic">BEFORE YOU START</span>
+          <span class="text-media-title">空き家を宿に。旅館業と民泊の違い</span>
+          <div class="listing-tags"><span class="tag">旅館業</span><span class="tag">民泊</span><span class="tag">空き家</span></div>
         </div>
         <div class="listing-body">
-          <div class="listing-meta"><span>INN&nbsp;006</span><span class="sep"></span><span>KANAYA</span></div>
-          <h3>金谷の石蔵を改装した<br />蔵の宿（くらのやど）</h3>
-          <p class="listing-desc">かつて石材を保管した蔵を、一棟貸しの宿へ。鋸山の麓、東京湾を見下ろす一日一組の隠れ家。</p>
-          <span class="listing-link">詳しく見る <span>→</span></span>
-        </div>
-      </a>
-
-      <a class="listing reveal" href="articles/07-tsukinoyado.html" data-area="tateyama">
-        <div class="listing-media">
-          <span class="listing-number">NO. 07</span>
-          <img src="https://picsum.photos/seed/chiba-tsuki-minamiboso/900/700" alt="南房総の月待ちの宿 月の宿" />
-          <div class="listing-tags"><span class="tag">南房総市</span><span class="tag">花畑</span></div>
-        </div>
-        <div class="listing-body">
-          <div class="listing-meta"><span>INN&nbsp;007</span><span class="sep"></span><span>MINAMIBOSO</span></div>
-          <h3>花畑の中の小さな宿<br />月の宿（つきのやど）</h3>
-          <p class="listing-desc">冬には菜の花、春にはポピー。三世代続いた花農家がやっている、母屋を改装した二部屋だけの宿。</p>
-          <span class="listing-link">詳しく見る <span>→</span></span>
-        </div>
-      </a>
-
-      <a class="listing reveal" href="articles/08-yamabiko.html" data-area="yourou">
-        <div class="listing-media">
-          <span class="listing-number">NO. 08</span>
-          <img src="https://picsum.photos/seed/chiba-yamabiko-kazusa/900/700" alt="上総の山あいの宿 やまびこ荘" />
-          <div class="listing-tags"><span class="tag">市原市</span><span class="tag">里山</span></div>
-        </div>
-        <div class="listing-body">
-          <div class="listing-meta"><span>INN&nbsp;008</span><span class="sep"></span><span>KAZUSA</span></div>
-          <h3>里山の一軒宿<br />やまびこ荘</h3>
-          <p class="listing-desc">小湊鉄道の小さな駅から徒歩二十分。棚田と竹林に囲まれた、主人が四十年守り続けてきた六部屋の宿。</p>
-          <span class="listing-link">詳しく見る <span>→</span></span>
+          <div class="listing-meta"><span>COLUMN 005</span><span class="sep"></span><span>BEFORE YOU START</span></div>
+          <h3>空き家を宿に。旅館業と民泊の違い</h3>
+          <p class="listing-desc">簡易宿所、民泊、特区民泊。3つの入口を、日数・手続き先・設備・始めやすさで比べました。</p>
+          <span class="listing-link">読む <span>→</span></span>
         </div>
       </a>
 
@@ -477,7 +432,7 @@ h1, h2, h3, h4,
     </div>
       </div>
       <div class="footer-col"><h4>MEDIA</h4><ul>
-        <li><a href="articles.html">宿一覧</a></li>
+        <li><a href="articles.html">記事一覧</a></li>
         <li><a href="index.html#about">メディアについて</a></li>
         <li><a href="index.html#newsletter">メルマガ登録</a></li>
       </ul></div>
@@ -508,27 +463,6 @@ h1, h2, h3, h4,
     document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
   }
 
-  // Filter
-  var btns = document.querySelectorAll('.filter-bar button');
-  var cards = document.querySelectorAll('#archiveGrid .listing');
-  btns.forEach(function(btn){
-    btn.addEventListener('click', function(){
-      btns.forEach(function(b){ b.classList.remove('is-active'); });
-      btn.classList.add('is-active');
-      var area = btn.getAttribute('data-area');
-      cards.forEach(function(c){
-        var match = (area === 'all') || (c.getAttribute('data-area') === area);
-        c.style.display = match ? '' : 'none';
-      });
-    });
-  });
-
-  // サイトマップの「エリアからさがす」(?area=xxx) で来たときは、そのエリアで絞り込んだ状態にする
-  var qArea = new URLSearchParams(window.location.search).get('area');
-  if (qArea) {
-    var qBtn = document.querySelector('.filter-bar button[data-area="' + qArea + '"]');
-    if (qBtn) qBtn.click();
-  }
 })();
 </script>
 <script src="assets/menu.js"></script>

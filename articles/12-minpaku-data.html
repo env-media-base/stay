@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>数字で見る、千葉県の民泊 — かくれ宿</title>
+<meta name="description" content="千葉県の民泊（住宅宿泊事業）は2026年9月時点で1,274軒。観光庁と千葉県の公的データから、7年の推移、湾岸や九十九里・外房で増える地域の動き、泊まる人の傾向と、小さな宿が読み取れることをまとめました。" />
+<!-- OGP / Twitter Card / favicon -->
+<!-- コラムは日本語のみ（英語版なし）。hreflang は ja / x-default だけにしている -->
+<link rel="canonical" href="https://kakureyado.pages.dev/articles/12-minpaku-data" />
+<link rel="alternate" hreflang="ja" href="https://kakureyado.pages.dev/articles/12-minpaku-data" />
+<link rel="alternate" hreflang="x-default" href="https://kakureyado.pages.dev/articles/12-minpaku-data" />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="かくれ宿 CHIBA" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:title" content="数字で見る、千葉県の民泊 — かくれ宿" />
+<meta property="og:description" content="千葉県の民泊は7年で約3倍に。公的データを数え直し、増えている地域と小さな宿が読み取れることをまとめました。" />
+<meta property="og:url" content="https://kakureyado.pages.dev/articles/12-minpaku-data" />
+<meta property="og:image" content="https://kakureyado.pages.dev/assets/ogp.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="数字で見る、千葉県の民泊 — かくれ宿" />
+<meta name="twitter:description" content="千葉県の民泊は7年で約3倍に。公的データを数え直し、増えている地域と小さな宿が読み取れることをまとめました。" />
+<meta name="twitter:image" content="https://kakureyado.pages.dev/assets/ogp.png" />
+<meta name="theme-color" content="#7A9971" />
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="../assets/logo.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/shared.css" />
+
+<template id="__bundler_thumbnail" data-bg-color="#7A9971">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#7A9971"/>
+    <text x="80" y="380" font-family="serif" font-size="72" fill="#F5F1E8">数字で見る、千葉県の民泊</text>
+    <text x="80" y="450" font-family="serif" font-size="24" fill="#F5F1E8" letter-spacing="6" opacity="0.85">COLUMN 003 · DATA · CHIBA</text>
+  </svg>
+</template>
+
+<style>
+.article-hero {
+  position: relative;
+  height: 80vh;
+  min-height: 540px;
+  background: #1a1a1a;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  color: #fff;
+}
+.article-hero img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7) saturate(0.95); }
+.article-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0.6) 100%); }
+.article-hero .container { position: relative; z-index: 2; padding-bottom: 80px; padding-top: 140px; }
+.article-hero .meta {
+  font-family: var(--font-serif); font-size: 12px; letter-spacing: 0.35em;
+  display: flex; gap: 18px; align-items: center; margin-bottom: 28px;
+  color: rgba(255,255,255,0.85);
+}
+.article-hero .meta .sep { width: 4px; height: 4px; background: currentColor; border-radius: 50%; }
+.article-hero h1 {
+  font-family: var(--font-serif); font-weight: 500;
+  font-size: clamp(34px, 5.5vw, 64px);
+  line-height: 1.4; letter-spacing: 0.04em;
+  max-width: 860px; margin: 0 0 24px;
+}
+.article-hero .subtitle { font-family: var(--font-serif); font-size: clamp(15px, 1.8vw, 19px); color: rgba(255,255,255,0.85); max-width: 600px; line-height: 1.9; }
+
+.article-body { padding: 100px 0; max-width: 760px; margin: 0 auto; }
+.article-body .lead {
+  font-family: var(--font-serif); font-size: clamp(17px, 2vw, 21px);
+  line-height: 2.1; letter-spacing: 0.04em; color: var(--color-text);
+  margin-bottom: 56px; padding-bottom: 56px; border-bottom: 1px solid var(--color-line);
+}
+.article-body h2 {
+  font-family: var(--font-serif); font-size: clamp(22px, 2.6vw, 30px);
+  margin: 80px 0 32px; line-height: 1.6; letter-spacing: 0.04em;
+  display: flex; align-items: baseline; gap: 18px;
+}
+.article-body h2::before {
+  content: attr(data-num); font-size: 13px; letter-spacing: 0.3em;
+  color: var(--color-forest); font-weight: 400; min-width: 32px;
+}
+.article-body p { font-size: 15px; line-height: 2.1; margin-bottom: 24px; color: var(--color-text); }
+.article-body figure { margin: 56px 0; }
+.article-body figure img { width: 100%; height: auto; aspect-ratio: 3/2; object-fit: cover; }
+.article-body figcaption {
+  font-family: var(--font-serif); font-size: 12px; letter-spacing: 0.18em;
+  color: var(--color-text-mute); margin-top: 14px; padding-left: 14px;
+  border-left: 1px solid var(--color-line);
+}
+.article-body blockquote {
+  font-family: var(--font-serif); font-size: clamp(20px, 2.4vw, 26px);
+  line-height: 1.8; letter-spacing: 0.04em; margin: 64px 0;
+  padding: 0 0 0 32px; border-left: 2px solid var(--color-forest);
+  color: var(--color-text);
+}
+.article-body blockquote cite { display: block; font-family: var(--font-sans); font-size: 13px; font-style: normal; color: var(--color-text-mute); margin-top: 16px; letter-spacing: 0.1em; }
+
+.spec {
+  background: var(--color-bg-sub);
+  padding: 48px clamp(24px, 4vw, 56px);
+  margin: 80px 0;
+}
+.spec h3 { font-family: var(--font-serif); font-size: 14px; letter-spacing: 0.3em; margin: 0 0 28px; color: var(--color-text-mute); font-weight: 500; }
+.spec dl { margin: 0; display: grid; grid-template-columns: 140px 1fr; gap: 0; }
+.spec dt, .spec dd { padding: 14px 0; border-top: 1px solid var(--color-line); margin: 0; }
+.spec dt { font-family: var(--font-serif); font-size: 13px; letter-spacing: 0.18em; color: var(--color-text-mute); }
+.spec dd { font-size: 14px; line-height: 1.85; color: var(--color-text); }
+.spec dt:nth-of-type(1), .spec dd:nth-of-type(1) { border-top: 0; padding-top: 0; }
+@media (max-width: 540px) { .spec dl { grid-template-columns: 1fr; gap: 0; } .spec dt { padding-bottom: 4px; border-top: 1px solid var(--color-line); } .spec dd { padding-top: 4px; padding-bottom: 18px; border-top: 0; } }
+
+.article-cta {
+  background: var(--color-forest); color: var(--color-beige);
+  padding: 60px clamp(28px, 5vw, 60px); margin: 80px 0 0;
+  text-align: center;
+}
+.article-cta h3 { font-family: var(--font-serif); font-size: 22px; line-height: 1.7; color: var(--color-beige); margin: 0 0 14px; font-weight: 500; }
+.article-cta p { font-size: 14px; color: rgba(245, 241, 232, 0.8); margin-bottom: 28px; line-height: 1.95; }
+.article-cta .btn { background: var(--color-beige); color: var(--color-text); }
+.article-cta .btn:hover { background: #fff; }
+
+.next-article {
+  background: var(--color-bg-sub); padding: 80px 0; border-top: 1px solid var(--color-line);
+}
+.next-article .container { display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
+.next-article .label { font-family: var(--font-serif); font-size: 12px; letter-spacing: 0.3em; color: var(--color-text-mute); margin-bottom: 8px; display: block; }
+.next-article a.next-link { font-family: var(--font-serif); font-size: clamp(20px, 2.5vw, 28px); color: var(--color-text); display: flex; align-items: center; gap: 18px; line-height: 1.5; }
+.next-article a.next-link:hover { color: var(--color-forest); }
+.next-article .back { font-family: var(--font-serif); font-size: 13px; letter-spacing: 0.2em; color: var(--color-text-mute); border-bottom: 1px solid var(--color-line); padding-bottom: 4px; }
+.next-article .back:hover { color: var(--color-text); border-bottom-color: currentColor; }
+
+@media (max-width: 720px) {
+  .article-hero { height: 70vh; min-height: 420px; }
+  .article-hero .container { padding-bottom: 50px; padding-top: 100px; }
+  .article-body { padding: 60px 0; }
+}
+
+/* =====================================================================
+   ハイブリッド層（2026-08-03）
+   文字＝星野リゾート準拠（Noto Sans JP・行間1.8・字間は詰めない）
+   画像の並べ方＝Airbnb準拠（角丸カード・自動折返しグリッド・白いピルバッジ）
+   色は一切変更していない。
+   ページ固有の <style> は shared.css より後勝ちなので、ここで上書きする。
+   ===================================================================== */
+h1, h2, h3, h4,
+.hero-title, .owner-hero-title, .page-head h1, .article-hero h1 {
+  font-family: var(--font-sans);
+  letter-spacing: normal;
+  font-weight: 700;
+  line-height: 1.4;
+}
+/* 和文エディトリアル特有の「広すぎる字間」を通常値へ（星野リゾート コーポレートと同じ ≒0.02em） */
+.eyebrow, .breadcrumb, .count, .filter-bar .container, .filter-bar button,
+.listing-meta, .feature-num, .footer-col h4, .hero-eyebrow, .owner-hero-eyebrow,
+.hero-issue, .hero-caption, .hero-scroll, .owner-hero-caption,
+.article-hero .meta, .article-body h2::before, .article-body figcaption,
+.article-body blockquote cite, .spec h3, .spec dt,
+.next-article .label, .next-article .back, .next-article a.next-link,
+.reason-card .reason-tag, .strength-item .num, .pillar .pillar-num,
+.pillar .pillar-tags span, .flow-step .flow-num, .flow-step h4,
+.case-card .case-tags span, .case-card .case-result,
+.testimonial .who, .consult-side li, .consult-side li::before,
+.consult-form .field label, .consult-form .field label .req,
+.consult-form .field label .opt, .faq-question .q-mark, .legal-body h2 {
+  letter-spacing: 0.02em;
+}
+.eyebrow::before, .eyebrow::after, .hero-eyebrow::before, .owner-hero-eyebrow::before { content: none; }
+.eyebrow, .hero-eyebrow, .owner-hero-eyebrow { font-weight: 600; font-size: 13px; }
+
+/* --- 画像・面はすべて角丸に（Airbnbの基本語彙） --- */
+.article-body figure img,
+.case-card .case-media,
+.testimonial img,
+.spec, .article-cta, .case-card, .testimonial, .pillar, .reason-card,
+.flow-step, .consult-form, .consult-thanks, .crosslink-banner,
+.strength-item, .faq-answer-inner {
+  border-radius: var(--radius-lg);
+}
+.case-card .case-media { overflow: hidden; }
+
+/* --- 一覧グリッド：自動折り返しの等幅カード --- */
+.archive-grid {
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important;
+  gap: 36px 20px !important;
+}
+@media (max-width: 560px) {
+  .archive-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)) !important; gap: 28px 16px !important; }
+}
+
+/* --- フィルターはAirbnbのピル型チップに --- */
+.filter-bar button {
+  border-radius: var(--radius-pill);
+  padding: 9px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--font-sans);
+}
+.filter-bar .container { font-size: 14px; font-family: var(--font-sans); }
+.filter-bar .label { font-weight: 600; }
+
+/* --- ページ見出し --- */
+.page-head h1 { line-height: 1.4; font-weight: 700; }
+.page-head .breadcrumb, .owner-breadcrumb-strip .breadcrumb { font-family: var(--font-sans); font-size: 14px; }
+.page-head .count { font-family: var(--font-sans); font-size: 15px; }
+
+/* ページ固有CSSの方が詳細度が高い箇所を、同じ深さで明示的に上書きする
+   （パンくず・小見出し・タグ・フォームのラベル等に 0.3em の字間が残っていたため） */
+.page-head .breadcrumb, .page-head .breadcrumb a, .page-head .count, .page-head .count strong,
+.owner-breadcrumb-strip .breadcrumb, .owner-breadcrumb-strip .breadcrumb a, .owner-breadcrumb-strip .breadcrumb span,
+.contact-head .breadcrumb, .contact-head .breadcrumb a, .contact-head .breadcrumb span,
+.legal-hero .breadcrumb, .legal-hero .breadcrumb a, .legal-hero .breadcrumb span, .legal-hero .updated,
+.hero-title .small, .owner-hero-title .small,
+.btn.owner-hero-cta, .btn.hero-cta,
+.reason-card .reason-tag,
+.consult-side h3, .contact-side h3,
+.contact-form .field label, .contact-form .field label .req, .contact-form .field label .opt,
+.consult-form .field label, .consult-form .field label .req, .consult-form .field label .opt {
+  letter-spacing: 0.02em;
+}
+
+/* --- 本文まわり --- */
+.article-body .lead { font-family: var(--font-sans); line-height: 1.9; letter-spacing: 0.02em; }
+.article-body h2 { line-height: 1.4; }
+.article-body p { font-size: 16px; line-height: 1.9; }
+.article-body blockquote { font-family: var(--font-sans); letter-spacing: 0.02em; line-height: 1.7; font-weight: 500; }
+.article-body figcaption { font-family: var(--font-sans); font-size: 13px; }
+.spec dt, .spec dd { font-family: var(--font-sans); }
+.spec dd { font-size: 15px; }
+.next-article a.next-link { font-family: var(--font-sans); font-weight: 600; }
+
+/* --- フォームの入力欄もAirbnbの角丸ボックスに --- */
+.consult-form .field input, .consult-form .field select, .consult-form .field textarea,
+.contact-form .field input, .contact-form .field select, .contact-form .field textarea {
+  border-radius: var(--radius-sm);
+}
+
+/* =====================================================================
+   取材記事（CASE）用の追加（2026-09・記事09から）
+   実写真に縦位置があること・短い発言が多いこと・INFORMATIONが複数施設に
+   またがることへの対応。色トークンは追加・変更していない。
+   ===================================================================== */
+.article-body .hero-note { font-size: 13px; color: var(--color-text-mute); margin: -40px 0 48px; line-height: 1.8; }
+.article-body figure.is-portrait { max-width: 360px; margin-left: auto; margin-right: auto; }
+.article-body figure.is-portrait img { aspect-ratio: 9/16; }
+.article-body .voice {
+  font-weight: 500; font-size: 17px; line-height: 1.85;
+  padding-left: 20px; border-left: 2px solid var(--color-guest);
+  margin: 32px 0;
+}
+.spec .spec-sub { font-weight: 700; font-size: 15px; margin: 40px 0 12px; color: var(--color-text); }
+.spec .spec-sub:first-of-type { margin-top: 0; }
+.spec a { color: var(--color-guest-deep); text-decoration: underline; text-underline-offset: 3px; word-break: break-all; }
+.article-note {
+  font-size: 13px; line-height: 1.9; color: var(--color-text-mute);
+  margin: 48px 0 0; padding-top: 24px; border-top: 1px solid var(--color-line);
+}
+@media (max-width: 720px) {
+  .article-body .hero-note { margin-top: -8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header is-hero" id="siteHeader">
+  <div class="container header-inner">
+    <a href="../index.html" class="logo" aria-label="かくれ宿 ホームへ">
+      <img class="logo-img" src="../assets/logo.jpg" alt="かくれ宿 ロゴ" />
+      <span class="logo-mark">かくれ宿 / CHIBA</span>
+    </a>
+    <nav class="nav" id="siteNav">
+      <a href="../articles.html">宿をさがす</a>
+      <a href="../for-owners.html">宿のオーナー様へ</a>
+      <a href="../index.html#newsletter" class="nav-cta">メルマガ登録</a>
+      <a href="../en/articles.html" class="nav-lang" lang="en" aria-label="English version">EN</a>
+    </nav>
+    <button class="hamburger" id="hamburger" type="button" aria-label="サイトマップを開く" aria-expanded="false" aria-controls="siteMenu">
+      <span class="hamburger-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="hamburger-label">メニュー</span>
+    </button>
+  </div>
+</header>
+
+<!-- =====================================================
+     SITEMAP — ヘッダーの ☰ で開くページ一覧
+     ・ページ単位まで。ページ内の見出しへのリンクは出さない（多すぎて選べなくなるため）
+     ・グループの先頭に「誰向けか」を必ず1行書く
+     ・to B のグループには is-host を付けて茶にする（色の役割は shared.css 参照）
+     ===================================================== -->
+<div class="sitemap" id="siteMenu" role="dialog" aria-modal="true" aria-label="サイトマップ">
+  <div class="container sitemap-inner">
+
+    <div class="sitemap-head">
+      <a href="../index.html" class="logo" aria-label="かくれ宿 ホームへ">
+        <img class="logo-img" src="../assets/logo.jpg" alt="かくれ宿 ロゴ" />
+        <span class="logo-mark">かくれ宿 / CHIBA</span>
+      </a>
+      <a href="../en/articles.html" class="sitemap-lang" lang="en">English</a>
+      <button type="button" class="sitemap-close">閉じる <span aria-hidden="true">✕</span></button>
+    </div>
+
+    <div class="sitemap-groups">
+
+      <div class="sitemap-group">
+        <h2>記事を読む</h2>
+        <p class="who">泊まってみたい方・読みものとして楽しみたい方へ</p>
+        <ul>
+          <li><a href="../articles.html">記事一覧<span class="note">取材記事とコラムをまとめて読む</span></a></li>
+          <li><a href="../index.html#newsletter">新着メールを受け取る<span class="note">無料・月1〜2回・いつでも解除できます</span></a></li>
+        </ul>
+      </div>
+
+      <div class="sitemap-group is-host">
+        <h2>宿を営む方へ</h2>
+        <p class="who">宿のオーナー様・ご家族の方へ。取材も掲載も、支援もすべて無料です</p>
+        <ul>
+          <li><a href="../contact.html">取材・掲載のご相談<span class="note">「うちの宿を紹介してほしい」はこちら</span></a></li>
+          <li><a href="../for-owners.html">宿の価値向上サポート<span class="note">事業承継を見据えて、今のうちに宿の価値を高めたい方へ</span></a></li>
+        </ul>
+      </div>
+
+      <div class="sitemap-group">
+        <h2>かくれ宿について</h2>
+        <p class="who">どんなメディアなのかを知りたい方へ</p>
+        <ul>
+          <li><a href="../index.html">トップページ</a></li>
+          <li><a href="../index.html#about">このメディアについて<span class="note">なぜ隠れた宿だけを紹介するのか</span></a></li>
+        </ul>
+      </div>
+
+      <div class="sitemap-group">
+        <h2>きまり</h2>
+        <p class="who">ご利用にあたって</p>
+        <ul>
+          <li><a href="../privacy.html">プライバシーポリシー</a></li>
+          <li><a href="../tokushoho.html">特定商取引法に基づく表記</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="sitemap-foot">
+      <p>大手の宿泊掲載サイトには載っていない、千葉県内に眠る"隠れた宿"を、静かに発掘・紹介するウェブメディアです。</p>
+      <div class="social-icons is-dark" aria-label="SNS">
+        <a class="social-icon" href="https://www.instagram.com/kakure_yado" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a class="social-icon" href="https://x.com/kakure_yado" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.53 3H20.5l-6.49 7.42L21.75 21h-6.02l-4.71-6.16L5.6 21H2.62l6.95-7.94L2.25 3h6.18l4.26 5.63L17.53 3Zm-1.06 16.2h1.66L7.62 4.7H5.84L16.47 19.2Z"/></svg></a>
+        <a class="social-icon" href="https://www.facebook.com/share/1cBxZJMGCn/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a class="social-icon" href="https://note.com/kakure_yado" target="_blank" rel="noopener" aria-label="note"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 4.5h12.7c2.04 0 4.1 1.56 4.1 4.1v10.9H15.5V9.85c0-1.05-.6-1.65-1.45-1.65-.65 0-1.4.4-2 .95v10.35H6.95V8.05c0-.45-.05-.65-.5-.65H3.6V4.5Z"/></svg></a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<section class="article-hero is-text">
+  <div class="container">
+    <div class="meta">
+      <span>COLUMN 003</span><span class="sep"></span>
+      <span>DATA</span><span class="sep"></span>
+      <span>2026.10</span>
+    </div>
+    <h1>数字で見る、千葉県の民泊</h1>
+    <p class="subtitle">千葉県の民泊は7年で約3倍に。公的データを数え直し、増えている地域と小さな宿が読み取れることをまとめました。</p>
+  </div>
+</section>
+
+<article class="article-body container">
+<p class="lead">千葉県で届出をしている民泊は、いま何軒あるのでしょうか。観光庁と千葉県の公的データを2026年10月に開き直し、1件ずつ数えました。どこで増え、どこで減っているのか。小さな宿を営む人が読み取れることを、僕たちなりにまとめます。</p>
+
+<h2 data-num="01">千葉県の民泊は1,274軒</h2>
+<p>ここでいう民泊は、住宅宿泊事業法（いわゆる民泊新法）にもとづく届出住宅のことです。ふつうの住宅を使い、年180日まで人を泊められる仕組みです。</p>
+<p>観光庁の民泊制度ポータルサイトによると、2026年9月15日時点の千葉県の数字は次のとおりです。</p>
+<ul>
+<li>これまでの届出件数：1,632件</li>
+<li>事業をやめた件数（事業廃止）：358件</li>
+<li>いま届出が生きている住宅：1,274件</li>
+</ul>
+<p>届出のおよそ5件に1件は、すでに廃止されています。全国の届出住宅は43,037件で、千葉県はその約3%です。県内の市の分も合わせて都道府県ごとに足すと、千葉県は全国で8番目に多い計算です（僕たちの集計）。</p>
+<h3>千葉市・船橋市・柏市の扱い</h3>
+<p>民泊の届出は、保健所を持つ市（保健所設置市）が独自に受け付けることがあります。ただ、観光庁の一覧には、千葉県内で独自に受け付ける市は載っていません。</p>
+<p>千葉県の届出一覧にも、千葉市・船橋市・柏市の住所がそのまま含まれています。そのため、この記事では県の数字を県全体の数字として扱い、市の数字は足していません。</p>
+
+<h2 data-num="02">7年で約3倍、ここ3年は毎年約2割増</h2>
+<p>観光庁が公開している過去の一覧から、毎年9月時点の千葉県の届出住宅数を並べました。</p>
+<div class="table-wrap"><table><thead><tr><th>時点</th><th>届出住宅数</th><th>前年からの増減</th></tr></thead><tbody>
+<tr><td>2019年9月17日</td><td>417軒</td><td>―</td></tr>
+<tr><td>2020年9月8日</td><td>595軒</td><td>+178軒</td></tr>
+<tr><td>2021年9月13日</td><td>636軒</td><td>+41軒</td></tr>
+<tr><td>2022年9月12日</td><td>674軒</td><td>+38軒</td></tr>
+<tr><td>2023年9月15日</td><td>714軒</td><td>+40軒</td></tr>
+<tr><td>2024年9月13日</td><td>880軒</td><td>+166軒</td></tr>
+<tr><td>2025年9月16日</td><td>1,063軒</td><td>+183軒</td></tr>
+<tr><td>2026年9月15日</td><td>1,274軒</td><td>+211軒</td></tr>
+</tbody></table></div>
+<p>2021年から2023年は、年40軒前後しか増えていません。感染症の流行で旅行が落ち込んだ時期と重なります。2024年からは、毎年160〜210軒のペースで増えています。</p>
+<p>直近1年の伸びは19.8%でした。全国の伸びは22.1%で、千葉県もほぼ同じ速さで増えています。</p>
+
+<h2 data-num="03">増えているのは湾岸と九十九里・外房</h2>
+<p>地域ごとの動きは、千葉県が公開する届出一覧で確かめました。2026年3月31日時点と6月30日時点の一覧を、1件ずつ突き合わせています。</p>
+<p>この3か月で新しい届出が95件あり、一覧から外れたものが22件ありました。差し引きで、1,130件から1,203件に増えています。</p>
+<div class="table-wrap"><table><thead><tr><th>地域</th><th>6月30日時点</th><th>3か月の増減</th><th>うち新規届出</th></tr></thead><tbody>
+<tr><td>湾岸・東葛（市川・浦安・船橋・松戸・柏など）</td><td>386件</td><td>+22件</td><td>30件</td></tr>
+<tr><td>九十九里（山武・長生の市町村）</td><td>234件</td><td>+21件</td><td>26件</td></tr>
+<tr><td>外房・南房総（夷隅・安房の市町）</td><td>226件</td><td>+15件</td><td>16件</td></tr>
+<tr><td>印旛（成田・佐倉・印西・富里など）</td><td>152件</td><td>+4件</td><td>7件</td></tr>
+<tr><td>内房（木更津・君津・富津・袖ケ浦・市原）</td><td>98件</td><td>+8件</td><td>8件</td></tr>
+<tr><td>千葉市</td><td>57件</td><td>+2件</td><td>4件</td></tr>
+<tr><td>香取・海匝（銚子・旭・匝瑳・香取など）</td><td>50件</td><td>+1件</td><td>4件</td></tr>
+<tr><td>合計</td><td>1,203件</td><td>+73件</td><td>95件</td></tr>
+</tbody></table></div>
+<p>地域の分け方は、僕たちが市町村をまとめたものです。新しい届出95件のうち72件、約4分の3が上の3地域に集まっています。</p>
+<p>市町村別では、浦安市89件、市川市75件、いすみ市68件、一宮町68件が上位です。3か月の増加は、市川市の10件増、浦安市の9件増が目立ちます。</p>
+<p>ただし、市川市の新規13件のうち9件は、同じ建物の部屋です。1棟の登録で、数字が大きく動くことがあります。</p>
+<p>一方で、習志野市は2件、佐倉市は1件減りました。神崎町と東庄町は、届出が0件です。</p>
+
+<h2 data-num="04">地域によって、宿の形も客層も違う</h2>
+<h3>湾岸は部屋貸し、海側は一軒家</h3>
+<p>届出一覧の住所には、建物名と部屋番号がつくものがあります。集合住宅の一室とみられる住所を数えると、湾岸・東葛は約4割でした。九十九里は3%、外房・南房総は8%です。</p>
+<p>住所の書き方から数えた目安ですが、海側は一軒家が中心とみられます。成田市も50件のうち25件が、同じ集合住宅の部屋でした。</p>
+<h3>泊まるのは国内の人、滞在は短め</h3>
+<p>観光庁は、民泊の宿泊実績を2か月ごとに集計しています。2026年6〜7月の千葉県の数字は次のとおりです。</p>
+<ul>
+<li>報告した912軒の宿泊日数は、合計9,967日。1軒あたり10.9日でした（全国は15.4日）。</li>
+<li>宿泊者19,189人のうち、日本国籍の人は14,813人で約77%です（全国は42.5%）。</li>
+<li>1人あたりの泊数は1.8泊でした（全国は2.8泊）。</li>
+</ul>
+
+<h2 data-num="05">数字から言えること、僕たちの見立て</h2>
+<h3>数字から言えること</h3>
+<ul>
+<li>千葉県の民泊は、ここ3年、毎年2割前後のペースで増えています。</li>
+<li>増えているのは、湾岸・東葛と、九十九里・外房の海沿いです。</li>
+<li>届出の約2割は廃止されています。始める人もいれば、やめる人もいます。</li>
+<li>夏の2か月の宿泊者は4分の3以上が日本国籍で、1人あたり2泊に届きません。</li>
+</ul>
+<h3>僕たちの見立て</h3>
+<p>海沿いの一軒家は、届出が増え続けています。同じ海、同じ一棟貸しが並ぶと、選ばれる理由は作りにくくなるはずです。その土地ならではの過ごし方を、宿の側から用意することが大切になると考えています。</p>
+<p>夏の2か月で1軒あたり約11日という数字も気になります。休眠中の届出も含む平均ですが、年180日の上限より手前で止まっている宿は多いはずです。上限よりも、まず集客が課題になりそうです。</p>
+<p>泊まる人の多くは国内の人で、滞在は短めです。首都圏から1〜2泊で来る家族やグループに、何を届けるか。小さな宿にとっては、ここが考えどころだと僕たちは見ています。</p>
+<p>内陸の印旛や香取・海匝は、増え方がゆるやかです。競合は少ないものの、誰が泊まりに来るのかを先に確かめたい地域です。</p>
+
+<div class="spec"><h3>この記事のまとめ</h3><dl>
+<dt>県内の民泊</dt><dd>1,274軒（2026年9月15日時点・観光庁）</dd>
+<dt>直近1年の伸び</dt><dd>19.8%増（全国は22.1%増）</dd>
+<dt>増えている地域</dt><dd>湾岸・東葛、九十九里、外房・南房総（2026年4〜6月の新規届出の約4分の3）</dd>
+<dt>泊まる人</dt><dd>日本国籍が約77%、1人あたり1.8泊（2026年6〜7月）</dd>
+<dt>千葉市などの扱い</dt><dd>県の届出一覧に含まれます。独自に受け付ける市はなく、市の数字を足す必要はありません</dd>
+</dl></div>
+
+<div class="sources"><h3>参考にした資料</h3><ul>
+<li><a href="https://www.pref.chiba.lg.jp/eishi/tetsuzuki/minpaku.html" target="_blank" rel="noopener">千葉県「民泊について（住宅宿泊事業法）」</a>（確認日：2026年10月）</li>
+<li><a href="https://www.pref.chiba.lg.jp/eishi/tetsuzuki/documents/itiran0630syozai.pdf" target="_blank" rel="noopener">千葉県「県内届出受理施設一覧：所在地別（令和8年6月30日時点）」</a>（確認日：2026年10月）</li>
+<li><a href="https://www.pref.chiba.lg.jp/eishi/tetsuzuki/documents/itiran0331syozai.pdf" target="_blank" rel="noopener">千葉県「県内届出受理施設一覧：所在地別（令和8年3月31日時点）」</a>（確認日：2026年10月）</li>
+<li><a href="https://www.mlit.go.jp/kankocho/minpaku/business/host/construction_situation.html" target="_blank" rel="noopener">観光庁 民泊制度ポータルサイト「住宅宿泊事業法の施行状況」</a>（確認日：2026年10月）</li>
+<li><a href="https://www.mlit.go.jp/kankocho/minpaku/business/host/content/002024797.pdf" target="_blank" rel="noopener">観光庁「住宅宿泊事業法に基づく届出及び登録の状況一覧（令和8年9月15日時点）」</a>（確認日：2026年10月）</li>
+<li><a href="https://www.mlit.go.jp/kankocho/minpaku/business/host/content/002024872.pdf" target="_blank" rel="noopener">観光庁「住宅宿泊事業の宿泊実績について（令和8年6月－7月）」</a>（確認日：2026年10月）</li>
+<li><a href="https://www.mlit.go.jp/kankocho/minpaku/business/host/content/001970420.pdf" target="_blank" rel="noopener">観光庁「届出及び登録の状況一覧（令和7年9月16日時点）」</a>（確認日：2026年10月）</li>
+<li><a href="https://www.mlit.go.jp/kankocho/minpaku/business/host/content/001765020.pdf" target="_blank" rel="noopener">観光庁「届出及び登録の状況一覧（令和6年9月13日時点）」</a>（確認日：2026年10月）</li>
+<li><a href="https://www.mlit.go.jp/kankocho/minpaku/business/host/content/001710501.pdf" target="_blank" rel="noopener">観光庁「届出及び登録の状況一覧（令和5年9月15日時点）」</a>（確認日：2026年10月）</li>
+<li><a href="https://www.mlit.go.jp/kankocho/minpaku/business/host/content/001517534.pdf" target="_blank" rel="noopener">観光庁「届出及び登録の状況一覧（令和4年9月12日時点）」</a>（確認日：2026年10月）</li>
+<li><a href="https://www.mlit.go.jp/kankocho/minpaku/business/host/content/001429063.pdf" target="_blank" rel="noopener">観光庁「届出及び登録の状況一覧（令和3年9月13日時点）」</a>（確認日：2026年10月）</li>
+<li><a href="https://www.mlit.go.jp/kankocho/minpaku/business/host/content/001367329.pdf" target="_blank" rel="noopener">観光庁「届出及び登録の状況一覧（令和2年9月8日時点）」</a>（確認日：2026年10月）</li>
+<li><a href="https://www.mlit.go.jp/kankocho/minpaku/business/host/content/001309471.pdf" target="_blank" rel="noopener">観光庁「届出及び登録の状況一覧（令和元年9月17日時点）」</a>（確認日：2026年10月）</li>
+</ul></div>
+
+<p class="article-note">この記事は、観光庁と千葉県の公開資料をもとに、かくれ宿CHIBA編集部が集計してまとめたものです。地域別の件数と「集合住宅の一室とみられる」割合は、届出一覧の住所から編集部が数えたもので、多少の誤差を含むことがあります。千葉県の届出一覧は、2026年10月24日の確認時点で6月30日時点版が最新でした。（執筆：2026年10月）</p>
+</article>
+
+<section class="next-article">
+  <div class="container">
+    <div>
+      <span class="label">MORE</span>
+      <a class="next-link" href="../articles.html">記事一覧を見る <span>→</span></a>
+    </div>
+    <a class="back" href="../index.html">← トップへ戻る</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="../index.html" class="logo" aria-label="かくれ宿 ホームへ">
+      <img class="logo-img" src="../assets/logo.jpg" alt="かくれ宿 ロゴ" />
+      <span class="logo-mark">かくれ宿 / CHIBA</span>
+    </a>
+        <p>大手の宿泊掲載サイトには載っていない、千葉県内に眠る"隠れた宿"を、静かに発掘・紹介するウェブメディア。</p>
+          <div class="footer-social social-icons is-dark" aria-label="SNS">
+      <a class="social-icon" href="https://www.instagram.com/kakure_yado" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+      <a class="social-icon" href="https://x.com/kakure_yado" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.53 3H20.5l-6.49 7.42L21.75 21h-6.02l-4.71-6.16L5.6 21H2.62l6.95-7.94L2.25 3h6.18l4.26 5.63L17.53 3Zm-1.06 16.2h1.66L7.62 4.7H5.84L16.47 19.2Z"/></svg></a>
+      <a class="social-icon" href="https://www.facebook.com/share/1cBxZJMGCn/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      <a class="social-icon" href="https://note.com/kakure_yado" target="_blank" rel="noopener" aria-label="note"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 4.5h12.7c2.04 0 4.1 1.56 4.1 4.1v10.9H15.5V9.85c0-1.05-.6-1.65-1.45-1.65-.65 0-1.4.4-2 .95v10.35H6.95V8.05c0-.45-.05-.65-.5-.65H3.6V4.5Z"/></svg></a>
+    </div>
+      </div>
+      <div class="footer-col"><h4>MEDIA</h4><ul>
+        <li><a href="../articles.html">記事一覧</a></li>
+        <li><a href="../index.html#about">メディアについて</a></li>
+        <li><a href="../index.html#newsletter">メルマガ登録</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>FOR&nbsp;OWNERS</h4><ul>
+        <li><a href="../for-owners.html">宿の価値向上サポート</a></li>
+        <li><a href="../contact.html">取材の依頼</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>CONTACT</h4><ul>
+        <li><a href="../contact.html">お問い合わせ</a></li>
+        <li><a href="../privacy.html">プライバシーポリシー</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 かくれ宿 千葉. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var header = document.getElementById('siteHeader');
+  function up(){ var y = window.scrollY||0; header.classList.toggle('is-scrolled', y>20); header.classList.toggle('is-hero', y < 400); }
+  up(); window.addEventListener('scroll', up, {passive:true});
+})();
+</script>
+<script src="../assets/menu.js"></script>
+</body>
+</html>
