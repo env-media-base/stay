@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>ネットの先払い、何を選ぶか — かくれ宿</title>
-<meta name="description" content="小さな宿・カフェがネットで代金を先に受け取りたいとき、Stripeの支払いリンクとSquareのリンク決済を、手数料・初期費用・審査の日数・入金で比べ、店のタイプ別に選び方を示します。" />
+<meta name="description" content="宿の予約金やカフェの代金を来店前にネットで受け取るには。Stripe・Square・Airペイ・PayPalの4つを、手数料・始めるまでの日数・入金・返金の扱いで比べ、店の型ごとに選び方を示します。" />
 <!-- OGP / Twitter Card / favicon -->
 <!-- コラムは日本語のみ（英語版なし）。hreflang は ja / x-default だけにしている -->
 <link rel="canonical" href="https://kakureyado.pages.dev/articles/10-payment" />
@@ -14,14 +14,14 @@
 <meta property="og:site_name" content="かくれ宿 CHIBA" />
 <meta property="og:locale" content="ja_JP" />
 <meta property="og:title" content="ネットの先払い、何を選ぶか — かくれ宿" />
-<meta property="og:description" content="Stripe・Squareを、費用と始めるまでの日数、入金の早さで比べました。" />
+<meta property="og:description" content="Stripe・Square・Airペイ・PayPalの支払いリンクを、費用と入金の早さで比べました。" />
 <meta property="og:url" content="https://kakureyado.pages.dev/articles/10-payment" />
 <meta property="og:image" content="https://kakureyado.pages.dev/assets/ogp.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="ネットの先払い、何を選ぶか — かくれ宿" />
-<meta name="twitter:description" content="Stripe・Squareを、費用と始めるまでの日数、入金の早さで比べました。" />
+<meta name="twitter:description" content="Stripe・Square・Airペイ・PayPalの支払いリンクを、費用と入金の早さで比べました。" />
 <meta name="twitter:image" content="https://kakureyado.pages.dev/assets/ogp.png" />
 <meta name="theme-color" content="#7A9971" />
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
@@ -362,43 +362,57 @@ h1, h2, h3, h4,
       <span>2026.10</span>
     </div>
     <h1>ネットの先払い、何を選ぶか</h1>
-    <p class="subtitle">Stripe・Squareを、費用と始めるまでの日数、入金の早さで比べました。</p>
+    <p class="subtitle">Stripe・Square・Airペイ・PayPalの支払いリンクを、費用と入金の早さで比べました。</p>
   </div>
 </section>
 
 <article class="article-body container">
-<p class="lead">宿の予約金や、カフェの予約・持ち帰りの代金を、来店前にネットで受け取りたい。そんなときに候補になる決済サービスを、費用・始めるまでの日数・手間で比べます。</p>
+<p class="lead">宿の予約金や、カフェの予約・持ち帰りの代金を、来店前にネットで受け取りたい。そんなときの候補を4つ、費用・始めるまでの日数・入金の早さで比べます。</p>
 
 <h2 data-num="01">先に結論</h2>
-<p>初めてネットで先払いを受けるなら、Square（スクエア）のリンク決済から始めるのが手堅いです。初期費用と月額が0円で、どの銀行の口座でも週1回は入金されます。</p>
-<p>PayPayでも受けたい店はStripe（ストライプ）が候補です。</p>
+<p>初めてネットで先払いを受けるなら、Square（スクエア）のリンク決済から始めるのが手堅いです。初期費用と月額が0円で、どの口座でも週1回は入金されます。</p>
+<p>手数料を抑えたい店はAirペイ（エアペイ）。PayPayでも受けたい店はStripe（ストライプ）。海外からのお客さんが多い宿はPayPal（ペイパル）です。</p>
 
 <h2 data-num="02">表で比べる</h2>
-<p>StripeとSquareは、決済代行（カード払いを代わりに受け付けてくれるサービス）です。どちらも支払いリンクを作れます。支払いリンクとは、URLを1本作るだけで、開いた人がカードで払える画面のことです。</p>
-<p>自分のホームページがなくても、メールやSNSでURLを送れば使えます。Stripeは、URLをQRコードにして見せることもできます。</p>
-<div class="table-wrap"><table><thead><tr><th>項目</th><th>Stripeの支払いリンク</th><th>Squareのリンク決済</th></tr></thead><tbody>
-<tr><td>初期費用</td><td>0円</td><td>0円</td></tr>
-<tr><td>月額</td><td>0円</td><td>0円</td></tr>
-<tr><td>カードの手数料</td><td>1件ごとに3.6%</td><td>1件ごとに3.6%</td></tr>
-<tr><td>PayPay</td><td>1件ごとに3.98%</td><td>リンク決済のページに記載なし</td></tr>
-<tr><td>始めるまで</td><td>公式ページに日数の目安なし</td><td>Visa・Mastercardなどは通常1〜3営業日（最短当日）。JCBなどは通常5〜15日</td></tr>
-<tr><td>入金</td><td>決済から4営業日で入金できる状態に（初回は7日）。毎日の振込はなし</td><td>三井住友・みずほは翌営業日。ほかの銀行は毎週金曜（水曜締め）</td></tr>
-<tr><td>返金したとき</td><td>最初に引かれた手数料は戻らない</td><td>払い戻しの手数料はかからない</td></tr>
+<p>4つとも、決済代行（カード払いを代わりに受け付けてくれるサービス）です。どれも支払いリンクを作れます。支払いリンクとは、URLを1本作るだけで、開いた人がカードで払える画面のことです。</p>
+<p>自分のホームページがなくても、メールやSNSでURLを送れば使えます。4つとも、URLをQRコードにして見せることもできます（PayPalは請求書の機能で作ります）。</p>
+<div class="table-wrap"><table><thead><tr><th>項目</th><th>Stripeの支払いリンク</th><th>Squareのリンク決済</th><th>Airペイのオンライン決済</th><th>PayPalのペイメントリンク・請求書</th></tr></thead><tbody>
+<tr><td>初期費用</td><td>0円</td><td>0円</td><td>0円</td><td>0円</td></tr>
+<tr><td>月額</td><td>0円</td><td>0円</td><td>0円</td><td>0円</td></tr>
+<tr><td>カードの手数料</td><td>1件ごとに3.6%</td><td>1件ごとに3.6%</td><td>1件ごとに3.24%</td><td>1件ごとに3.6%＋40円（国内）</td></tr>
+<tr><td>PayPay</td><td>1件ごとに3.98%</td><td>リンク決済のページに記載なし</td><td>公式ページに記載なし（載っているのはカード5ブランド）</td><td>公式ページに記載なし</td></tr>
+<tr><td>始めるまで</td><td>公式ページに日数の目安なし</td><td>Visa・Mastercardなどは通常1〜3営業日（最短当日）。JCBなどは通常5〜15日</td><td>審査は通常3日程度（Airペイ全体の目安）</td><td>公式ページに日数の目安なし</td></tr>
+<tr><td>入金</td><td>決済から4営業日で入金できる状態に（初回は7日）。毎日の振込はなし</td><td>三井住友・みずほの口座は翌営業日。それ以外は毎週金曜（水曜締め）</td><td>月1回。振込手数料0円</td><td>自分で引き出す。5万円未満は1回250円。標準で3〜6営業日かかる場合あり</td></tr>
+<tr><td>返金したとき</td><td>最初に引かれた手数料は戻らない</td><td>払い戻しの手数料はかからない</td><td>公式ページに記載なし</td><td>返金の手数料はなし。最初に引かれた手数料は戻らない</td></tr>
 </tbody></table></div>
 
 <h2 data-num="03">一つずつ、もう少しくわしく</h2>
 <h3>Stripeの支払いリンク</h3>
 <p>料金はカード払い1件ごとに3.6%、PayPayは3.98%です。初期費用と月額はかかりません。支払いリンクも、追加の手数料なしで使えます。</p>
-<p>強みは、入力欄を自分で足せることです。テキスト・数字・選択式（ドロップダウン）の3種類があり、たとえば「来店日」を選んでもらえます。お客さんが数量を変えられる設定もあります。</p>
-<p>ただし公式には、追加した欄で個人情報を集めないよう注意書きがあります。細かい連絡事項は、別の予約フォームで受けるほうが安全です。</p>
+<p>強みは、入力欄を自分で足せることです。たとえば選択式の欄で「来店日」を選んでもらえます。ただし公式には、追加した欄で個人情報を集めないよう注意書きがあります。</p>
 <p>気をつけたい点は2つです。1つは、返金しても最初の手数料が戻らないこと。1万円の予約を取り消すと、360円は店の負担になります。</p>
-<p>もう1つは入金です。日本では毎日の振込はなく、週1回か月1回などを選びます。売上が入金できる状態になるのは決済から4営業日後で、初回は7日かかります。</p>
+<p>もう1つは入金です。毎日の振込はなく、週1回か月1回などを選びます。決済から4営業日（初回は7日）で入金できる状態になります。</p>
 
 <h3>Squareのリンク決済</h3>
-<p>手数料は1件ごとに3.6%で、初期費用と月額は0円です。振込手数料も無料です。</p>
+<p>手数料は1件ごとに3.6%で、初期費用と月額は0円です。振込手数料も無料です。作ったリンクからQRコードも作れます。</p>
 <p>始めるまでが早いのが特長です。審査（決済会社が店の情報を確かめる手続き）は、Visa・Mastercardなどで通常1〜3営業日。最短なら申し込んだ当日から使えます。JCBなどは別の審査で、通常5〜15日かかります。</p>
-<p>入金は、三井住友銀行とみずほ銀行なら翌営業日です。それ以外の銀行は水曜締めで、毎週金曜に振り込まれます。どの銀行の口座でも、週に1回は現金が戻ってきます。</p>
+<p>入金は、三井住友銀行とみずほ銀行の口座なら翌営業日です。それ以外の口座は水曜締めで、毎週金曜に振り込まれます。どの口座でも、週に1回は現金が戻ってきます。</p>
 <p>払い戻し（返金）の手数料はかかりません。ただ、最初に引かれた3.6%が戻るかどうかは、公式ページでは確かめられませんでした。予約の取り消しが多い宿は、申し込む前に確認してください。</p>
+
+<h3>Airペイのオンライン決済</h3>
+<p>店頭のカード払い向けサービス、Airペイの機能の一つです。決済リンク（支払い用のページのURL）を作って、メールやSNSで送ります。リンクをQRコードにして、店頭に置く使い方も紹介されています。</p>
+<p>手数料は1件ごとに3.24%です。店の規模や業種に関係なく一律で、初期費用と月額は0円です。1万円の予約金なら324円で、4つの中でいちばん低い率です。</p>
+<p>使えるのはVisa・Mastercard・JCBなど5つのカードです。PayPayなどカード以外は、ページに載っていません。</p>
+<p>気をつけたいのは入金です。オンライン決済の売上は月1回の振込で、振込日はメールで届きます。振込手数料は0円ですが、ゆうちょの口座は振込先に使えません。</p>
+<p>申し込みはWebで完結し、Airペイの審査は通常3日程度です。管理はパソコンかiPadで行います。返金したときの手数料の扱いは、公式ページでは確かめられませんでした。</p>
+
+<h3>PayPalのペイメントリンク・請求書</h3>
+<p>ホームページなしで使える方法は、ペイメントリンクと請求書の2つです。どちらもビジネスアカウント（事業者向けの登録）が要ります。ペイメントリンクは、商品名と価格を入れてURLを作り、メールやSNSで送ります。</p>
+<p>請求書は、お客さんのメールアドレスあてに送れます。アドレスがわからなければ、共有リンクやQRコードも作れます。PayPalのアカウントがないお客さんも、カードで払えます。</p>
+<p>手数料は国内なら1件ごとに3.6%＋40円で、初期費用と月額はかかりません。1万円なら400円。3,000円なら148円で、率にすると約4.9%です。</p>
+<p>海外のお客さんからの支払いは、24の通貨で受けられます。その場合、手数料に0.5%が上乗せされます。</p>
+<p>売上はPayPalの中にたまり、自分で引き出します。5万円未満は1回250円、5万円以上は無料です。標準の引き出しは3〜6営業日かかる場合があります。</p>
+<p>返金の手数料はかかりません。ただ、受け取ったときの手数料は戻りません。1万円を返金すると、400円は店の負担です。</p>
 
 <h2 data-num="04">申し込む前に用意すること</h2>
 <p>ネットで申し込みを受けて先にお金を受け取る売り方は、特定商取引法の「通信販売」にあたることがあります。その場合、ホームページなどに決まった項目を表示する必要があります。</p>
@@ -411,17 +425,26 @@ h1, h2, h3, h4,
 <li>申し込みの取り消し（キャンセル）についての決まり</li>
 </ul>
 <p>特にキャンセルの決まりは、先に言葉にしておくのが大事です。「何日前までなら全額返す」「それ以降は返さない」と書いておけば、返金の判断に迷いません。</p>
-<p>手数料も、先に月の額で見ておくと安心です。たとえば1万円の予約金を月20件受けると売上は20万円。3.6%なら手数料は月7,200円です。</p>
+<p>手数料も、先に月の額で見ておくと安心です。たとえば1万円の予約金を月20件受けると、売上は20万円です。</p>
+<ul>
+<li>Airペイ（3.24%）：月6,480円</li>
+<li>StripeとSquare（3.6%）：月7,200円</li>
+<li>PayPal（3.6%＋40円）：月8,000円</li>
+</ul>
+<p>差は月に1,500円ほど。手数料だけでなく、入金の早さと返金の扱いも合わせて見てください。</p>
 
 <h2 data-num="05">僕たちの結論</h2>
-<p><strong>初めてネットで先払いを受ける店は、Squareのリンク決済。</strong>固定費0円で始められ、どの銀行の口座でも週1回入金されます。返金の手数料がかからないので、キャンセルが出やすい宿にも合います。</p>
-<p><strong>PayPayでも受けたい店、入力欄を作り込みたい店は、Stripe。</strong>ただし返金すると手数料が戻らないので、キャンセルが少ない店向きです。</p>
+<p><strong>初めてネットで先払いを受ける店は、Squareのリンク決済。</strong>固定費0円で始められ、どの口座でも週1回入金されます。返金の手数料がかからないので、キャンセルが出やすい宿にも合います。</p>
+<p><strong>手数料を抑えたい店、入金が月1回で困らない店は、Airペイ。</strong>4つの中でいちばん低い3.24%です。返金の扱いは申し込む前に確かめてください。</p>
+<p><strong>PayPayでも受けたい店、入力欄を作り込みたい店は、Stripe。</strong>返金すると手数料が戻らないので、キャンセルが少ない店向きです。</p>
+<p><strong>海外からの予約が多い宿は、PayPal。</strong>24の通貨で受けられます。1件40円の手数料があるので、少額の予約が多い店には向きません。</p>
 <p>迷ったら、まずSquareで1か月だけ試してみる。数字が手元にそろってから、次を考えれば十分です。</p>
 
 <div class="spec"><h3>この記事のまとめ</h3><dl>
-<dt>初めてなら</dt><dd>Squareのリンク決済。初期費用・月額0円、手数料3.6%、返金手数料なし</dd>
-<dt>PayPayも受けたいなら</dt><dd>Stripeの支払いリンク。カード3.6%・PayPay3.98%。返金しても最初の手数料は戻らない</dd>
-<dt>入金の早さ</dt><dd>Squareはほかの銀行で毎週金曜。Stripeは週1回か月1回などで、毎日の振込はなし</dd>
+<dt>初めてなら</dt><dd>Square。固定費0円、手数料3.6%、返金手数料なし</dd>
+<dt>手数料を抑えたいなら</dt><dd>Airペイ。手数料3.24%で最も低い。入金は月1回</dd>
+<dt>PayPayも受けたいなら</dt><dd>Stripe。カード3.6%・PayPay3.98%。返金しても手数料は戻らない</dd>
+<dt>海外のお客さんが多いなら</dt><dd>PayPal。国内3.6%＋40円、海外は0.5%上乗せ</dd>
 <dt>申し込む前に</dt><dd>特定商取引法の表記とキャンセルの決まりをホームページに用意する</dd>
 </dl></div>
 
@@ -434,10 +457,16 @@ h1, h2, h3, h4,
 <li><a href="https://squareup.com/jp/ja/payments/our-fees" target="_blank" rel="noopener">Square 決済手数料</a>（確認日：2026年10月）</li>
 <li><a href="https://squareup.com/jp/ja/online-checkout" target="_blank" rel="noopener">Square リンク決済（オンラインチェックアウト）</a>（確認日：2026年10月）</li>
 <li><a href="https://squareup.com/jp/ja/payments/in-person-payments" target="_blank" rel="noopener">Square 対面決済（審査期間のよくある質問）</a>（確認日：2026年10月）</li>
+<li><a href="https://airregi.jp/payment/service/online/" target="_blank" rel="noopener">Airペイ オンライン決済</a>（確認日：2026年10月）</li>
+<li><a href="https://airregi.jp/payment/" target="_blank" rel="noopener">Airペイ サービス案内（申込みの流れ・よくある質問）</a>（確認日：2026年10月）</li>
+<li><a href="https://www.paypal.com/jp/business/paypal-business-fees" target="_blank" rel="noopener">PayPal ビジネスアカウントの手数料</a>（確認日：2026年10月）</li>
+<li><a href="https://www.paypal.com/jp/business/accept-payments/payment-links" target="_blank" rel="noopener">PayPal ペイメントリンク</a>（確認日：2026年10月）</li>
+<li><a href="https://www.paypal.com/jp/business/accept-payments/invoice" target="_blank" rel="noopener">PayPal オンラインで請求書を作成・送信</a>（確認日：2026年10月）</li>
+<li><a href="https://securepayments.paypal.com/jp/cshelp/article/paypal%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%81%8B%E3%82%89%E8%B3%87%E9%87%91%E3%82%92%E5%BC%95%E3%81%8D%E5%87%BA%E3%81%99%E3%81%AB%E3%81%AF%E3%81%A9%E3%81%86%E3%81%99%E3%82%8C%E3%81%B0%E3%82%88%E3%81%84%E3%81%A7%E3%81%99%E3%81%8B-help394" target="_blank" rel="noopener">PayPal ヘルプ「PayPalアカウントから資金を引き出すにはどうすればよいですか?」</a>（確認日：2026年10月）</li>
 <li><a href="https://www.no-trouble.caa.go.jp/what/mailorder/" target="_blank" rel="noopener">消費者庁 特定商取引法ガイド「通信販売」</a>（確認日：2026年10月）</li>
 </ul></div>
 
-<p class="article-note">StripeとSquareの数字は、2026年10月24日に各社の日本の公式ページで確かめたものです。（執筆：2026年10月。料金などは変わることがあるので、申し込む前に各社の公式ページで確かめてください）</p>
+<p class="article-note">StripeとSquareの数字は2026年10月24日に、AirペイとPayPalの数字は2026年10月25日に、各社の日本の公式ページで確かめたものです。（執筆：2026年10月。料金などは変わることがあるので、申し込む前に各社の公式ページで確かめてください）</p>
 </article>
 
 <section class="next-article">
