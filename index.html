@@ -3,400 +3,69 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>かくれ宿 — 古民家の宿とカフェの読みもの</title>
+<title>かくれ宿 — 古民家の宿とカフェを訪ねる</title>
 <meta name="description" content="大手の予約サイトには載っていない、全国の古民家の宿とカフェを、営む人の話ごと届けるウェブメディア。" />
-
-<!-- OGP / Twitter Card / favicon -->
 <link rel="canonical" href="https://kakureyado.pages.dev/" />
-<link rel="alternate" hreflang="ja" href="https://kakureyado.pages.dev/" />
-<link rel="alternate" hreflang="en" href="https://kakureyado.pages.dev/en/" />
-<link rel="alternate" hreflang="x-default" href="https://kakureyado.pages.dev/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="かくれ宿" />
 <meta property="og:locale" content="ja_JP" />
-<meta property="og:title" content="かくれ宿 — 古民家の宿とカフェの読みもの" />
+<meta property="og:title" content="かくれ宿 — 古民家の宿とカフェを訪ねる" />
 <meta property="og:description" content="大手の予約サイトには載っていない、全国の古民家の宿とカフェを、営む人の話ごと届けるウェブメディア。" />
 <meta property="og:url" content="https://kakureyado.pages.dev/" />
 <meta property="og:image" content="https://kakureyado.pages.dev/assets/ogp.png" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="かくれ宿 — 古民家の宿とカフェの読みもの" />
-<meta name="twitter:description" content="大手の予約サイトには載っていない、全国の古民家の宿とカフェを、営む人の話ごと届けるウェブメディア。" />
-<meta name="twitter:image" content="https://kakureyado.pages.dev/assets/ogp.png" />
 <meta name="theme-color" content="#352C25" />
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="assets/logo.jpg" />
-
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet" />
-
-<style>
-/* =====================================================================
-   トップページ リニューアル（2026-10-25・お試し版）
-   土台＝中川政七商店の読みもの（白地・游ゴシック・タブナビ・左に黒線の見出し・
-         右に新着とタグ・【連載名】・写真タイル）
-   ＋NIPPONIA村人（ヒーローの明朝コピー・人／エリアから探す・件数）
-   色＝焦げ茶 #352C25・朱 #E25B33（HIGHTIDE）／生成り #F8F6ED・#EDE9DB・山吹 #FFBF00（cotogoto）
-   ※ shared.css は読み込まない（他ページの緑のデザインと衝突するため）。
-     ☰サイトマップとSNSアイコンは他ページと同じHTMLのまま、見た目だけここで当てる。
-   ===================================================================== */
-:root {
-  --white: #FFFFFF;
-  --kinari: #F8F6ED;
-  --kinari-deep: #EDE9DB;
-  --ink: #352C25;
-  --gray: #8A8A8A;
-  --line: #DCDCDC;
-  --shu: #E25B33;
-  --yamabuki: #FFBF00;
-  --gothic: "游ゴシック体", YuGothic, "Yu Gothic Medium", "Yu Gothic", "Noto Sans JP", sans-serif;
-  --mincho: "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif JP", serif;
-  --gutter: 32px;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  background: var(--white);
-  color: var(--ink);
-  font-family: var(--gothic);
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 1.8;
-  -webkit-font-smoothing: antialiased;
-}
-img { display: block; width: 100%; height: 100%; object-fit: cover; }
-a { color: inherit; text-decoration: none; }
-ul { list-style: none; }
-button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
-.wrap { max-width: 1200px; margin: 0 auto; padding: 0 var(--gutter); }
-
-/* ---------- 上の細い帯 ---------- */
-.topbar { background: var(--kinari); font-size: 12px; }
-.topbar .wrap { display: flex; justify-content: space-between; align-items: center; height: 36px; }
-.topbar-links { display: flex; height: 100%; }
-.topbar-links a { display: flex; align-items: center; padding: 0 18px; white-space: nowrap; }
-.topbar-links a:hover { color: var(--shu); }
-.topbar-links a.dark { background: var(--ink); color: var(--white); }
-
-/* ---------- ヘッダー ---------- */
-.header .wrap { display: flex; align-items: center; gap: 20px; height: 96px; }
-.logo { display: flex; align-items: center; gap: 14px; }
-.logo-img { width: 56px; height: 56px; }
-.logo-name { font-family: var(--mincho); font-size: 22px; font-weight: 600; letter-spacing: 0.1em; line-height: 1.3; }
-.logo-name small { display: block; font-family: var(--gothic); font-size: 12px; font-weight: 500; letter-spacing: 0.04em; color: var(--gray); }
-.header-actions { margin-left: auto; display: flex; gap: 20px; }
-.icon-btn { display: flex; flex-direction: column; align-items: center; font-size: 11px; gap: 2px; }
-.icon-btn .circle { width: 36px; height: 36px; border-radius: 50%; background: var(--ink); display: flex; align-items: center; justify-content: center; }
-.icon-btn.line .circle { background: var(--white); border: 1px solid var(--ink); }
-.icon-btn svg { width: 18px; height: 18px; }
-
-/* ---------- タブナビ ---------- */
-.tabs { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--white); position: sticky; top: 0; z-index: 10; }
-.tabs ul { display: flex; max-width: 1200px; margin: 0 auto; }
-.tabs li { flex: 1; border-left: 1px solid var(--line); }
-.tabs li:last-child { border-right: 1px solid var(--line); }
-.tabs a { display: block; text-align: center; padding: 14px 8px; font-size: 14px; font-weight: 700; white-space: nowrap; }
-.tabs a:hover { color: var(--shu); }
-
-/* ---------- ヒーロー ---------- */
-.hero { position: relative; height: 560px; overflow: hidden; }
-.hero-copy { position: absolute; left: max(var(--gutter), calc((100vw - 1200px) / 2 + var(--gutter))); bottom: 56px; background: rgba(255, 255, 255, 0.94); padding: 32px 40px 28px; max-width: 520px; }
-.hero-copy .series { font-size: 12px; font-weight: 700; color: var(--shu); }
-.hero-copy h1 { font-family: var(--mincho); font-weight: 400; font-size: 34px; line-height: 1.6; letter-spacing: 0.08em; margin: 8px 0 14px; }
-.hero-copy p { font-size: 14px; line-height: 1.9; }
-.hero-copy .go { display: inline-block; margin-top: 14px; font-size: 13px; font-weight: 700; border-bottom: 1px solid var(--ink); }
-.hero-copy .go:hover { color: var(--shu); border-color: var(--shu); }
-
-/* ---------- このメディアについて ---------- */
-.about { background: var(--kinari); }
-.about .wrap { display: grid; grid-template-columns: 260px 1fr 1fr 1fr; gap: 40px; padding-top: 48px; padding-bottom: 48px; align-items: start; }
-.about-title { font-family: var(--mincho); font-size: 22px; font-weight: 600; line-height: 1.6; letter-spacing: 0.06em; }
-.about-title small { display: block; font-family: var(--gothic); font-size: 12px; font-weight: 700; color: var(--shu); letter-spacing: 0.04em; margin-bottom: 6px; }
-.about-item b { display: block; font-size: 15px; font-weight: 700; margin-bottom: 6px; }
-.about-item b span { font-family: var(--mincho); color: var(--shu); margin-right: 8px; }
-.about-item p { font-size: 13px; line-height: 1.8; }
-
-/* ---------- 本文2段組 ---------- */
-.layout { display: grid; grid-template-columns: 1fr 300px; gap: 56px; padding-top: 72px; padding-bottom: 96px; }
-.block { margin-bottom: 80px; }
-.block:last-child { margin-bottom: 0; }
-.h2 { display: flex; align-items: center; gap: 12px; font-size: 22px; font-weight: 700; line-height: 1.4; margin-bottom: 28px; }
-.h2::before { content: ""; width: 4px; height: 26px; background: var(--ink); }
-.h2 small { font-size: 13px; font-weight: 500; color: var(--gray); margin-left: 4px; }
-.more { display: flex; justify-content: center; margin-top: 36px; }
-.more a { display: inline-flex; align-items: center; justify-content: center; min-width: 240px; height: 44px; border: 1px solid var(--ink); border-radius: 6px; font-size: 14px; font-weight: 700; }
-.more a:hover { background: var(--ink); color: var(--white); }
-
-.card-photo { aspect-ratio: 4 / 3; position: relative; background: var(--kinari-deep); overflow: hidden; }
-.card-photo img { transition: transform .4s; }
-a:hover > .card-photo img { transform: scale(1.04); }
-.card time { display: block; font-size: 13px; color: var(--gray); margin-top: 10px; }
-.role { display: inline-block; font-size: 11px; font-weight: 700; color: var(--white); background: var(--shu); padding: 1px 8px; margin-top: 10px; }
-
-/* 大きい取材カード */
-.feature { display: grid; grid-template-columns: 3fr 2fr; gap: 28px; align-items: center; }
-.feature .card-photo { aspect-ratio: 3 / 2; }
-.feature h3 { font-family: var(--mincho); font-size: 26px; font-weight: 600; line-height: 1.6; letter-spacing: 0.06em; margin-top: 4px; }
-.feature:hover h3 { color: var(--shu); }
-.feature .excerpt { font-size: 14px; margin-top: 12px; }
-.feature .facts { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-top: 20px; }
-.feature .facts div { padding: 10px 0; font-size: 11px; color: var(--gray); }
-.feature .facts b { display: block; font-size: 13px; color: var(--ink); }
-
-/* 取材先募集 */
-.recruit { display: flex; align-items: center; justify-content: space-between; gap: 24px; background: var(--kinari); padding: 28px 32px; margin-top: 40px; }
-.recruit .series { font-size: 12px; font-weight: 700; color: var(--shu); }
-.recruit h3 { font-family: var(--mincho); font-size: 20px; font-weight: 600; line-height: 1.6; margin: 4px 0; }
-.recruit p { font-size: 13px; }
-.recruit .go { flex-shrink: 0; display: inline-flex; align-items: center; height: 44px; padding: 0 22px; background: var(--ink); color: var(--white); font-size: 13px; font-weight: 700; border-radius: 6px; }
-.recruit .go:hover { background: var(--shu); }
-
-/* テーマの写真タイル */
-.tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px 20px; }
-.tile .card-photo { aspect-ratio: 16 / 10; }
-.tile p { font-size: 15px; font-weight: 700; margin-top: 10px; }
-.tile p::after { content: " ›"; }
-.tile p span { font-size: 12px; font-weight: 500; color: var(--gray); margin-left: 6px; }
-.tile:hover p { color: var(--shu); }
-.soon { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; height: 100%; font-size: 12px; color: var(--gray); }
-.soon svg { width: 56px; opacity: 0.35; }
-
-/* 人から探す */
-.people { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-.person { display: grid; grid-template-columns: 56px 1fr; gap: 16px; align-items: center; padding: 20px; border: 1px solid var(--line); }
-.person:hover { border-color: var(--shu); }
-.person .num { width: 56px; height: 56px; border-radius: 50%; background: var(--kinari); display: flex; align-items: center; justify-content: center; font-family: var(--mincho); font-size: 22px; color: var(--shu); }
-.person h3 { font-size: 16px; font-weight: 700; }
-.person p { font-size: 13px; color: var(--gray); line-height: 1.7; }
-
-/* エリア（件数つき） */
-.area-filter { display: flex; flex-wrap: wrap; gap: 10px; }
-.area-filter a { display: inline-flex; align-items: center; gap: 6px; height: 40px; padding: 0 18px; border: 1px solid var(--line); border-radius: 20px; font-size: 14px; }
-.area-filter a:hover { border-color: var(--shu); }
-.area-filter a b { font-weight: 700; color: var(--shu); }
-.area-filter a.zero, .area-filter a.zero b { color: var(--gray); }
-.area-filter a.all { background: var(--ink); color: var(--white); border-color: var(--ink); }
-.area-filter a.all b { color: var(--yamabuki); }
-.area-note { font-size: 13px; color: var(--gray); margin-top: 14px; }
-
-/* 調べもの（コラム） */
-.col-list { border-top: 1px solid var(--line); }
-.col-list a { display: grid; grid-template-columns: 96px 1fr; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--line); align-items: center; }
-.col-list .thumb { aspect-ratio: 1; background: var(--kinari); display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; color: var(--gray); }
-.col-list .thumb b { font-family: var(--mincho); font-size: 22px; color: var(--shu); letter-spacing: 0; }
-.col-list .cat { font-size: 12px; color: var(--gray); }
-.col-list h3 { font-size: 15px; font-weight: 700; line-height: 1.6; }
-.col-list a:hover h3 { color: var(--shu); }
-.col-list p { font-size: 13px; color: var(--gray); line-height: 1.7; margin-top: 2px; }
-
-/* ---------- 右の欄 ---------- */
-.side { display: flex; flex-direction: column; gap: 48px; }
-.side-h { font-size: 16px; font-weight: 700; padding-bottom: 10px; border-bottom: 2px solid var(--ink); margin-bottom: 8px; }
-.side-list a { display: grid; grid-template-columns: 88px 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
-.side-list .thumb { aspect-ratio: 4 / 3; background: var(--kinari); display: flex; align-items: center; justify-content: center; font-family: var(--mincho); font-size: 16px; color: var(--shu); overflow: hidden; }
-.side-list .cat { font-size: 11px; color: var(--gray); }
-.side-list p { font-size: 13px; font-weight: 700; line-height: 1.5; }
-.side-list a:hover p { color: var(--shu); }
-.tag-note { font-size: 12px; color: var(--gray); margin-bottom: 12px; }
-.tagcloud { display: flex; flex-wrap: wrap; gap: 8px; }
-.tagcloud a { font-size: 13px; padding: 3px 14px; border: 1px solid var(--line); border-radius: 16px; }
-.tagcloud a:hover { border-color: var(--shu); color: var(--shu); }
-.side-banner { display: block; background: var(--ink); color: var(--white); padding: 28px 24px; }
-.side-banner .series { font-size: 12px; font-weight: 700; color: var(--yamabuki); }
-.side-banner h3 { font-family: var(--mincho); font-size: 20px; font-weight: 600; line-height: 1.6; margin: 8px 0; }
-.side-banner p { font-size: 12px; opacity: 0.85; }
-.side-banner .go { display: inline-block; margin-top: 16px; font-size: 13px; font-weight: 700; background: var(--shu); padding: 8px 18px; }
-.side-mail { border: 1px solid var(--line); padding: 24px; scroll-margin-top: 72px; }
-.side-mail h3 { font-size: 15px; font-weight: 700; }
-.side-mail .sub { font-size: 12px; color: var(--gray); margin: 6px 0 14px; }
-.form-cta-lead { font-size: 12px; margin-bottom: 10px; }
-.side-mail .btn-mail { display: block; text-align: center; height: 40px; line-height: 40px; border-radius: 6px; background: var(--ink); color: var(--white); font-size: 13px; font-weight: 700; }
-.side-mail .btn-mail:hover { background: var(--shu); }
-.form-cta-fine { font-size: 11px; color: var(--gray); margin-top: 10px; line-height: 1.7; }
-.form-cta-fine a { text-decoration: underline; }
-
-/* ---------- オーナーの方へ ---------- */
-.owners { background: var(--kinari); padding: 80px 0; text-align: center; }
-.owners .series { font-size: 13px; font-weight: 700; color: var(--shu); }
-.owners h2 { font-family: var(--mincho); font-size: 30px; font-weight: 400; letter-spacing: 0.08em; line-height: 1.6; margin: 12px 0 16px; }
-.owners p { font-size: 14px; }
-.owners .points { display: flex; justify-content: center; gap: 32px; margin: 24px 0 32px; font-size: 14px; font-weight: 700; flex-wrap: wrap; }
-.owners .points span::before { content: "●"; color: var(--yamabuki); margin-right: 6px; font-size: 10px; vertical-align: 2px; }
-.owners .btns { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
-.btn { display: inline-flex; align-items: center; justify-content: center; min-width: 260px; height: 52px; border-radius: 6px; font-size: 15px; font-weight: 700; }
-.btn.shu { background: var(--shu); color: var(--white); }
-.btn.shu:hover { background: var(--ink); }
-.btn.line { border: 1px solid var(--ink); background: var(--white); }
-.btn.line:hover { border-color: var(--shu); color: var(--shu); }
-
-/* ---------- フッター ---------- */
-.footer { background: var(--kinari-deep); padding: 72px 0 40px; font-size: 13px; }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
-.footer .logo-img { width: 48px; height: 48px; }
-.footer .about-text { margin-top: 16px; line-height: 1.9; }
-.footer h4 { font-size: 13px; font-weight: 700; margin-bottom: 10px; }
-.footer li { line-height: 2.3; }
-.footer li a:hover { color: var(--shu); }
-.copy { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: 56px; font-size: 11px; color: var(--gray); }
-.copy .legal a { margin-left: 16px; }
-
-/* ---------- SNSアイコン（他ページと同じHTML） ---------- */
-.social-icons { display: inline-flex; align-items: center; gap: 12px; margin-top: 16px; }
-.social-icon { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; color: var(--ink); transition: color .2s, background .2s; }
-.social-icon svg { width: 22px; height: 22px; display: block; }
-.social-icon:hover { color: var(--shu); background: var(--white); }
-
-/* ---------- ☰ サイトマップ（他ページと同じHTML・menu.jsで開閉） ---------- */
-.sitemap { position: fixed; inset: 0; z-index: 70; background: var(--white); overflow-y: auto; overscroll-behavior: contain; opacity: 0; visibility: hidden; transform: translateY(-10px); transition: opacity .28s, transform .32s, visibility .32s; }
-.sitemap.is-open { opacity: 1; visibility: visible; transform: none; }
-body.has-sitemap-open { overflow: hidden; }
-.sitemap .container { max-width: 1200px; margin: 0 auto; padding: 0 var(--gutter); }
-.sitemap-inner { padding: 26px 0 80px; }
-.sitemap-head { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-bottom: 22px; border-bottom: 1px solid var(--line); margin-bottom: 40px; }
-.sitemap-head .logo-img { width: 44px; height: 44px; }
-.logo-mark { font-family: var(--mincho); font-size: 20px; font-weight: 600; letter-spacing: 0.1em; }
-.sitemap-lang { margin-left: auto; font-size: 13px; font-weight: 700; }
-.sitemap-close { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; font-size: 14px; font-weight: 700; border: 1px solid var(--line); border-radius: 999px; }
-.sitemap-close:hover { border-color: var(--ink); }
-.sitemap-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 44px 32px; align-items: start; }
-.sitemap-group h2 { font-size: 19px; font-weight: 700; margin-bottom: 6px; display: flex; align-items: center; gap: 10px; }
-.sitemap-group h2::before { content: ""; width: 4px; height: 20px; background: var(--ink); }
-.sitemap-group.is-host h2::before { background: var(--shu); }
-.sitemap-group .who { font-size: 13px; color: var(--gray); margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
-.sitemap-group li > a { display: block; padding: 8px 0; font-size: 15px; font-weight: 700; }
-.sitemap-group li > a:hover { color: var(--shu); }
-.sitemap-group li > a .note { display: block; font-size: 12px; font-weight: 500; color: var(--gray); }
-.sitemap-foot { margin-top: 52px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
-.sitemap-foot p { font-size: 13px; color: var(--gray); max-width: 480px; }
-.sitemap-foot .social-icons { margin-top: 0; }
-
-/* ---------- タブレット ---------- */
-@media (max-width: 1000px) {
-  .layout { grid-template-columns: 1fr; }
-  .side { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-  .about .wrap { grid-template-columns: 1fr 1fr 1fr; }
-  .about-title { grid-column: 1 / -1; }
-}
-/* ---------- スマホ ---------- */
-@media (max-width: 720px) {
-  :root { --gutter: 16px; }
-  body { font-size: 14px; }
-  .topbar .wrap > span, .topbar-links a.about-link { display: none; }
-  .topbar .wrap { justify-content: flex-end; }
-  .header .wrap { height: 72px; gap: 12px; }
-  .logo-img { width: 44px; height: 44px; }
-  .logo-name { font-size: 18px; }
-  .logo-name small { font-size: 10px; }
-  .header-actions { gap: 14px; }
-  .tabs ul { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  .tabs li { flex: 0 0 auto; }
-  .tabs a { padding: 12px 16px; font-size: 13px; }
-  .hero { height: auto; }
-  .hero > img { height: 280px; }
-  .hero-copy { position: static; max-width: none; padding: 24px var(--gutter) 32px; background: var(--white); }
-  .hero-copy h1 { font-size: 24px; }
-  .about .wrap { grid-template-columns: 1fr; gap: 20px; padding-top: 36px; padding-bottom: 36px; }
-  .layout { padding-top: 48px; padding-bottom: 64px; gap: 64px; }
-  .block { margin-bottom: 64px; }
-  .h2 { font-size: 19px; margin-bottom: 20px; }
-  .h2::before { height: 22px; }
-  .feature { grid-template-columns: 1fr; gap: 16px; }
-  .feature h3 { font-size: 22px; }
-  .recruit { flex-direction: column; align-items: flex-start; padding: 24px 20px; }
-  .tiles { grid-template-columns: 1fr 1fr; gap: 20px 12px; }
-  .tile p { font-size: 14px; }
-  .tile p span { display: block; margin-left: 0; }
-  .people { grid-template-columns: 1fr; }
-  .col-list a { grid-template-columns: 72px 1fr; gap: 14px; }
-  .side { grid-template-columns: 1fr; gap: 40px; }
-  .owners { padding: 56px 0; }
-  .owners h2 { font-size: 22px; }
-  .owners .points { flex-direction: column; gap: 6px; }
-  .btn { width: 100%; min-width: 0; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
-  .footer-grid > div:first-child { grid-column: 1 / -1; }
-  .sitemap-inner { padding: 18px 0 64px; }
-  .sitemap-head { margin-bottom: 28px; }
-  .sitemap-head .logo-mark { font-size: 16px; }
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600&family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/kakure.css" />
 </head>
-<body>
+<body class="k">
 
-<!-- 上の細い帯 -->
-<div class="topbar">
-  <div class="wrap">
-    <span>古民家の宿とカフェを、営む人の話ごと訪ねる</span>
-    <div class="topbar-links">
-      <a class="about-link" href="#about">かくれ宿について</a>
-      <a href="en/index.html" lang="en">English</a>
-      <a class="dark" href="contact.html">取材のご相談</a>
-    </div>
-  </div>
-</div>
-
-<!-- ヘッダー -->
-<header class="header" id="siteHeader">
-  <div class="wrap">
-    <a class="logo" href="index.html" aria-label="かくれ宿 ホームへ">
-      <img class="logo-img" src="assets/logo-warm.jpg" alt="かくれ宿 ロゴ" />
-      <span class="logo-name">かくれ宿<small>古民家の宿とカフェの読みもの</small></span>
-    </a>
-    <div class="header-actions">
-      <a class="icon-btn" href="#newsletter">
-        <span class="circle"><svg viewBox="0 0 18 18" fill="none" stroke="#FFFFFF" stroke-width="1.4" aria-hidden="true"><rect x="2" y="4" width="14" height="10"/><path d="M2 4 L9 10 L16 4"/></svg></span>
-        メルマガ
-      </a>
-      <button class="icon-btn line" id="hamburger" type="button" aria-label="サイトマップを開く" aria-expanded="false" aria-controls="siteMenu">
-        <span class="circle"><svg viewBox="0 0 18 18" fill="none" stroke="#352C25" stroke-width="1.4" aria-hidden="true"><path d="M4 6 H14 M4 9 H14 M4 12 H14"/></svg></span>
-        メニュー
-      </button>
-    </div>
+<header class="k-header is-over" id="siteHeader">
+  <div class="k-header-in">
+    <a class="k-logo" href="index.html" aria-label="かくれ宿 ホームへ"><img class="logo-img" src="assets/logo-warm.jpg" alt="かくれ宿 ロゴ" /><span class="k-logo-name">かくれ宿<small>古民家の宿とカフェを訪ねる</small></span></a>
+    <nav class="k-nav" aria-label="主なメニュー"><a href="places.html">訪ねた宿と店</a><a href="articles.html">読みもの</a><a href="about.html">かくれ宿について</a><a href="for-owners.html">宿を営む方へ</a><a href="en/index.html" lang="en">EN</a></nav>
+    <a class="k-cta" href="contact.html">取材のご相談</a>
+    <button class="k-menu" id="hamburger" type="button" aria-label="サイトマップを開く" aria-expanded="false" aria-controls="siteMenu"><span class="k-bars" aria-hidden="true"></span><span class="k-menu-t">MENU</span></button>
   </div>
 </header>
 
 <div class="sitemap" id="siteMenu" role="dialog" aria-modal="true" aria-label="サイトマップ">
   <div class="container sitemap-inner">
-
     <div class="sitemap-head">
-      <a href="index.html" class="logo" aria-label="かくれ宿 ホームへ">
-        <img class="logo-img" src="assets/logo-warm.jpg" alt="かくれ宿 ロゴ" />
-        <span class="logo-mark">かくれ宿</span>
-      </a>
+      <a href="index.html" class="logo" aria-label="かくれ宿"><img class="logo-img" src="assets/logo-warm.jpg" alt="かくれ宿" /><span class="logo-mark">かくれ宿</span></a>
       <a href="en/index.html" class="sitemap-lang" lang="en">English</a>
       <button type="button" class="sitemap-close">閉じる <span aria-hidden="true">✕</span></button>
     </div>
-
     <div class="sitemap-groups">
-
       <div class="sitemap-group">
-        <h2>記事を読む</h2>
-        <p class="who">泊まってみたい方・読みものとして楽しみたい方へ</p>
+        <h2>宿と店を訪ねる</h2>
+        <p class="who">読んで、実際に行ってみたい方へ</p>
         <ul>
-          <li><a href="articles.html">記事一覧<span class="note">取材記事とコラムをまとめて読む</span></a></li>
-          <li><a href="index.html#newsletter">新着メールを受け取る<span class="note">無料・月1〜2回・いつでも解除できます</span></a></li>
+          <li><a href="places.html">訪ねた宿と店<span class="note">住所・営業日・行き方もまとめています</span></a></li>
+          <li><a href="articles.html">読みもの一覧<span class="note">取材記事と、宿を営む人の調べもの</span></a></li>
+          <li><a href="index.html#newsletter">メルマガ<span class="note">無料・月1〜2回・いつでも解除できます</span></a></li>
         </ul>
       </div>
-
       <div class="sitemap-group is-host">
         <h2>宿を営む方へ</h2>
-        <p class="who">宿のオーナー様・ご家族の方へ。取材も掲載も、支援もすべて無料です</p>
+        <p class="who">宿・カフェのオーナー様とご家族へ。取材も掲載も無償です</p>
         <ul>
-          <li><a href="contact.html">取材・掲載のご相談<span class="note">「うちの宿を紹介してほしい」はこちら</span></a></li>
+          <li><a href="contact.html">取材・掲載のご相談<span class="note">「うちの店を紹介してほしい」はこちら</span></a></li>
           <li><a href="for-owners.html">宿の価値向上サポート<span class="note">事業承継を見据えて、今のうちに宿の価値を高めたい方へ</span></a></li>
         </ul>
       </div>
-
       <div class="sitemap-group">
         <h2>かくれ宿について</h2>
         <p class="who">どんなメディアなのかを知りたい方へ</p>
         <ul>
           <li><a href="index.html">トップページ</a></li>
-          <li><a href="index.html#about">このメディアについて<span class="note">なぜ隠れた宿だけを紹介するのか</span></a></li>
+          <li><a href="about.html">かくれ宿について<span class="note">何を、どう取材しているか</span></a></li>
         </ul>
       </div>
-
       <div class="sitemap-group">
         <h2>きまり</h2>
         <p class="who">ご利用にあたって</p>
@@ -405,9 +74,7 @@ body.has-sitemap-open { overflow: hidden; }
           <li><a href="tokushoho.html">特定商取引法に基づく表記</a></li>
         </ul>
       </div>
-
     </div>
-
     <div class="sitemap-foot">
       <p>大手の予約サイトには載っていない、全国の古民家の宿とカフェを、営む人の話ごと届けるウェブメディアです。</p>
       <div class="social-icons is-dark" aria-label="SNS">
@@ -417,187 +84,94 @@ body.has-sitemap-open { overflow: hidden; }
         <a class="social-icon" href="https://note.com/kakure_yado" target="_blank" rel="noopener" aria-label="note"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 4.5h12.7c2.04 0 4.1 1.56 4.1 4.1v10.9H15.5V9.85c0-1.05-.6-1.65-1.45-1.65-.65 0-1.4.4-2 .95v10.35H6.95V8.05c0-.45-.05-.65-.5-.65H3.6V4.5Z"/></svg></a>
       </div>
     </div>
-
   </div>
 </div>
 
-
-<!-- タブナビ -->
-<nav class="tabs" aria-label="主なメニュー">
-  <ul>
-    <li><a href="articles.html">読みもの一覧</a></li>
-    <li><a href="#people">人から探す</a></li>
-    <li><a href="#area">エリアから探す</a></li>
-    <li><a href="#theme">テーマから探す</a></li>
-    <li><a href="for-owners.html">宿を営む方へ</a></li>
-  </ul>
-</nav>
-
-<!-- ヒーロー -->
-<div class="hero" id="hero">
+<section class="k-hero">
   <img src="assets/img/09-onre/onre-04-open-door.jpg" alt="開け放った扉の向こうに、片付けを待つ空き家の室内" />
-  <div class="hero-copy">
-    <span class="series">【一軒目をたずねて】CASE 001｜千葉県市原市</span>
+  <div class="k-hero-in">
+    <span class="k-label">KAKUREYADO</span>
     <h1>古い家に、<br>もう一度、灯りがともる。</h1>
-    <p>全国の古民家宿と古民家カフェを訪ね、建物を生き返らせた人の話ごと届けます。</p>
-    <a class="go" href="articles/09-onre-cafe.html">記事を読む ›</a>
+    <p class="k-lead">全国の古民家の宿とカフェを訪ね、<br>建物と、そこを営む人の話を届けます。</p>
   </div>
-</div>
+  <p class="k-hero-cap">写真：<a href="places/on-re-cafe.html">On Re.cafe（千葉県市原市）</a></p>
+</section>
 
-<!-- このメディアについて -->
-<section class="about" id="about">
-  <div class="wrap">
-    <h2 class="about-title"><small>かくれ宿について</small>「泊まる」ではなく、<br>「出会う」ための宿を。</h2>
-    <div class="about-item"><b><span>01</span>予約サイトには載っていない</b><p>大手の予約サイトでは辿り着けない、個人で営む小さな宿とカフェだけを訪ねます。</p></div>
-    <div class="about-item"><b><span>02</span>建物と人の話をまるごと</b><p>空き家を直した理由、続けている理由。宿の数より、一軒ずつの物語を。</p></div>
-    <div class="about-item"><b><span>03</span>消えゆく前に届けたい</b><p>後継者不足や集客難で、閉じてしまう宿も少なくありません。なくなる前に、景色と人の手触りを。</p></div>
+<section class="k-sec" id="about">
+  <div class="k-wrap">
+    <h2 class="k-h2">かくれ宿とは</h2>
+    <div class="k-body">
+      <p>かくれ宿は、大手の予約サイトには載っていない古民家の宿やカフェを訪ねて、建物と、そこを営む人の話をあわせて紹介するウェブメディアです。</p>
+      <p>訪ねるのは、空き家を直して店を開いた人、家業の宿を継いだ人、古い建物でゲストハウスや民泊を始めた人のところです。地域は問いません。読んだ人が実際に足を運べるように、場所や営業日、行き方も一緒に載せています。</p>
+      <a class="k-more" href="about.html">かくれ宿について</a>
+    </div>
   </div>
 </section>
 
-<div class="wrap layout">
-  <main>
-
-    <!-- 最新の取材 -->
-    <section class="block" id="stories">
-      <h2 class="h2">最新の取材<small>STORIES</small></h2>
-      <a class="feature card" href="articles/09-onre-cafe.html">
-        <div class="card-photo"><img src="assets/img/09-onre/onre-01-ivy-entrance.jpg" alt="蔦に覆われた空き家の玄関" loading="lazy" /></div>
-        <div>
-          <time>2026年8月｜千葉県市原市</time>
-          <span class="role">団地の空き家を、一軒ずつ生き返らせる人</span>
-          <h3>一年に、一軒ずつ</h3>
-          <p class="excerpt">市原・若宮団地。団地を調べる仕事をしていた人が、いまは団地の空き家を生き返らせている。</p>
-          <div class="facts">
-            <div>建物<b>築50年超の団地</b></div>
-            <div>前の姿<b>10年の空き家</b></div>
-            <div>いま<b>カフェ</b></div>
-          </div>
+<section class="k-sec k-dark">
+  <div class="k-wrap">
+    <h2 class="k-h2">訪ねた宿と店</h2>
+    <div class="k-people">
+      <a class="k-photocard" href="places/on-re-cafe.html">
+        <img src="assets/img/09-onre/onre-01-ivy-entrance.jpg" alt="蔦に覆われたテラスハウスの玄関" loading="lazy" />
+        <div class="cap">
+          <p class="role">店を営む人 ／ 関東</p>
+          <h3>On Re.cafe</h3>
+          <p class="where">千葉県市原市・若宮団地　10年空き家だったテラスハウスを直したカフェ</p>
         </div>
       </a>
-      <div class="recruit">
+      <div class="k-askcard">
         <div>
-          <span class="series">次に訪ねる一軒を探しています</span>
-          <h3>あなたの店や、知り合いの宿を教えてください。</h3>
-          <p>古民家の宿・カフェ・ゲストハウスなら、地域は問いません。取材・撮影・執筆はすべて無償です。</p>
+          <h3>次に訪ねる宿と店を<br>探しています。</h3>
+          <p>古民家の宿・カフェ・ゲストハウスを営んでいる方、近くに気になる店がある方は教えてください。取材・撮影・執筆に費用はかかりません。</p>
         </div>
-        <a class="go" href="contact.html">紹介する ›</a>
+        <a class="k-btn is-gold" href="contact.html">場所を教える</a>
       </div>
-      <div class="more"><a href="articles.html">読みものをすべて見る</a></div>
-    </section>
-
-    <!-- テーマから探す -->
-    <section class="block" id="theme">
-      <h2 class="h2">テーマから探す<small>THEME</small></h2>
-      <div class="tiles">
-        <a class="tile" href="articles/09-onre-cafe.html"><div class="card-photo"><img src="assets/img/09-onre/onre-06-light.jpg" alt="" loading="lazy" /></div><p>古民家カフェ<span>1件</span></p></a>
-        <a class="tile" href="articles/09-onre-cafe.html"><div class="card-photo"><img src="assets/img/09-onre/onre-01-ivy-entrance.jpg" alt="" loading="lazy" /></div><p>空き家リノベーション<span>1件</span></p></a>
-        <a class="tile" href="articles/13-stay-report.html"><div class="card-photo"><div class="soon"><svg viewBox="0 0 40 28" fill="none" stroke="#352C25" stroke-width="1.4" aria-hidden="true"><path d="M1 18 L11 7 L17 12 L22 6 L39 18"/><path d="M6 22 L13 13 H29 L35 22 Z"/></svg>宿泊記</div></div><p>泊まってみた<span>1件</span></p></a>
-        <a class="tile" href="contact.html"><div class="card-photo"><div class="soon"><svg viewBox="0 0 40 28" fill="none" stroke="#352C25" stroke-width="1.4" aria-hidden="true"><path d="M1 18 L11 7 L17 12 L22 6 L39 18"/><path d="M6 22 L13 13 H29 L35 22 Z"/></svg>これから訪ねます</div></div><p>古民家宿<span>取材先募集中</span></p></a>
-        <a class="tile" href="contact.html"><div class="card-photo"><div class="soon"><svg viewBox="0 0 40 28" fill="none" stroke="#352C25" stroke-width="1.4" aria-hidden="true"><path d="M1 18 L11 7 L17 12 L22 6 L39 18"/><path d="M6 22 L13 13 H29 L35 22 Z"/></svg>これから訪ねます</div></div><p>ゲストハウス<span>取材先募集中</span></p></a>
-        <a class="tile" href="contact.html"><div class="card-photo"><div class="soon"><svg viewBox="0 0 40 28" fill="none" stroke="#352C25" stroke-width="1.4" aria-hidden="true"><path d="M1 18 L11 7 L17 12 L22 6 L39 18"/><path d="M6 22 L13 13 H29 L35 22 Z"/></svg>これから訪ねます</div></div><p>民泊・一棟貸し<span>取材先募集中</span></p></a>
-      </div>
-    </section>
-
-    <!-- 人から探す -->
-    <section class="block" id="people">
-      <h2 class="h2">人から探す<small>PEOPLE</small></h2>
-      <div class="people">
-        <a class="person" href="articles.html"><span class="num">継</span><div><h3>家業を継いだ人</h3><p>親から、祖父母から。古い宿や店を受け継いで続けている人</p></div></a>
-        <a class="person" href="articles.html"><span class="num">移</span><div><h3>移り住んだ人</h3><p>都市から地方へ。暮らしを変えて宿やカフェを開いた人</p></div></a>
-        <a class="person" href="articles.html"><span class="num">直</span><div><h3>空き家を直した人</h3><p>誰も住まなくなった家を、自分たちの手で生き返らせた人</p></div></a>
-        <a class="person" href="articles.html"><span class="num">結</span><div><h3>地域をつくる人</h3><p>一軒の店から、まちに人の流れを取り戻そうとしている人</p></div></a>
-      </div>
-    </section>
-
-    <!-- エリアから探す -->
-    <section class="block" id="area">
-      <h2 class="h2">エリアから探す<small>AREA</small></h2>
-      <div class="area-filter">
-        <a class="all" href="articles.html">すべて <b>1</b></a>
-        <a class="zero" href="articles.html">北海道・東北 <b>0</b></a>
-        <a href="articles/09-onre-cafe.html">関東 <b>1</b></a>
-        <a class="zero" href="articles.html">中部 <b>0</b></a>
-        <a class="zero" href="articles.html">近畿 <b>0</b></a>
-        <a class="zero" href="articles.html">中国・四国 <b>0</b></a>
-        <a class="zero" href="articles.html">九州・沖縄 <b>0</b></a>
-      </div>
-      <p class="area-note">数字は掲載している取材記事の数です。まだ訪ねていない地域の宿・カフェも探しています。</p>
-    </section>
-
-    <!-- 宿を営む人の調べもの -->
-    <section class="block" id="columns">
-      <h2 class="h2">宿を営む人の調べもの<small>COLUMN</small></h2>
-      <div class="col-list">
-        <a href="articles/10-payment.html"><span class="thumb">COLUMN<b>01</b></span><div><span class="cat">決済</span><h3>ネットの先払い、何を選ぶか</h3><p>Stripe・Square・Airペイ・PayPalの支払いリンクを、費用と入金の早さで比べました。</p></div></a>
-        <a href="articles/11-closed-inns.html"><span class="thumb">COLUMN<b>02</b></span><div><span class="cat">廃業・事業承継</span><h3>宿を閉めたあと、建物はどうなる</h3><p>千葉と全国の事例、国の制度の動きから、「閉めたあと」を元気なうちに考えておく理由をまとめました。</p></div></a>
-        <a href="articles/12-minpaku-data.html"><span class="thumb">COLUMN<b>03</b></span><div><span class="cat">民泊・データ</span><h3>数字で見る、千葉県の民泊</h3><p>千葉県の民泊は7年で約3倍に。公的データを数え直し、増えている地域と小さな宿が読み取れることをまとめました。</p></div></a>
-        <a href="articles/13-stay-report.html"><span class="thumb">COLUMN<b>04</b></span><div><span class="cat">宿泊記・一棟貸し</span><h3>一棟貸しに泊まって分かった選ばれる理由</h3><p>奥多摩の一棟貸しに泊まった記録から、窓・BBQ・水まわりに見えた選ばれる理由をまとめました。</p></div></a>
-        <a href="articles/14-ryokan-or-minpaku.html"><span class="thumb">COLUMN<b>05</b></span><div><span class="cat">旅館業・民泊・空き家</span><h3>空き家を宿に。旅館業と民泊の違い</h3><p>簡易宿所、民泊、特区民泊。3つの入口を、日数・手続き先・設備・始めやすさで比べました。</p></div></a>
-      </div>
-      <div class="more"><a href="articles.html">読みものをすべて見る</a></div>
-    </section>
-  </main>
-
-  <!-- 右の欄 -->
-  <aside class="side">
-    <div>
-      <h2 class="side-h">新着の読みもの</h2>
-      <div class="side-list">
-        <a href="articles/10-payment.html"><span class="thumb">01</span><div><span class="cat">COLUMN</span><p>ネットの先払い、何を選ぶか</p></div></a>
-        <a href="articles/09-onre-cafe.html"><span class="thumb"><img src="assets/img/09-onre/onre-02-ono.jpg" alt="" loading="lazy" /></span><div><span class="cat">CASE 001</span><p>一年に、一軒ずつ｜市原・若宮団地</p></div></a>
-        <a href="articles/14-ryokan-or-minpaku.html"><span class="thumb">05</span><div><span class="cat">COLUMN</span><p>空き家を宿に。旅館業と民泊の違い</p></div></a>
-        <a href="articles/13-stay-report.html"><span class="thumb">04</span><div><span class="cat">COLUMN</span><p>一棟貸しに泊まって分かった選ばれる理由</p></div></a>
-      </div>
-    </div>
-    <div>
-      <h2 class="side-h">タグから探す</h2>
-      <p class="tag-note">タグに関連する読みものを開きます</p>
-      <div class="tagcloud">
-        <a href="articles/14-ryokan-or-minpaku.html">空き家</a><a href="articles/12-minpaku-data.html">民泊</a><a href="articles/09-onre-cafe.html">カフェ</a><a href="articles/13-stay-report.html">一棟貸し</a><a href="articles/14-ryokan-or-minpaku.html">旅館業</a><a href="articles/11-closed-inns.html">事業承継</a><a href="articles/10-payment.html">決済</a><a href="articles/09-onre-cafe.html">団地</a>
-      </div>
-    </div>
-    <a class="side-banner" href="contact.html">
-      <span class="series">宿・カフェを営む方へ</span>
-      <h3>あなたの店の物語を、届けさせてください。</h3>
-      <p>取材・撮影・執筆、サイトやSNSの整備まで無償です。</p>
-      <span class="go">取材を相談する ›</span>
-    </a>
-    <div class="side-mail" id="newsletter">
-      <h3>新しく訪ねた一軒を、いちばん先に。</h3>
-      <p class="sub">月に1〜2回、まだ誰も知らない宿とカフェの話と、取材の裏側をお届けします。</p>
-      <div class="form-cta">
-        <p class="form-cta-lead">登録はGoogleフォームから。メールアドレスを入れるだけです。</p>
-        <a class="btn-mail" href="https://docs.google.com/forms/d/e/1FAIpQLSeETUW033vC0tlaCbyqaaGW-YMgiCgIcYP9VUdAvr9TXnslrg/viewform?usp=pp_url&entry.1690091772=%E6%96%B0%E7%9D%80%E3%81%AE%E5%AE%BF%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B%EF%BC%88%E3%83%A1%E3%83%AB%E3%83%9E%E3%82%AC%EF%BC%89%E3%82%92%E5%8F%97%E3%81%91%E5%8F%96%E3%82%8A%E3%81%9F%E3%81%84" target="_blank" rel="noopener">メルマガに登録する</a>
-        <p class="form-cta-fine">フォームが開かない場合は <a href="mailto:kakureyado.official@gmail.com">kakureyado.official@gmail.com</a> までメールでどうぞ。いつでも配信停止できます。</p>
-      </div>
-    </div>
-  </aside>
-</div>
-
-<!-- オーナーの方へ -->
-<section class="owners" id="owners">
-  <div class="wrap">
-    <span class="series">宿・カフェを営む方へ</span>
-    <h2>ウェブサイトがなくても、<br>とびきり素敵な店を探しています。</h2>
-    <p>あなたの店の物語を、全国の読者に届けさせてください。</p>
-    <div class="points"><span>取材・撮影・執筆は無償</span><span>サイト・SNSの整備も無償</span><span>情報発信が苦手でも大丈夫</span></div>
-    <div class="btns">
-      <a class="btn shu" href="contact.html">取材・掲載を相談する</a>
-      <a class="btn line" href="for-owners.html">宿の価値向上サポートを見る</a>
     </div>
   </div>
 </section>
 
-<!-- フッター -->
-<footer class="footer">
-  <div class="wrap">
-    <div class="footer-grid">
+<section class="k-sec">
+  <div class="k-wrap">
+    <h2 class="k-h2">読みもの</h2>
+    <div class="k-reads">
+      <a class="k-read" href="articles/09-onre-cafe.html" data-kind="story" data-tags="空き家 カフェ 団地"><div class="ph"><img src="assets/img/09-onre/onre-01-ivy-entrance.jpg" alt="" loading="lazy" /></div><time>2026年8月｜千葉県市原市</time><h3>【訪ねた宿と店】一年に、一軒ずつ</h3><p>市原・若宮団地。団地を調べる仕事をしていた人が、いまは団地の空き家を生き返らせている。</p></a><a class="k-read" href="articles/14-ryokan-or-minpaku.html" data-kind="column" data-tags="空き家 民泊 旅館業"><div class="ph is-cover"><span class="series">宿を営む人の調べもの</span><b>旅館業と民泊</b><span class="no">No.05</span></div><time>2026年10月</time><h3>【宿を営む人の調べもの】空き家を宿に。旅館業と民泊の違い</h3><p>簡易宿所、民泊、特区民泊。3つの入口を、日数・手続き先・設備・始めやすさで比べました。</p></a><a class="k-read" href="articles/13-stay-report.html" data-kind="column" data-tags="一棟貸し 宿泊記"><div class="ph is-cover"><span class="series">宿を営む人の調べもの</span><b>一棟貸しに泊まる</b><span class="no">No.04</span></div><time>2026年10月</time><h3>【宿を営む人の調べもの】一棟貸しに泊まって分かった選ばれる理由</h3><p>奥多摩の一棟貸しに泊まった記録から、窓・BBQ・水まわりに見えた選ばれる理由をまとめました。</p></a><a class="k-read" href="articles/12-minpaku-data.html" data-kind="column" data-tags="民泊 データ"><div class="ph is-cover"><span class="series">宿を営む人の調べもの</span><b>千葉県の民泊</b><span class="no">No.03</span></div><time>2026年10月</time><h3>【宿を営む人の調べもの】数字で見る、千葉県の民泊</h3><p>千葉県の民泊は7年で約3倍に。公的データを数え直し、増えている地域と小さな宿が読み取れることをまとめました。</p></a><a class="k-read" href="articles/11-closed-inns.html" data-kind="column" data-tags="事業承継 廃業"><div class="ph is-cover"><span class="series">宿を営む人の調べもの</span><b>閉めたあとの建物</b><span class="no">No.02</span></div><time>2026年10月</time><h3>【宿を営む人の調べもの】宿を閉めたあと、建物はどうなる</h3><p>千葉と全国の事例、国の制度の動きから、「閉めたあと」を元気なうちに考えておく理由をまとめました。</p></a><a class="k-read" href="articles/10-payment.html" data-kind="column" data-tags="決済"><div class="ph is-cover"><span class="series">宿を営む人の調べもの</span><b>ネットの先払い</b><span class="no">No.01</span></div><time>2026年10月</time><h3>【宿を営む人の調べもの】ネットの先払い、何を選ぶか</h3><p>Stripe・Square・Airペイ・PayPalの支払いリンクを、費用と入金の早さで比べました。</p></a>
+    </div>
+    <p style="margin-top:44px;text-align:center"><a class="k-btn is-line" href="articles.html">読みものをすべて見る</a></p>
+  </div>
+</section>
+
+<section class="k-sec k-owners k-panelbg">
+  <div class="k-wrap">
+    <h2 class="k-h2">宿・カフェを営む方へ</h2>
+    <div class="k-body">
+      <p>ウェブサイトがない、SNSもやっていない。それでも訪ねたくなる宿や店を探しています。取材・撮影・執筆と掲載に費用はかかりません。ウェブサイトやSNSを整えるお手伝いも無償です。</p>
+      <p>将来の事業承継を見据えて、今のうちに宿の価値を高めておきたい方の相談も受けています。</p>
+      <div class="k-btns">
+        <a class="k-btn is-shu" href="contact.html">取材・掲載を相談する</a>
+        <a class="k-btn is-line" href="for-owners.html">宿の価値向上サポート</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="k-mail" id="newsletter">
+  <div class="k-wrap">
+    <p class="k-mail-lead">訪ねた宿と店の話を、月に1〜2回お届けします。</p>
+    <div class="form-cta">
+      <p class="form-cta-lead">登録はGoogleフォームから。メールアドレスを入れるだけです。</p>
+      <a class="k-btn is-shu" href="https://docs.google.com/forms/d/e/1FAIpQLSeETUW033vC0tlaCbyqaaGW-YMgiCgIcYP9VUdAvr9TXnslrg/viewform?usp=pp_url&entry.1690091772=%E6%96%B0%E7%9D%80%E3%81%AE%E5%AE%BF%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B%EF%BC%88%E3%83%A1%E3%83%AB%E3%83%9E%E3%82%AC%EF%BC%89%E3%82%92%E5%8F%97%E3%81%91%E5%8F%96%E3%82%8A%E3%81%9F%E3%81%84" target="_blank" rel="noopener">メルマガに登録する</a>
+      <p class="form-cta-fine">フォームが開かない場合は <a href="mailto:kakureyado.official@gmail.com">kakureyado.official@gmail.com</a> までメールでどうぞ。いつでも配信停止できます。</p>
+    </div>
+  </div>
+</section>
+
+<footer class="k-footer">
+  <div class="k-wrap">
+    <div class="k-footer-grid">
       <div>
-        <a class="logo" href="index.html" aria-label="かくれ宿 ホームへ">
-          <img class="logo-img" src="assets/logo-warm.jpg" alt="かくれ宿 ロゴ" />
-          <span class="logo-name">かくれ宿<small>古民家の宿とカフェの読みもの</small></span>
-        </a>
-        <p class="about-text">大手の予約サイトには載っていない、全国の古民家の宿とカフェを、営む人の話ごと届けるウェブメディアです。</p>
+        <a class="k-logo" href="index.html" aria-label="かくれ宿"><img class="logo-img" src="assets/logo-warm.jpg" alt="かくれ宿" /><span class="k-logo-name">かくれ宿<small>古民家の宿とカフェを訪ねる</small></span></a>
+        <p class="k-footer-about">大手の予約サイトには載っていない、全国の古民家の宿とカフェを、営む人の話ごと届けるウェブメディアです。</p>
         <div class="footer-social social-icons is-dark" aria-label="SNS">
       <a class="social-icon" href="https://www.instagram.com/kakure_yado" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
       <a class="social-icon" href="https://x.com/kakure_yado" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.53 3H20.5l-6.49 7.42L21.75 21h-6.02l-4.71-6.16L5.6 21H2.62l6.95-7.94L2.25 3h6.18l4.26 5.63L17.53 3Zm-1.06 16.2h1.66L7.62 4.7H5.84L16.47 19.2Z"/></svg></a>
@@ -605,11 +179,11 @@ body.has-sitemap-open { overflow: hidden; }
       <a class="social-icon" href="https://note.com/kakure_yado" target="_blank" rel="noopener" aria-label="note"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 4.5h12.7c2.04 0 4.1 1.56 4.1 4.1v10.9H15.5V9.85c0-1.05-.6-1.65-1.45-1.65-.65 0-1.4.4-2 .95v10.35H6.95V8.05c0-.45-.05-.65-.5-.65H3.6V4.5Z"/></svg></a>
     </div>
       </div>
-      <div><h4>読みもの</h4><ul><li><a href="articles.html">記事一覧</a></li><li><a href="#about">メディアについて</a></li><li><a href="#newsletter">メルマガ登録</a></li></ul></div>
-      <div><h4>宿を営む方へ</h4><ul><li><a href="for-owners.html">宿の価値向上サポート</a></li><li><a href="contact.html">取材の依頼</a></li><li><a href="for-owners.html#support">デジタル支援について</a></li></ul></div>
-      <div><h4>お問い合わせ</h4><ul><li><a href="contact.html">お問い合わせ</a></li><li><a href="privacy.html">プライバシーポリシー</a></li><li><a href="tokushoho.html">特定商取引法に基づく表記</a></li></ul></div>
+      <div><h4>訪ねる・読む</h4><ul><li><a href="places.html">訪ねた宿と店</a></li><li><a href="articles.html">読みもの一覧</a></li><li><a href="index.html#newsletter">メルマガ登録</a></li></ul></div>
+      <div><h4>宿を営む方へ</h4><ul><li><a href="contact.html">取材の依頼</a></li><li><a href="for-owners.html">宿の価値向上サポート</a></li><li><a href="for-owners.html#support">デジタル支援について</a></li></ul></div>
+      <div><h4>かくれ宿について</h4><ul><li><a href="about.html">このメディアについて</a></li><li><a href="contact.html">お問い合わせ</a></li><li><a href="privacy.html">プライバシーポリシー</a></li><li><a href="tokushoho.html">特定商取引法に基づく表記</a></li></ul></div>
     </div>
-    <p class="copy"><span>© 2026 かくれ宿. All rights reserved.</span><span class="legal"><a href="tokushoho.html">Terms</a><a href="privacy.html">Privacy</a></span></p>
+    <p class="k-copy"><span>© 2026 かくれ宿. All rights reserved.</span><span class="legal"><a href="tokushoho.html">Terms</a><a href="privacy.html">Privacy</a></span></p>
   </div>
 </footer>
 

@@ -24,7 +24,7 @@
 <meta name="twitter:title" content="Minshuku Nagi, a Seaside Inn in Tateyama — Kakureyado" />
 <meta name="twitter:description" content="On a hill overlooking the Pacific, a four-room inn run single-handedly by its okami (the innkeeper)." />
 <meta name="twitter:image" content="https://kakureyado.pages.dev/assets/ogp.png" />
-<meta name="theme-color" content="#7A9971" />
+<meta name="theme-color" content="#352C25" />
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml" />
 <link rel="apple-touch-icon" href="../../assets/logo.jpg" />
 
@@ -238,26 +238,20 @@ h1, h2, h3, h4,
   border-radius: var(--radius-sm);
 }
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600&family=Noto+Serif+JP:wght@600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../../assets/kakure.css" />
 </head>
-<body>
+<body class="k-legacy">
 <div class="sample-notice">This page is a <strong>fictional sample</strong> made to show our layout. It is not a real inn. <a href="../articles.html">See articles</a></div>
 
-<header class="site-header is-hero" id="siteHeader">
-  <div class="container header-inner">
-    <a href="../index.html" class="logo" aria-label="Kakureyado home">
-      <img class="logo-img" src="../../assets/logo.jpg" alt="Kakureyado logo" />
-      <span class="logo-mark">かくれ宿</span>
-    </a>
-    <nav class="nav" id="siteNav">
-      <a href="../articles.html">Articles</a>
-      <a href="../for-owners.html">For Inn Owners</a>
-      <a href="../index.html#newsletter" class="nav-cta">Newsletter</a>
-      <a href="../../articles/01-nagi.html" class="nav-lang" lang="ja">日本語</a>
-    </nav>
-    <button class="hamburger" id="hamburger" type="button" aria-label="Open sitemap" aria-expanded="false" aria-controls="siteMenu">
-      <span class="hamburger-lines" aria-hidden="true"><span></span><span></span><span></span></span>
-      <span class="hamburger-label">Menu</span>
-    </button>
+<header class="k-header" id="siteHeader">
+  <div class="k-header-in">
+    <a class="k-logo" href="../index.html" aria-label="Kakureyado home"><img class="logo-img" src="../../assets/logo-warm.jpg" alt="Kakureyado logo" /><span class="k-logo-name">Kakureyado<small>Old houses, inns and cafés in Japan</small></span></a>
+    <nav class="k-nav" aria-label="Main"><a href="../articles.html">Articles</a><a href="../for-owners.html">For Inn Owners</a><a href="../../index.html" lang="ja">日本語</a></nav>
+    <a class="k-cta" href="../contact.html">Contact</a>
+    <button class="k-menu" id="hamburger" type="button" aria-label="Open site map" aria-expanded="false" aria-controls="siteMenu"><span class="k-bars" aria-hidden="true"></span><span class="k-menu-t">MENU</span></button>
   </div>
 </header>
 
@@ -267,68 +261,49 @@ h1, h2, h3, h4,
      ・グループの先頭に「誰向けか」を必ず1行書く
      ・to B のグループには is-host を付けて茶にする（色の役割は shared.css 参照）
      ===================================================== -->
-<div class="sitemap" id="siteMenu" role="dialog" aria-modal="true" aria-label="Sitemap">
+<div class="sitemap" id="siteMenu" role="dialog" aria-modal="true" aria-label="Site map">
   <div class="container sitemap-inner">
-
     <div class="sitemap-head">
-      <a href="../index.html" class="logo" aria-label="Kakureyado home">
-        <img class="logo-img" src="../../assets/logo.jpg" alt="Kakureyado logo" />
-        <span class="logo-mark">かくれ宿</span>
-      </a>
-      <a href="../../articles/01-nagi.html" class="sitemap-lang" lang="ja">日本語</a>
+      <a href="../index.html" class="logo" aria-label="Kakureyado"><img class="logo-img" src="../../assets/logo-warm.jpg" alt="Kakureyado" /><span class="logo-mark">Kakureyado</span></a>
+      <a href="../../index.html" class="sitemap-lang" lang="ja">日本語</a>
       <button type="button" class="sitemap-close">Close <span aria-hidden="true">✕</span></button>
     </div>
-
     <div class="sitemap-groups">
-
       <div class="sitemap-group">
         <h2>Read</h2>
-        <p class="who">For travelers and armchair readers</p>
+        <p class="who">For travellers and readers</p>
         <ul>
-          <li><a href="../articles.html">Articles<span class="note">Our first stories (in Japanese)</span></a></li>
-          <li><a href="../index.html#newsletter">Get New Inns by Email<span class="note">Free · 1–2 emails a month · unsubscribe anytime</span></a></li>
+          <li><a href="../articles.html">Articles<span class="note">Stories and columns</span></a></li>
+          <li><a href="../index.html#newsletter">Newsletter<span class="note">Free, once or twice a month</span></a></li>
         </ul>
       </div>
-
       <div class="sitemap-group is-host">
-        <h2>For Innkeepers</h2>
-        <p class="who">For inn owners and their families — coverage and support are free</p>
+        <h2>For inn owners</h2>
+        <p class="who">Coverage and listing are free of charge</p>
         <ul>
-          <li><a href="../contact.html">Request a Feature<span class="note">"Please introduce our inn" starts here</span></a></li>
-          <li><a href="../for-owners.html">Inn Value-Building Support<span class="note">For owners planning ahead for succession who want to raise their inn's value now</span></a></li>
+          <li><a href="../contact.html">Ask us to visit your place</a></li>
+          <li><a href="../for-owners.html">Inn value support</a></li>
         </ul>
       </div>
-
       <div class="sitemap-group">
-        <h2>About Kakureyado</h2>
-        <p class="who">Curious what this magazine is?</p>
+        <h2>About</h2>
+        <p class="who">About this site</p>
         <ul>
           <li><a href="../index.html">Home</a></li>
-          <li><a href="../index.html#about">About This Magazine<span class="note">Why we only feature hidden inns</span></a></li>
+          <li><a href="../../index.html" lang="ja">日本語のサイト</a></li>
+          <li><a href="../privacy.html">Privacy policy</a></li>
         </ul>
       </div>
-
-      <div class="sitemap-group">
-        <h2>Policies</h2>
-        <p class="who">Terms of use</p>
-        <ul>
-          <li><a href="../privacy.html">Privacy Policy</a></li>
-          <li><a href="../../tokushoho.html">Legal Notice (Japanese only)</a></li>
-        </ul>
-      </div>
-
     </div>
-
     <div class="sitemap-foot">
-      <p>A web magazine quietly uncovering the hidden inns of Chiba, Japan — small places you won't find on the major booking sites.</p>
-      <div class="social-icons is-dark" aria-label="Social media">
+      <p>Kakureyado visits old houses turned into inns and cafés across Japan, and tells the stories of the people who run them.</p>
+      <div class="social-icons is-dark" aria-label="SNS">
         <a class="social-icon" href="https://www.instagram.com/kakure_yado" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
         <a class="social-icon" href="https://x.com/kakure_yado" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.53 3H20.5l-6.49 7.42L21.75 21h-6.02l-4.71-6.16L5.6 21H2.62l6.95-7.94L2.25 3h6.18l4.26 5.63L17.53 3Zm-1.06 16.2h1.66L7.62 4.7H5.84L16.47 19.2Z"/></svg></a>
         <a class="social-icon" href="https://www.facebook.com/share/1cBxZJMGCn/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
         <a class="social-icon" href="https://note.com/kakure_yado" target="_blank" rel="noopener" aria-label="note"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 4.5h12.7c2.04 0 4.1 1.56 4.1 4.1v10.9H15.5V9.85c0-1.05-.6-1.65-1.45-1.65-.65 0-1.4.4-2 .95v10.35H6.95V8.05c0-.45-.05-.65-.5-.65H3.6V4.5Z"/></svg></a>
       </div>
     </div>
-
   </div>
 </div>
 
@@ -406,39 +381,24 @@ h1, h2, h3, h4,
   </div>
 </section>
 
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <a href="../index.html" class="logo" aria-label="Kakureyado home">
-      <img class="logo-img" src="../../assets/logo.jpg" alt="Kakureyado logo" />
-      <span class="logo-mark">かくれ宿</span>
-    </a>
-        <p>A web magazine quietly uncovering the hidden inns of Chiba, Japan — small places you won't find on the major booking sites.</p>
-          <div class="footer-social social-icons is-dark" aria-label="Social media">
+<footer class="k-footer">
+  <div class="k-wrap">
+    <div class="k-footer-grid">
+      <div>
+        <a class="k-logo" href="../index.html" aria-label="Kakureyado"><img class="logo-img" src="../../assets/logo-warm.jpg" alt="Kakureyado" /><span class="k-logo-name">Kakureyado<small>Old houses, inns and cafés in Japan</small></span></a>
+        <p class="k-footer-about">Kakureyado visits old houses turned into inns and cafés across Japan, and tells the stories of the people who run them.</p>
+        <div class="footer-social social-icons is-dark" aria-label="SNS">
       <a class="social-icon" href="https://www.instagram.com/kakure_yado" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
       <a class="social-icon" href="https://x.com/kakure_yado" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.53 3H20.5l-6.49 7.42L21.75 21h-6.02l-4.71-6.16L5.6 21H2.62l6.95-7.94L2.25 3h6.18l4.26 5.63L17.53 3Zm-1.06 16.2h1.66L7.62 4.7H5.84L16.47 19.2Z"/></svg></a>
       <a class="social-icon" href="https://www.facebook.com/share/1cBxZJMGCn/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
       <a class="social-icon" href="https://note.com/kakure_yado" target="_blank" rel="noopener" aria-label="note"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 4.5h12.7c2.04 0 4.1 1.56 4.1 4.1v10.9H15.5V9.85c0-1.05-.6-1.65-1.45-1.65-.65 0-1.4.4-2 .95v10.35H6.95V8.05c0-.45-.05-.65-.5-.65H3.6V4.5Z"/></svg></a>
     </div>
       </div>
-      <div class="footer-col"><h4>MEDIA</h4><ul>
-        <li><a href="../articles.html">Articles</a></li>
-        <li><a href="../index.html#about">About This Magazine</a></li>
-        <li><a href="../index.html#newsletter">Newsletter</a></li>
-      </ul></div>
-      <div class="footer-col"><h4>FOR&nbsp;OWNERS</h4><ul>
-        <li><a href="../for-owners.html">Inn Value-Building Support</a></li>
-        <li><a href="../contact.html">Request a Feature</a></li>
-      </ul></div>
-      <div class="footer-col"><h4>CONTACT</h4><ul>
-        <li><a href="../contact.html">Contact</a></li>
-        <li><a href="../privacy.html">Privacy Policy</a></li>
-      </ul></div>
+      <div><h4>Read</h4><ul><li><a href="../articles.html">Articles</a></li><li><a href="../index.html#newsletter">Newsletter</a></li></ul></div>
+      <div><h4>For inn owners</h4><ul><li><a href="../for-owners.html">Inn value support</a></li><li><a href="../contact.html">Ask us to visit</a></li></ul></div>
+      <div><h4>About</h4><ul><li><a href="../contact.html">Contact</a></li><li><a href="../privacy.html">Privacy policy</a></li><li><a href="../../tokushoho.html">Legal notice</a></li><li><a href="../../index.html" lang="ja">日本語</a></li></ul></div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 Kakureyado. All rights reserved.</span>
-    </div>
+    <p class="k-copy"><span>© 2026 Kakureyado. All rights reserved.</span><span class="legal"><a href="../../tokushoho.html">Terms</a><a href="../privacy.html">Privacy</a></span></p>
   </div>
 </footer>
 

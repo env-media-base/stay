@@ -1,0 +1,372 @@
+/* =====================================================================
+   かくれ宿 v3（2026-10-25）— 全ページ共通
+   手本＝NIPPONIA村人（明朝の見出し・罫線＋金茶の短い線・施設ページ・暗い面の写真カード）
+       ＋中川政七商店の読みもの（一覧と記事の右に新着・タグ、【連載名】）
+   数値の出どころ → Vault: Projects/Experiential-Accommodation/かくれ宿_デザイン分析とルール_2026-10-25.md
+   ・新しいページ（トップ・紹介・一覧・について）は k- で始まるクラスだけで組む（shared.css は読まない）
+   ・既存ページ（記事・オーナー向け・問い合わせ等）は shared.css の後にこのファイルを読み、
+     body.k-legacy の中だけ色と書体を差し替える
+   ===================================================================== */
+:root {
+  --k-bg: #FAF8F3;          /* NIPPONIA ページの地 */
+  --k-panel: #EDEAE3;       /* NIPPONIA パネル */
+  --k-panel-2: #E8E3D8;
+  --k-line: #DBD5C8;        /* NIPPONIA 罫線 */
+  --k-ink: #352C25;         /* HIGHTIDE 焦げ茶（NIPPONIAの黒の代わり） */
+  --k-ink-2: #4B5058;
+  --k-mute: #7B8088;        /* NIPPONIA 補足のグレー */
+  --k-gold: #9A7B44;        /* NIPPONIA 金茶 */
+  --k-gold-lt: #C9A86A;     /* NIPPONIA 明るい金 */
+  --k-shu: #E25B33;         /* HIGHTIDE 朱：取材相談とメルマガのボタンだけ */
+  --k-on-dark: #EDEAE3;
+  --k-mute-dark: #A9AEB5;
+  --k-mincho: "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif JP", serif;
+  --k-gothic: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "游ゴシック体", YuGothic, "Yu Gothic Medium", "Noto Sans JP", sans-serif;
+  --k-wrap: 1200px;
+  --k-gutter: 40px;
+}
+
+/* ---------------- 共通の土台（新しいページ） ---------------- */
+body.k { margin: 0; background: var(--k-bg); color: var(--k-ink); font-family: var(--k-gothic); font-size: 15px; font-weight: 400; line-height: 2.1; -webkit-font-smoothing: antialiased; -webkit-text-size-adjust: 100%; }
+body.k *, body.k *::before, body.k *::after { box-sizing: border-box; }
+:where(body.k) :where(h1, h2, h3, h4, p, ul, dl, dd, figure) { margin: 0; padding: 0; }
+:where(body.k) ul { list-style: none; }
+:where(body.k) a { color: inherit; text-decoration: none; }
+:where(body.k) img { display: block; max-width: 100%; }
+.k-wrap { max-width: var(--k-wrap); margin: 0 auto; padding: 0 var(--k-gutter); }
+.k-narrow { max-width: 880px; margin: 0 auto; padding: 0 var(--k-gutter); }
+
+/* ---------------- ヘッダー（全ページ） ---------------- */
+.k-header { position: sticky; top: 0; z-index: 50; background: rgba(250, 248, 243, 0.96); border-bottom: 1px solid var(--k-line); font-family: var(--k-gothic); }
+.k-header.is-over { position: absolute; left: 0; right: 0; background: transparent; border-bottom-color: transparent; color: #fff; }
+.k-header-in { display: flex; align-items: center; gap: 28px; height: 76px; max-width: none; padding: 0 var(--k-gutter); }
+.k-logo { display: flex; align-items: center; gap: 12px; color: inherit; text-decoration: none; flex-shrink: 0; }
+.k-logo .logo-img, .sitemap-head .logo-img { width: 40px; height: 40px; display: block; border-radius: 0; object-fit: cover; box-shadow: none; border: 0; }
+.k-logo-name { font-family: var(--k-mincho); font-size: 21px; font-weight: 600; letter-spacing: 0.16em; line-height: 1.3; }
+.k-logo-name small { display: block; font-family: var(--k-gothic); font-size: 10.9px; font-weight: 400; letter-spacing: 0.14em; opacity: 0.8; }
+.k-nav { display: flex; gap: 26px; margin-left: auto; font-size: 13.3px; letter-spacing: 0.09em; }
+.k-nav a { color: inherit; text-decoration: none; }
+.k-nav a:hover { color: var(--k-gold); }
+.k-header.is-over .k-nav a:hover { color: var(--k-gold-lt); }
+.k-cta { display: inline-flex; align-items: center; height: 38px; padding: 0 20px; background: var(--k-shu); color: #fff !important; font-size: 13.3px; letter-spacing: 0.09em; text-decoration: none; flex-shrink: 0; }
+.k-cta:hover { background: var(--k-ink); }
+.k-header.is-over .k-cta:hover { background: #fff; color: var(--k-ink) !important; }
+.k-menu { display: inline-flex; align-items: center; gap: 8px; height: 38px; padding: 0 4px; background: none; border: 0; color: inherit; font-family: Arial, sans-serif; font-size: 12.8px; letter-spacing: 0.1em; cursor: pointer; }
+.k-menu span.k-bars { display: inline-block; width: 18px; height: 9px; border-top: 1px solid currentColor; border-bottom: 1px solid currentColor; }
+
+/* ---------------- ☰ サイトマップ（全ページ・menu.jsで開閉） ---------------- */
+.sitemap { position: fixed; inset: 0; z-index: 70; background: var(--k-bg); color: var(--k-ink); font-family: var(--k-gothic); overflow-y: auto; overscroll-behavior: contain; opacity: 0; visibility: hidden; transform: translateY(-10px); transition: opacity .28s, transform .32s, visibility .32s; }
+.sitemap.is-open { opacity: 1; visibility: visible; transform: none; }
+body.has-sitemap-open { overflow: hidden; }
+.sitemap .container { max-width: var(--k-wrap); margin: 0 auto; padding: 0 var(--k-gutter); }
+.sitemap-inner { padding: 22px 0 80px; }
+.sitemap-head { display: flex; align-items: center; gap: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--k-line); margin-bottom: 44px; }
+.sitemap-head .logo { display: flex; align-items: center; gap: 12px; color: var(--k-ink); text-decoration: none; }
+.sitemap-head .logo-img { width: 40px; height: 40px; }
+.sitemap-head .logo-mark { font-family: var(--k-mincho); font-size: 20px; font-weight: 600; letter-spacing: 0.16em; color: var(--k-ink); }
+.sitemap-lang { margin-left: auto; font-size: 13px; letter-spacing: 0.06em; color: var(--k-gold); text-decoration: none; }
+.sitemap-close { display: inline-flex; align-items: center; gap: 8px; padding: 9px 18px; background: none; border: 1px solid var(--k-ink); border-radius: 0; color: var(--k-ink); font-family: var(--k-gothic); font-size: 13px; letter-spacing: 0.08em; cursor: pointer; }
+.sitemap-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 44px 40px; align-items: start; }
+.sitemap-group h2 { font-family: var(--k-mincho); font-size: 19px; font-weight: 600; letter-spacing: 0.1em; color: var(--k-ink); margin: 0 0 6px; line-height: 1.6; }
+.sitemap-group .who { font-size: 12.5px; line-height: 1.9; color: var(--k-mute); margin: 0 0 12px; padding-bottom: 12px; border-bottom: 1px solid var(--k-line); }
+.sitemap-group ul { list-style: none; margin: 0; padding: 0; }
+.sitemap-group li > a { display: block; padding: 8px 0; color: var(--k-ink); text-decoration: none; font-size: 15px; line-height: 1.7; }
+.sitemap-group li > a:hover { color: var(--k-gold); }
+.sitemap-group li > a .note { display: block; font-size: 12px; color: var(--k-mute); }
+.sitemap-foot { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--k-line); display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.sitemap-foot p { font-size: 13px; line-height: 2; color: var(--k-mute); max-width: 520px; margin: 0; }
+
+/* ---------------- SNSアイコン（全ページ） ---------------- */
+.social-icons { display: inline-flex; align-items: center; gap: 10px; }
+.social-icon { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; color: var(--k-mute); transition: color .2s; }
+.social-icon svg { width: 20px; height: 20px; display: block; }
+.social-icon:hover { color: var(--k-gold); }
+.k-footer .social-icon, .k-footer .is-dark .social-icon { color: var(--k-mute-dark); }
+.k-footer .social-icon:hover { color: var(--k-gold-lt); background: none; }
+
+/* ---------------- フッター（全ページ） ---------------- */
+.k-footer { background: #2A231E; color: var(--k-mute-dark); padding: 64px 0 40px; font-family: var(--k-gothic); font-size: 13.6px; line-height: 1.9; }
+.k-footer a { color: inherit; text-decoration: none; }
+.k-footer a:hover { color: var(--k-on-dark); }
+.k-footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+.k-footer .k-logo { color: var(--k-on-dark); }
+.k-footer-about { margin: 18px 0 14px; max-width: 360px; }
+.k-footer h4 { margin: 0 0 10px; font-family: var(--k-mincho); font-size: 14px; font-weight: 600; letter-spacing: 0.1em; color: var(--k-on-dark); }
+.k-footer ul { list-style: none; margin: 0; padding: 0; }
+.k-footer li { line-height: 2.3; }
+.k-copy { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: 56px; padding-top: 24px; border-top: 1px solid rgba(237, 234, 227, 0.12); font-size: 11.5px; letter-spacing: 0.05em; }
+.k-copy .legal a { margin-left: 18px; }
+
+/* ---------------- 見出し・ボタン・タグ（新しいページ） ---------------- */
+.k-label { display: block; font-size: 11.2px; letter-spacing: 0.3em; color: var(--k-gold); }
+.k-h2 { position: relative; font-family: var(--k-mincho); font-size: 31.2px; font-weight: 600; letter-spacing: 0.1em; line-height: 1.55; padding-bottom: 16px; border-bottom: 1px solid var(--k-line); margin-bottom: 40px; }
+.k-h2::after { content: ""; position: absolute; left: 0; bottom: -2px; width: 44px; height: 3px; background: var(--k-gold); }
+.k-dark .k-h2 { color: var(--k-on-dark); border-bottom-color: rgba(237, 234, 227, 0.16); }
+.k-body { padding-left: 170px; }
+.k-body p { font-size: 16px; line-height: 2.15; margin-bottom: 1.4em; }
+.k-body p.k-small { font-size: 13.3px; color: var(--k-mute); }
+.k-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 30px; background: var(--k-ink); color: #fff; font-size: 15.2px; letter-spacing: 0.1em; border: 1px solid var(--k-ink); }
+.k-btn:hover { background: var(--k-gold); border-color: var(--k-gold); }
+.k-btn.is-line { background: transparent; color: var(--k-ink); }
+.k-btn.is-line:hover { background: var(--k-ink); color: #fff; border-color: var(--k-ink); }
+.k-btn.is-shu { background: var(--k-shu); border-color: var(--k-shu); }
+.k-btn.is-shu:hover { background: var(--k-ink); border-color: var(--k-ink); }
+.k-btn.is-gold { background: var(--k-gold-lt); border-color: var(--k-gold-lt); color: var(--k-ink); }
+.k-btn.is-gold:hover { background: #fff; border-color: #fff; }
+.k-btn .ext { font-size: 12px; }
+.k-more { font-size: 13.6px; letter-spacing: 0.06em; color: var(--k-gold); }
+.k-more::after { content: " →"; }
+.k-more:hover { color: var(--k-ink); }
+.k-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.k-tag { display: inline-flex; align-items: center; gap: 4px; padding: 3px 14px; border: 1px solid var(--k-line); border-radius: 999px; background: var(--k-bg); font-size: 12.5px; line-height: 1.9; color: var(--k-ink-2); }
+a.k-tag:hover { border-color: var(--k-gold); color: var(--k-gold); }
+.k-tag.is-on { background: var(--k-ink); border-color: var(--k-ink); color: #fff; }
+.k-tag .n { color: var(--k-gold); }
+.k-tag.is-on .n { color: var(--k-gold-lt); }
+.k-tag.is-zero { color: var(--k-mute); }
+.k-tag.is-zero .n { color: var(--k-mute); }
+.k-sq { display: inline-block; padding: 0 8px; border: 1px solid var(--k-line); font-size: 11px; line-height: 1.9; color: var(--k-mute); }
+
+/* ---------------- ヒーロー（暗い写真） ---------------- */
+.k-hero { position: relative; min-height: 640px; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--k-on-dark); overflow: hidden; background: #2A231E; }
+.k-hero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.55; }
+.k-hero-in { position: relative; padding: 140px var(--k-gutter) 90px; }
+.k-hero .k-label { color: var(--k-gold-lt); margin-bottom: 26px; }
+.k-hero h1 { font-family: var(--k-mincho); font-size: 44.8px; font-weight: 600; letter-spacing: 0.12em; line-height: 1.75; }
+.k-hero p.k-lead { margin-top: 24px; font-size: 15px; line-height: 2.1; }
+.k-hero-cap { position: absolute; right: var(--k-gutter); bottom: 22px; font-size: 11.5px; letter-spacing: 0.06em; color: var(--k-mute-dark); }
+.k-hero-cap a { border-bottom: 1px solid currentColor; }
+
+/* ページの頭（明るい） */
+.k-pagehead { padding: 72px 0 40px; }
+.k-pagehead h1 { font-family: var(--k-mincho); font-size: 36px; font-weight: 600; letter-spacing: 0.12em; line-height: 1.6; margin-top: 8px; }
+.k-pagehead p { margin-top: 14px; font-size: 15px; color: var(--k-ink-2); }
+.k-crumb { font-size: 12px; color: var(--k-mute); letter-spacing: 0.04em; }
+.k-crumb a:hover { color: var(--k-gold); }
+
+/* ページ内のリンク（NIPPONIA about の金色の小さな目次） */
+.k-toc { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 36px; padding: 40px 0 8px; font-size: 13.6px; letter-spacing: 0.06em; color: var(--k-gold); }
+.k-toc a:hover { color: var(--k-ink); }
+
+/* セクション */
+.k-sec { padding: 96px 0; }
+.k-sec + .k-sec { padding-top: 24px; }
+.k-dark { background: #2A231E; color: var(--k-on-dark); }
+.k-panelbg { background: var(--k-panel); }
+.k-sec.k-dark + .k-sec, .k-sec.k-panelbg + .k-sec, .k-sec + .k-sec.k-dark, .k-sec + .k-sec.k-panelbg { padding-top: 96px; }
+
+/* ---------------- 宿・店のカード（NIPPONIA 施設カード） ---------------- */
+.k-places { display: grid; grid-template-columns: repeat(4, 1fr); gap: 36px 24px; }
+.k-place .ph { aspect-ratio: 4 / 3; background: var(--k-panel-2); overflow: hidden; }
+.k-place .ph img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+.k-place:hover .ph img { transform: scale(1.04); }
+.k-place h3 { font-family: var(--k-mincho); font-size: 15.5px; font-weight: 600; letter-spacing: 0.08em; line-height: 1.6; margin-top: 12px; }
+.k-place:hover h3 { color: var(--k-gold); }
+.k-place .where { font-size: 12px; color: var(--k-mute); line-height: 1.8; }
+.k-place .k-tags { margin-top: 8px; gap: 4px; }
+.k-place.is-empty .ph { display: flex; align-items: center; justify-content: center; text-align: center; padding: 16px; font-size: 12.5px; line-height: 1.9; color: var(--k-mute); }
+
+/* 暗い面の大きな写真カード（NIPPONIA「人と暮らしから」） */
+.k-people { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+.k-photocard { position: relative; display: block; min-height: 460px; overflow: hidden; background: #1E1915; }
+.k-photocard img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.8; transition: transform .6s, opacity .3s; }
+.k-photocard:hover img { transform: scale(1.03); opacity: 0.9; }
+.k-photocard::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(20, 16, 13, 0.82), rgba(20, 16, 13, 0) 55%); }
+.k-photocard .cap { position: absolute; left: 32px; right: 32px; bottom: 28px; z-index: 1; color: #fff; }
+.k-photocard .role { font-size: 11.5px; letter-spacing: 0.12em; color: var(--k-on-dark); opacity: 0.85; }
+.k-photocard h3 { font-family: var(--k-mincho); font-size: 26px; font-weight: 600; letter-spacing: 0.1em; line-height: 1.6; margin-top: 6px; }
+.k-photocard .where { font-size: 12.5px; color: var(--k-mute-dark); }
+.k-askcard { display: flex; flex-direction: column; justify-content: space-between; padding: 36px 32px; border: 1px solid rgba(237, 234, 227, 0.2); }
+.k-askcard .k-label { color: var(--k-gold-lt); }
+.k-askcard h3 { font-family: var(--k-mincho); font-size: 22px; font-weight: 600; letter-spacing: 0.08em; line-height: 1.7; margin: 14px 0 12px; }
+.k-askcard p { font-size: 13.6px; line-height: 2; color: var(--k-mute-dark); }
+.k-askcard .k-btn { margin-top: 28px; align-self: flex-start; }
+
+/* エリア・種類で探すパネル（NIPPONIA） */
+.k-finder { background: var(--k-panel); padding: 28px 32px; margin-bottom: 44px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px 48px; }
+.k-finder dt { font-size: 12.5px; color: var(--k-mute); margin-bottom: 8px; }
+.k-finder dd { margin: 0; }
+
+/* ---------------- 読みもののカード（中川政七） ---------------- */
+.k-reads { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px 24px; }
+.k-read .ph { aspect-ratio: 4 / 3; background: var(--k-panel); overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.k-read .ph img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+.k-read:hover .ph img { transform: scale(1.04); }
+.k-read .ph.is-cover { flex-direction: column; align-items: stretch; justify-content: space-between; padding: 20px 22px; text-align: left; }
+.k-read .ph.is-cover .series { font-family: var(--k-gothic); font-size: 11px; letter-spacing: 0.1em; padding: 0; text-align: left; line-height: 1.6; }
+.k-read .ph.is-cover b { font-family: var(--k-mincho); font-size: 22px; font-weight: 600; letter-spacing: 0.08em; line-height: 1.6; color: var(--k-ink); }
+.k-read .ph.is-cover .no { font-size: 11px; letter-spacing: 0.12em; color: var(--k-mute); }
+.k-read:hover .ph.is-cover b { color: var(--k-gold); }
+.k-read .ph .series { font-family: var(--k-mincho); font-size: 15px; letter-spacing: 0.12em; line-height: 1.9; color: var(--k-gold); text-align: center; padding: 0 20px; }
+.k-read time { display: block; margin-top: 12px; font-size: 13px; color: var(--k-mute); line-height: 1.6; }
+.k-read h3 { font-size: 15px; font-weight: 600; line-height: 1.75; margin-top: 4px; }
+.k-read:hover h3 { color: var(--k-gold); }
+.k-read p { font-size: 12.5px; color: var(--k-mute); line-height: 1.9; margin-top: 4px; }
+
+/* 一覧＋右の欄 */
+.k-cols { display: grid; grid-template-columns: 1fr 300px; gap: 64px; align-items: start; }
+.k-side { display: flex; flex-direction: column; gap: 48px; position: sticky; top: 100px; }
+.k-side h2 { font-size: 16px; font-weight: 600; padding-bottom: 10px; border-bottom: 2px solid var(--k-ink); margin-bottom: 6px; letter-spacing: 0.04em; }
+.k-side-list a { display: grid; grid-template-columns: 84px 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--k-line); }
+.k-side-list .th { aspect-ratio: 4 / 3; background: var(--k-panel); overflow: hidden; display: flex; align-items: center; justify-content: center; font-family: var(--k-mincho); font-size: 11px; letter-spacing: 0.1em; color: var(--k-gold); text-align: center; line-height: 1.5; }
+.k-side-list .th img { width: 100%; height: 100%; object-fit: cover; }
+.k-side-list time { font-size: 11.5px; color: var(--k-mute); line-height: 1.6; }
+.k-side-list p { font-size: 13px; font-weight: 600; line-height: 1.6; }
+.k-side-list a:hover p { color: var(--k-gold); }
+.k-side .k-small { font-size: 12px; color: var(--k-mute); margin-bottom: 12px; line-height: 1.8; }
+
+/* ---------------- 宿・店の紹介ページ（NIPPONIA 施設ページ） ---------------- */
+.k-placehero { position: relative; min-height: 520px; display: flex; align-items: flex-end; color: #fff; background: #2A231E; overflow: hidden; }
+.k-placehero > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
+.k-placehero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(20, 16, 13, 0.75), rgba(20, 16, 13, 0) 60%); }
+.k-placehero .k-wrap { position: relative; z-index: 1; width: 100%; padding-bottom: 56px; }
+.k-placehero .role { font-size: 12px; letter-spacing: 0.12em; color: var(--k-on-dark); }
+.k-placehero h1 { font-family: var(--k-mincho); font-size: 44px; font-weight: 600; letter-spacing: 0.1em; line-height: 1.5; margin-top: 8px; }
+.k-placehero .where { font-size: 13.6px; color: var(--k-on-dark); margin-top: 6px; }
+.k-placemeta { padding: 32px 0 0; }
+.k-placemeta .line { margin-top: 14px; font-size: 12.5px; color: var(--k-mute); }
+.k-placebody { padding: 48px 0 0; }
+.k-placebody .k-body { padding-left: 170px; max-width: 900px; }
+.k-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 12px; }
+.k-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 56px; }
+.k-gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.k-info { border-top: 1px solid var(--k-line); }
+.k-info > div { display: grid; grid-template-columns: 170px 1fr; gap: 24px; padding: 18px 0; border-bottom: 1px solid var(--k-line); font-size: 14.5px; line-height: 2; }
+.k-info dt { font-family: var(--k-mincho); font-weight: 600; letter-spacing: 0.08em; }
+.k-info dd a { color: var(--k-gold); border-bottom: 1px solid currentColor; }
+.k-info-sub { font-family: var(--k-mincho); font-size: 18px; font-weight: 600; letter-spacing: 0.1em; margin: 40px 0 10px; }
+
+/* ---------------- メルマガ帯（NIPPONIA） ---------------- */
+.k-mail { background: #2A231E; color: var(--k-on-dark); text-align: center; padding: 88px 0; }
+.k-mail .k-mail-lead { font-family: var(--k-mincho); font-size: 24px; font-weight: 400; letter-spacing: 0.08em; line-height: 1.7; }
+.k-mail .form-cta { margin-top: 30px; }
+.k-mail .form-cta-lead { font-size: 13px; color: var(--k-mute-dark); margin-bottom: 18px; }
+.k-mail .form-cta-fine { font-size: 11.5px; color: var(--k-mute-dark); margin-top: 16px; letter-spacing: 0.04em; }
+.k-mail .form-cta-fine a { border-bottom: 1px solid currentColor; }
+
+/* 宿を営む方へ（明るい帯） */
+.k-owners { background: var(--k-panel); }
+.k-owners .k-btns { margin-top: 28px; }
+
+/* ---------------- タブレット・スマホ ---------------- */
+@media (max-width: 1080px) {
+  .k-nav { display: none; }
+  .k-places { grid-template-columns: repeat(3, 1fr); }
+  .k-cols { grid-template-columns: 1fr; }
+  .k-side { position: static; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+@media (max-width: 760px) {
+  :root { --k-gutter: 16px; }
+  body.k { font-size: 14.5px; }
+  .k-header-in { height: 60px; gap: 12px; }
+  .k-logo .logo-img { width: 34px; height: 34px; }
+  .k-logo-name { font-size: 18px; letter-spacing: 0.12em; }
+  .k-logo-name small { font-size: 9.5px; letter-spacing: 0.08em; }
+  .k-cta { height: 34px; padding: 0 12px; font-size: 12px; letter-spacing: 0.04em; margin-left: auto; }
+  .k-menu .k-menu-t { display: none; }
+  .k-hero { min-height: 520px; }
+  .k-hero-in { padding: 110px var(--k-gutter) 72px; }
+  .k-hero h1 { font-size: 23px; letter-spacing: 0.06em; }
+  .k-read .ph.is-cover { padding: 14px; }
+  .k-read .ph.is-cover b { font-size: 16px; letter-spacing: 0.04em; }
+  .k-read .ph.is-cover .series { font-size: 9.5px; letter-spacing: 0.02em; }
+  .k-hero p.k-lead { font-size: 13.5px; text-align: left; }
+  .k-hero-cap { left: var(--k-gutter); right: auto; }
+  .k-sec { padding: 64px 0; }
+  .k-sec.k-dark + .k-sec, .k-sec.k-panelbg + .k-sec, .k-sec + .k-sec.k-dark, .k-sec + .k-sec.k-panelbg { padding-top: 64px; }
+  .k-h2 { font-size: 23px; margin-bottom: 28px; padding-bottom: 12px; }
+  .k-body, .k-placebody .k-body { padding-left: 0; }
+  .k-body p { font-size: 15px; line-height: 2.05; }
+  .k-pagehead { padding: 44px 0 28px; }
+  .k-pagehead h1 { font-size: 26px; }
+  .k-toc { justify-content: flex-start; gap: 6px 20px; padding-top: 28px; }
+  .k-places { grid-template-columns: 1fr 1fr; gap: 28px 12px; }
+  .k-people { grid-template-columns: 1fr; }
+  .k-photocard { min-height: 360px; }
+  .k-photocard .cap { left: 20px; right: 20px; bottom: 20px; }
+  .k-photocard h3 { font-size: 22px; }
+  .k-askcard { padding: 28px 22px; }
+  .k-finder { grid-template-columns: 1fr; padding: 22px 18px; }
+  .k-reads { grid-template-columns: 1fr 1fr; gap: 28px 12px; }
+  .k-read h3 { font-size: 14px; }
+  .k-side { grid-template-columns: 1fr; }
+  .k-placehero { min-height: 420px; }
+  .k-placehero h1 { font-size: 30px; }
+  .k-gallery { grid-template-columns: 1fr 1fr; }
+  .k-info > div { grid-template-columns: 1fr; gap: 2px; padding: 14px 0; }
+  .k-btn { width: 100%; }
+  .k-mail { padding: 64px 0; }
+  .k-mail .k-mail-lead { font-size: 19px; }
+  .k-footer-grid { grid-template-columns: 1fr 1fr; }
+  .k-footer-grid > div:first-child { grid-column: 1 / -1; }
+  .sitemap-inner { padding: 16px 0 64px; }
+  .sitemap-head { margin-bottom: 28px; }
+  .sitemap-head .logo-mark { font-size: 16px; }
+}
+
+/* =====================================================================
+   既存ページ（shared.css を使う記事・オーナー向け・問い合わせ等）の差し替え
+   色の変数を v3 の色に置き換え、見出しを明朝に、角丸と影を外す
+   ===================================================================== */
+body.k-legacy {
+  --color-forest: #352C25;
+  --color-forest-deep: #352C25;
+  --color-earth: #9A7B44;
+  --color-earth-hover: #7E6435;
+  --color-beige: #EDEAE3;
+  --color-beige-soft: #E8E3D8;
+  --color-text: #352C25;
+  --color-text-mute: #7B8088;
+  --color-bg: #FAF8F3;
+  --color-bg-sub: #EDEAE3;
+  --color-line: #DBD5C8;
+  --color-guest: #352C25;
+  --color-guest-deep: #352C25;
+  --color-guest-hover: #9A7B44;
+  --color-host: #9A7B44;
+  --color-host-deep: #352C25;
+  --color-host-hover: #9A7B44;
+  --font-sans: var(--k-gothic);
+  --font-serif: var(--k-mincho);
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --shadow-card: none;
+  background: var(--k-bg);
+  color: var(--k-ink);
+  font-family: var(--k-gothic);
+}
+body.k-legacy h1, body.k-legacy h2, body.k-legacy h3,
+body.k-legacy .hero-title, body.k-legacy .owner-hero-title, body.k-legacy .page-head h1, body.k-legacy .article-hero h1 {
+  font-family: var(--k-mincho);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+}
+body.k-legacy .k-footer h4, body.k-legacy .sitemap-group h2 { font-family: var(--k-mincho); }
+body.k-legacy .btn { border-radius: 0; background: var(--k-ink); letter-spacing: 0.08em; }
+body.k-legacy .btn:hover { background: var(--k-gold); }
+body.k-legacy .btn-ghost { background: transparent; }
+body.k-legacy .eyebrow, body.k-legacy .hero-eyebrow, body.k-legacy .owner-hero-eyebrow { color: var(--k-gold); letter-spacing: 0.3em; font-size: 11.2px; font-weight: 400; }
+body.k-legacy .article-hero.is-text { background: #2A231E; }
+body.k-legacy .article-hero.is-text .container { padding-top: 88px; }
+body.k-legacy .article-hero:not(.is-text) { margin-top: 0; }
+body.k-legacy .article-body p { font-size: 16px; line-height: 2.25; }
+body.k-legacy .article-body h2 { font-family: var(--k-mincho); letter-spacing: 0.08em; }
+body.k-legacy .article-body a { color: var(--k-gold); }
+body.k-legacy .spec { background: var(--k-panel); border-radius: 0; }
+body.k-legacy .spec h3 { font-family: var(--k-mincho); letter-spacing: 0.12em; }
+body.k-legacy .article-cta { background: #2A231E; border-radius: 0; }
+body.k-legacy .article-cta .btn { background: var(--k-shu); }
+body.k-legacy .form-cta .btn { background: var(--k-shu); }
+body.k-legacy .form-cta .btn:hover { background: var(--k-ink); }
+body.k-legacy .owner-hero-panel, body.k-legacy .owners-section { background: #2A231E; }
+body.k-legacy .reason-card, body.k-legacy .pillar, body.k-legacy .flow-step, body.k-legacy .case-card,
+body.k-legacy .testimonial, body.k-legacy .strength-item, body.k-legacy .faq-item, body.k-legacy .consult-form,
+body.k-legacy .legal-contact-box, body.k-legacy .contact-form { border-radius: 0; box-shadow: none; }
+body.k-legacy .reveal { opacity: 1; transform: none; }
+/* 引用は「左の縦線＋淡い箱」をやめ、明朝の大きめの字と上下の細い罫線で強弱をつける */
+body.k-legacy .article-body blockquote { background: none; border: 0; border-top: 1px solid var(--k-line); border-bottom: 1px solid var(--k-line); border-radius: 0; padding: 28px 0; margin: 40px 0; font-family: var(--k-mincho); font-size: 19px; font-weight: 600; letter-spacing: 0.06em; line-height: 1.9; color: var(--k-ink); box-shadow: none; }
+body.k-legacy .article-body blockquote::before, body.k-legacy .article-body blockquote::after { content: none; display: none; }
+body.k-legacy .article-body blockquote p { font-size: inherit; line-height: inherit; margin: 0; }
+body.k-legacy .article-body blockquote cite { display: block; margin-top: 10px; font-family: var(--k-gothic); font-size: 12.5px; font-weight: 400; color: var(--k-mute); font-style: normal; }
