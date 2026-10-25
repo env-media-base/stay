@@ -43,7 +43,7 @@ body.k :focus-visible { outline: 2px solid var(--k-shu); outline-offset: 4px; }
 .k-header.is-over { position: absolute; left: 0; right: 0; background: transparent; border-bottom-color: transparent; color: #fff; }
 .k-header-in { display: flex; align-items: center; gap: 28px; height: 76px; max-width: none; padding: 0 var(--k-gutter); }
 .k-logo { display: flex; align-items: center; gap: 12px; color: inherit; text-decoration: none; flex-shrink: 0; }
-.k-logo .logo-img, .sitemap-head .logo-img { width: 40px; height: 40px; display: block; border-radius: 0; object-fit: cover; box-shadow: none; border: 0; }
+.k-logo .logo-img, .sitemap-head .logo-img { width: 40px; height: 40px; display: block; border-radius: 0; object-fit: cover; box-shadow: none; border: 0; filter: saturate(.52) brightness(1.1); }
 .k-logo-name { font-family: var(--k-mincho); font-size: 21px; font-weight: 600; letter-spacing: 0.16em; line-height: 1.3; }
 .k-logo-name small { display: block; font-family: var(--k-gothic); font-size: 10.9px; font-weight: 400; letter-spacing: 0.14em; opacity: 0.8; }
 .k-nav { display: flex; gap: 26px; margin-left: auto; font-size: 13.3px; letter-spacing: 0.09em; }
